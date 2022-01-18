@@ -11,7 +11,7 @@
   
   <meta name="author" content="themefisher.com">
 
-  <title>가이드맵</title>
+  <title>이용정보 | 드림월드</title>
   <link rel="icon" href="http://localhost:9000/dream/images/favicon.png"> <!-- 파비콘 -->
 
   <!-- bootstrap.min css -->
