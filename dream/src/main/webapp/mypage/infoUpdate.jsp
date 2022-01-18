@@ -1,7 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" %>
+    pageEncoding="UTF-8"  import="com.dream.vo.MemberVO, com.dream.dao.MemberDao"%>
 <%
-	
+	String info_id = (String)session.getAttribute("sid");
+	MemberDao dao = new MemberDao();
+	MemberVO vo = dao.getInfo(info_id);
+	//System.out.println(vo.getMem_id());
 %>    
 <!DOCTYPE html>
 <html>
@@ -58,28 +61,28 @@
 						<ul>
 							<li>
 								<label>*아이디</label>
-								<input type="text" name="id" class="input_style1" disabled>
+								<input type="text" name="id" class="input_style1" value="<%= vo.getMem_id() %>" disabled>
 							</li>		
 							<li>
 								<label>*비밀번호</label>
-								<input type="password" name="pass" class="input_style1" disabled>
+								<input type="password" name="pass" class="input_style1" value="<%= vo.getMem_pass() %>" disabled>
 							</li>		
 							<li>
-								<label>*이름</label>
-								<input type="text" name="name" class="input_style1" disabled>
+								<label>*성명</label>
+								<input type="text" name="name" class="input_style1" value="<%= vo.getMem_name() %>" disabled>
 							</li>		
 							<li>
 								<label>*생년월일</label>
-								<input type="text" name="birth" class="input_style1" disabled>
+								<input type="text" name="birth" class="input_style1" value="<%= vo.getMem_birth() %>" disabled>
 							</li>
 							<li>
 								<label>*이메일</label>
-								<input type="text" name="email1" class="email" disabled>
-								@ <input type="text" name="email2" class="email" disabled>
+								<input type="text" name="email1" class="email" value="<%= vo.getMem_email1() %>" disabled>
+								@ <input type="text" name="email2" class="email"value="<%= vo.getMem_email2() %>"  disabled>
 							</li>	
 							<li>
 								<label>*핸드폰번호</label>
-								<input type="text" name="hp" class="input_style1" disabled>
+								<input type="text" name="hp" class="input_style1" value="<%= vo.getMem_hp() %>" disabled>
 							</li>	
 							<li>
 								<a href="http://localhost:9000/dream/mypage/infoUpdate-next.jsp">
