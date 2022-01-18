@@ -104,7 +104,7 @@
 
 						<h3 class="mt-3 mb-5 lh-36">드림월드에 재미있는<br>어트랙션이 무엇이 있는지<br>궁금하다면?</h3>
 
-						<a href="blog-single.html" class="btn btn-small btn-solid-border btn-round-full text-black">&gt;&gt;더보기</a>
+						<a href="http://localhost:9000/dream/entertainment/attraction.jsp" class="btn btn-small btn-solid-border btn-round-full text-black">&gt;&gt;더보기</a>
 					</div>
 				</div>
 			</div>
@@ -120,7 +120,7 @@
 
 						<h3 class="mt-3 mb-5 lh-36">드림월드 가고 싶은데 <br>어디에있을까? <br>어떻게 가는게 가장빠를까?</h3>
 
-						<a href="blog-single.html" class="btn btn-small btn-solid-border btn-round-full">&gt;&gt;더보기</a>
+						<a href="http://localhost:9000/dream/information/navi.jsp" class="btn btn-small btn-solid-border btn-round-full">&gt;&gt;더보기</a>
 					</div>
 				</div>
 			</div>
