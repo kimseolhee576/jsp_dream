@@ -43,7 +43,7 @@
 		        <li>
 		            <label>*아이디</label>
 		            <input type="text" name="mem_id" placeholder="영문+숫자 조합의 6~10자리" class="input1" id="id" onKeyup="idCheck()">
-		            <button type="button" onclick="idDupliCheck()" class="btn_style2">중복확인</button>
+		            <button type="button" onclick="idDupliCheck()" class="btn_style2" id="btn_idCheck">중복확인</button>
 		            <span id = "idMsg"></span>
 		        </li>
 		        <li>

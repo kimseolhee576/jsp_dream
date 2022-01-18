@@ -410,6 +410,7 @@ function hpCheck(){
 function resetForm(){
 	$('#joinForm span').empty();
 	$('#joinForm input').css("border","1px solid #B4B4FF");
+	$('#btn_idCheck').css("border-color","white");
 }
 
 
