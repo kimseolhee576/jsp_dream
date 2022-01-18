@@ -39,7 +39,7 @@
 			<div class="col-lg-9 col-md-10">
 				<div class="block">
 					<span class="d-block mb-3 text-white text-capitalize">Welcome to DreamWorld</span>
-					<h1 class="animated fadeInUp mb-5">꿈과 환상의 나라로 <br>여러분을 초대합니다5555 <br></h1>
+					<h1 class="animated fadeInUp mb-5">꿈과 환상의 나라로 <br>여러분을 초대합니다 <br></h1>
 					<a href="#" target="_blank" class="btn btn-main animated fadeInUp btn-round-full" >이용안내<i class="btn-icon fa fa-angle-right ml-2"></i></a>
 				</div>
 			</div>
@@ -53,26 +53,26 @@
 		<div class="row">
 			<div class="col-lg-3 col-md-6 col-sm-6">
 				<div class="counter-item text-center mb-5 mb-lg-0">
-					<h3 class="mb-0"><span class="counter-stat font-weight-bold">1730</span> +</h3>
-					<p class="text-muted">하루 이용객</p>
+					<h3 class="mb-0">+<span class="counter-stat font-weight-bold">6248</span>명</h3>
+					<p class="text-muted">어제 이용객</p>
 				</div>
 			</div>
 			<div class="col-lg-3 col-md-6 col-sm-6">
 				<div class="counter-item text-center mb-5 mb-lg-0">
-					<h3 class="mb-0"><span class="counter-stat font-weight-bold">125000 </span> </h3>
+					<h3 class="mb-0"><span class="counter-stat font-weight-bold">324586 </span>명</h3>
 					<p class="text-muted">전체 이용객</p>
 				</div>
 			</div>
 			<div class="col-lg-3 col-md-6 col-sm-6">
 				<div class="counter-item text-center mb-5 mb-lg-0">
-					<h3 class="mb-0"><span class="counter-stat font-weight-bold">39</span></h3>
-					<p class="text-muted">오늘 운휴 갯수</p>
+					<h3 class="mb-0"><span class="counter-stat font-weight-bold">117</span>km/h</h3>
+					<p class="text-muted">드라켄 최고 시속</p>
 				</div>
 			</div>
 			<div class="col-lg-3 col-md-6 col-sm-6">
 				<div class="counter-item text-center">
-					<h3 class="mb-0"><span class="counter-stat font-weight-bold">14</span></h3>
-					<p class="text-muted">코로나 확진자 수 </p>
+					<h3 class="mb-0"><span class="counter-stat font-weight-bold">124876</span>일</h3>
+					<p class="text-muted">무사고 운영일</p>
 				</div>
 			</div>
 		</div>
@@ -133,7 +133,7 @@
 						<div class="blog-item-meta">
 							<span class="ml-2 mr-2">후기게시판</span>
 						</div> 
-						<h3 class="mt-3 mb-5 lh-36">많이 타본 어트랙션을<br> 별점으로 추천받는다! <br>어떤 놀이기구가 재미있을까?</h3>
+						<h3 class="mt-3 mb-5 lh-36">많이 타본 어트랙션을<br>별점으로 추천받는다!<br>어떤 놀이기구가 재밌을까?</h3>
 						<a href="http://localhost:9000/dream/reviewboard/reviewList.jsp" class="btn btn-small btn-solid-border btn-round-full">&gt;&gt;더보기</a>
 					</div>
 				</div>
