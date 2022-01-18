@@ -7,6 +7,7 @@
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <title>즐길거리 | 드림월드</title>
+<link rel="icon" href="http://localhost:9000/dream/images/favicon.png"> <!-- 파비콘 -->
 <!-- Main Stylesheet -->
 <link rel="stylesheet" href="http://localhost:9000/dream/css/style.css">
 <!-- entertainment Stylesheet -->
@@ -33,29 +34,33 @@
 
 <!-- 부대시설 6가지 -->
 <section class="section blog-wrap bg-gray">
-<h2 class="enter_h2">부대시설</h2> 
-<section class="attraction-top section about-2 position-relative1">
 	<div class="container">
-		<div class="row">
-			<div class="attraction">
-				<div id="attraction_img">
-					<img src="http://localhost:9000/dream/images/aa.jpg" alt="의무실" class="img-attr">
+		<div class="content">
+			<h2 class="enter_h2">부대시설</h2> 
+			<section class="attraction-top section about-2 position-relative1">
+				<div class="container">
+					<div class="row">
+						<div class="attraction">
+							<div id="attraction_img">
+								<img src="http://localhost:9000/dream/images/aa.jpg" alt="의무실" class="img-attr">
+							</div>
+							<div id="attraction_text">
+								<span class="h6 text-color">DreamWorld</span>
+								<h2 class="mt-3 mb-4 position-relative content-title">의무실</h2>
+								<div class="at-text">고객의 의료편의시설과 안전사고를 대비하는 <br>
+									응급 의료실입니다. </div>
+								<span class="at-text">시설분류 : 의료시설</span>
+								<span class="at-text">위치 : 정문 입장 후 오른쪽에 위치함.</span>
+								<span class="at-text">설명 : 상비약 구비</span>
+								<span class="at-text">운영시간 : 놀이 공원 운영 중 상시 운영</span>
+								<span class="at-text">비고 : </span>
+							</div>
+						</div>
+					</div>
 				</div>
-				<div id="attraction_text">
-					<span class="h6 text-color">DreamWorld</span>
-					<h2 class="mt-3 mb-4 position-relative content-title">의무실</h2>
-					<div class="at-text">고객의 의료편의시설과 안전사고를 대비하는 <br>
-						응급 의료실입니다. </div>
-					<span class="at-text">시설분류 : 의료시설</span>
-					<span class="at-text">위치 : 정문 입장 후 오른쪽에 위치함.</span>
-					<span class="at-text">설명 : 상비약 구비</span>
-					<span class="at-text">운영시간 : 놀이 공원 운영 중 상시 운영</span>
-					<span class="at-text">비고 : </span>
-				</div>
-			</div>
+			</section>
 		</div>
 	</div>
-</section>
 <section class="attraction-top section about-2 position-relative">
 	<div class="container">
 		<div class="row">
