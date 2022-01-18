@@ -37,7 +37,7 @@
 	   <div class="container">
 <div class="content">
 	<section class="login">
-        <h2>회원가입테스트</h2>
+        <h2>회원가입</h2>
         <form id="joinForm" name="joinForm" action="join_proc.jsp" method="post">
      		<ul>
 		        <li>
@@ -53,7 +53,7 @@
 		        </li>
 		        <li>
 		            <label>*비밀번호 확인</label>
-		            <input type="password" name="mem_cpass" placeholder="영문+숫자 조합의 6~10자리" class="input1" id="cpass" onblur="passSameCheck()" onKeyup="passCheck()">
+		            <input type="password" name="mem_cpass" placeholder="영문+숫자 조합의 6~10자리" class="input1" id="cpass" onblur="passSameCheck()" onKeyup="cpassCheck()">
 		            <span id="cpassMsg"></span>
 		        </li>
 		        <li>

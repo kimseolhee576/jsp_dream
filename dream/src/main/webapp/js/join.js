@@ -167,8 +167,10 @@ function cpassCheck(){
     passMsg = document.getElementById("passMsg");
     cpassMsg = document.getElementById("cpassMsg");
     
-    if(cpass.value!=""&&pass.value==""){
-		passFlag=1;
+    if(passFlag==0){
+	    if(cpass.value!=""&&pass.value==""){
+			passFlag=1;
+		}
 	}
         if(!pwJ.test($('#cpass').val())||empJ.test($('#cpass').val())){
         cpassMsg.style.color = "#FF1493";
