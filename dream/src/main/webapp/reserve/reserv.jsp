@@ -12,7 +12,7 @@
   
   <meta name="author" content="themefisher.com">
 
-   <title>예매하기 | 드림월드</title>
+   <title>예약하기 | 드림월드</title>
   <link rel="icon" href="http://localhost:9000/dream/images/favicon.png"> <!-- 파비콘 -->
 
   
