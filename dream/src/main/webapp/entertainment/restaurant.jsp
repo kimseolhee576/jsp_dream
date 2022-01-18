@@ -1,20 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
 <!doctype html>
-<html >
-  <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <title>즐길거리 | 드림월드</title>
-  <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="http://localhost:9000/dream/css/style.css">
-  <!-- entertainment Stylesheet -->
-  <link rel="stylesheet" href="http://localhost:9000/dream/css/entertainment.css">
-
+<html>
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<title>즐길거리 | 드림월드</title>
+<!-- Main Stylesheet -->
+<link rel="stylesheet" href="http://localhost:9000/dream/css/style.css">
+<!-- entertainment Stylesheet -->
+<link rel="stylesheet" href="http://localhost:9000/dream/css/entertainment.css">
 </head>
 
 <body>
-
 <!-- Header Start --> 
 <%@ include file="../header.jsp" %>
 <!-- Header Close --> 
@@ -32,8 +31,6 @@
   </div>
 </section>
 
-
-<!-- Section About Start -->
 <!-- 레스토랑&스낵 -->
 <section class="section blog-wrap bg-gray">
 <h2 class="enter_h2">레스토랑&amp;스낵</h2> 
@@ -171,11 +168,11 @@
 	</div>
 </section>
 </section>
+  </div>
 
 <!-- footer Start -->
 <%@ include file="../footer.jsp" %>
 <!-- footer Close --> 
    
-    </div>
-  </body>
-  </html>
+</body>
+</html>
