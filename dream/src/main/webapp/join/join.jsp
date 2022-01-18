@@ -38,7 +38,7 @@
 	   <div class="container">
 <div class="content">
 	<section class="login">
-        <h2>회원가입</h2>
+        <h2>회원가입테스트</h2>
         <form id="joinForm" name="joinForm" action="join_proc.jsp" method="post">
      		<ul>
 		        <li>
