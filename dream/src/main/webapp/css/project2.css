@@ -1,0 +1,166 @@
+	/** {margin:0; padding:0;}
+	div.content{
+		width:100%;
+	}*/
+	div.content {
+		width:1150px;
+		margin:auto;
+		font-family: "Poppins", sans-serif;
+	}
+	table.notice_list, table.notice_write, 
+	table.notice_content, table.notice_update{
+	width:90%;
+	margin:auto;
+}
+	/*section.notice > h1 + form, section.notice > h1 + article
+	, section.notice > h1 + table {
+		width:90%;
+		margin:auto;
+	}*/
+
+	table.notice_list tr td:nth-child(2) {
+		text-align:left;
+		padding-left:20px;
+	}
+	table.notice_list tr td:nth-child(2) a {
+		color:#333;
+		text-decoration:none;
+	}	
+	table.notice_list tr td:nth-child(2) a:hover,
+	table.board_list tr td:nth-child(2) a:hover {
+		text-decoration:underline;
+	}
+	table.notice_list tr:last-child td, table.board_list tr:last-child td {
+		border:1px solid white;
+	}
+	/*section.notice table, section.notice th, section.notice td {
+		border-collapse:collapse;
+		text-align:center;
+		font-size:10pt;
+	}
+	section.notice table th, section.notice table td {
+		padding:5px 0;
+	}
+	section.notice table th {
+		background:MediumSeaGreen;
+		color:white;
+	}
+		section.notice article div {
+		width:200px;
+		background:MediumSeaGreen;
+		display:inline-block;
+		text-align:center;
+		padding:20px 0;
+		color:lightgray;
+		font-weight:700;
+		border-radius:5px;
+	}
+	section.notice article div:first-child {
+		background:green;
+		margin-right:20px;
+	}*/
+	.admin_notice_bgcolor {
+		background:powderblue;
+		font-weight:700;
+		text-align:center;
+	}
+	div.content section > div {
+		text-align:center;
+		margin:20px 0;
+		clear:both;
+	}
+
+	div.content section > div {
+		text-align:center;
+		margin:20px 0;
+		clear:both;
+	}
+	table.notice_list tr:first-child td, table.notice_list tr:last-child td {
+		text-align:right;
+		border:1px solid lightgray;
+	}
+	table.notice_list tr:first-child td {
+		border-bottom:2px solid black;
+	}
+	section.notice h1 {
+		margin:50px 0 30px 150px;
+	}
+	table.notice_list td {
+		border: 2px solid black;
+	}
+	
+	/*******************************
+		공지사항 - 글쓰기, 수정
+	********************************/
+	table.notice_write, table.notice_update, table.board_delete { 
+	width:100%; 
+	}
+	
+	table.notice_write th, table.notice_update th {
+		width:100px;
+	}
+	
+	table.notice_write tr td, table.notice_update tr td {
+		text-align:left;
+		padding:0 10px;
+	}
+	table.notice_write input, table.notice_write textarea, table.notice_update input,
+	table.notice_update textarea {
+		width:94%;
+		padding:7px 0 7px 15px;
+		margin:8px;
+		/*height:200px;*/
+		border-radius:4px;
+		border:1px solid #333;		
+	}
+	table.notice_write textarea, table.notice_update textarea  {
+		width:94%;
+		padding:7px 0 7px 15px;
+		margin:8px;
+		border-radius:4px;
+		border:1px solid #333;
+		height:200px;
+		font-family:"맑은고딕";
+	}
+	table.notice_write tr:last-child td, table.notice_update tr:last-child td {
+		text-align:center;
+		border:1px solid white;
+	}
+	table.notice_write tr:last-child button, table.notice_update tr:last-child button {
+		margin:20px 5px;
+	}	
+	table.notice_write tr:last-child a, table.notice_update tr:last-child a {
+		text-decoration:none;
+	}
+	
+	/********************
+		공지사항, 게시판 - 상세정보
+	********************/
+	table.notice_content tr td, table.notice_content tr td {
+		border-bottom:1px solid black;
+		text-align:left;
+		padding-left:10px;
+	}
+	table.notice_content tr:last-child td, table.notice_content tr:last-child td {
+		text-align:center;
+		border:1px solid white;
+		padding-top:15px;
+	}
+	table.notice_content tr:last-child td a, table.notice_content tr:last-child td a  {
+		text-decoration:none;
+	}
+	
+	table.notice_content td.title_style {
+		font-size:20pt;
+		width:70%;
+	}
+	
+	table.notice_content td.date_style {
+		font-size:10pt;
+		text-align:right;
+	}	
+	table.notice_content tr:last-child td {
+		text-align:right;
+	}
+	
+	

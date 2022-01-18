@@ -1,0 +1,260 @@
+div.content {
+	width:1150px;	
+	margin:auto;
+	font-family: "Poppins", sans-serif;
+}
+input.input_style1 {
+	border:2px solid #B4B4FF;
+	width:400px;
+	border-radius:4px;
+}
+button.btn_style1 { /*글쓰기 하단*/
+	margin-left:15px;
+	margin-top:5px;
+	padding:5px 15px;
+	background:#534bae;
+	border:1px solid #534bae;
+	color:white;
+	font-size:11pt;
+	font-weight:bold;
+}
+ .btn_style1:hover, .btn_style3:hover {
+	  background-color: #8C8CFF;
+	 	color: #000069;
+	}    
+button.btn_style2 { /*목록버튼*/
+	margin:5px 0 0 200px;
+	padding:5px 15px;
+	background:#555;
+	border:1px solid #555;
+	font-size:11pt;
+	font-weight:bold;
+	color:white;
+}
+button.btn_style2:hover {
+	background-color: #999;
+	color:black;
+}
+button.btn_style3 { /*검색버튼*/
+	margin-left:10px;
+	margin-top:5px;
+	padding:10.5px 20px;
+	background:#534bae;
+	border:1px solid #534bae;
+	color:white;
+	font-size:11pt;
+	font-weight:bold;
+}
+table.review_content td.title_style,
+table.notice_content td.title_style { /*후기게시판 상세보기 제목*/
+	font-size:20pt;
+	width:70%;
+}
+td.date_style {
+	text-align:right;
+	font-size:10pt;
+}
+td.star_style {
+	text-align:left;
+	font-size:12pt;
+}
+section.review_board textarea,
+section.notice textarea { /*여기*/
+	width:99%;
+}
+/*후기게시판 리스트*/
+section.review_board a {
+	text-decoration:none;
+	color:#444;
+}
+table.review_list a:hover {
+	text-decoration:underline;
+}
+table.review_list tr:first-child td,
+table.review_list tr:last-child td,
+table.review_write tr:first-child td,
+table.notice_list tr:first-child td, /*여기*/
+table.notice_list tr:last-child td { /* 위에 검색, 아래는 버튼*/
+	text-align:right;
+}
+table.review_list, table.review_write, 
+table.review_content, table.review_update,
+ table.notice_list,table.notice_write, 
+table.notice_content, table.notice_update { /*여기*/
+	width:90%;
+	margin:auto;
+}
+select.listSelect {
+	padding:9px;	
+}
+/*table.review_list tr:nth-of-type(even) {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+table.review_list tr:first-child,
+table.review_list tr:last-child {
+	background-color:white;
+}*/
+section.review_board table, 
+section.review_board table tr,
+section.review_board table td, 
+section.review_board table th,
+section.notice table, 
+section.notice table tr,
+section.notice table td, 
+section.notice table th {  /* 테이블 테두리*/
+	border-collapse:collapse;
+	border-bottom:1px solid #666;
+}
+table.review_list tr:first-child td,
+table.notice_list tr:first-child td {
+	border:1px solid rgba(245, 248,249);
+	border-bottom:1px solid #666;
+}
+table.review_list tr:last-child td,
+table.notice_list tr:last-child td,
+table.notice_update tr:last-child td {
+	border:1px solid rgba(245, 248,249); /* 버튼 부분 테이블 지우기*/
+}
+table.review_list td, table.notice_list td {
+	text-align:center;
+	font-size:12pt;
+	padding:4px;
+}
+table.review_list td:nth-child(2),
+table.notice_list td:nth-child(2){ /*제목들만 왼쪽정렬*/
+	text-align:left;
+}
+table.review_list th,
+table.notice_list th {
+	text-align:center;
+	padding:4px;
+	font-size:13pt;
+}
+/*table.review_list tr:nth-child(2) td{
+	text-align:center;
+	font-weight:bold;
+}*/
+/*후기게시판 - 글 상세보기*/
+table.review_content tr:last-child td, table.notice_content tr:last-child td {
+	border:1px solid rgba(245, 248,249);
+	text-align:center;
+}
+table.review_content tr:first-child td, table.notice_content tr:first-child td,
+table.notice_update tr:first-child td, table.notice_write tr:first-child td{
+	text-align:right;
+	padding-bottom:5px;
+}
+table.review_content 
+table.review_content tr,
+table.review_content td,
+table.review_content th {
+	border-collapse:collapse;
+	border-bottom:1px solid #666;
+}
+table.review_content, table.notice_update,
+table.notice_write, form[name="infoUpdateForm"] { /*제목이랑 content랑 떨어뜨리기*/
+	margin-top:50px;
+}
+/*후기게시판 - 글 쓰기*/
+table.review_write tr:last-child td,
+table.notice_update tr:last-child td,
+table.notice_write tr:last-child td {
+	border-bottom:1px solid rgba(245, 248,249);
+	text-align:center;
+}
+input#review_title, input#notice_title,
+input#ntitle {
+	width:99%;
+}
+table.review_write td, table.notice_update td,
+table.notice_list td, table.notice_write td {
+	padding:10px;
+}
+/*마이페이지 - 내정보수정*/
+section.info_update li {
+	list-style-type: none;
+	padding:5px;
+	margin-left:60px;
+}
+
+section.info_update li label {
+	display:inline-block;
+	width:150px;
+	background:#f0f0ff;
+	color: #000069;
+	padding:10px;
+	border-radius:7px;
+	font-size:10pt;
+	font-weight:bold;
+	text-align:center;
+}
+section.info_update h2 {
+	padding-left:100px;
+}
+section.review_board h2,
+section.notice h2 {
+	padding-left:50px;
+}
+section.info_update li:last-child { /*내정보수정 버튼 가운데정렬*/
+	text-align:center;
+	margin-right:40px;
+}
+form[name="infoUpdateForm"] ul {
+	width:800px;
+	margin:auto;
+}
+form[name="infoUpdateForm"] select {
+	padding:10px;
+	border:2px solid #B4B4FF;
+	border-radius:4px;
+	font-size:10pt;
+}
+input.email {
+	width:187px;
+	border:2px solid #B4B4FF;
+	border-radius:4px;
+}
+input[type="text"]:disabled, input[type="password"]:disabled {
+  background: #ddd;
+}
+/**
+후기게시판-별점입력
+*/
+form[name="reviewWriteForm"] div,
+form[name="reviewUpdateForm"] div{
+    display: inline-block; 
+    direction: rtl;  /*이모지 순서 반전 */
+    border: 0; /* 필드셋 테두리 제거 */
+}
+form[name="reviewWriteForm"] input[name="review_star"],
+form[name="reviewUpdateForm"] input[name="review_star"]{
+    display: none;  /*라디오박스 감춤 */
+}
+form[name="reviewWriteForm"] label,
+form[name="reviewUpdateForm"] label{
+    font-size: 18px; /* 이모지 크기 13px*/
+    color: transparent; /* 기존 이모지 컬러 제거(transparent-투명) */
+    text-shadow: 0 0 0 lightgray; /* 새 이모지 색상 부여 */
+    margin-right:-6px;
+}
+form[name="reviewWriteForm"] label:hover,
+form[name="reviewUpdateForm"] label:hover{
+    text-shadow: 0 0 0 rgba(255,150,61); 
+    cursor:pointer;
+}
+form[name="reviewWriteForm"] label:hover ~ label,
+form[name="reviewUpdateForm"] label:hover ~ label{
+    text-shadow: 0 0 0 rgba(255,150,61); /* 마우스 호버한데까지 색칠됨 */
+}
+form[name="reviewWriteForm"] input[name="review_star"]:checked ~ label,
+form[name="reviewUpdateForm"] input[name="review_star"]:checked ~ label{
+    text-shadow: 0 0 0 rgba(255,150,61); /* 마우스 클릭 rgba(255,200,61)*/
+}
+/**
+후기게시판-별점 출력
+*/
+label.list_star {
+	font-size: 0.8em;
+	 color: transparent;
+	  text-shadow: 0 0 0 rgba(255,150,61);
+}
