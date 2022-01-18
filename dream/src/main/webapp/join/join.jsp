@@ -4,17 +4,16 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>회원가입 | 드림월드</title>
-  <link rel="icon" href="http://localhost:9000/dream/images/favicon.png"> <!-- 파비콘 -->
-<!-- 내링크 j쿼리lib, 달력 -->
+<meta charset="utf-8">
+<title>회원가입 | 드림월드</title>
+<link rel="icon" href="http://localhost:9000/dream/images/favicon.png"> <!-- 파비콘 -->
+<!-- join j쿼리lib, 달력 -->
 <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <!-- 내링크 -->
+<!-- join 링크 -->
 <link href="http://localhost:9000/dream/css/join.css" rel="stylesheet">
 <script src="http://localhost:9000/dream/js/join.js"></script>
-
 </head>
 
 <body>
@@ -99,32 +98,6 @@
 <!-- footer Start -->
 <%@ include file="../footer.jsp" %>
 <!-- footer Close --> 
-   
-
-    <!-- 
-    Essential Scripts
-    =====================================-->
-
-    
-    <!-- Main jQuery -->
-<!--<script src="http://localhost:9000/dream/plugins/jquery/jquery.js"></script> -->
-    <!-- Bootstrap 4.3.1 -->
-   <!--  Magnific Popup-->
-    <!-- Slick Slider -->
-    <!-- Counterup -->
-    <!-- Google Map 
-    <script src="http://localhost:9000/dream/js/contact.js"></script>
-    <script src="http://localhost:9000/dream/plugins/bootstrap/js/popper.js"></script>
-    <script src="http://localhost:9000/dream/plugins/bootstrap/js/bootstrap.min.js"></script>
-    <script src="http://localhost:9000/dream/plugins/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
-    <script src="http://localhost:9000/dream/plugins/slick-carousel/slick/slick.min.js"></script>
-    <script src="http://localhost:9000/dream/plugins/counterup/jquery.waypoints.min.js"></script>
-    <script src="http://localhost:9000/dream/plugins/counterup/jquery.counterup.min.js"></script>
-
-    <script src="http://localhost:9000/dream/plugins/google-map/map.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkeLMlsiwzp6b3Gnaxd86lvakimwGA6UA&callback=initMap"></script>    
-    
-    <script src="http://localhost:9000/dream/js/script.js"></script>-->
 
   </body>
   </html>
