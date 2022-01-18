@@ -15,17 +15,16 @@
 <title>마이페이지 | 드림월드</title>
 <!-- bootstrap.min css -->
 <link rel="stylesheet" href="http://localhost:9000/dream/plugins/bootstrap/css/bootstrap.min.css">
-<!-- Icon Font Css -->
+<!-- Icon Font Css 
 <link rel="stylesheet" href="http://localhost:9000/dream/plugins/themify/css/themify-icons.css">
 <link rel="stylesheet" href="http://localhost:9000/dream/plugins/fontawesome/css/all.css">
-<link rel="stylesheet" href="http://localhost:9000/dream/plugins/magnific-popup/dist/magnific-popup.css">
-<!-- Owl Carousel CSS -->
+<link rel="stylesheet" href="http://localhost:9000/dream/plugins/magnific-popup/dist/magnific-popup.css">-->
+<!-- Owl Carousel CSS 
 <link rel="stylesheet" href="http://localhost:9000/dream/plugins/slick-carousel/slick/slick.css">
-<link rel="stylesheet" href="http://localhost:9000/dream/plugins/slick-carousel/slick/slick-theme.css">
+<link rel="stylesheet" href="http://localhost:9000/dream/plugins/slick-carousel/slick/slick-theme.css">-->
 
 <!-- Main Stylesheet -->
 <link rel="stylesheet" href="http://localhost:9000/dream/css/style.css">
-
 <link href="http://localhost:9000/dream/css/dreamReview.css" rel="stylesheet">
 
 </head>
@@ -56,7 +55,7 @@
 								<h2 class="mt-2 text-white">예매 내역 확인</h2>
 							</div>
 							<div class="col-lg-4">
-								<a href="contact.html" class="btn btn-main btn-round-full float-lg-right float-md-right float-sm-right">&gt;&gt;&nbsp;Go</a>
+								<a href="http://localhost:9000/dream/reserve/reserv_result.jsp" class="btn btn-main btn-round-full float-lg-right float-md-right float-sm-right">&gt;&gt;&nbsp;Go</a>
 							</div>
 						</div>
 					</div>
@@ -81,7 +80,6 @@
   <!-- 
     Essential Scripts
     =====================================-->
-
     <script src="http://localhost:9000/dream/js/dreamReview.js"></script>
     <!-- Main jQuery -->
     <script src="plugins/jquery/jquery.js"></script>
@@ -89,13 +87,13 @@
     <!-- Bootstrap 4.3.1 -->
     <script src="plugins/bootstrap/js/popper.js"></script>
     <script src="plugins/bootstrap/js/bootstrap.min.js"></script>
-   <!--  Magnific Popup-->
-    <script src="plugins/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
-    <!-- Slick Slider -->
-    <script src="plugins/slick-carousel/slick/slick.min.js"></script>
-    <!-- Counterup -->
+   <!--  Magnific Popup
+    <script src="plugins/magnific-popup/dist/jquery.magnific-popup.min.js"></script>-->
+    <!-- Slick Slider 
+    <script src="plugins/slick-carousel/slick/slick.min.js"></script>-->
+    <!-- Counterup 
     <script src="plugins/counterup/jquery.waypoints.min.js"></script>
-    <script src="plugins/counterup/jquery.counterup.min.js"></script>
+    <script src="plugins/counterup/jquery.counterup.min.js"></script>-->
     
     <script src="js/script.js"></script>
 </body>
