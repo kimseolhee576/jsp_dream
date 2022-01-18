@@ -6,24 +6,8 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <title>즐길거리 | 드림월드</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="megakit,business,company,agency,multipurpose,modern,bootstrap4">
-  
-  <meta name="author" content="themefisher.com">
-
-<link rel="icon" href="http://localhost:9000/dream/images/favicon.png"> <!-- 파비콘 -->
-  <!-- bootstrap.min css -->
-  <link rel="stylesheet" href="http://localhost:9000/dream/plugins/bootstrap/css/bootstrap.min.css">
-  <!-- Icon Font Css -->
-  <link rel="stylesheet" href="http://localhost:9000/dream/plugins/themify/css/themify-icons.css">
-  <link rel="stylesheet" href="http://localhost:9000/dream/plugins/fontawesome/css/all.css">
-  <link rel="stylesheet" href="http://localhost:9000/dream/plugins/magnific-popup/dist/magnific-popup.css">
-  <!-- Owl Carousel CSS -->
-  <link rel="stylesheet" href="http://localhost:9000/dream/plugins/slick-carousel/slick/slick.css">
-  <link rel="stylesheet" href="http://localhost:9000/dream/plugins/slick-carousel/slick/slick-theme.css">
-
-  <!-- Main Stylesheet 
-  <link rel="stylesheet" href="http://localhost:9000/dream/css/style.css">-->
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="http://localhost:9000/dream/css/style.css">
   <!-- entertainment Stylesheet -->
   <link rel="stylesheet" href="http://localhost:9000/dream/css/entertainment.css">
 
@@ -190,28 +174,11 @@
 	</div>
 </section>
 </section>
-    </div>
+
+<!-- footer Start -->
 <%@ include file="../footer.jsp" %>
+<!-- footer Close --> 
 
-    <!-- 
-    Essential Scripts
-    =====================================-->
-    
-    <!-- Main jQuery -->
-    <script src="http://localhost:9000/dream/plugins/jquery/jquery.js"></script>
-    <script src="http://localhost:9000/dream/js/contact.js"></script>
-    <!-- Bootstrap 4.3.1 -->
-    <script src="http://localhost:9000/dream/plugins/bootstrap/js/popper.js"></script>
-    <script src="http://localhost:9000/dream/plugins/bootstrap/js/bootstrap.min.js"></script>
-   <!--  Magnific Popup-->
-    <script src="http://localhost:9000/dream/plugins/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
-    <!-- Slick Slider -->
-    <script src="http://localhost:9000/dream/plugins/slick-carousel/slick/slick.min.js"></script>
-    <!-- Counterup -->
-    <script src="http://localhost:9000/dream/plugins/counterup/jquery.waypoints.min.js"></script>
-    <script src="http://localhost:9000/dream/plugins/counterup/jquery.counterup.min.js"></script>
-    
-    <script src="http://localhost:9000/dream/js/script.js"></script>
-
+    </div>
   </body>
   </html>
