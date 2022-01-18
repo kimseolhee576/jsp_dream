@@ -53,7 +53,7 @@
 				<div class="container">
 					<div class="btn-map">
 						<a href="http://localhost:9000/dream/images/all_map.jpg" target="_blank">
-							<button type="button" onclick="showImg1()" class="btn_style_map">전체지도</button>
+							<button type="button" class="btn_style_map">전체지도</button>
 						</a>
 					</div>
 					<div class="row">
