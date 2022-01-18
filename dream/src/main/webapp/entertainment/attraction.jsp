@@ -11,6 +11,18 @@
 <link rel="stylesheet" href="http://localhost:9000/dream/css/style.css">
 <!-- entertainment Stylesheet -->
 <link rel="stylesheet" href="http://localhost:9000/dream/css/entertainment.css">
+  <link rel="icon" href="http://localhost:9000/dream/images/favicon.png"> <!-- 파비콘 -->
+
+  <!-- bootstrap.min css -->
+  <link rel="stylesheet" href="http://localhost:9000/dream/plugins/bootstrap/css/bootstrap.min.css">
+  <!-- Icon Font Css -->
+  <link rel="stylesheet" href="http://localhost:9000/dream/plugins/themify/css/themify-icons.css">
+  <link rel="stylesheet" href="http://localhost:9000/dream/plugins/fontawesome/css/all.css">
+  <link rel="stylesheet" href="http://localhost:9000/dream/plugins/magnific-popup/dist/magnific-popup.css">
+  <!-- Owl Carousel CSS -->
+  <link rel="stylesheet" href="http://localhost:9000/dream/plugins/slick-carousel/slick/slick.css">
+  <link rel="stylesheet" href="http://localhost:9000/dream/plugins/slick-carousel/slick/slick-theme.css">
+
 </head>
 
 <body>
@@ -24,6 +36,7 @@
     <div class="row">
       <div class="col-md-12">
         <div class="block text-center">
+       	  <span class="text-white"></span>
           <h1 class="text-capitalize mb-4 text-lg">즐길거리</h1>
         </div>
       </div>
@@ -33,30 +46,39 @@
 
 <!-- 어트랙션 6가지 -->
 <section class="section blog-wrap bg-gray">
-<h2 class="enter_h2">어트랙션</h2> 
-<section class="attraction-top section about-2 position-relative1">
 	<div class="container">
-		<div class="row">
-			<div class="attraction">
-				<div id="attraction_img">
-					<img src="http://localhost:9000/dream/images/bc.jpg" alt="발키리" class="img-attr">
+		<div class="content">
+			<h2 class="enter_h2">어트랙션</h2> 
+			<section class="attraction-top section about-2 position-relative1">
+				<div class="container">
+					<div class="btn-map">
+						<a href="http://localhost:9000/dream/images/all_map.jpg" target="_blank">
+							<button type="button" onclick="showImg1()" class="btn_style_map">전체지도</button>
+						</a>
+					</div>
+					<div class="row">
+						<div class="attraction">
+							<div id="attraction_img">
+								<img src="http://localhost:9000/dream/images/bc.jpg" alt="발키리" class="img-attr">
+							</div>
+							<div id="attraction_text">
+								<span class="h6 text-color">DreamWorld</span>
+								<h2 class="mt-3 mb-4 position-relative content-title">발키리</h2>
+								<div class="at-text">앞으로 뒤로 전장을 날아다니는 발키리<br>
+									격렬한 전투의 흔적 속에서 용맹히 싸우다 전사한 용사들의<br>
+									 영혼을 수거하는 발키리와 함께 흙의 보물을 찾아 떠나보세요!</div>
+								<span class="at-text">테마분류 : 자녀,연인,친구,스릴</span>
+								<span class="at-text">위치 : 드라켄밸리</span>
+								<span class="at-text">탑승인원 : 20명</span>
+								<span class="at-text">키제한 : 120cm ~ 200cm</span>
+								<span class="at-text">비고 : 보호자 동승시 100cm이상 이용가능</span>
+							</div>
+						</div>
+					</div>
 				</div>
-				<div id="attraction_text">
-					<span class="h6 text-color">DreamWorld</span>
-					<h2 class="mt-3 mb-4 position-relative content-title">발키리</h2>
-					<div class="at-text">앞으로 뒤로 전장을 날아다니는 발키리<br>
-						격렬한 전투의 흔적 속에서 용맹히 싸우다 전사한 용사들의<br>
-						 영혼을 수거하는 발키리와 함께 흙의 보물을 찾아 떠나보세요!</div>
-					<span class="at-text">테마분류 : 자녀,연인,친구,스릴</span>
-					<span class="at-text">위치 : 드라켄밸리</span>
-					<span class="at-text">탑승인원 : 20명</span>
-					<span class="at-text">키제한 : 120cm ~ 200cm</span>
-					<span class="at-text">비고 : 보호자 동승시 100cm이상 이용가능</span>
-				</div>
-			</div>
+			</section>
 		</div>
 	</div>
-</section>
 <section class="attraction-top section about-2 position-relative">
 	<div class="container">
 		<div class="row">
