@@ -51,6 +51,7 @@
 			<h2 class="enter_h2">어트랙션</h2> 
 			<section class="attraction-top section about-2 position-relative1">
 				<div class="container">
+				
 					<div class="btn-map">
 						<a href="http://localhost:9000/dream/images/all_map.jpg" target="_blank">
 							<button type="button" class="btn_style_map">전체지도</button>

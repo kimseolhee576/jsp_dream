@@ -33,10 +33,10 @@ public class NoticeDao extends DBConn {
      */
     public ArrayList<NoticeVO> select() {
         ArrayList<NoticeVO> list = new ArrayList<NoticeVO>();
-        String sql = "select rownum rno, notice_id, ntitle, ncontent, notice_hits, notice_status, "
-                + " mem_id1, to_char(notice_date, 'yyyy/mm/dd'), mem_id2, notice_updatedate "
-                + " from (select notice_id, ntitle, ncontent, notice_hits, notice_status, "
-                + " mem_id1, notice_date, mem_id2, notice_updatedate from notice_table order by notice_date desc) where notice_status=0";
+        String sql = "select rownum rno, notice_id, ntitle, ncontent, notice_hits, notice_status, mem_id1, to_char(notice_date, 'yyyy/mm/dd'), mem_id2, notice_updatedate from\r\n"
+                + "(select rownum rno, notice_id, ntitle, ncontent, notice_hits, notice_status, mem_id1, notice_date, mem_id2, notice_updatedate \r\n"
+                + "from (select notice_id, ntitle, ncontent, notice_hits, notice_status, \r\n"
+                + "mem_id1, notice_date, mem_id2, notice_updatedate from notice_table order by notice_date)) where notice_status=0 order by rno desc";
         getPreparedStatement(sql);
         try {
             rs = pstmt.executeQuery();
