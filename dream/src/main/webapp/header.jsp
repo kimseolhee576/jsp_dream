@@ -40,6 +40,7 @@
                     <a href="http://localhost:9000/dream/login/login.jsp" ><span>로그인</span></a>
                     <a href="http://localhost:9000/dream/join/join.jsp"><span>회원가입</span></a>
 	            <% }else{ %>
+	                <span><%=sid%>님, 환영합니다!</span>
 	                <a href="http://localhost:9000/dream/mypage/myPage.jsp"><span>마이페이지</span></a>   
 		            <a href="http://localhost:9000/dream/login/logout.jsp" ><span>로그아웃</span></a>
 		        <% } %>          

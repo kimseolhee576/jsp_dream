@@ -493,6 +493,11 @@ a:focus {
   
 }
 
+.header-top .header-top-info span { 
+  color: #fff;
+  font-family:"Poppins", sans-serif;
+}
+
 .navbar-brand {
   color: #fff;
   font-weight: 600;
