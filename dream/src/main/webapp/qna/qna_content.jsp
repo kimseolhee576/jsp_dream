@@ -120,7 +120,7 @@ QnaVO vo = new QnaDAO().getQnaVO(qna_id);
 	                          <td></td>
 	                      </tr>
 	                      <% } %>
-	                   <% if(sid != null || sid.equals("admin")){ %>     
+	                    <% } %>       
 	                   <form method="post" action="comm_write_proc.jsp?qna_id=<%=vo.getQna_id()%>&mem_id=<%=sid%>">
 	                     <tr>
 	                         <td style="text-align: left;"><%=sid %></td>
@@ -128,8 +128,7 @@ QnaVO vo = new QnaDAO().getQnaVO(qna_id);
 	                         <td colspan="2" style="text-align: right;"><input type="submit" class="btn_style3" value="댓글 등록"></td>
 	                     </tr>
 	                   </form>
-	                   <% } %> 
-	                  <% } %>      
+	                 
 	               </tbody>
             </table>
            <table class="qna_table">

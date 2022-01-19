@@ -13,7 +13,7 @@
   
   <meta name="author" content="themefisher.com">
 
-  <title>로그인 | 드림월드</title>
+  <title>아이디 찾기 | 드림월드</title>
 <link rel="icon" href="http://localhost:9000/dream/images/favicon.png"> <!-- 파비콘 -->
   <!-- bootstrap.min css -->
   <link rel="stylesheet" href="http://localhost:9000/dream/plugins/bootstrap/css/bootstrap.min.css">
@@ -49,10 +49,11 @@
         }
       }
     </style>
-
     
     <!-- Custom styles for this template -->
-    <link href="http://localhost:9000/dream/css/signin.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link href="http://localhost:9000/dream/css/forgot.css" rel="stylesheet">
 
 </head>
 
@@ -70,7 +71,7 @@
     <div class="row">
       <div class="col-md-12">
         <div class="block text-center">
-          <h1 class="text-capitalize mb-4 text-lg">로그인</h1>
+          <h1 class="text-capitalize mb-4 text-lg">회원정보 찾기</h1>
         </div>
       </div>
     </div>
@@ -80,34 +81,38 @@
 
 <section class="section blog-wrap bg-gray">
     <div class="container">
-        <div class="row" style="display:block; height:550px">
-             <div class="text-center">
-				<main class="form-signin">
-					  <form name="login_form" action="login_proc.jsp" method="post">
-					    <img src="http://localhost:9000/dream/images/logo3.png">
-					    <h1 class="h3 mb-3 fw-normal"><br></h1>
-					
-					    <div class="form-floating">
-					      <input type="text" name="mem_id" class="form-control" id="mem_id" autocomplete="off" required placeholder="아이디">
-					    </div>
-					    <div class="form-floating">
-					      <input type="password" name="mem_pass" class="form-control" id="mem_pass" autocomplete="off" required placeholder="비밀번호">
-					    </div>
-					    <div class="checkbox mb-3" style="font-size: 13px;">
-					      <label>
-					        <a href="http://localhost:9000/dream/login/forgotid.jsp">아이디 찾기</a>&nbsp;|
-					        <a href="http://localhost:9000/dream/login/forgotpw.jsp">비밀번호 찾기</a>&nbsp;|
-					        <a href="http://localhost:9000/dream/join/join.jsp">회원가입</a>    
-					        <!-- <input class="form-check-input" type="checkbox">아이디 기억하기 -->
-					      </label>
-					    </div>
-					    <button class="btn_style3" id="login_btn" type="submit">로그인</button>
-					    <p class="mt-5 mb-3 text-muted" id="copyright">&copy; 꿈과 희망의 나라 드림월드 All Rights Reserved.</p>
-					  </form>
-	             </main>
-	         </div>    
-			
-		</div>
+       <!-- MultiStep Form -->
+<div class="container-fluid">
+    <div class="row justify-content-center mt-0" style="width: 800px; margin:auto">
+        <div class="col-11 col-sm-9 col-md-7 col -lg-6 text-center p-0 mt-3 mb-2" >
+            <div class="card px-0 pt-4 pb-0 mt-3 mb-3" style="padding: 50px !important;">
+                <h2><strong>뭐라고 쓰지</strong></h2>
+                <p>일단 보류</p>
+                <div class="row">
+                    <div class="col-md-12 mx-0">
+                        <form name="forgotid_form" action="forgotid_proc.jsp" method="post" id="msform">
+                            <!-- progressbar -->
+                            <ul id="progressbar">
+                                <li class="active" id="personal"><strong>아이디 찾기</strong></li>
+                                <li id="account"><strong>비밀번호 찾기</strong></li>
+                                <li id="confirm"><strong>비밀번호 재설정</strong></li>
+                            </ul> <!-- fieldsets -->
+                            <fieldset>
+                                <div class="form-card" style="height:300px;">
+                                    <h2 class="fs-title">아이디 찾기</h2> 
+                                        <input type="text" name="mem_name" placeholder="이름" required>
+                                        <input type="text" name="mem_hp" placeholder="핸드폰 번호" required>
+                                        <button type="button" onclick="location.href='login.jsp'" class="btn_style3" style="float:left;">이전</button>
+                                        <button type="submit" class="btn_style3" style="float:right;">다음</button>
+                                 </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>  
     </div>
 </section>
 
@@ -135,6 +140,10 @@
 
   
     <script src="http://localhost:9000/dream/js/script.js"></script>
+    
+    <!-- Forgot Custom -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
   </body>
   </html>

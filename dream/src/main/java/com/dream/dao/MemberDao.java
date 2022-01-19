@@ -54,7 +54,7 @@ public class MemberDao extends DBConn {
      * 엘리언니꺼 시작!!!!!!!!!!
      */
     /**
-     * 입력받은 id, pw를 db와 비교해서 일치하는 데이터가 있는지 체크
+     * 로그인--입력받은 아이디, 비밀번호를 db와 비교
      */
     public int getLoginResult(MemberVO vo) {
         int result = 0;
@@ -64,6 +64,32 @@ public class MemberDao extends DBConn {
         try {
             pstmt.setString(1, vo.getMem_id());
             pstmt.setString(2, vo.getMem_pass());
+
+            rs = pstmt.executeQuery();
+
+            while (rs.next()) {
+                result = rs.getInt(1);
+            }
+
+            close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+
+    /**
+     * 아이디 찾기--입력받은 이름, 핸드폰 번호를 db와 비교
+     */
+    public int getFindIdResult(MemberVO vo) {
+        int result = 0;
+        String sql = "select count(*) from member_table where mem_name=? and mem_hp=?";
+        getPreparedStatement(sql);
+
+        try {
+            pstmt.setString(1, vo.getMem_name());
+            pstmt.setString(2, vo.getMem_hp());
 
             rs = pstmt.executeQuery();
 
