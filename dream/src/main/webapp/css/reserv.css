@@ -94,7 +94,7 @@ body {
 	
 
 .label_style{ /* 날짜,티켓명,총가격 라벨 스타일 */
-	background:#ddd;
+	background:#f0f0ff;
 	width:150px;
 	display:inline-block; 
 	text-align:center;
@@ -117,7 +117,7 @@ body {
 }
 
 .label_style2{  /* 인원 라벨 스타일 */
-	background:#ddd;
+	background:#f0f0ff;
 	width:150px;
 	display:inline-block;
 	text-align:center;
