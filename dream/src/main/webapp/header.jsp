@@ -27,6 +27,8 @@
 
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="http://localhost:9000/dream/css/style.css">
+  
+  <script type="text/javascript" src="http://localhost:9000/dream/js/reserv.js"></script>
 
 </head>
 <body>
@@ -90,7 +92,11 @@
 			</ul>
 
 			<form class="form-lg-inline my-2 my-md-0 ml-lg-4 text-center">
+			<% if(sid == null) { %>
+				<a href="http://localhost:9000/dream/login/login.jsp" class="btn btn-solid-border btn-round-full" onclick="aa()">예매하기</a>
+			<% }else { %>
 			  <a href="http://localhost:9000/dream/reserve/reserv.jsp" class="btn btn-solid-border btn-round-full">예매하기</a>
+			<% } %>
 			</form>
 		  </div>
 		</div>

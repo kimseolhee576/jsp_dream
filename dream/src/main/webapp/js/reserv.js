@@ -179,7 +179,9 @@ viewport: { selector: 'body', padding: 0 },
 
  
  
- 
+function aa(){
+	alert("로그인이 필요합니다. 로그인화면으로 이동합니다.");
+}
  
  
  
