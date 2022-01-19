@@ -154,4 +154,43 @@ public class NoticeDao extends DBConn {
 
     }
 
+    /**
+     * 공지사항 - 검색
+     */
+    public ArrayList<NoticeVO> getSearch(String searchField, String searchText) {
+        ArrayList<NoticeVO> list = new ArrayList<NoticeVO>();
+        String sql = "select rownum rno, notice_id, ntitle, ncontent, notice_hits, notice_status, "
+                + " mem_id1, to_char(notice_date,'yyyy/mm/dd') notice_date, mem_id2, notice_updatedate from "
+                + " (select notice_id, ntitle, ncontent, notice_hits, notice_status, "
+                + " mem_id1, notice_date, mem_id2, notice_updatedate from notice_table where " + searchField.trim();
+        try {
+            if (searchText != null && !searchText.equals("")) {
+                sql += " like '%" + searchText.trim() + "%' order by notice_date desc) where notice_status=0";
+            }
+            getPreparedStatement(sql);
+            rs = pstmt.executeQuery();
+            while (rs.next()) {
+                NoticeVO vo = new NoticeVO();
+                vo.setRno(rs.getInt(1));
+                vo.setNotice_id(rs.getString(2));
+                vo.setNtitle(rs.getString(3));
+                vo.setNcontent(rs.getString(4));
+                vo.setNotice_hits(rs.getInt(5));
+                vo.setNotice_status(rs.getInt(6));
+                vo.setMem_id1(rs.getString(7));
+                vo.setNotice_date(rs.getString(8));
+                vo.setMem_id2(rs.getString(9));
+                vo.setNotice_updatedate(rs.getString(10));
+
+                list.add(vo);
+
+            }
+            close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return list;
+    }
+
 }

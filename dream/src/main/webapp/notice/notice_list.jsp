@@ -64,15 +64,15 @@
 			<div class="content">
 				<section class="notice">
 					<h2>공지사항</h2>
+					<form name="searchForm" action="search.jsp" method="post">
 						<table class="notice_list">
 							<tr>
 								<td colspan="4" class="search">
-									<select class="listSelect">
-										<option>제목</option>
-										<option>전체</option>
+									<select class="listSelect" name="searchField">
+										<option value="ntitle">제목</option>
 									</select>
-									<input type="text">
-									<a href=""><button type="button" class="btn_style3">검색</button></a>
+									<input type="text" placeholder="검색어 입력" name="searchText" id="searchText">
+									<button type="button" class="btn_style3" onclick="searchCheck()">검색</button>
 								</td>
 							</tr>
 							<tr>
@@ -95,6 +95,7 @@
 								</td>
 							</tr>
 						</table>
+					</form>
 				</section>
 			</div>
 	    </div>
@@ -107,6 +108,7 @@
     Essential Scripts
     =====================================-->
     
+    <script src="http://localhost:9000/dream/js/project02.js"></script>
     <!-- Main jQuery -->
     <script src="plugins/jquery/jquery.js"></script>
     <script src="js/contact.js"></script>

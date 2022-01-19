@@ -44,4 +44,18 @@ function notice_delete() {
 	}
 }
 
+/**
+ * 공지사항 - 검색
+ */
+function searchCheck(){
+	let searchText=document.getElementById("searchText");
+		if(searchText.value == ""){
+			alert("검색어를 입력해주세요");
+			return false;
+		}else{
+			searchForm.submit();
+		}
+} 
+
+
 
