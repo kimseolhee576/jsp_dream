@@ -49,6 +49,7 @@
 <!-- Header Close -->
 
 <div class="main-wrapper ">
+<section class="page-title bg-1">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
@@ -58,7 +59,9 @@
       </div>
     </div>
   </div>
+</section>  
 
+<section class="section blog-wrap bg-gray">
     <div class="container">
       <div class="content">
 				<section class="review_board">
@@ -95,13 +98,16 @@
     			<% if(sid!=null){ %>
     			     <a href="http://localhost:9000/dream/qna/qna_write.jsp"> 	<button type="button" class="btn_style1">글쓰기</button>
                </a>
-    			<% } %>
+    			<% }else{ %>
+    			     <button type="button" class="btn_style1" onclick="qnaLoginAlert()">글쓰기</button>
+                <% } %>
             </td>
           </tr>
         </table>
        </section>
      </div>
    </div>
+</section>   
 </div>
 <!-- footer Start -->
 <%@include file ="../footer.jsp" %>

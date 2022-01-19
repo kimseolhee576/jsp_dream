@@ -184,7 +184,7 @@ table.notice_list td, table.notice_write td {
 /*문의게시판 상세보기*/
 .qna_table {
     width:90%;
-    margin:auto;
+    margin: 50px auto;
     font-family: "Poppins", sans-serif;
     margin-bottom: 30px;
 }

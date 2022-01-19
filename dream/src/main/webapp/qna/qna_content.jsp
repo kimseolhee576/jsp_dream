@@ -67,7 +67,8 @@ QnaVO vo = new QnaDAO().getQnaVO(qna_id);
 <section class="section blog-wrap bg-gray">
     <div class="container">
       <div class="content">
-       <h2>문의게시판</h2>
+      <section class="review_board">
+       <h2 style="padding-top: 50px">문의게시판</h2>
       			<table class="qna_table">
 					<tbody>
 						<tr>
@@ -111,37 +112,36 @@ QnaVO vo = new QnaDAO().getQnaVO(qna_id);
 	                          <td id="comment_id"><%= list.get(i).getMem_id() %></td>
 	                          <td id="comment"><%= list.get(i).getComm_content() %>
 	                          <td style="text-align: right;"><%= list.get(i).getComm_date() %>
-	                      <% if(sid != null && sid.equals(list.get(i).getMem_id()) ){ %>     
+	                      <% if(sid != null && sid.equals(list.get(i).getMem_id())){ %>     
 	                          <td><a href="update.jsp?bbsID=수정"><button type="button" class="btn_style3">수정</button></a></td>
 	                          <td><a href="update.jsp?bbsID=삭제" class="btn_style3">삭제</a></td>
 	                      <% }else{ %>
 	                          <td></td>
 	                          <td></td>
 	                      </tr>
-	                      <% }
-	                       }
-	                      
-	                      if(sid != null && sid.equals(vo.getMem_id1())){ %> 
+	                      <% } %>
+	                   <% if(sid != null || sid.equals("admin")){ %>     
 	                   <form method="post" action="comm_write_proc.jsp?qna_id=<%=vo.getQna_id()%>&mem_id=<%=sid%>">
 	                     <tr>
 	                         <td style="text-align: left;"><%=sid %></td>
 	                         <td colspan="2"><input type="text" style="height:100px; width:100%;" class="form-control" placeholder="(200자 이내)" name = "comm_content"></td>
 	                         <td colspan="2" style="text-align: right;"><input type="submit" class="btn_style3" value="댓글 등록"></td>
 	                     </tr>
-	                <% } %>     
 	                   </form>
+	                   <% } %> 
+	                  <% } %>      
 	               </tbody>
             </table>
            <table class="qna_table">
-              <% if(sid != null && sid.equals(vo.getMem_id1())){ %>   
+              <% if(vo.getMem_id1().equals(sid)|| "admin".equals(sid)){ %>   
                <tbody> 
 	              <tr><a href="qna_list.jsp" class="btn_style3">목록</a></tr>
 		          <tr><a href="qna_update.jsp?qna_id=<%=qna_id%>" class="btn_style3">수정</a></tr>
 		          <tr><a href="qna_delete_proc.jsp?qna_id=<%=qna_id%>" class="btn_style3">삭제</a></tr>
-		       
 		       </tbody> 
-		      <% } %>  
+		      <% } %>
 	       </table>  
+	      </section> 
 	   </div>
     </div>
 </section> 

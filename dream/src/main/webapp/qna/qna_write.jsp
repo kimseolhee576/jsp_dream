@@ -52,8 +52,10 @@
 </section>
 
 <section class="section blog-wrap bg-gray">
-    <div class="container">
-    <h2>문의게시판</h2>
+   <div class="container">
+      <div class="content">
+          <section class="review_board">
+            <h2>문의게시판</h2>
         <div class="row" style="display: block;">
             <form method="post" action="qna_write_proc.jsp">
         				<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
@@ -79,6 +81,8 @@
         				<input type="submit" class="btn btn-primary pull-right" id="qna_write_button" value="글쓰기">
             </form>
 		    </div>
+		  </section>
+		</div>    
     </div>
 </section>
 
