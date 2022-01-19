@@ -1,20 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
 <!doctype html>
-<html >
-  <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <title>즐길거리 | 드림월드</title>
-  <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="http://localhost:9000/dream/css/style.css">
-  <!-- entertainment Stylesheet -->
-  <link rel="stylesheet" href="http://localhost:9000/dream/css/entertainment.css">
-
+<html>
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<title>즐길거리 | 드림월드</title>
+<link rel="icon" href="http://localhost:9000/dream/images/favicon.png"> <!-- 파비콘 -->
+<!-- Main Stylesheet -->
+<link rel="stylesheet" href="http://localhost:9000/dream/css/style.css">
+<!-- entertainment Stylesheet -->
+<link rel="stylesheet" href="http://localhost:9000/dream/css/entertainment.css">
 </head>
 
 <body>
-
 <!-- Header Start --> 
 <%@ include file="../header.jsp" %>
 <!-- Header Close --> 
@@ -32,34 +32,36 @@
   </div>
 </section>
 
-
-<!-- Section About Start -->
 <!-- 레스토랑&스낵 -->
 <section class="section blog-wrap bg-gray">
-<h2 class="enter_h2">레스토랑&amp;스낵</h2> 
-<section class="attraction-top section about-2 position-relative1">
 	<div class="container">
-		<div class="row">
-			<div class="attraction">
-				<div id="attraction_img">
-					<img src="http://localhost:9000/dream/images/pp.jpg" alt="버클리클럽" class="img-attr">
+		<div class="content">
+			<h2 class="enter_h2">레스토랑&amp;스낵</h2> 
+			<section class="attraction-top section about-2 position-relative1">
+				<div class="container">
+					<div class="row">
+						<div class="attraction">
+							<div id="attraction_img">
+								<img src="http://localhost:9000/dream/images/pp.jpg" alt="버클리클럽" class="img-attr">
+							</div>
+							<div id="attraction_text">
+								<span class="h6 text-color">DreamWorld</span>
+								<h2 class="mt-3 mb-4 position-relative content-title">버클리클럽</h2>
+								<div class="at-text">미국 캘리포니아주의 작은 도시를 옮겨온 기분!<br>
+									아메리칸 스타일과 다양한 퓨전요리, 한식까지<br>
+									원하는 메뉴를 다양하게 드실 수 있어요! </div>
+								<span class="at-text">분류 : 퓨전, 한식</span>
+								<span class="at-text">위치 : 푸드 코너</span>
+								<span class="at-text">설명 : 아메리칸 스타일 퓨전요리, 한식</span>
+								<span class="at-text">운영시간 : 10시~20시</span>
+								<span class="at-text">비고 : </span>
+							</div>
+						</div>
+					</div>
 				</div>
-				<div id="attraction_text">
-					<span class="h6 text-color">DreamWorld</span>
-					<h2 class="mt-3 mb-4 position-relative content-title">버클리클럽</h2>
-					<div class="at-text">미국 캘리포니아주의 작은 도시를 옮겨온 기분!<br>
-						아메리칸 스타일과 다양한 퓨전요리, 한식까지<br>
-						원하는 메뉴를 다양하게 드실 수 있어요! </div>
-					<span class="at-text">분류 : 퓨전, 한식</span>
-					<span class="at-text">위치 : 푸드 코너</span>
-					<span class="at-text">설명 : 아메리칸 스타일 퓨전요리, 한식</span>
-					<span class="at-text">운영시간 : 10시~20시</span>
-					<span class="at-text">비고 : </span>
-				</div>
-			</div>
+			</section>
 		</div>
 	</div>
-</section>
 <section class="attraction-top section about-2 position-relative">
 	<div class="container">
 		<div class="row">
@@ -171,11 +173,11 @@
 	</div>
 </section>
 </section>
+  </div>
 
 <!-- footer Start -->
 <%@ include file="../footer.jsp" %>
 <!-- footer Close --> 
    
-    </div>
-  </body>
-  </html>
+</body>
+</html>

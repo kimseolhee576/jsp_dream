@@ -4,17 +4,16 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>회원가입 | 드림월드</title>
-  <link rel="icon" href="http://localhost:9000/dream/images/favicon.png"> <!-- 파비콘 -->
-<!-- 내링크 j쿼리lib, 달력 -->
+<meta charset="utf-8">
+<title>회원가입 | 드림월드</title>
+<link rel="icon" href="http://localhost:9000/dream/images/favicon.png"> <!-- 파비콘 -->
+<!-- join j쿼리lib, 달력 -->
 <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <!-- 내링크 -->
+<!-- join 링크 -->
 <link href="http://localhost:9000/dream/css/join.css" rel="stylesheet">
 <script src="http://localhost:9000/dream/js/join.js"></script>
-
 </head>
 
 <body>
@@ -38,13 +37,13 @@
 	   <div class="container">
 <div class="content">
 	<section class="login">
-        <h2>회원가입테스트</h2>
+        <h2>회원가입</h2>
         <form id="joinForm" name="joinForm" action="join_proc.jsp" method="post">
      		<ul>
 		        <li>
 		            <label>*아이디</label>
 		            <input type="text" name="mem_id" placeholder="영문+숫자 조합의 6~10자리" class="input1" id="id" onKeyup="idCheck()">
-		            <button type="button" onclick="idDupliCheck()" class="btn_style2">중복확인</button>
+		            <button type="button" onclick="idDupliCheck()" class="btn_style2" id="btn_idCheck">중복확인</button>
 		            <span id = "idMsg"></span>
 		        </li>
 		        <li>
@@ -54,7 +53,7 @@
 		        </li>
 		        <li>
 		            <label>*비밀번호 확인</label>
-		            <input type="password" name="mem_cpass" placeholder="영문+숫자 조합의 6~10자리" class="input1" id="cpass" onblur="passSameCheck()" onKeyup="passCheck()">
+		            <input type="password" name="mem_cpass" placeholder="영문+숫자 조합의 6~10자리" class="input1" id="cpass" onblur="passSameCheck()" onKeyup="cpassCheck()">
 		            <span id="cpassMsg"></span>
 		        </li>
 		        <li>
@@ -99,32 +98,6 @@
 <!-- footer Start -->
 <%@ include file="../footer.jsp" %>
 <!-- footer Close --> 
-   
-
-    <!-- 
-    Essential Scripts
-    =====================================-->
-
-    
-    <!-- Main jQuery -->
-<!--<script src="http://localhost:9000/dream/plugins/jquery/jquery.js"></script> -->
-    <!-- Bootstrap 4.3.1 -->
-   <!--  Magnific Popup-->
-    <!-- Slick Slider -->
-    <!-- Counterup -->
-    <!-- Google Map 
-    <script src="http://localhost:9000/dream/js/contact.js"></script>
-    <script src="http://localhost:9000/dream/plugins/bootstrap/js/popper.js"></script>
-    <script src="http://localhost:9000/dream/plugins/bootstrap/js/bootstrap.min.js"></script>
-    <script src="http://localhost:9000/dream/plugins/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
-    <script src="http://localhost:9000/dream/plugins/slick-carousel/slick/slick.min.js"></script>
-    <script src="http://localhost:9000/dream/plugins/counterup/jquery.waypoints.min.js"></script>
-    <script src="http://localhost:9000/dream/plugins/counterup/jquery.counterup.min.js"></script>
-
-    <script src="http://localhost:9000/dream/plugins/google-map/map.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkeLMlsiwzp6b3Gnaxd86lvakimwGA6UA&callback=initMap"></script>    
-    
-    <script src="http://localhost:9000/dream/js/script.js"></script>-->
 
   </body>
   </html>

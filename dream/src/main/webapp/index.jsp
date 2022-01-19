@@ -39,7 +39,7 @@
 			<div class="col-lg-9 col-md-10">
 				<div class="block">
 					<span class="d-block mb-3 text-white text-capitalize">Welcome to DreamWorld</span>
-					<h1 class="animated fadeInUp mb-5">꿈과 환상의 나라로 <br>여러분을 초대합니다 <br></h1>
+					<h1 class="animated fadeInUp mb-5">꿈과 환상의 나라로 <br>여러분을 초대합니다! <br></h1>
 					<a href="#" target="_blank" class="btn btn-main animated fadeInUp btn-round-full" >이용안내<i class="btn-icon fa fa-angle-right ml-2"></i></a>
 				</div>
 			</div>
@@ -104,7 +104,7 @@
 
 						<h3 class="mt-3 mb-5 lh-36">드림월드에 재미있는<br>어트랙션이 무엇이 있는지<br>궁금하다면?</h3>
 
-						<a href="blog-single.html" class="btn btn-small btn-solid-border btn-round-full text-black">&gt;&gt;더보기</a>
+						<a href="http://localhost:9000/dream/entertainment/attraction.jsp" class="btn btn-small btn-solid-border btn-round-full text-black">&gt;&gt;더보기</a>
 					</div>
 				</div>
 			</div>
@@ -120,7 +120,7 @@
 
 						<h3 class="mt-3 mb-5 lh-36">드림월드 가고 싶은데 <br>어디에있을까? <br>어떻게 가는게 가장빠를까?</h3>
 
-						<a href="blog-single.html" class="btn btn-small btn-solid-border btn-round-full">&gt;&gt;더보기</a>
+						<a href="http://localhost:9000/dream/information/navi.jsp" class="btn btn-small btn-solid-border btn-round-full">&gt;&gt;더보기</a>
 					</div>
 				</div>
 			</div>

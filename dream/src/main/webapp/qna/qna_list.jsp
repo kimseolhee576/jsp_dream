@@ -35,6 +35,9 @@
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="http://localhost:9000/dream/css/style.css">
 
+  <!-- 게시판 스타일 통일-->
+  <link href="http://localhost:9000/dream/css/dreamReview.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -61,36 +64,46 @@
 
 <section class="section blog-wrap bg-gray">
     <div class="container">
-    <h2>문의게시판</h2>
-        <div class="row">
-			<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
-				<thead>
-					<tr>
-						<th style="background-color: #eeeeee; text-align: center;">글번호</th>
-						<th style="background-color: #eeeeee; text-align: center;">제목</th>
-						<th style="background-color: #eeeeee; text-align: center;">작성자</th>
-						<th style="background-color: #eeeeee; text-align: center;">등록일</th>
-						<th style="background-color: #eeeeee; text-align: center;">조회수</th>
-					</tr>
-				</thead>
-				<tbody>
-				    <% for(QnaVO vo : list){ %>
-					<tr>
-	                    <td><%=vo.getQna_id() %></td>
-	                    <td><a href="qna_content.jsp?qna_id=<%=vo.getQna_id()%>"><%=vo.getQna_title() %></a></td>
-	                    <td><%=vo.getMem_id1() %></td>
-	                    <td><%=vo.getQna_date() %></td>
-	                    <td><%=vo.getQna_hits() %></td>
-	                </tr>
-	                <% } %>
-				</tbody>
-			</table>
-			<%
-			 if(sid!=null){ %>
-			     <a href="qna_write.jsp" class="btn btn-primary pull-right">글쓰기</a>
-			<% } %>
-			  
-		</div>
+      <div class="content">
+				<section class="review_board">
+          <h2>문의게시판</h2>
+    			<table class="review_list">
+  					<tr>
+              <td colspan="6">
+                <select name="searchField" class="listSelect">
+                  <option value="review_title">제목</option>
+                  <option value="mem_id1">작성자</option>
+                </select>
+                <input type="text" placeholder="검색어 입력" name="searchText" id="searchText">
+                <button type="button" class="btn_style3" onclick="searchCheck()">검색</button> <!-- button type="button" -->
+              </td>
+            </tr>
+  						<th width="7%">번호</th>
+  						<th width="40%">제목</th>
+  						<th>작성자</th>
+  						<th>등록일</th>
+  						<th width="10%">조회수</th>
+  					</tr>
+            <% for(QnaVO vo : list){ %>
+    				<tr>
+              <td><%=vo.getQna_id() %></td>
+              <td><a href="qna_content.jsp?qna_id=<%=vo.getQna_id()%>"><%=vo.getQna_title() %></a></td>
+              <td><%=vo.getMem_id1() %></td>
+              <td><%=vo.getQna_date() %></td>
+              <td><%=vo.getQna_hits() %></td>
+          </tr>
+          <% } %>
+          <tr>
+            <td colspan="6">
+    			<%
+    			 if(sid!=null){ %>
+    			     <a href="http://localhost:9000/dream/qna/qna_write.jsp"> 	<button type="button" class="btn_style1">글쓰기</button>
+               </a>
+    			<% } %>
+            </td>
+          </tr>
+        </table>
+      </div>
     </div>
 </section>
 

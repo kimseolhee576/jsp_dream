@@ -1,20 +1,3 @@
-/*
-//모든 공백 체크 정규식
-    let empJ = /\s/g;
-    //아이디 정규식
-    let idJ = /^[a-z0-9]{6,10}$/;
-    // 비밀번호 정규식
-    let pwJ = /^[A-Za-z0-9]{6,10}$/; 
-    // 이름 정규식
-    let nameJ = /^[가-힣]{2,5}$/;
-    // 생년월일 정규식
-    let bdJ = /^[0-9]{8}$/;//내가 만든거라 확인필요
-    // 이메일 검사 정규식
-    let mailJ = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
-    // 휴대폰 번호 정규식
-    let phoneJ = /^01([0|1|6|7|8|9]?)?([0-9]{3,4})?([0-9]{4})$/;
-*/
-
 
 /*
     회원가입 - 폼 체크 
@@ -23,6 +6,7 @@
     let idCheckFlag;
     let idDupliCheckFlag;
     let idUsingFlag;
+    let passFlag;
 function joinFormCheck(){
     
     let id, pass, cpass, name, birthdate, email1, email2, email3, hp;
@@ -57,8 +41,6 @@ function joinFormCheck(){
         idMsg.innerHTML = "아이디를 입력해주세요";
         idMsg.style.color = "#FF1493";
         id.style.border = "1px solid #FF1493";
-    /*    idMsg.style.color = "#ff69b4";
-        id.style.border = "1px solid #ff69b4";*/
         id.focus();
         return false;
     }else if(pass.value == ""){
@@ -109,9 +91,11 @@ function joinFormCheck(){
     }else if(idDupliCheckFlag==0){
 		if(idUsingFlag==1){
 	        alert("다른 아이디를 입력해주세요");
+	        id.style.border = "1px solid #FF1493";
 	        id.focus();
 		}else{
 	        alert("아이디 중복확인을 해주세요");
+	        $('#btn_idCheck').css("border-color","#FF1493");
 		}
 	        return false;
     }else{
@@ -134,8 +118,8 @@ function idCheck(){
     idUsingFlag=0;
     if(id.value != ""){
         if(!idJ.test($('#id').val())||empJ.test($('#id').val())){
-        idMsg.style.color = "red";
-        id.style.border = "1px solid red";
+        idMsg.style.color = "#FF1493";
+        id.style.border = "1px solid #FF1493";
         idMsg.innerHTML = "유효한 양식이 아닙니다";
     //    $('#id').val('');
         return false;
@@ -158,37 +142,48 @@ function passCheck(){
     cpass = document.getElementById("cpass");
     passMsg = document.getElementById("passMsg");
     cpassMsg = document.getElementById("cpassMsg");
-    if(pass.value != ""){
+    
+    if(passFlag==0){
+	    if(pass.value!=""&&cpass.value==""){
+			passFlag=1;
+		}
+	}
         if(!pwJ.test($('#pass').val())||empJ.test($('#pass').val())){
-        passMsg.style.color = "red";
-        pass.style.border = "1px solid red";
+        passMsg.style.color = "#FF1493";
+        pass.style.border = "1px solid #FF1493";
         passMsg.innerHTML = "유효한 양식이 아닙니다";
-    //    $('#pass').val('');
         return false;
 
         }else{
             passMsg.innerHTML = "";
             pass.style.border = "1px solid #ddd";
         }
-    }
-    /*
-    if(cpass.value != ""){
-        if(!pass.value!=cpass.value){
-        cpassMsg.style.color = "red";
-        pass.style.border = "1px solid red";
-        cpassMsg.innerHTML = "비밀번호 일치 체크 중";
-    //    $('#pass').val('');
+}
+function cpassCheck(){
+    let pwJ = /^(?=.*[a-z])(?=.*[0-9]).{6,10}$/; 
+    let pass,cpass,passMsg,cpassMsg;
+    pass = document.getElementById("pass");
+    cpass = document.getElementById("cpass");
+    passMsg = document.getElementById("passMsg");
+    cpassMsg = document.getElementById("cpassMsg");
+    
+    if(passFlag==0){
+	    if(cpass.value!=""&&pass.value==""){
+			passFlag=1;
+		}
+	}
+        if(!pwJ.test($('#cpass').val())||empJ.test($('#cpass').val())){
+        cpassMsg.style.color = "#FF1493";
+        cpass.style.border = "1px solid #FF1493";
+        cpassMsg.innerHTML = "유효한 양식이 아닙니다";
         return false;
 
+        }else{
+            cpassMsg.innerHTML = "";
+            cpass.style.border = "1px solid #ddd";
         }
-        else{
-	        cpassMsg.style.color = "blue";
-            cpassMsg.innerHTML = "비밀번호 일치 체크 중";
-            pass.style.border = "1px solid #ddd";
-        }
-    }
-    */
 }
+
 /*
     회원가입 - 비밀번호 일치 체크
 */
@@ -211,7 +206,7 @@ function passSameCheck(){
             return true;
         }else{
             passMsg.innerHTML = "비밀번호가 일치하지 않습니다";
-            passMsg.style.color = "red";
+            passMsg.style.color = "#FF1493";
             cpassMsg.innerHTML = "";
             pass.value = "";
             cpass.value = "";
@@ -231,8 +226,8 @@ function nameCheck(){
     nameMsg = document.getElementById("nameMsg");
     if(name.value != ""){
         if(!nameJ.test($('#name').val())||empJ.test($('#name').val())){
-        nameMsg.style.color = "red";
-        name.style.border = "1px solid red";
+        nameMsg.style.color = "#FF1493";
+        name.style.border = "1px solid #FF1493";
         nameMsg.innerHTML = "유효한 양식이 아닙니다";
     //    $('#name').val('');
         return false;
@@ -254,8 +249,8 @@ function birthdateCheck(){
     birthdateMsg = document.getElementById("birthdateMsg");
     if(birthdate.value != ""){
         if(!bdJ.test($('#birthdate').val())||empJ.test($('#birthdate').val())){
-        nameMsg.style.color = "red";
-        birthdate.style.border = "1px solid red";
+        nameMsg.style.color = "#FF1493";
+        birthdate.style.border = "1px solid #FF1493";
         birthdateMsg.innerHTML = "유효한 양식이 아닙니다";
     //    $('#name').val('');
         return false;
@@ -278,7 +273,7 @@ function emailSelectCheck(){
     
     if(email3.value == "choice"){
         emailMsg.innerHTML = "다른 주소를 선택해주세요";
-        emailMsg.style.color = "red";
+        emailMsg.style.color = "#FF1493";
         email2.value = "";      
     }else if(email3.value == "self"){
         emailMsg.innerHTML = "";
@@ -323,8 +318,8 @@ function hpCheck(){
     hpMsg = document.getElementById("hpMsg");
     if(hp.value != ""){
         if(!phoneJ.test($('#hp').val())){
-        hpMsg.style.color = "red";
-        hp.style.border = "1px solid red";
+        hpMsg.style.color = "#FF1493";
+        hp.style.border = "1px solid #FF1493";
         hpMsg.innerHTML = "유효한 양식이 아닙니다";
     //    $('#hp').val('');
         return false;
@@ -350,15 +345,18 @@ function hpCheck(){
            success:function(result){
                if(result==0){
             alert("사용 중인 아이디입니다");
+			$('#id').css("border-color","#FF1493");
+			$('#btn_idCheck').css("border-color","white");
             $('#id').html("");
             $('#id').focus();
             //     $('#idMsg').html('사용불가');
-            //     $('#idMsg').attr('color','red');
+            //     $('#idMsg').attr('color','#FF1493');
             idUsingFlag=1;
                }else{
             alert("사용 가능한 아이디입니다");
        //     $('#pass').focus();
             idDupliCheckFlag=1;
+            $('#btn_idCheck').css("border-color","white");
             //     $('#idMsg').html('사용가능');
             //     $('#idMsg').attr('color','green');
                }
@@ -370,9 +368,12 @@ function hpCheck(){
     }else{
 		if($('#id').val()!=""){
 	        alert("유효한 아이디를 입력해주세요");
+	        $('#btn_idCheck').css("border-color","white");
 		}else{
 			$('#idMsg').text("아이디를 입력해주세요");
-			$('#idMsg').css("color","red");
+			$('#idMsg').css("color","#FF1493");
+			$('#id').css("border-color","#FF1493");
+			$('#btn_idCheck').css("border-color","white");
 		}
     }
 }
@@ -409,6 +410,7 @@ function hpCheck(){
 function resetForm(){
 	$('#joinForm span').empty();
 	$('#joinForm input').css("border","1px solid #B4B4FF");
+	$('#btn_idCheck').css("border-color","white");
 }
 
 

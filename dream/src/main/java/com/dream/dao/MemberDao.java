@@ -103,5 +103,32 @@ public class MemberDao extends DBConn {
 //        System.out.println(result);
 //        return result;
 //    }
+    /**
+     * infoUpdate - 내 정보 가져오기 / 작성자: 김설희
+     */
+    public MemberVO getInfo(String sid) {
+        MemberVO vo = new MemberVO();
+        String sql = "select mem_id, mem_pass, mem_name, mem_birth, mem_email1, mem_email2, mem_hp, mem_date, mem_status "
+                + " from member_table where mem_id='" + sid + "'";
+        // System.out.println(sql);
+        getPreparedStatement(sql);
+        try {
+            rs = pstmt.executeQuery();
+            if (rs.next()) {
+                vo.setMem_id(rs.getString(1));
+                vo.setMem_pass(rs.getString(2));
+                vo.setMem_name(rs.getString(3));
+                vo.setMem_birth(rs.getInt(4));
+                vo.setMem_email1(rs.getString(5));
+                vo.setMem_email2(rs.getString(6));
+                vo.setMem_hp(rs.getInt(7));
+                vo.setMem_date(rs.getString(8));
+                vo.setMem_status(rs.getInt(9));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return vo;
+    }
 
 }

@@ -1,5 +1,5 @@
 div.content {
-	width:1150px;	
+	width:1150px;
 	margin:auto;
 	font-family: "Poppins", sans-serif;
 }
@@ -21,7 +21,7 @@ button.btn_style1 { /*글쓰기 하단*/
  .btn_style1:hover, .btn_style3:hover {
 	  background-color: #8C8CFF;
 	 	color: #000069;
-	}    
+	}
 button.btn_style2 { /*목록버튼*/
 	margin:5px 0 0 200px;
 	padding:5px 15px;
@@ -77,15 +77,15 @@ table.notice_list tr:first-child td, /*여기*/
 table.notice_list tr:last-child td { /* 위에 검색, 아래는 버튼*/
 	text-align:right;
 }
-table.review_list, table.review_write, 
+table.review_list, table.review_write,
 table.review_content, table.review_update,
- table.notice_list,table.notice_write, 
+ table.notice_list,table.notice_write,
 table.notice_content, table.notice_update { /*여기*/
 	width:90%;
 	margin:auto;
 }
 select.listSelect {
-	padding:9px;	
+	padding:9px;
 }
 /*table.review_list tr:nth-of-type(even) {
   background-color: rgba(0, 0, 0, 0.05);
@@ -94,13 +94,13 @@ table.review_list tr:first-child,
 table.review_list tr:last-child {
 	background-color:white;
 }*/
-section.review_board table, 
+section.review_board table,
 section.review_board table tr,
-section.review_board table td, 
+section.review_board table td,
 section.review_board table th,
-section.notice table, 
+section.notice table,
 section.notice table tr,
-section.notice table td, 
+section.notice table td,
 section.notice table th {  /* 테이블 테두리*/
 	border-collapse:collapse;
 	border-bottom:1px solid #666;
@@ -144,7 +144,7 @@ table.notice_update tr:first-child td, table.notice_write tr:first-child td{
 	text-align:right;
 	padding-bottom:5px;
 }
-table.review_content 
+table.review_content
 table.review_content tr,
 table.review_content td,
 table.review_content th {
@@ -200,7 +200,7 @@ section.info_update li:last-child { /*내정보수정 버튼 가운데정렬*/
 	margin-right:40px;
 }
 form[name="infoUpdateForm"] ul {
-	width:800px;
+	width:900px;
 	margin:auto;
 }
 form[name="infoUpdateForm"] select {
@@ -217,12 +217,15 @@ input.email {
 input[type="text"]:disabled, input[type="password"]:disabled {
   background: #ddd;
 }
+span#passMsg, span#cpassMsg, span#emailMsg, span#hpMsg{
+	font-size:9pt;
+}
 /**
 후기게시판-별점입력
 */
 form[name="reviewWriteForm"] div,
 form[name="reviewUpdateForm"] div{
-    display: inline-block; 
+    display: inline-block;
     direction: rtl;  /*이모지 순서 반전 */
     border: 0; /* 필드셋 테두리 제거 */
 }
@@ -239,7 +242,7 @@ form[name="reviewUpdateForm"] label{
 }
 form[name="reviewWriteForm"] label:hover,
 form[name="reviewUpdateForm"] label:hover{
-    text-shadow: 0 0 0 rgba(255,150,61); 
+    text-shadow: 0 0 0 rgba(255,150,61);
     cursor:pointer;
 }
 form[name="reviewWriteForm"] label:hover ~ label,
