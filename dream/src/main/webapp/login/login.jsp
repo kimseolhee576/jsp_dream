@@ -80,12 +80,12 @@
 
 <section class="section blog-wrap bg-gray">
     <div class="container">
-        <div class="row" style="display:block">
+        <div class="row" style="display:block; height:550px">
              <div class="text-center">
 				<main class="form-signin">
 					  <form name="login_form" action="login_proc.jsp" method="post">
-					    <img class="mb-4" src="" alt="" width="72" height="57">
-					    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+					    <img src="http://localhost:9000/dream/images/logo3.png">
+					    <h1 class="h3 mb-3 fw-normal"><br></h1>
 					
 					    <div class="form-floating">
 					      <input type="text" name="mem_id" class="form-control" id="mem_id" autocomplete="off" required placeholder="아이디">
@@ -93,14 +93,16 @@
 					    <div class="form-floating">
 					      <input type="password" name="mem_pass" class="form-control" id="mem_pass" autocomplete="off" required placeholder="비밀번호">
 					    </div>
-					
-					    <div class="checkbox mb-3">
+					    <div class="checkbox mb-3" style="font-size: 13px;">
 					      <label>
-					        <input class="form-check-input" type="checkbox">아이디 기억하기
+					        <a href="http://localhost:9000/dream/login/forgotid.jsp">아이디 찾기</a>&nbsp;|
+					        <a href="http://localhost:9000/dream/login/forgotpw.jsp">비밀번호 찾기</a>&nbsp;|
+					        <a href="http://localhost:9000/dream/join/join.jsp">회원가입</a>    
+					        <!-- <input class="form-check-input" type="checkbox">아이디 기억하기 -->
 					      </label>
 					    </div>
-					    <button class="w-100 btn btn-lg btn-primary" id="login_btn" type="submit">로그인</button>
-					    <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
+					    <button class="btn_style3" id="login_btn" type="submit">로그인</button>
+					    <p class="mt-5 mb-3 text-muted" id="copyright">&copy; 꿈과 희망의나라 드림월드 All Rights Reserved.</p>
 					  </form>
 	             </main>
 	         </div>    
