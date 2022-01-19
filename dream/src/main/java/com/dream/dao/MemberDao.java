@@ -14,7 +14,7 @@ public class MemberDao extends DBConn {
             pstmt.setInt(4, vo.getMem_birth());
             pstmt.setString(5, vo.getMem_email1());
             pstmt.setString(6, vo.getMem_email2());
-            pstmt.setInt(7, vo.getMem_hp());
+            pstmt.setString(7, vo.getMem_hp());
 
             result = pstmt.executeUpdate();
 
@@ -120,7 +120,7 @@ public class MemberDao extends DBConn {
                 vo.setMem_birth(rs.getInt(4));
                 vo.setMem_email1(rs.getString(5));
                 vo.setMem_email2(rs.getString(6));
-                vo.setMem_hp(rs.getInt(7));
+                vo.setMem_hp(rs.getString(7));
                 vo.setMem_date(rs.getString(8));
                 vo.setMem_status(rs.getInt(9));
             }
@@ -142,7 +142,7 @@ public class MemberDao extends DBConn {
             pstmt.setString(1, vo.getMem_pass());
             pstmt.setString(2, vo.getMem_email1());
             pstmt.setString(3, vo.getMem_email2());
-            pstmt.setInt(4, vo.getMem_hp());
+            pstmt.setString(4, vo.getMem_hp());
             pstmt.setString(5, vo.getMem_id());
 
             result = pstmt.executeUpdate();

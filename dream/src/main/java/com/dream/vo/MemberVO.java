@@ -1,8 +1,8 @@
 package com.dream.vo;
 
 public class MemberVO {
-    int mem_birth, mem_hp, mem_status;
-    String mem_id, mem_pass, mem_name, mem_email1, mem_email2, mem_date;
+    int mem_birth, mem_status;
+    String mem_id, mem_pass, mem_name, mem_email1, mem_email2, mem_date, mem_hp;
 
     public String getMem_date() {
         return mem_date;
@@ -20,11 +20,11 @@ public class MemberVO {
         this.mem_birth = mem_birth;
     }
 
-    public int getMem_hp() {
+    public String getMem_hp() {
         return mem_hp;
     }
 
-    public void setMem_hp(int mem_hp) {
+    public void setMem_hp(String mem_hp) {
         this.mem_hp = mem_hp;
     }
 
