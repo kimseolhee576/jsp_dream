@@ -6,15 +6,19 @@
 		width:1000px;
 		margin:auto;
 	}
-	/*
-	.container{border:1px solid red;}
-	.content{border:1px solid orange;}
-	.login{border:1px solid blue;}
-		*/	
+	
+	section.section.blog-wrap.bg-gray{
+/*		border:1px solid red;*/
+		margin-bottom: -120px;
+		}
+/*	.content{border:1px solid orange;}
+	.login{border:1px solid blue;}*/
 	
 	section.login {
 		height:auto;
-		margin-left: -35px;
+		margin: 0px 0px -100px -15px;
+		padding-bottom: 100px;
+	/*	border:1px solid red;*/
 	}
 	section.login > h1 {
 	/*	border-left:15px solid #333;
@@ -28,6 +32,7 @@
 	/*	border:1px solid green;*/
 		width:80%;
 		margin:auto;
+		padding-right: 0px;
 	}
 	section.login h2 {
 		margin:0 0 40px 130px;
@@ -111,19 +116,19 @@
 		height: 40px;
 	}
     .input1 {
-        width:40%;
-        padding:20px 20px;
+        width:35%;
+        padding:20px 10px;
         border-radius:4px;
         border:2px solid #B4B4FF;
     }
     .email {
-        width:18%;
-        padding:20px 20px;
+        width:16%;
+        padding:20px 10px;
         border-radius:4px;
         border:2px solid #B4B4FF;
     }
     #email3 {
-        padding: 9.5px 0px 9.5px 40px;
+        padding: 9.5px 0px 9.5px 35px;
     }
     form[name="joinForm"] li:last-child {
         /*text-align:center;*/

@@ -279,12 +279,14 @@ function emailSelectCheck(){
         emailMsg.innerHTML = "";
         email2.value = "";
         email2.focus();
-    }else{
+    }else {
         emailMsg.innerHTML = "";
         email2.value = email3.value;
-        email1.style.border = "1px solid #ddd";
         email2.style.border = "1px solid #ddd";
-    }
+        if(email1.value!=""){
+        	email1.style.border = "1px solid #ddd";
+		}
+	}
 }
 /*
     회원가입 - 이메일 유효성 체크
@@ -409,7 +411,7 @@ function hpCheck(){
 */
 function resetForm(){
 	$('#joinForm span').empty();
-	$('#joinForm input').css("border","1px solid #B4B4FF");
+	$('#joinForm input').css("border","2px solid #B4B4FF");
 	$('#btn_idCheck').css("border-color","white");
 }
 

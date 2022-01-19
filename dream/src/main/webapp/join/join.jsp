@@ -11,9 +11,8 @@
 <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<!-- join 링크 -->
+<!-- join css링크 -->
 <link href="http://localhost:9000/dream/css/join.css" rel="stylesheet">
-<script src="http://localhost:9000/dream/js/join.js"></script>
 </head>
 
 <body>
@@ -98,6 +97,7 @@
 <!-- footer Start -->
 <%@ include file="../footer.jsp" %>
 <!-- footer Close --> 
-
+<!-- Scripts-->
+<script src="http://localhost:9000/dream/js/join.js"></script>
   </body>
   </html>
