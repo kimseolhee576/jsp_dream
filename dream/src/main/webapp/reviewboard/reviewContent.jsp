@@ -102,15 +102,17 @@
 							<td colspan="3"><%= vo.getReview_content() %><br><br><br><br></td>
 						</tr>
 						<tr>
+						<% if(vo.getMem_id1().equals(sid)){ %>
 							<td colspan="3">
 								<a href="http://localhost:9000/dream/reviewboard/reviewUpdate.jsp?review_id=<%= vo.getReview_id()%>">
 									<button type="button" class="btn_style1">수정</button>
 								</a>
 									<button type="button" class="btn_style1" onclick="reviewDelete()">삭제</button>
-								<!-- <a href="http://localhost:9000/dream/reviewboard/reviewList.jsp">
-									<button type="button" class="btn_style2">목록</button>
-								</a> -->
 							</td>
+							<% }else{ %>
+							<td colspan="3">
+							</td>
+							<% } %>
 						</tr>
 					</table>
 				</form>

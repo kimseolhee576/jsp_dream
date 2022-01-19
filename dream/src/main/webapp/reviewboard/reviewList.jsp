@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="com.dream.dao.ReviewDAO,com.dream.vo.ReviewVO, java.util.ArrayList" %>
 <% 
+	String login_id = (String)session.getAttribute("sid");
 	ReviewDAO dao = new ReviewDAO();
 	ArrayList<ReviewVO> list= dao.select();
 
@@ -23,9 +24,7 @@
 <link rel="stylesheet" href="http://localhost:9000/dream/plugins/themify/css/themify-icons.css">
 <link rel="stylesheet" href="http://localhost:9000/dream/plugins/fontawesome/css/all.css">
 <link rel="stylesheet" href="http://localhost:9000/dream/plugins/magnific-popup/dist/magnific-popup.css">
-<!-- Owl Carousel CSS -->
-<link rel="stylesheet" href="http://localhost:9000/dream/plugins/slick-carousel/slick/slick.css">
-<link rel="stylesheet" href="http://localhost:9000/dream/plugins/slick-carousel/slick/slick-theme.css">
+
 <!-- Main Stylesheet -->
 <link rel="stylesheet" href="http://localhost:9000/dream/css/style.css">
 
@@ -97,8 +96,12 @@
 							<% } %>
 							<tr>
 								<td colspan="6">
-									<a href="http://localhost:9000/dream/reviewboard/reviewWrite.jsp">
-										<button type="button" class="btn_style1">글쓰기</button>
+									<% if(login_id != null) {%>
+									<a href="http://localhost:9000/dream/reviewboard/reviewWrite.jsp?login_id=<%= login_id %>">
+									<% }else{ %>  <a href="http://localhost:9000/dream/login/login.jsp"> 
+									<% } %>
+											<button type="button" class="btn_style1">글쓰기</button>
+										</a>
 									</a>
 								</td>
 							</tr>
