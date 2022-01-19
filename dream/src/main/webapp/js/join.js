@@ -135,6 +135,7 @@ function idCheck(){
 /*
     회원가입 - 비밀번호 유효성 체크
 */
+    passFlag=0;
 function passCheck(){
     let pwJ = /^(?=.*[a-z])(?=.*[0-9]).{6,10}$/; 
     let pass,cpass,passMsg,cpassMsg;
@@ -142,12 +143,10 @@ function passCheck(){
     cpass = document.getElementById("cpass");
     passMsg = document.getElementById("passMsg");
     cpassMsg = document.getElementById("cpassMsg");
-    
-    if(passFlag==0){
-	    if(pass.value!=""&&cpass.value==""){
-			passFlag=1;
-		}
+    if(cpass.value==""){
+		passFlag=0;
 	}
+    if(passFlag==0){
         if(!pwJ.test($('#pass').val())||empJ.test($('#pass').val())){
         passMsg.style.color = "#FF1493";
         pass.style.border = "1px solid #FF1493";
@@ -158,6 +157,15 @@ function passCheck(){
             passMsg.innerHTML = "";
             pass.style.border = "1px solid #ddd";
         }
+	}else if(passFlag==1){
+		passMsg.style.color = "#FF1493";
+        pass.style.border = "1px solid #FF1493";
+        passMsg.innerHTML = "비밀번호 일치 확인 중";
+	}else if(passFlag==2){
+		cpassMsg.style.color = "#FF1493";
+        cpass.style.border = "1px solid #FF1493";
+        cpassMsg.innerHTML = "비밀번호 일치 확인 중";
+	}
 }
 function cpassCheck(){
     let pwJ = /^(?=.*[a-z])(?=.*[0-9]).{6,10}$/; 
@@ -166,12 +174,11 @@ function cpassCheck(){
     cpass = document.getElementById("cpass");
     passMsg = document.getElementById("passMsg");
     cpassMsg = document.getElementById("cpassMsg");
-    
-    if(passFlag==0){
-	    if(cpass.value!=""&&pass.value==""){
-			passFlag=1;
-		}
+	
+    if(pass.value==""){
+		passFlag=0;
 	}
+    if(passFlag==0){
         if(!pwJ.test($('#cpass').val())||empJ.test($('#cpass').val())){
         cpassMsg.style.color = "#FF1493";
         cpass.style.border = "1px solid #FF1493";
@@ -182,6 +189,15 @@ function cpassCheck(){
             cpassMsg.innerHTML = "";
             cpass.style.border = "1px solid #ddd";
         }
+	}else if(passFlag==1){
+		passMsg.style.color = "#FF1493";
+        pass.style.border = "1px solid #FF1493";
+        passMsg.innerHTML = "비밀번호 일치 확인 중";
+	}else if(passFlag==2){
+		cpassMsg.style.color = "#FF1493";
+        cpass.style.border = "1px solid #FF1493";
+        cpassMsg.innerHTML = "비밀번호 일치 확인 중";
+	}
 }
 
 /*
@@ -195,23 +211,44 @@ function passSameCheck(){
     passMsg = document.getElementById("passMsg");
     cpassMsg = document.getElementById("cpassMsg");
     
+	    if(pass.value!=""&&cpass.value==""){
+			passFlag=1;
+		}else if(pass.value==""&&cpass.value!=""){
+			passFlag=2;
+		}
     if(pass.value != "" && cpass.value != ""){
         if(pass.value == cpass.value){
-            passMsg.innerHTML = "비밀번호가 일치합니다";
-            passMsg.style.color = "blue";
-            cpassMsg.innerHTML = "";
-            pass.style.border = "1px solid #ddd";
-            cpass.style.border = "1px solid #ddd";
-        //    name.focus();
-            return true;
+	            passMsg.innerHTML = "";
+	            cpassMsg.innerHTML = "";
+	            pass.style.border = "1px solid #ddd";
+	            cpass.style.border = "1px solid #ddd";
+			if(passFlag==1){
+	            passMsg.innerHTML = "비밀번호가 일치합니다";
+	            passMsg.style.color = "blue";
+	            return true;
+			}else if(passFlag==2){
+	            cpassMsg.innerHTML = "비밀번호가 일치합니다";
+	            cpassMsg.style.color = "blue";
+	            return true;
+			}
         }else{
-            passMsg.innerHTML = "비밀번호가 일치하지 않습니다";
-            passMsg.style.color = "#FF1493";
-            cpassMsg.innerHTML = "";
-            pass.value = "";
-            cpass.value = "";
-            pass.focus();
-            return false;
+			if(passFlag==1){
+	            passMsg.innerHTML = "비밀번호가 일치하지 않습니다";
+	            passMsg.style.color = "#FF1493";
+	            cpassMsg.innerHTML = "";
+	            pass.value = "";
+	            cpass.value = "";
+	            pass.focus();
+	            return false;
+	    	}else if(passFlag==2){
+	            cpassMsg.innerHTML = "비밀번호가 일치하지 않습니다";
+	            cpassMsg.style.color = "#FF1493";
+	            passMsg.innerHTML = "";
+	            cpass.value = "";
+	            pass.value = "";
+	            cpass.focus();
+	            return false;
+	    	}
         }       
     }
 }
