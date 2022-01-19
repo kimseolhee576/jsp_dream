@@ -8,8 +8,9 @@ request.setCharacterEncoding("utf-8");
 <jsp:setProperty property="*" name="vo"/>
 
 <%
+	String sid = (String)session.getAttribute("sid");
 	ReviewDAO dao = new ReviewDAO();
-	int result = dao.insert(vo);
+	int result = dao.insert(vo, sid);
 	
 	if(result == 1){
 	    response.sendRedirect("reviewList.jsp");

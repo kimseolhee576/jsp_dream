@@ -8,16 +8,16 @@ public class ReviewDAO extends DBConn {
     /**
      * 후기게시판 글쓰기
      */
-    public int insert(ReviewVO vo) {
+    public int insert(ReviewVO vo, String sid) {
         int result = 0;
-        String sql = "insert into review_table values('r_'||SEQU_REVIEW_TABLE.nextval,?,?,?,0,0,'test2',sysdate,'test2',sysdate)";
+        String sql = "insert into review_table values('r_'||SEQU_REVIEW_TABLE.nextval,?,?,?,0,0, '" + sid
+                + "', sysdate, '" + sid + "', sysdate)";
         getPreparedStatement(sql);
 
         try {
             pstmt.setString(1, vo.getReview_title()); // 제목
             pstmt.setString(2, vo.getReview_content()); // 내용
             pstmt.setInt(3, vo.getReview_star()); // 별점
-
             result = pstmt.executeUpdate();
 
             close();
@@ -118,7 +118,7 @@ public class ReviewDAO extends DBConn {
      */
     public int update(ReviewVO vo) {
         int result = 0;
-        String sql = "update review_table set review_title=?, review_content=?, review_star=?, review_updatedate=sysdate  where review_ID=?";
+        String sql = "update review_table set review_title=?, review_content=?, review_star=?, review_updatedate=sysdate  where review_id=?";
         getPreparedStatement(sql);
         try {
             pstmt.setString(1, vo.getReview_title());

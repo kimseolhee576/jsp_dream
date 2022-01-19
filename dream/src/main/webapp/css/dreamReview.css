@@ -57,7 +57,7 @@ button.btn_style4 { /*글쓰기 하단*/
 }
 table.review_content td.title_style,
 table.notice_content td.title_style { /*후기게시판 상세보기 제목*/
-	font-size:20pt;
+	/*font-size:20pt;*/
 	width:70%;
 }
 td.date_style {
@@ -140,10 +140,6 @@ table.notice_list th {
 	padding:4px;
 	font-size:13pt;
 }
-/*table.review_list tr:nth-child(2) td{
-	text-align:center;
-	font-weight:bold;
-}*/
 /*후기게시판 - 글 상세보기*/
 table.review_content tr:last-child td, table.notice_content tr:last-child td {
 	border:1px solid rgba(245, 248,249);
@@ -154,6 +150,19 @@ table.notice_update tr:first-child td, table.notice_write tr:first-child td{
 	text-align:right;
 	padding-bottom:5px;
 }
+/*table.review_content tr:first-child { /* 리뷰 상세보기 표 양 옆 테두리 */
+/*	border-top:1px solid rgba(245, 248,249);
+	border-left:1px solid rgba(245, 248,249);
+	border-right:1px solid rgba(245, 248,249);
+}
+table.review_content tr:last-child { /* 리뷰 상세보기 표 양 옆 테두리 */
+/*	border-bottom:1px solid rgba(245, 248,249);
+	border-left:1px solid rgba(245, 248,249);
+	border-right:1px solid rgba(245, 248,249);
+}
+table.review_content { /* 리뷰 상세보기 표 양 옆 테두리 */
+/*	border:1px solid #666;
+}*/
 table.review_content
 table.review_content tr,
 table.review_content td,
@@ -179,6 +188,13 @@ input#ntitle {
 table.review_write td, table.notice_update td,
 table.notice_list td, table.notice_write td {
 	padding:10px;
+}
+/*후기게시판- 글 수정*/
+form[name="reviewUpdateForm"] th,
+form[name="reviewDeleteForm"] th,
+form[name="reviewWriteForm"] th{ /* 글 수정 th 색깔*/
+	background:#B4B4FF;
+	text-align:center;
 }
 /*마이페이지 - 내정보수정*/
 section.info_update li {
@@ -249,7 +265,7 @@ form[name="reviewUpdateForm"] input[name="review_star"]{
 }
 form[name="reviewWriteForm"] label,
 form[name="reviewUpdateForm"] label{
-    font-size: 18px; /* 이모지 크기 13px*/
+    font-size: 18px; /* 이모지 크기 */
     color: transparent; /* 기존 이모지 컬러 제거(transparent-투명) */
     text-shadow: 0 0 0 lightgray; /* 새 이모지 색상 부여 */
     margin-right:-6px;
@@ -265,13 +281,14 @@ form[name="reviewUpdateForm"] label:hover ~ label{
 }
 form[name="reviewWriteForm"] input[name="review_star"]:checked ~ label,
 form[name="reviewUpdateForm"] input[name="review_star"]:checked ~ label{
-    text-shadow: 0 0 0 rgba(255,150,61); /* 마우스 클릭 rgba(255,200,61)*/
+    text-shadow: 0 0 0 rgba(255,150,61); /* 마우스 클릭한 부분까지 다 칠해짐*/
 }
 /**
 후기게시판-별점 출력
 */
 label.list_star {
-	font-size: 0.8em;
-	 color: transparent;
-	  text-shadow: 0 0 0 rgba(255,150,61);
+	font-size: 15px; /*0.9em*/
+	color: transparent;
+	text-shadow: 0 0 0 rgba(255,150,61);
+
 }

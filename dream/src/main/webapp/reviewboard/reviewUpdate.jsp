@@ -23,9 +23,6 @@
 <link rel="stylesheet" href="http://localhost:9000/dream/plugins/themify/css/themify-icons.css">
 <link rel="stylesheet" href="http://localhost:9000/dream/plugins/fontawesome/css/all.css">
 <link rel="stylesheet" href="http://localhost:9000/dream/plugins/magnific-popup/dist/magnific-popup.css">
-<!-- Owl Carousel CSS -->
-<link rel="stylesheet" href="http://localhost:9000/dream/plugins/slick-carousel/slick/slick.css">
-<link rel="stylesheet" href="http://localhost:9000/dream/plugins/slick-carousel/slick/slick-theme.css">
 
 <!-- Main Stylesheet -->
 <link rel="stylesheet" href="http://localhost:9000/dream/css/style.css">
@@ -41,13 +38,7 @@
 	  <div class="row">
 	    <div class="col-md-12">
 	       <div class="block text-center">
-	          <!-- <span class="text-white">News details</span> -->
 	         <h1 class="text-capitalize mb-4 text-lg">고객센터</h1>
-	         <ul class="list-inline">
-	            <!-- <li class="list-inline-item"><a href="../index.jsp" class="text-white">Home</a></li>
-	            <li class="list-inline-item"><span class="text-white">/</span></li>
-	            <li class="list-inline-item"><a href="#" class="text-white-50">News details</a></li> -->
-	         </ul>
 	       </div>
 	     </div>
 	   </div>
@@ -64,7 +55,7 @@
 							<tr>
 								<td colspan="2">
 									<a href="http://localhost:9000/dream/reviewboard/reviewList.jsp">
-											<button type="button" class="btn_style2">목록</button>
+										<button type="button" class="btn_style2">목록</button>
 									</a>
 								</td>
 							</tr>
@@ -87,7 +78,7 @@
 							<tr>
 								<th>내용</th>
 								<td>
-									<textarea name="review_content" id="review_content" rows="7" cols="70"  placeholder="내용을 입력해주세요"><%= vo.getReview_content() %></textarea>
+									<textarea name="review_content" id="review_content" rows="13" cols="70"  placeholder="내용을 입력해주세요"><%= vo.getReview_content() %></textarea>
 								</td>
 							</tr>
 							<tr>
@@ -105,9 +96,20 @@
 </div>
 <!-- footer Start -->
 <%@include file ="../footer.jsp" %>
-
 <!-- script 정리했는데 혹시 에러나면 다른데서 붙여 -->
 <script src="http://localhost:9000/dream/js/dreamReview.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script><!-- 수정하기 눌렀을 때 별점 선택되어있게함 -->
+$.fn.radioSelect = function(val) {
+	this.each(function() {
+	var $this = $(this);
+	if($this.val() == val)
+	$this.attr('checked', true);
+	});
+	return this;
+	};
+$(":radio[name='review_star']").radioSelect(<%=vo.getReview_star() %>);
+</script>
    
 </body>
 </html>

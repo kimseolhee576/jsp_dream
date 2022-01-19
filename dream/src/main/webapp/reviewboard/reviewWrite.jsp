@@ -20,9 +20,6 @@
 <link rel="stylesheet" href="http://localhost:9000/dream/plugins/themify/css/themify-icons.css">
 <link rel="stylesheet" href="http://localhost:9000/dream/plugins/fontawesome/css/all.css">
 <link rel="stylesheet" href="http://localhost:9000/dream/plugins/magnific-popup/dist/magnific-popup.css">
-<!-- Owl Carousel CSS -->
-<link rel="stylesheet" href="http://localhost:9000/dream/plugins/slick-carousel/slick/slick.css">
-<link rel="stylesheet" href="http://localhost:9000/dream/plugins/slick-carousel/slick/slick-theme.css">
 
 <!-- Main Stylesheet -->
 <link rel="stylesheet" href="http://localhost:9000/dream/css/style.css">
@@ -40,13 +37,7 @@
 	    <div class="row">
 	      <div class="col-md-12">
 	        <div class="block text-center">
-	          <!-- <span class="text-white">News details</span> -->
 	          <h1 class="text-capitalize mb-4 text-lg">고객센터</h1>
-	          <ul class="list-inline">
-	            <!-- <li class="list-inline-item"><a href="../index.jsp" class="text-white">Home</a></li>
-	            <li class="list-inline-item"><span class="text-white">/</span></li>
-	            <li class="list-inline-item"><a href="#" class="text-white-50">News details</a></li> -->
-	          </ul>
 	        </div>
 	      </div>
 	    </div>
@@ -92,9 +83,6 @@
 							<td colspan="2">
 								<button type="button" class="btn_style1" onclick="reviewWriteFormCheck()">등록</button>
 								<button type="reset" class="btn_style1">다시쓰기</button>
-								<!-- <a href="http://localhost:9000/dream/reviewboard/reviewList.jsp">
-									<button type="button" class="btn_style2">목록</button>
-								</a> -->
 							</td>
 						</tr>
 					</table>
@@ -117,17 +105,6 @@
     <!-- Bootstrap 4.3.1 -->
     <script src="plugins/bootstrap/js/popper.js"></script>
     <script src="plugins/bootstrap/js/bootstrap.min.js"></script>
-   <!--  Magnific Popup-->
-    <script src="plugins/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
-    <!-- Slick Slider -->
-    <script src="plugins/slick-carousel/slick/slick.min.js"></script>
-    <!-- Counterup -->
-    <script src="plugins/counterup/jquery.waypoints.min.js"></script>
-    <script src="plugins/counterup/jquery.counterup.min.js"></script>
-
-    <!-- Google Map -->
-    <script src="plugins/google-map/map.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkeLMlsiwzp6b3Gnaxd86lvakimwGA6UA&callback=initMap"></script>    
     
     <script src="js/script.js"></script>
 
