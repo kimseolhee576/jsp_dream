@@ -82,10 +82,15 @@
 								<td colspan="3"><%=vo.getNcontent() %></td>
 							</tr>
 							<tr>
+							<%if ("admin".equals(sid)) { %>
 								<td colspan="3">
 									<a href="notice_update.jsp?notice_id=<%= notice_id%>"><button type="button" class="btn_style1">수정</button></a>
 									<button type="button" onclick="notice_delete()" class="btn_style1">삭제</button>
 								</td>
+							<% }else{ %>
+								<td colspan="3"></td>
+							<% } %>
+							
 							</tr>
 						</table>		
 					</section>

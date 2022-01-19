@@ -69,7 +69,7 @@
 							<tr>
 								<td colspan="6">
 									<a href="http://localhost:9000/dream/notice/notice_list.jsp">
-										<button type="button" class="btn_style3">전체 목록</button>
+										<button type="button" class="btn_style2">전체 목록</button>
 									</a>
 								</td>
 							</tr>

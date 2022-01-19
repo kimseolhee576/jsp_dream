@@ -90,9 +90,17 @@
 							</tr>
 							<% } %>
 							<tr>
+								<% if("admin".equals(sid)) { %>
 								<td colspan="4">
 									<a href="notice_write.jsp"><button type="button" class="btn_style1">글쓰기</button></a> 
 								</td>
+								<% } else if (sid == null) { %>	
+								<td colspan="4">
+								</td>
+								<% } else { %>
+								<td colspan="4">
+								</td>
+								<% } %>
 							</tr>
 						</table>
 					</form>
