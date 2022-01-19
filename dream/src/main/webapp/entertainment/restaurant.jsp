@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@  page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
 <!doctype html>
@@ -50,11 +50,10 @@
 								<div class="at-text">미국 캘리포니아주의 작은 도시를 옮겨온 기분!<br>
 									아메리칸 스타일과 다양한 퓨전요리, 한식까지<br>
 									원하는 메뉴를 다양하게 드실 수 있어요! </div>
-								<span class="at-text">분류 : 퓨전, 한식</span>
-								<span class="at-text">위치 : 푸드 코너</span>
-								<span class="at-text">설명 : 아메리칸 스타일 퓨전요리, 한식</span>
-								<span class="at-text">운영시간 : 10시~20시</span>
-								<span class="at-text">비고 : </span>
+								<span class="at-text">분&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     류&nbsp;| 퓨전, 한식</span>
+								<span class="at-text">위&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     치&nbsp;| 푸드 코너</span>
+								<span class="at-text">설&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     명&nbsp;| 아메리칸 스타일 퓨전요리, 한식</span>
+								<span class="at-text">운영시간 | 10시~20시</span>
 							</div>
 						</div>
 					</div>
@@ -74,11 +73,10 @@
 					<h2 class="mt-3 mb-4 position-relative content-title">아메리카나</h2>
 					<div class="at-text">온가족이 즐길 수 있는 간단한 음료, 간식거리 등 <br>
 						캐주얼 스타일의 메뉴를 가깝고 편안하게 즐길 수 있어요</div>
-					<span class="at-text">분류 : 음료, 간식</span>
-					<span class="at-text">위치 : 푸드 코너</span>
-					<span class="at-text">설명 : 간단한 음료, 간식거리</span>
-					<span class="at-text">운영시간 : 10시~20시</span>
-					<span class="at-text">비고 : </span>
+					<span class="at-text">분&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     류&nbsp;| 음료, 간식</span>
+					<span class="at-text">위&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     치&nbsp;| 푸드 코너</span>
+					<span class="at-text">설&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     명&nbsp;| 간단한 음료, 간식거리</span>
+					<span class="at-text">운영시간 | 10시~20시</span>
 				</div>
 			</div>
 		</div>
@@ -96,11 +94,10 @@
 					<h2 class="mt-3 mb-4 position-relative content-title">드라켄스낵</h2>
 					<div class="at-text">입맛 따라 골라먹는 우동, 콜팝치킨, 어묵,<br>
 						만두, 구슬아이스크림, 등심탕수육, 치즈볼도 드세요!</div>
-					<span class="at-text">분류 : 간식, 분식</span>
-					<span class="at-text">위치 : 푸드 코너</span>
-					<span class="at-text">설명 : 간편하게 분식이 먹고 싶을 때</span>
-					<span class="at-text">운영시간 : 10시~20시</span>
-					<span class="at-text">비고 : </span>
+					<span class="at-text">분&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     류&nbsp;| 간식, 분식</span>
+					<span class="at-text">위&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     치&nbsp;| 푸드 코너</span>
+					<span class="at-text">설&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     명&nbsp;| 간편하게 분식이 먹고 싶을 때</span>
+					<span class="at-text">운영시간 | 10시~20시</span>
 				</div>
 			</div>
 		</div>
@@ -118,11 +115,10 @@
 					<h2 class="mt-3 mb-4 position-relative content-title">편의점</h2>
 					<div class="at-text">다양한 스낵과 간편한 물품이 한 곳에 <br>
 						다 모여있어 편리해요!</div>
-					<span class="at-text">분류 : 물품 판매</span>
-					<span class="at-text">위치 : 중앙 공원 입구</span>
-					<span class="at-text">설명 : 각종 편의 물품, 음식 판매</span>
-					<span class="at-text">운영시간 : 10시~20시</span>
-					<span class="at-text">비고 : </span>
+					<span class="at-text">분&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     류&nbsp;| 물품 판매</span>
+					<span class="at-text">위&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     치&nbsp;| 중앙 공원 입구</span>
+					<span class="at-text">설&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     명&nbsp;| 각종 편의 물품, 음식 판매</span>
+					<span class="at-text">운영시간 | 10시~20시</span>
 				</div>
 			</div>
 		</div>
@@ -140,11 +136,10 @@
 					<h2 class="mt-3 mb-4 position-relative content-title">피자빙고</h2>
 					<div class="at-text">남녀노소 누구나 즐겨찾는 피자빙고! <br>
 						간단한 한 끼로도 좋아요</div>
-					<span class="at-text">분류 : 카페/피자</span>
-					<span class="at-text">위치 : 푸드 코너</span>
-					<span class="at-text">설명 : 피자 전문, 카페</span>
-					<span class="at-text">운영시간 : 10시~20시</span>
-					<span class="at-text">비고 : </span>
+					<span class="at-text">분&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     류&nbsp;| 카페/피자</span>
+					<span class="at-text">위&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     치&nbsp;| 푸드 코너</span>
+					<span class="at-text">설&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     명&nbsp;| 피자 전문, 카페</span>
+					<span class="at-text">운영시간 | 10시~20시</span>
 				</div>
 			</div>
 		</div>
@@ -162,11 +157,10 @@
 					<h2 class="mt-3 mb-4 position-relative content-title">스태프핫도그</h2>
 					<div class="at-text">130년 역사를 가진 덴마크 전통 핫도그, <br>
 						스태프 핫도그를 맛보세요!</div>
-					<span class="at-text">분류 : 간식</span>
-					<span class="at-text">위치 : 푸드 코너</span>
-					<span class="at-text">설명 : 덴마크 전통 핫도그 전문</span>
-					<span class="at-text">운영시간 : 10시~20시</span>
-					<span class="at-text">비고 : </span>
+					<span class="at-text">분&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     류&nbsp;| 간식</span>
+					<span class="at-text">위&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     치&nbsp;| 푸드 코너</span>
+					<span class="at-text">설&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     명&nbsp;| 덴마크 전통 핫도그 전문</span>
+					<span class="at-text">운영시간 | 10시~20시</span>
 				</div>
 			</div>
 		</div>
