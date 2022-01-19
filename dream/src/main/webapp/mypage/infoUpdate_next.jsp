@@ -65,12 +65,12 @@
 							</li>		
 							<li>
 								<label>*비밀번호</label>
-								<input type="password" name="pass" id="pass" class="input_style1" value="<%= vo.getMem_pass() %>">
+								<input type="password" name="pass" id="pass" class="input_style1" value="<%= vo.getMem_pass() %>" onkeyup="passCheck()">
 								<span id="passMsg"></span>
 							</li>		
 							<li>
 								<label>*비밀번호 확인</label>
-								<input type="password" name="cpass" id="cpass" class="input_style1" value="<%= vo.getMem_pass() %>">
+								<input type="password" name="cpass" id="cpass" class="input_style1" value="<%= vo.getMem_pass() %>" onkeyup="cpassCheck()">
 								<span id="cpassMsg"></span>
 							</li>		
 							<li>
@@ -96,11 +96,11 @@
 							</li>	
 							<li>
 								<label>*핸드폰번호</label>
-								<input type="text" name="mem_hp" class="input_style1" id="hp" value="<%= vo.getMem_hp() %>">
+								<input type="text" name="mem_hp" class="input_style1" id="hp" value="<%= vo.getMem_hp() %>" onkeyup="hpCheck()">
 								<span id="hpMsg"></span>
 							</li>	
 							<li>
-								<button type="button" class="btn_style1" onclick="infoUpdateCheck()">수정완료</button>
+								<button type="button" class="btn_style4" onclick="infoUpdateCheck()">수정완료</button>
 							</li>
 						</ul>
 					</form> 

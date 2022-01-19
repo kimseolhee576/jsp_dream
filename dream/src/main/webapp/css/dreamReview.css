@@ -45,6 +45,16 @@ button.btn_style3 { /*검색버튼*/
 	font-size:11pt;
 	font-weight:bold;
 }
+button.btn_style4 { /*글쓰기 하단*/
+	margin-left:-35px;
+	margin-top:5px;
+	padding:5px 15px;
+	background:#534bae;
+	border:1px solid #534bae;
+	color:white;
+	font-size:11pt;
+	font-weight:bold;
+}
 table.review_content td.title_style,
 table.notice_content td.title_style { /*후기게시판 상세보기 제목*/
 	font-size:20pt;
