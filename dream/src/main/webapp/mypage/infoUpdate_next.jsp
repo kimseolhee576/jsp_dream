@@ -26,10 +26,11 @@
 <link rel="stylesheet" href="http://localhost:9000/dream/plugins/themify/css/themify-icons.css">
 <link rel="stylesheet" href="http://localhost:9000/dream/plugins/fontawesome/css/all.css">
 <link rel="stylesheet" href="http://localhost:9000/dream/plugins/magnific-popup/dist/magnific-popup.css">
-<!-- Owl Carousel CSS -->
+<!-- Owl Carousel CSS 
 <link rel="stylesheet" href="http://localhost:9000/dream/plugins/slick-carousel/slick/slick.css">
-<link rel="stylesheet" href="http://localhost:9000/dream/plugins/slick-carousel/slick/slick-theme.css">
+<link rel="stylesheet" href="http://localhost:9000/dream/plugins/slick-carousel/slick/slick-theme.css">-->
 
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <!-- Main Stylesheet -->
 <!-- <link rel="stylesheet" href="http://localhost:9000/dream/css/style.css"> -->
 
@@ -65,12 +66,12 @@
 							</li>		
 							<li>
 								<label>*비밀번호</label>
-								<input type="password" name="pass" id="pass" class="input_style1" value="<%= vo.getMem_pass() %>" onkeyup="passCheck()">
+								<input type="password" name="pass" id="pass" class="input_style1" value="<%= vo.getMem_pass() %>" placeholder="영문+숫자 조합의 6~10자리" onkeyup="passCheck()">
 								<span id="passMsg"></span>
 							</li>		
 							<li>
 								<label>*비밀번호 확인</label>
-								<input type="password" name="cpass" id="cpass" class="input_style1" value="<%= vo.getMem_pass() %>" onkeyup="cpassCheck()">
+								<input type="password" name="cpass" id="cpass" class="input_style1" value="<%= vo.getMem_pass() %>" placeholder="영문+숫자 조합의 6~10자리" onkeyup="cpassCheck()">
 								<span id="cpassMsg"></span>
 							</li>		
 							<li>
@@ -96,11 +97,12 @@
 							</li>	
 							<li>
 								<label>*핸드폰번호</label>
-								<input type="text" name="mem_hp" class="input_style1" id="hp" value="<%= vo.getMem_hp() %>" onkeyup="hpCheck()">
+								<input type="text" name="mem_hp" class="input_style1" id="hp" value="<%= vo.getMem_hp() %>"  placeholder="*숫자만 10~11자리(ex:01012345678)" onKeyup="hpCheck()">
 								<span id="hpMsg"></span>
 							</li>	
 							<li>
-								<button type="button" class="btn_style4" onclick="infoUpdateCheck()">수정완료</button>
+								<button type="button" class="btn_style1" onclick="infoUpdateCheck()">수정 완료</button>
+								<button type="reset" class="btn_style1" onclick="resetForm()">다시 작성</button>
 							</li>
 						</ul>
 					</form> 
@@ -115,15 +117,16 @@
     Essential Scripts
     =====================================-->
 	<script src="http://localhost:9000/dream/js/infoUpdate.js"></script>
-    <script src="http://localhost:9000/dream/js/dreamReview.js"></script>
     <!-- Main jQuery -->
-    <script src="plugins/jquery/jquery.js"></script>
-    <script src="js/contact.js"></script>
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    
+    <script src="http://localhost:9000/dream/js/contact.js"></script>
     <!-- Bootstrap 4.3.1 -->
-    <script src="plugins/bootstrap/js/popper.js"></script>
-    <script src="plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="http://localhost:9000/dream/plugins/bootstrap/js/popper.js"></script>
+    <script src="http://localhost:9000/dream/plugins/bootstrap/js/bootstrap.min.js"></script>
    
     
-    <script src="js/script.js"></script>
+    <script src="http://localhost:9000/dream/js/script.js"></script>
 </body>
 </html>
