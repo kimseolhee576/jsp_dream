@@ -85,7 +85,7 @@
 								<input type="text" name="hp" class="input_style1" value="<%= vo.getMem_hp() %>" disabled>
 							</li>	
 							<li>
-								<a href="http://localhost:9000/dream/mypage/infoUpdate-next.jsp">
+								<a href="http://localhost:9000/dream/mypage/infoUpdate_next.jsp">
 									<button type="button" class="btn_style1">수정하기</button>
 								</a>
 								<button type="button" class="btn_style1">탈퇴하기</button>

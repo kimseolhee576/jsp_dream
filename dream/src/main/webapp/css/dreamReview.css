@@ -200,7 +200,7 @@ section.info_update li:last-child { /*내정보수정 버튼 가운데정렬*/
 	margin-right:40px;
 }
 form[name="infoUpdateForm"] ul {
-	width:800px;
+	width:900px;
 	margin:auto;
 }
 form[name="infoUpdateForm"] select {
@@ -216,6 +216,9 @@ input.email {
 }
 input[type="text"]:disabled, input[type="password"]:disabled {
   background: #ddd;
+}
+span#passMsg, span#cpassMsg, span#emailMsg, span#hpMsg{
+	font-size:9pt;
 }
 /**
 후기게시판-별점입력

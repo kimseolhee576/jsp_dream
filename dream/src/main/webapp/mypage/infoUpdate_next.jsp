@@ -65,12 +65,12 @@
 							</li>		
 							<li>
 								<label>*비밀번호</label>
-								<input type="password" name="pass" class="input_style1" value="<%= vo.getMem_pass() %>">
+								<input type="password" name="pass" id="pass" class="input_style1" value="<%= vo.getMem_pass() %>">
 								<span id="passMsg"></span>
 							</li>		
 							<li>
 								<label>*비밀번호 확인</label>
-								<input type="password" name="cpass" class="input_style1" value="<%= vo.getMem_pass() %>">
+								<input type="password" name="cpass" id="cpass" class="input_style1" value="<%= vo.getMem_pass() %>">
 								<span id="cpassMsg"></span>
 							</li>		
 							<li>
@@ -96,7 +96,7 @@
 							</li>	
 							<li>
 								<label>*핸드폰번호</label>
-								<input type="text" name="mem_hp" class="input_style1" value="<%= vo.getMem_hp() %>">
+								<input type="text" name="mem_hp" class="input_style1" id="hp" value="<%= vo.getMem_hp() %>">
 								<span id="hpMsg"></span>
 							</li>	
 							<li>
@@ -114,7 +114,7 @@
   <!-- 
     Essential Scripts
     =====================================-->
-
+	<script src="http://localhost:9000/dream/js/infoUpdate.js"></script>
     <script src="http://localhost:9000/dream/js/dreamReview.js"></script>
     <!-- Main jQuery -->
     <script src="plugins/jquery/jquery.js"></script>
@@ -122,17 +122,7 @@
     <!-- Bootstrap 4.3.1 -->
     <script src="plugins/bootstrap/js/popper.js"></script>
     <script src="plugins/bootstrap/js/bootstrap.min.js"></script>
-   <!--  Magnific Popup-->
-    <script src="plugins/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
-    <!-- Slick Slider -->
-    <script src="plugins/slick-carousel/slick/slick.min.js"></script>
-    <!-- Counterup -->
-    <script src="plugins/counterup/jquery.waypoints.min.js"></script>
-    <script src="plugins/counterup/jquery.counterup.min.js"></script>
-
-    <!-- Google Map -->
-    <script src="plugins/google-map/map.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkeLMlsiwzp6b3Gnaxd86lvakimwGA6UA&callback=initMap"></script>    
+   
     
     <script src="js/script.js"></script>
 </body>
