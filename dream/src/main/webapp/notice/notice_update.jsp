@@ -71,7 +71,7 @@
 							<tr>
 								<th>제목</th>
 								<td>
-									<input type="text"  id="notice_title" name="ntitle" value="<%=vo.getNtitle() %>" id="ntitle">
+									<input type="text" name="ntitle" value="<%=vo.getNtitle() %>" id="ntitle">
 								</td>
 							</tr>	
 							<tr>
