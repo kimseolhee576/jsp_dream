@@ -19,18 +19,17 @@ function infoUpdateCheck(){
 	hpMsg = document.getElementById("hpMsg");
 	
 	
-	let checkList=[passMsg, cpassMsg,  emailMsg, hpMsg];
-    let checkListCount=0;
-    
+	let checkList = [passMsg, cpassMsg,  emailMsg, hpMsg];
+    let checkListCount = 0;
     for(let i=0; i<checkList.length; i++){
 		if(checkList[i].innerHTML == "유효한 양식이 아닙니다"){
 			checkListCount++;
 		}
 	}
+	
 	if(pass.value == ""){
 		passMsg.innerHTML = "비밀번호를 입력해주세요";
 		passMsg.style.color = "#FF1493";
-		passMsg.style.fontsize = "9pt";
         pass.style.border = "1px solid #FF1493";
         pass.focus();
         return false;
@@ -71,7 +70,7 @@ function infoUpdateCheck(){
 */
 function passCheck(){
 	let pwJ = /^(?=.*[a-z])(?=.*[0-9]).{6,10}$/; 
-    let pass,cpass,passMsg;
+    let pass, cpass, passMsg;
     pass = document.getElementById("pass");
     cpass = document.getElementById("cpass");
     passMsg = document.getElementById("passMsg");
@@ -81,7 +80,7 @@ function passCheck(){
 			passFlag = 1;
 		}
 	}
-        if(!pwJ.test($('#pass').val())||empJ.test($('#pass').val())){
+        if(!pwJ.test($('#pass').val()) || empJ.test($('#pass').val())){
         passMsg.style.color = "#FF1493";
         pass.style.border = "1px solid #FF1493";
         passMsg.innerHTML = "유효한 양식이 아닙니다";
@@ -97,7 +96,7 @@ function passCheck(){
 */
 function cpassCheck(){
     let pwJ = /^(?=.*[a-z])(?=.*[0-9]).{6,10}$/; 
-    let pass,cpass,cpassMsg;
+    let pass, cpass, cpassMsg;
     pass = document.getElementById("pass");
     cpass = document.getElementById("cpass");
     cpassMsg = document.getElementById("cpassMsg");
@@ -184,14 +183,15 @@ function emailSelectCheck(){
     }
 }	
 /*
-*  마이페이지 - 내 정보 수정 - 비밀번호 일치 체크
+*  마이페이지 - 내 정보 수정 - 비밀번호&비밀번호확인 일치 체크
 */
 function passSameCheck(){
-    let pass, cpass, passMsg, cpassMsg;
+    let pass, cpass, passMsg, cpassMsg, email1;
     pass = document.getElementById("pass");
     cpass = document.getElementById("cpass");
     passMsg = document.getElementById("passMsg");
     cpassMsg = document.getElementById("cpassMsg");
+    email1 = document.getElementById("email1");
     
     if(pass.value != "" && cpass.value != ""){
         if(pass.value == cpass.value){
@@ -200,7 +200,7 @@ function passSameCheck(){
             cpassMsg.innerHTML = "";
             pass.style.border = "1px solid #ddd";
             cpass.style.border = "1px solid #ddd";
-        //    name.focus();
+            email1.focus();
             return true;
         }else{
             passMsg.innerHTML = "비밀번호가 일치하지 않습니다";
@@ -213,21 +213,19 @@ function passSameCheck(){
         }       
     }
 }
-
-	
-	
-	
+/**
+* 탈퇴하기 
+ */
+function memberStatus(){
+	if(confirm("동일한 ID로는 재가입이 불가능합니다. 정말로 탈퇴하시겠습니까? ")){
+		statusForm.submit();
+	}
+}
 /*
-* 리셋 버튼 폼 초기화
+* 다시입력 버튼 클릭 시 폼 리셋
 */
 function resetForm(){
 	$('#infoUpdateForm span').empty();
 	$('#infoUpdateForm input').css("border","1px solid #B4B4FF");
 }
-
-
-
-
-
-
 

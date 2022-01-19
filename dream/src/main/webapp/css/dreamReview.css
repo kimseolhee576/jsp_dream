@@ -213,6 +213,10 @@ form[name="infoUpdateForm"] ul {
 	width:900px;
 	margin:auto;
 }
+form[name="statusForm"] ul {
+	width:900px;
+	margin:auto;
+}
 form[name="infoUpdateForm"] select {
 	padding:10px;
 	border:2px solid #B4B4FF;

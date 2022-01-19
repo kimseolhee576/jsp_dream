@@ -152,4 +152,22 @@ public class MemberDao extends DBConn {
         }
         return result;
     }
+
+    /**
+     * 회원탈퇴하기 / 작성자:김설희
+     */
+    public int status(String sid) {
+        int result = 0;
+        String sql = "update member_table set mem_status=1 where mem_id=?";
+        getPreparedStatement(sql);
+        try {
+            pstmt.setString(1, sid);
+
+            result = pstmt.executeUpdate();
+            close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
 }

@@ -25,9 +25,6 @@
 <link rel="stylesheet" href="http://localhost:9000/dream/plugins/themify/css/themify-icons.css">
 <link rel="stylesheet" href="http://localhost:9000/dream/plugins/fontawesome/css/all.css">
 <link rel="stylesheet" href="http://localhost:9000/dream/plugins/magnific-popup/dist/magnific-popup.css">
-<!-- Owl Carousel CSS -->
-<link rel="stylesheet" href="http://localhost:9000/dream/plugins/slick-carousel/slick/slick.css">
-<link rel="stylesheet" href="http://localhost:9000/dream/plugins/slick-carousel/slick/slick-theme.css">
 
 <!-- Main Stylesheet -->
 <link href="http://localhost:9000/dream/css/dreamReview.css" rel="stylesheet">
@@ -57,7 +54,7 @@
 				<section class="info_update">
 				<h2>내 정보 수정</h2>
 					<section class="input-disabled">
-					<form name="infoUpdateForm" action="" method="post">
+					<form name="statusForm" action="status_proc.jsp" method="post">
 						<ul>
 							<li>
 								<label>*아이디</label>
@@ -88,7 +85,7 @@
 								<a href="http://localhost:9000/dream/mypage/infoUpdate_next.jsp">
 									<button type="button" class="btn_style1">수정하기</button>
 								</a>
-								<button type="button" class="btn_style1">탈퇴하기</button>
+								<button type="button" class="btn_style1" onclick="memberStatus()">탈퇴하기</button>
 							</li>
 						</ul>
 					  </form>
@@ -103,25 +100,23 @@
   <!-- 
     Essential Scripts
     =====================================-->
-
-    <script src="http://localhost:9000/dream/js/dreamReview.js"></script>
-    <!-- Main jQuery -->
-    <script src="plugins/jquery/jquery.js"></script>
-    <script src="js/contact.js"></script>
-    <!-- Bootstrap 4.3.1 -->
+	<script src="http://localhost:9000/dream/js/infoUpdate.js"></script>
+     <!-- Main jQuery -->
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    
+    <!-- Bootstrap 4.3.1 
     <script src="plugins/bootstrap/js/popper.js"></script>
-    <script src="plugins/bootstrap/js/bootstrap.min.js"></script>
-   <!--  Magnific Popup-->
-    <script src="plugins/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
-    <!-- Slick Slider -->
-    <script src="plugins/slick-carousel/slick/slick.min.js"></script>
-    <!-- Counterup -->
+    <script src="plugins/bootstrap/js/bootstrap.min.js"></script>-->
+   <!--  Magnific Popup
+    <script src="plugins/magnific-popup/dist/jquery.magnific-popup.min.js"></script>-->
+    <!-- Counterup 
     <script src="plugins/counterup/jquery.waypoints.min.js"></script>
-    <script src="plugins/counterup/jquery.counterup.min.js"></script>
+    <script src="plugins/counterup/jquery.counterup.min.js"></script>-->
 
-    <!-- Google Map -->
+    <!-- Google Map 
     <script src="plugins/google-map/map.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkeLMlsiwzp6b3Gnaxd86lvakimwGA6UA&callback=initMap"></script>    
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkeLMlsiwzp6b3Gnaxd86lvakimwGA6UA&callback=initMap"></script> -->   
     
     <script src="js/script.js"></script>
 </body>

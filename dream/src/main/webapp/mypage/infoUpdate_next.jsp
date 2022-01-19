@@ -58,7 +58,7 @@
 			<div class="content">
 				<section class="info_update">
 				<h2>내 정보 수정</h2>
-					 <form name="infoUpdateForm" action="infoUpdate_proc.jsp" method="post">
+					 <form name="infoUpdateForm" id="infoUpdateForm" action="infoUpdate_proc.jsp" method="post">
 						<ul>
 							<li>
 								<label>*아이디</label>
@@ -116,17 +116,15 @@
   <!-- 
     Essential Scripts
     =====================================-->
-	<script src="http://localhost:9000/dream/js/infoUpdate.js"></script>
     <!-- Main jQuery -->
     <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     
+	<script src="http://localhost:9000/dream/js/infoUpdate.js"></script>
    <!--  <script src="http://localhost:9000/dream/js/contact.js"></script>
     <!-- Bootstrap 4.3.1
     <script src="http://localhost:9000/dream/plugins/bootstrap/js/popper.js"></script>
     <script src="http://localhost:9000/dream/plugins/bootstrap/js/bootstrap.min.js"></script> -->
-   
     
-    <script src="http://localhost:9000/dream/js/script.js"></script>
 </body>
 </html>
