@@ -6,15 +6,18 @@ import com.dream.vo.reservVO;
 
 public class reservDao extends DBConn {
     /**
-     * insert(reserVO vo) : 예매정보 저장
+     * insert(reservVO vo) : 예매정보 저장
      */
-    public int insert(reservVO vo) {
+    public int insert(String sid, reservVO vo) {
         int result = 0;
-        String sql = "insert into reserv_check "
-                + " values('r_'||sequ_reserv_check.nextval,'test1',?,?,?,?,sysdate,?,?)";
+        String sql = "insert into reserv_check values('r_'||sequ_reserv_check.nextval,'" + sid
+                + "',?,?,?,?,sysdate,?,?)";
         getPreparedStatement(sql);
 
+        System.out.println(sql);
+
         try {
+
             pstmt.setString(1, vo.getReserv_ss());
             pstmt.setString(2, vo.getReserv_sb());
             pstmt.setString(3, vo.getReserv_fs());
@@ -60,12 +63,15 @@ public class reservDao extends DBConn {
      * 
      * @return
      */
-    public ArrayList<reservVO> select() {
+    public ArrayList<reservVO> select(String sid) {
         ArrayList<reservVO> list = new ArrayList<reservVO>();
-        String sql = "select mem_id, reserv_ss, reserv_sb, reserv_fs, reserv_fb, reserv_total, to_char(reserv_date,'\"\"YYYY\"년-\"MM\"월-\"DD\"일\"'), reserv_dday from reserv_check order by reserv_date desc";
+        String sql = "select mem_id, reserv_ss, reserv_sb, reserv_fs, reserv_fb, reserv_total,"
+                + " to_char(reserv_date,'YYYY\"년\"\"-\"MM\"월\"-\"\"DD\"일\"'), reserv_dday"
+                + " from reserv_check where Mem_id='" + sid + "' order by reserv_date desc";
         getPreparedStatement(sql);
 
         try {
+
             rs = pstmt.executeQuery();
             while (rs.next()) {
                 reservVO vo = new reservVO();

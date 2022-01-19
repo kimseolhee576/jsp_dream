@@ -2,14 +2,15 @@
     pageEncoding="UTF-8"
     import = "com.dream.dao.reservDao,com.dream.vo.reservVO" %>
 
-
 <% request.setCharacterEncoding("utf-8"); %>
 <jsp:useBean id="vo" class="com.dream.vo.reservVO"></jsp:useBean>
 <jsp:setProperty property="*" name="vo"/>
 
+
 <%
+	String sid = (String)session.getAttribute("sid");
 	reservDao dao = new reservDao();
-	int result = dao.insert(vo);
+	int result = dao.insert(sid,vo);
 %>
 
 <!DOCTYPE html>

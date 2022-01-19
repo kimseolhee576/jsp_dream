@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" 
     import = "com.dream.dao.reservDao,com.dream.vo.reservVO" %>
-    
-
+   
 <% request.setCharacterEncoding("utf-8"); %>
 <jsp:useBean id="vo" class="com.dream.vo.reservVO"></jsp:useBean>
 <jsp:setProperty property="*" name="vo"/>
+
 
     
 <!DOCTYPE html>
@@ -73,7 +73,6 @@
 <div id="all" class="all">
 	<section> <!-- 여기 -->
 		<form name="reserv_checkForm" action="reserv_kakao.jsp" method="post">
-		
 		<ul>
 			<li>
 				<label class="label_style">방문날짜</label>

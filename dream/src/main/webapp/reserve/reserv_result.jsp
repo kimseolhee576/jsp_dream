@@ -2,9 +2,11 @@
     pageEncoding="UTF-8"
     import = "com.dream.dao.reservDao,com.dream.vo.reservVO, java.util.ArrayList" %>
 
+
 <%
+	String ssid = (String)session.getAttribute("sid");
 	reservDao dao = new reservDao();
-	ArrayList<reservVO> list = dao.select();
+	ArrayList<reservVO> list = dao.select(ssid);
 %>    
 
 
