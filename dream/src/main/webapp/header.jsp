@@ -61,7 +61,7 @@
 			<ul class="navbar-nav ml-auto">
 
 			  <li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="http://localhost:9000/dream/index.jsp" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home</a>
+					<a class="nav-link dropdown-toggle" href="http://localhost:9000/dream/index.jsp" id="dropdown03"  aria-haspopup="true" aria-expanded="false">Home</a>
 			  </li>
 			  <li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">이용정보</a>
