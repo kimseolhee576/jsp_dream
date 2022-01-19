@@ -1,110 +1,111 @@
 package com.dream.vo;
 
 public class reservVO {
-    String rid, iid, rss, rsb, rfs, rfb, num1, num2, num3, num4, cdate, rdate, total;
+    String reserv_id, mem_id, reserv_ss, reserv_sb, reserv_fs, reserv_fb, start_s, start_b, free_s, free_b, reserv_date,
+            reserv_dday, reserv_total;
 
-    public String getNum1() {
-        return num1;
+    public String getReserv_id() {
+        return reserv_id;
     }
 
-    public void setNum1(String num1) {
-        this.num1 = num1;
+    public void setReserv_id(String reserv_id) {
+        this.reserv_id = reserv_id;
     }
 
-    public String getNum2() {
-        return num2;
+    public String getMem_id() {
+        return mem_id;
     }
 
-    public void setNum2(String num2) {
-        this.num2 = num2;
+    public void setMem_id(String mem_id) {
+        this.mem_id = mem_id;
     }
 
-    public String getNum3() {
-        return num3;
+    public String getReserv_ss() {
+        return reserv_ss;
     }
 
-    public void setNum3(String num3) {
-        this.num3 = num3;
+    public void setReserv_ss(String reserv_ss) {
+        this.reserv_ss = reserv_ss;
     }
 
-    public String getNum4() {
-        return num4;
+    public String getReserv_sb() {
+        return reserv_sb;
     }
 
-    public void setNum4(String num4) {
-        this.num4 = num4;
+    public void setReserv_sb(String reserv_sb) {
+        this.reserv_sb = reserv_sb;
     }
 
-    public String getRid() {
-        return rid;
+    public String getReserv_fs() {
+        return reserv_fs;
     }
 
-    public void setRid(String rid) {
-        this.rid = rid;
+    public void setReserv_fs(String reserv_fs) {
+        this.reserv_fs = reserv_fs;
     }
 
-    public String getIid() {
-        return iid;
+    public String getReserv_fb() {
+        return reserv_fb;
     }
 
-    public void setIid(String iid) {
-        this.iid = iid;
+    public void setReserv_fb(String reserv_fb) {
+        this.reserv_fb = reserv_fb;
     }
 
-    public String getRss() {
-        return rss;
+    public String getStart_s() {
+        return start_s;
     }
 
-    public void setRss(String rss) {
-        this.rss = rss;
+    public void setStart_s(String start_s) {
+        this.start_s = start_s;
     }
 
-    public String getRsb() {
-        return rsb;
+    public String getStart_b() {
+        return start_b;
     }
 
-    public void setRsb(String rsb) {
-        this.rsb = rsb;
+    public void setStart_b(String start_b) {
+        this.start_b = start_b;
     }
 
-    public String getRfs() {
-        return rfs;
+    public String getFree_s() {
+        return free_s;
     }
 
-    public void setRfs(String rfs) {
-        this.rfs = rfs;
+    public void setFree_s(String free_s) {
+        this.free_s = free_s;
     }
 
-    public String getRfb() {
-        return rfb;
+    public String getFree_b() {
+        return free_b;
     }
 
-    public void setRfb(String rfb) {
-        this.rfb = rfb;
+    public void setFree_b(String free_b) {
+        this.free_b = free_b;
     }
 
-    public String getCdate() {
-        return cdate;
+    public String getReserv_date() {
+        return reserv_date;
     }
 
-    public void setCdate(String cdate) {
-        this.cdate = cdate;
+    public void setReserv_date(String reserv_date) {
+        this.reserv_date = reserv_date;
     }
 
-    public String getRdate() {
-        return rdate;
+    public String getReserv_dday() {
+        return reserv_dday;
     }
 
-    public void setRdate(String rdate) {
-        this.rdate = rdate;
+    public void setReserv_dday(String reserv_dday) {
+        this.reserv_dday = reserv_dday;
     }
 
-    public String getTotal() {
-        return total;
+    public String getReserv_total() {
+        return reserv_total;
     }
 
-    public void setTotal(String total) {
-        this.total = total;
+    public void setReserv_total(String reserv_total) {
+        this.reserv_total = reserv_total;
     }
 
 }

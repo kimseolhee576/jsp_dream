@@ -34,12 +34,12 @@
             pay_method : 'card',
             merchant_uid : 'merchant_' + new Date().getTime(),
             name : '놀이공원 티켓 결제',
-            amount : <%= vo.getTotal() %>,
-            buyer_rdate : '<%= vo.getRdate() %>',
-            buyer_num1 : ' <%= vo.getNum1() %>',
-            buyer_num2 : ' <%= vo.getNum2() %>',
-            buyer_num3 : ' <%= vo.getNum3() %>',
-            buyer_num4 : ' <%= vo.getNum4() %>',
+            amount : <%= vo.getReserv_total() %>,
+            buyer_rdate : '<%= vo.getReserv_dday() %>',
+            buyer_num1 : ' <%= vo.getReserv_ss() %>',
+            buyer_num2 : ' <%= vo.getReserv_sb() %>',
+            buyer_num3 : ' <%= vo.getReserv_fs() %>',
+            buyer_num4 : ' <%= vo.getReserv_fb() %>',
             buyer_postcode : '123-456',
             //m_redirect_url : 'http://localhost:9000/Second_project/reserve/reserv_proc.jsp'
         }, function(rsp) {

@@ -3,96 +3,96 @@
 	checkbox, select 값 계산 후 총 가격으로 출력 
 *******************************************/
 
-let rsb,rss,rfs,rfb,total,num1,num2,num3,num4,sum1,sum2,sum3,sum4;
-	function change1(){
+let reserv_sb,reserv_ss,reserv_fs,reserv_fb,reserv_total,start_s,start_b,free_s,free_b,sum1,sum2,sum3,sum4;
+	function change_s(){
 		
 		sum1,sum2,sum3,sum4=0;
 		
-       rsb=document.getElementById("rsb");
-       rss=document.getElementById("rss");
-       rfs=document.getElementById("rfs");
-       rfb=document.getElementById("rfb");
-       total=document.getElementById("total");
-       num1=document.getElementById("num1");
-       num2=document.getElementById("num2");
-       num3=document.getElementById("num3");
-       num4=document.getElementById("num4");
+       reserv_ss=document.getElementById("reserv_ss");
+       reserv_sb=document.getElementById("reserv_sb");
+       reserv_fs=document.getElementById("reserv_fs");
+       reserv_fb=document.getElementById("reserv_fb");
+       reserv_total=document.getElementById("reserv_total");
+       start_s=document.getElementById("start_s");
+       start_b=document.getElementById("start_b");
+       free_s=document.getElementById("free_s");
+       free_b=document.getElementById("free_b");
        
        
-       if(rss.checked){
-		   rss.value=20000;
-    	   sum1=rss.value*num1.value;
+       if(start_s.checked){
+		   start_s.value=20000;
+    	   sum1=start_s.value*reserv_ss.value;
        }
-       if(rsb.checked){
-			rsb.value=30000;
-    	   sum2=rsb.value*num2.value;
+       if(start_b.checked){
+			start_b.value=30000;
+    	   sum2=start_b.value*reserv_sb.value;
        }
-       if(rfs.checked){
-			rfs.value=40000;
-    	   sum3=rfs.value*num3.value;
+       if(free_s.checked){
+			free_s.value=40000;
+    	   sum3=free_s.value*reserv_fs.value;
        }
-       if(rfb.checked){
-			rfb.value=60000;
-    	   sum4=rfb.value*num4.value;
+       if(free_b.checked){
+			free_b.value=60000;
+    	   sum4=free_b.value*reserv_fb.value;
        }
-       total.value=sum1+sum2+sum3+sum4;
+       reserv_total.value=sum1+sum2+sum3+sum4;
    }
    
-   function change(){
+   function change_c(){
 	  
 	   sum1,sum2,sum3,sum4=0;
 	   
-	   rsb=document.getElementById("rsb");
-       rss=document.getElementById("rss");
-       rfs=document.getElementById("rfs");
-       rfb=document.getElementById("rfb");
-       total=document.getElementById("total");
-       num1=document.getElementById("num1");
-       num2=document.getElementById("num2");
-       num3=document.getElementById("num3");
-       num4=document.getElementById("num4");
+	   reserv_ss=document.getElementById("reserv_ss");
+       reserv_sb=document.getElementById("reserv_sb");
+       reserv_fs=document.getElementById("reserv_fs");
+       reserv_fb=document.getElementById("reserv_fb");
+       reserv_total=document.getElementById("reserv_total");
+       start_s=document.getElementById("start_s");
+       start_b=document.getElementById("start_b");
+       free_s=document.getElementById("free_s");
+       free_b=document.getElementById("free_b");
        
-       if(rss.checked){
-		   rss.value=20000;
-    	   sum1=rss.value*num1.value;
-    	   num1.disabled = false;
+       if(start_s.checked){
+		   start_s.value=20000;
+    	   sum1=start_s.value*reserv_ss.value;
+    	   reserv_ss.disabled = false;
        }else{
     	   sum1=0;
-    	   rss.value=0;
-    	   $("#num1 option:eq(0)").prop("selected", true);
-    	   num1.disabled = true;
+    	   start_s.value=0;
+    	   $("#reserv_ss option:eq(0)").prop("selected", true);
+    	   reserv_ss.disabled = true;
        }
-       if(rsb.checked){
-			rsb.value=30000;
-    	   sum2=rsb.value*num2.value;
-    	   num2.disabled = false;
+       if(start_b.checked){
+			start_b.value=30000;
+    	   sum2=start_b.value*reserv_sb.value;
+    	   reserv_sb.disabled = false;
        }else{
     	   sum2=0;
-    	   rsb.value=0;
-           $("#num2 option:eq(0)").prop("selected", true);
-           num2.disabled = true;
+    	   start_b.value=0;
+           $("#reserv_sb option:eq(0)").prop("selected", true);
+           reserv_sb.disabled = true;
        }
-       if(rfs.checked){
-			rfs.value=40000;
-    	   sum3=rfs.value*num3.value;
-    	   num3.disabled = false;
+       if(free_s.checked){
+			free_s.value=40000;
+    	   sum3=free_s.value*reserv_fs.value;
+    	   reserv_fs.disabled = false;
        }else{
     	   sum3=0;
-    	   rfs.value=0;
-    	   $("#num3 option:eq(0)").prop("selected", true);
-    	   num3.disabled = true;
+    	   free_s.value=0;
+    	   $("#reserv_fs option:eq(0)").prop("selected", true);
+    	   reserv_fs.disabled = true;
        }
-       if(rfb.checked){
-			rfb.value=60000;
-    	   sum4=rfb.value*num4.value;
-    	   num4.disabled = false;
+       if(free_b.checked){
+			free_b.value=60000;
+    	   sum4=free_b.value*reserv_fb.value;
+    	   reserv_fb.disabled = false;
        }else{
     	   sum4=0;
-    	   rfb.value=0;
-           $("#num4 option:eq(0)").prop("selected", true);
-           num4.disabled = true;
+    	   free_b.value=0;
+           $("#reserv_fb option:eq(0)").prop("selected", true);
+           reserv_fb.disabled = true;
        }
-       total.value=sum1+sum2+sum3+sum4;
+       reserv_total.value=sum1+sum2+sum3+sum4;
    }
    
 /***************************************
@@ -100,34 +100,32 @@ let rsb,rss,rfs,rfb,total,num1,num2,num3,num4,sum1,sum2,sum3,sum4;
 ***************************************/
 function reservFormCheck(){
 	
-	let rss,rsb,rfs,rfb,rdate,num1,num2,num3,num4;
-	
-	rss = document.getElementById("rss");
-	rsb = document.getElementById("rsb");
-	rfs = document.getElementById("rfs");
-	rfb = document.getElementById("rfb");
-	num1 = document.getElementById("num1");
-	num2 = document.getElementById("num2");
-	num3 = document.getElementById("num3");
-	num4 = document.getElementById("num4");
-	rdate = document.getElementById("rdate");
-	total = document.getElementById("total");
+	reserv_ss = document.getElementById("reserv_ss");
+	reserv_sb = document.getElementById("reserv_sb");
+	reserv_fs = document.getElementById("reserv_fs");
+	reserv_fb = document.getElementById("reserv_fb");
+	start_s = document.getElementById("start_s");
+	start_b = document.getElementById("start_b");
+	free_s = document.getElementById("free_s");
+	free_b = document.getElementById("free_b");
+	reserv_dday = document.getElementById("reserv_dday");
+	reserv_total = document.getElementById("reserv_total");
 	
 	
-	if(rdate.value == ""){
+	if(reserv_dday.value == ""){
 		alert("방문날짜를 선택해 주세요");
 		return false;
-	}else if(rss.value == 0 && rsb.value == 0 && rfs.value == 0 && rfb.value == 0){
+	}else if(start_s.value == 0 && start_b.value == 0 && free_s.value == 0 && free_b.value == 0){
 		alert("티켓을 선택해 주세요");
 		return false;
-	}else if(num1.value == 0 && num2.value == 0 && num3.value == 0 && num4.value == 0){
+	}else if(reserv_ss.value == 0 && reserv_sb.value == 0 && reserv_fs.value == 0 && reserv_fb.value == 0){
 		alert("인원을 선택해 주세요");
 		return false;
 	}else{
-		num1.disabled = false;
-		num2.disabled = false;
-		num3.disabled = false;
-		num4.disabled = false;
+		reserv_ss.disabled = false;
+		reserv_sb.disabled = false;
+		reserv_fs.disabled = false;
+		reserv_fb.disabled = false;
 		reservForm.submit();
 	}
 }
@@ -140,8 +138,8 @@ function reservFormCheck(){
   $(function() {
 	   // showAnim
 	   //옵션  : 매개변수값 2번째가 옵션의 타입이며 3번째 항목은 옵션에 대한 설정 값
-	    $( "#rdate" ).datepicker( "option", "minDate", "slideDown" );     //달력의 표시 형태
-		$( "#rdate" ).datepicker({
+	    $( "#reserv_dday" ).datepicker( "option", "minDate", "slideDown" );     //달력의 표시 형태
+		$( "#reserv_dday" ).datepicker({
 			showOn:"button",
 			showMonthAfterYear:true,
 			buttonImage:"http://jqueryui.com/resources/demos/datepicker/images/calendar.gif",

@@ -77,27 +77,27 @@
 		<ul>
 			<li>
 				<label class="label_style">방문날짜</label>
-				<input type="text" class="form-control" id="rdate" name="rdate" value="<%= vo.getRdate() %>" readonly>
+				<input type="text" class="form-control" id="reserv_dday" name="reserv_dday" value="<%= vo.getReserv_dday() %>" readonly>
 			</li>
 			<li>
 				<label class="label_style">입장권(소인)</label>
-				<input type="text" class="form-control" id="num1" name="num1" value="<%= vo.getNum1() %>" readonly>
+				<input type="text" class="form-control" id="reserv_ss" name="reserv_ss" value="<%= vo.getReserv_ss() %>" readonly>
 			</li>
 			<li>
 				<label class="label_style">입장권(대인)</label>
-				<input type="text" class="form-control" id="num2" name="num2" value="<%= vo.getNum2() %>" readonly>
+				<input type="text" class="form-control" id="reserv_sb" name="reserv_sb" value="<%= vo.getReserv_sb() %>" readonly>
 			</li>
 			<li>
 				<label class="label_style">자유이용권(소인)</label>
-				<input type="text" class="form-control" id="num3" name="num3" value="<%= vo.getNum3() %>" readonly>
+				<input type="text" class="form-control" id="reserv_fs" name="reserv_fs" value="<%= vo.getReserv_fs() %>" readonly>
 			</li>
 			<li>
 				<label class="label_style">자유이용권(대인)</label>
-				<input type="text" class="form-control" id="num4" name="num4" value="<%= vo.getNum4() %>" readonly>
+				<input type="text" class="form-control" id="reserv_fb" name="reserv_fb" value="<%= vo.getReserv_fb() %>" readonly>
 			</li>
 			<li>
 				<label class="label_style">총 가격</label>
-				<input type="text" class="form-control" name="total" id="total" value="<%= vo.getTotal() %>" readonly>
+				<input type="text" class="form-control" name="reserv_total" id="reserv_total" value="<%= vo.getReserv_total() %>" readonly>
 			</li>
 			<li>
 				<input type="submit" class="btn_style" value="결제하기">

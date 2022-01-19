@@ -75,14 +75,14 @@
 					</tr>
 					<% for(reservVO vo : list){ %>
 					<tr>
-						<td><%= vo.getIid() %></td>
-						<td><%= vo.getRss() %></td>
-						<td><%= vo.getRsb() %></td>
-						<td><%= vo.getRfs() %></td>
-						<td><%= vo.getRfb() %></td>
-						<td><%= vo.getTotal() %></td>
-						<td><%= vo.getCdate() %></td>
-						<td><%= vo.getRdate() %></td>
+						<td><%= vo.getMem_id() %></td>
+						<td><%= vo.getReserv_ss() %></td>
+						<td><%= vo.getReserv_sb() %></td>
+						<td><%= vo.getReserv_fs() %></td>
+						<td><%= vo.getReserv_fb() %></td>
+						<td><%= vo.getReserv_total() %></td>
+						<td><%= vo.getReserv_date() %></td>
+						<td><%= vo.getReserv_dday() %></td>
 					</tr>
 					<% } %>
 			</table>

@@ -66,14 +66,14 @@
 	<form name="reservForm" action="reserv_check.jsp" method="post">
 		<ul>
 			<li>
-				<label class="label_style">날짜</label> <input type="text" id="rdate" name="rdate" class="text" readonly>
+				<label class="label_style">날짜</label> <input type="text" id="reserv_dday" name="reserv_dday" class="text" readonly>
 			</li>
         	<li>
 	        	<label class="label_style">입장권</label>
-	            <input type="checkbox" class="input1" name="rss" value="0" id="rss" onchange="change()">
-	            <label for="rss"> <span></span> 소인</label>
+	            <input type="checkbox" class="input1" name="start_s" value="0" id="start_s" onchange="change_c()">
+	            <label for="start_s"> <span></span> 소인</label>
 	            <label class="label_style2">인원</label>
-	        	<select id="num1" name="num1" onchange="change1()" disabled>
+	        	<select id="reserv_ss" name="reserv_ss" onchange="change_s()" disabled>
 	            <option >0</option>
 	            <option value="1">1</option>
 	            <option value="2">2</option>
@@ -83,10 +83,10 @@
 	        	</select>
 	        	<br>
 	        	<label class="label_style1" >입장권</label>
-	            <input type="checkbox" class="start" name="rsb" value="0" id="rsb" onchange="change()">
-	            <label for="rsb"> <span></span> 대인</label>
+	            <input type="checkbox" class="start" name="start_b" value="0" id="start_b" onchange="change_c()">
+	            <label for="start_b"> <span></span> 대인</label>
 	            <label class="label_style2">인원</label>
-	            <select id="num2" name="num2" onchange="change1()" disabled>
+	            <select id="reserv_sb" name="reserv_sb" onchange="change_s()" disabled>
 	            <option >0</option>
 	            <option value="1">1</option>
 	            <option value="2">2</option>
@@ -97,10 +97,10 @@
 	        </li>
         	<li>
 	        	<label class="label_style">자유이용권</label>
-	            <input type="checkbox" class="free" name="rfs" value="0" id="rfs" onchange="change()">
-	            <label for="rfs"> <span></span> 소인</label>
+	            <input type="checkbox" class="free" name="free_s" value="0" id="free_s" onchange="change_c()">
+	            <label for="free_s"> <span></span> 소인</label>
 	            <label class="label_style2">인원</label>
-	        	<select id="num3" name="num3" onchange="change1()" disabled>
+	        	<select id="reserv_fs" name="reserv_fs" onchange="change_s()" disabled>
 	            <option >0</option>
 	            <option value="1">1</option>
 	            <option value="2">2</option>
@@ -110,10 +110,10 @@
 	        	</select>
 	        	<br>
 	        	<label class="label_style1" >자유이용권</label>
-            	<input type="checkbox" class="free" name="rfb" value="0" id="rfb" onchange="change()">
-            	<label for="rfb"> <span></span> 대인</label>
+            	<input type="checkbox" class="free" name="free_b" value="0" id="free_b" onchange="change_c()">
+            	<label for="free_b"> <span></span> 대인</label>
 				<label class="label_style2">인원</label>
-	            <select id="num4" name="num4" onchange="change1()" disabled>
+	            <select id="reserv_fb" name="reserv_fb" onchange="change_s()" disabled>
 	            <option >0</option>
 	            <option value="1">1</option>
 	            <option value="2">2</option>
@@ -123,7 +123,7 @@
 	            </select>
         	</li>
         	<li>
-        		<label class="label_style">총 가격 : </label><input type="text" name="total" id="total" class="text" readonly>
+        		<label class="label_style">총 가격 : </label><input type="text" name="reserv_total" id="reserv_total" class="text" readonly>
         	</li>
         	<li>
        			<input type="button" class="btn_style" value="예매하기" onclick="reservFormCheck()">

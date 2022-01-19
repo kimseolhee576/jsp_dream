@@ -10,17 +10,17 @@ public class reservDao extends DBConn {
      */
     public int insert(reservVO vo) {
         int result = 0;
-        String sql = "insert into reserve_check "
-                + " values('r_'||sequ_reserve_check_rid.nextval,'aaa',?,?,?,?,sysdate,?,?)";
+        String sql = "insert into reserv_check "
+                + " values('r_'||sequ_reserv_check.nextval,'test1',?,?,?,?,sysdate,?,?)";
         getPreparedStatement(sql);
 
         try {
-            pstmt.setString(1, vo.getNum1());
-            pstmt.setString(2, vo.getNum2());
-            pstmt.setString(3, vo.getNum3());
-            pstmt.setString(4, vo.getNum4());
-            pstmt.setString(5, vo.getRdate());
-            pstmt.setString(6, vo.getTotal());
+            pstmt.setString(1, vo.getReserv_ss());
+            pstmt.setString(2, vo.getReserv_sb());
+            pstmt.setString(3, vo.getReserv_fs());
+            pstmt.setString(4, vo.getReserv_fb());
+            pstmt.setString(5, vo.getReserv_dday());
+            pstmt.setString(6, vo.getReserv_total());
 
             result = pstmt.executeUpdate();
 
@@ -62,21 +62,21 @@ public class reservDao extends DBConn {
      */
     public ArrayList<reservVO> select() {
         ArrayList<reservVO> list = new ArrayList<reservVO>();
-        String sql = "select iid, rss, rsb, rfs, rfb, total, to_char(cdate,'\"\"YYYY\"년-\"MM\"월-\"DD\"일\"'), rdate from reserve_check order by cdate desc";
+        String sql = "select mem_id, reserv_ss, reserv_sb, reserv_fs, reserv_fb, reserv_total, to_char(reserv_date,'\"\"YYYY\"년-\"MM\"월-\"DD\"일\"'), reserv_dday from reserv_check order by reserv_date desc";
         getPreparedStatement(sql);
 
         try {
             rs = pstmt.executeQuery();
             while (rs.next()) {
                 reservVO vo = new reservVO();
-                vo.setIid(rs.getString(1));
-                vo.setRss(rs.getString(2));
-                vo.setRsb(rs.getString(3));
-                vo.setRfs(rs.getString(4));
-                vo.setRfb(rs.getString(5));
-                vo.setTotal(rs.getString(6));
-                vo.setCdate(rs.getString(7));
-                vo.setRdate(rs.getString(8));
+                vo.setMem_id(rs.getString(1));
+                vo.setReserv_ss(rs.getString(2));
+                vo.setReserv_sb(rs.getString(3));
+                vo.setReserv_fs(rs.getString(4));
+                vo.setReserv_fb(rs.getString(5));
+                vo.setReserv_total(rs.getString(6));
+                vo.setReserv_date(rs.getString(7));
+                vo.setReserv_dday(rs.getString(8));
 
                 list.add(vo);
             }
