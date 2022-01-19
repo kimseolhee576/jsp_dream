@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="com.dream.dao.ReviewDAO,com.dream.vo.ReviewVO, java.util.ArrayList" %>
 <% 
-	String login_id = (String)session.getAttribute("sid");
 	ReviewDAO dao = new ReviewDAO();
 	ArrayList<ReviewVO> list= dao.select();
 
@@ -96,8 +95,8 @@
 							<% } %>
 							<tr>
 								<td colspan="6">
-									<% if(login_id != null) {%>
-									<a href="http://localhost:9000/dream/reviewboard/reviewWrite.jsp?login_id=<%= login_id %>">
+									<% if(sid != null) {%>
+									<a href="http://localhost:9000/dream/reviewboard/reviewWrite.jsp?login_id=<%= sid %>">
 									<% }else{ %>  <a href="http://localhost:9000/dream/login/login.jsp"> 
 									<% } %>
 											<button type="button" class="btn_style1">글쓰기</button>

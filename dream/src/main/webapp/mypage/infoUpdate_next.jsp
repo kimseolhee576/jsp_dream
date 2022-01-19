@@ -62,16 +62,16 @@
 						<ul>
 							<li>
 								<label>*아이디</label>
-								<input type="text" name="id" class="input_style1" value="<%= vo.getMem_id() %>" disabled>
+								<input type="text" name="mem_id" id="id" class="input_style1" value="<%= vo.getMem_id() %>" disabled>
 							</li>		
 							<li>
 								<label>*비밀번호</label>
-								<input type="password" name="pass" id="pass" class="input_style1" value="<%= vo.getMem_pass() %>" placeholder="영문+숫자 조합의 6~10자리" onkeyup="passCheck()">
+								<input type="password" name="mem_pass" id="pass" class="input_style1" value="<%= vo.getMem_pass() %>" placeholder="영문+숫자 조합의 6~10자리"  onkeyup="passCheck()">
 								<span id="passMsg"></span>
 							</li>		
 							<li>
 								<label>*비밀번호 확인</label>
-								<input type="password" name="cpass" id="cpass" class="input_style1" value="<%= vo.getMem_pass() %>" placeholder="영문+숫자 조합의 6~10자리" onkeyup="cpassCheck()">
+								<input type="password" name="mem_pass" id="cpass" class="input_style1" value="<%= vo.getMem_pass() %>" placeholder="영문+숫자 조합의 6~10자리" onblur="passSameCheck()" onkeyup="cpassCheck()">
 								<span id="cpassMsg"></span>
 							</li>		
 							<li>
@@ -84,8 +84,8 @@
 							</li>
 							<li>
 								<label>*이메일</label>
-								<input type="text" name="mem_email1" class="email" id="email1" value="<%= vo.getMem_email1() %>">
-								@ <input type="text" name="mem_email2" class="email" id="email2" value="<%= vo.getMem_email2() %>">
+								<input type="text" name="mem_email1" class="email" id="email1" onchange="emailCheck()" value="<%= vo.getMem_email1() %>">
+								@ <input type="text" name="mem_email2" class="email" id="email2" onchange="emailCheck()" value="<%= vo.getMem_email2() %>">
 								<select name="email" id="email3" onchange="emailSelectCheck()">
 									<option value="choice">선택</option>
 									<option value="naver.com">네이버</option>
@@ -101,8 +101,8 @@
 								<span id="hpMsg"></span>
 							</li>	
 							<li>
-								<button type="button" class="btn_style1" onclick="infoUpdateCheck()">수정 완료</button>
-								<button type="reset" class="btn_style1" onclick="resetForm()">다시 작성</button>
+								<button type="button" class="btn_style1" onclick="infoUpdateCheck()">수정완료</button>
+								<button type="reset" class="btn_style1" onclick="resetForm()">다시입력</button>
 							</li>
 						</ul>
 					</form> 
@@ -121,10 +121,10 @@
     <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     
-    <script src="http://localhost:9000/dream/js/contact.js"></script>
-    <!-- Bootstrap 4.3.1 -->
+   <!--  <script src="http://localhost:9000/dream/js/contact.js"></script>
+    <!-- Bootstrap 4.3.1
     <script src="http://localhost:9000/dream/plugins/bootstrap/js/popper.js"></script>
-    <script src="http://localhost:9000/dream/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="http://localhost:9000/dream/plugins/bootstrap/js/bootstrap.min.js"></script> -->
    
     
     <script src="http://localhost:9000/dream/js/script.js"></script>

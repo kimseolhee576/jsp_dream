@@ -57,32 +57,32 @@
 				<section class="info_update">
 				<h2>내 정보 수정</h2>
 					<section class="input-disabled">
-					 <form name="infoUpdateForm" action="" method="post">
+					<form name="infoUpdateForm" action="" method="post">
 						<ul>
 							<li>
 								<label>*아이디</label>
-								<input type="text" name="id" class="input_style1" value="<%= vo.getMem_id() %>" disabled>
+								<input type="text" name="mem_id" class="input_style1" value="<%= vo.getMem_id() %>" disabled>
 							</li>		
 							<li>
 								<label>*비밀번호</label>
-								<input type="password" name="pass" class="input_style1" value="<%= vo.getMem_pass() %>" disabled>
+								<input type="password" name="mem_pass" class="input_style1" value="<%= vo.getMem_pass() %>" disabled>
 							</li>		
 							<li>
 								<label>*성명</label>
-								<input type="text" name="name" class="input_style1" value="<%= vo.getMem_name() %>" disabled>
+								<input type="text" name="mem_name" class="input_style1" value="<%= vo.getMem_name() %>" disabled>
 							</li>		
 							<li>
 								<label>*생년월일</label>
-								<input type="text" name="birth" class="input_style1" value="<%= vo.getMem_birth() %>" disabled>
+								<input type="text" name="mem_birth" class="input_style1" value="<%= vo.getMem_birth() %>" disabled>
 							</li>
 							<li>
 								<label>*이메일</label>
-								<input type="text" name="email1" class="email" value="<%= vo.getMem_email1() %>" disabled>
-								@ <input type="text" name="email2" class="email"value="<%= vo.getMem_email2() %>"  disabled>
+								<input type="text" name="mem_email1" class="email" value="<%= vo.getMem_email1() %>" disabled>
+								@ <input type="text" name="mem_email2" class="email"value="<%= vo.getMem_email2() %>"  disabled>
 							</li>	
 							<li>
 								<label>*핸드폰번호</label>
-								<input type="text" name="hp" class="input_style1" value="<%= vo.getMem_hp() %>" disabled>
+								<input type="text" name="mem_hp" class="input_style1" value="<%= vo.getMem_hp() %>" disabled>
 							</li>	
 							<li>
 								<a href="http://localhost:9000/dream/mypage/infoUpdate_next.jsp">
@@ -91,7 +91,7 @@
 								<button type="button" class="btn_style1">탈퇴하기</button>
 							</li>
 						</ul>
-					</form> 
+					  </form>
 					</section>
 				</section>
 			</div>

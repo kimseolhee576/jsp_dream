@@ -107,7 +107,7 @@ public class MemberDao extends DBConn {
      */
     public MemberVO getInfo(String sid) {
         MemberVO vo = new MemberVO();
-        String sql = "select mem_id, mem_pass, mem_name, mem_birth, mem_email1, mem_email2, mem_hp, mem_date, mem_status "
+        String sql = "select mem_id, mem_pass, mem_name, mem_birth, mem_email1, mem_email2, lpad(mem_hp, 11,'0') mem_hp , mem_date, mem_status "
                 + " from member_table where mem_id='" + sid + "'";
         // System.out.println(sql);
         getPreparedStatement(sql);
@@ -124,10 +124,32 @@ public class MemberDao extends DBConn {
                 vo.setMem_date(rs.getString(8));
                 vo.setMem_status(rs.getInt(9));
             }
+            close();
         } catch (Exception e) {
             e.printStackTrace();
         }
         return vo;
     }
 
+    /**
+     * 내정보수정 - 수정하기 / 작성자:김설희
+     */
+    public int infoUpdate(MemberVO vo) {
+        int result = 0;
+        String sql = " update member_table SET mem_pass=?, mem_email1=?, mem_email2=?, mem_hp=? where mem_id=?";
+        getPreparedStatement(sql);
+        try {
+            pstmt.setString(1, vo.getMem_pass());
+            pstmt.setString(2, vo.getMem_email1());
+            pstmt.setString(3, vo.getMem_email2());
+            pstmt.setInt(4, vo.getMem_hp());
+            pstmt.setString(5, vo.getMem_id());
+
+            result = pstmt.executeUpdate();
+            close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
 }
