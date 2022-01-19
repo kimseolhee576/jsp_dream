@@ -3,6 +3,7 @@
 <%@ page import="com.dream.vo.QnaVO" %>
 <%@ page import="com.dream.dao.QnaDAO" %>
 <%@ page import="java.util.ArrayList" %>
+<%@ page import="java.time.LocalDate" %>
 
 <%
   QnaDAO dao = new QnaDAO();
@@ -86,13 +87,17 @@
   					</tr>
             <% for(QnaVO vo : list){ %>
     				<tr>
-              <td><%=vo.getQna_id() %></td>
-              <td><a href="qna_content.jsp?qna_id=<%=vo.getQna_id()%>">&emsp;<%=vo.getQna_title() %></a></td>
-              <td><%=vo.getMem_id1() %></td>
-              <td><%=vo.getQna_date() %></td>
-              <td><%=vo.getQna_hits() %></td>
-          </tr>
-          <% } %>
+		              <td><%=vo.getQna_id() %></td>
+		              <td style="font-weight: bold"><a href="qna_content.jsp?qna_id=<%=vo.getQna_id()%>">&emsp;<%=vo.getQna_title() %></a>&nbsp;
+		            <% LocalDate today = LocalDate.now();
+		            if(vo.getQna_date().equals(today.toString())){%>   
+		              <span class="badge badge-warning">new</span></td>
+		            <%} %> 
+		              <td><%=vo.getMem_id1() %></td>
+		              <td><%=vo.getQna_date() %></td>
+		              <td><%=vo.getQna_hits() %></td>
+		          </tr>
+           <%} %>  
           <tr>
             <td colspan="6">
     			<% if(sid!=null){ %>

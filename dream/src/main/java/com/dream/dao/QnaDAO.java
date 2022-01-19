@@ -11,7 +11,9 @@ public class QnaDAO extends DBConn {
      */
     public ArrayList<QnaVO> getList() {
         ArrayList<QnaVO> list = new ArrayList<QnaVO>();
-        String sql = "select * from qna_table order by qna_date desc";
+        String sql = "select qna_id, qna_title, qna_content, qna_hits, qna_status, mem_id1, "
+                + " to_char(qna_date,'yyyy-mm-dd') qna_date, mem_id2, qna_updatedate "
+                + " from (select * from qna_table order by qna_date desc)";
         getPreparedStatement(sql);
 
         try {
