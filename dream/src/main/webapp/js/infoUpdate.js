@@ -217,7 +217,7 @@ function passSameCheck(){
 * 탈퇴하기 
  */
 function memberStatus(){
-	if(confirm("동일한 ID로는 재가입이 불가능합니다. 정말로 탈퇴하시겠습니까? ")){
+	if(confirm("※주의사항※\n1. 동일한 ID로는 재가입이 불가능합니다.\n2. 탈퇴해도 작성한 글은 삭제되지 않습니다.\n정말로 탈퇴하시겠습니까?")){
 		statusForm.submit();
 	}
 }

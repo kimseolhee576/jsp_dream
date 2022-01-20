@@ -237,7 +237,7 @@ form[name="infoUpdateForm"] ul {
 	margin:auto;
 }
 form[name="statusForm"] ul {
-	width:900px;
+	width:800px;
 	margin:auto;
 }
 form[name="infoUpdateForm"] select {
@@ -256,6 +256,9 @@ input[type="text"]:disabled, input[type="password"]:disabled {
 }
 span#passMsg, span#cpassMsg, span#emailMsg, span#hpMsg{
 	font-size:9pt;
+}
+form[name="infoUpdateForm"] li:not(:last-child) { /*infoUpdate_next.jsp에서 버튼빼고 오른쪽으로 이동*/
+	margin-left:100px;
 }
 /**
 후기게시판-별점입력

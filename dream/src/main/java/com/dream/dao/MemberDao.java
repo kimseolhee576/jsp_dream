@@ -184,7 +184,7 @@ public class MemberDao extends DBConn {
      */
     public MemberVO getInfo(String sid) {
         MemberVO vo = new MemberVO();
-        String sql = "select mem_id, mem_pass, mem_name, mem_birth, mem_email1, mem_email2, lpad(mem_hp, 11,'0') mem_hp , mem_date, mem_status "
+        String sql = "select mem_id, mem_pass, mem_name, mem_birth, mem_email1, mem_email2, mem_hp , mem_date, mem_status "
                 + " from member_table where mem_id='" + sid + "'";
         // System.out.println(sql);
         getPreparedStatement(sql);
