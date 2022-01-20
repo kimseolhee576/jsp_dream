@@ -1484,5 +1484,12 @@ h3.quote::before {
   }
 }
 
+header.navigation {
+  position: fixed;
+  top: 0;
+  height: 168px;
+  width: 100%;
+  z-index: 1;
+}
 
 /*# sourceMappingURL=maps/style.css.map */
