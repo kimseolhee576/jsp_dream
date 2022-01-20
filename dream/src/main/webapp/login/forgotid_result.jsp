@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"  %>
 <%@ page import="java.util.ArrayList" %>
-
+<%
+    String userid = (String)session.getAttribute("userid");
+%>
 
 <!doctype html>
 <html lang="en">
@@ -13,7 +15,7 @@
   
   <meta name="author" content="themefisher.com">
 
-  <title>아이디 찾기 | 드림월드</title>
+  <title>아이디 찾기 결과 | 드림월드</title>
 <link rel="icon" href="http://localhost:9000/dream/images/favicon.png"> <!-- 파비콘 -->
   <!-- bootstrap.min css -->
   <link rel="stylesheet" href="http://localhost:9000/dream/plugins/bootstrap/css/bootstrap.min.css">
@@ -99,11 +101,11 @@
                             </ul> <!-- fieldsets -->
                             <fieldset>
                                 <div class="form-card" style="height:300px;">
-                                    <h2 class="fs-title">아이디 찾기</h2> 
-                                        <input type="text" name="mem_name" placeholder="이름" required>
-                                        <input type="text" name="mem_hp" placeholder="핸드폰 번호" required>
+                                    <h2 class="fs-title">아이디 찾기 결과</h2><br> 
+                                        <p class="find_result">회원님의 아이디는</p>
+                                        <p class="find_result"><b><%=userid%></b>입니다.</p>
                                         <button type="button" onclick="location.href='login.jsp'" class="btn_style3" style="float:left;">&#8678&nbsp;로그인</button>
-                                        <button type="submit" class="btn_style3" style="float:right;">PW찾기&nbsp;&#8680</button>
+                                        <button type="button" onclick="location.href='forgotpw.jsp'" class="btn_style3" style="float:right;">PW찾기&nbsp;&#8680</button>
                                  </div>
                             </fieldset>
                         </form>

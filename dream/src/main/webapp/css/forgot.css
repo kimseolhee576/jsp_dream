@@ -254,3 +254,8 @@ select.list-dt:focus {
      background-color: #8C8CFF;
      color: #000069;
 }
+
+.find_result{
+	font-family: "Poppins", sans-serif !important;
+	text-align: center !important;
+}
