@@ -150,18 +150,18 @@ table.notice_update tr:first-child td, table.notice_write tr:first-child td{
 	text-align:right;
 	padding-bottom:5px;
 }
-/*table.review_content tr:first-child { /* 리뷰 상세보기 표 양 옆 테두리 */
-/*	border-top:1px solid rgba(245, 248,249);
+/*table.review_content tr:first-child { /* 리뷰 상세보기 표 양 옆 테두리 
+	border-top:1px solid rgba(245, 248,249);
+	border-left:1px solid rgba(245, 248,249);
+	border-right:1px solid rgba(245, 248,249);
+}*/
+/*table.review_content tr:last-child { /* 리뷰 상세보기 표 양 옆 테두리 
+	border-bottom:1px solid rgba(245, 248,249);
 	border-left:1px solid rgba(245, 248,249);
 	border-right:1px solid rgba(245, 248,249);
 }
-table.review_content tr:last-child { /* 리뷰 상세보기 표 양 옆 테두리 */
-/*	border-bottom:1px solid rgba(245, 248,249);
-	border-left:1px solid rgba(245, 248,249);
-	border-right:1px solid rgba(245, 248,249);
-}
-table.review_content { /* 리뷰 상세보기 표 양 옆 테두리 */
-/*	border:1px solid #666;
+/*table.review_content { /* 리뷰 상세보기 표 양 옆 테두리 
+	border:1px solid #666;
 }*/
 table.review_content
 table.review_content tr,

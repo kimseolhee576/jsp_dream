@@ -32,8 +32,8 @@ public class ReviewDAO extends DBConn {
      */
     public ArrayList<ReviewVO> select() {
         ArrayList<ReviewVO> list = new ArrayList<ReviewVO>();
-        String sql = "select rownum rno,review_id, review_title, review_content,review_star,review_hits,review_status, mem_id1, to_char(review_date,'yyyy/mm/dd') review_date , mem_id2, review_updatedate from\r\n"
-                + "(select review_id, review_title, review_content,review_star,review_hits,review_status, mem_id1, review_date, mem_id2, review_updatedate from review_table order by review_date desc) where review_status=0";
+        String sql = "select rownum rno,review_id, review_title, review_content,review_star,review_hits,review_status, mem_id1, to_char(review_date,'yyyy/mm/dd') review_date , mem_id2, review_updatedate from (select rownum rno,review_id, review_title, review_content,review_star,review_hits,review_status, mem_id1, review_date, mem_id2, review_updatedate from\r\n"
+                + "(select review_id, review_title, review_content,review_star,review_hits,review_status, mem_id1, review_date, mem_id2, review_updatedate from review_table order by review_date)) where review_status=0 order by rno desc";
         getPreparedStatement(sql);
 
         try {
