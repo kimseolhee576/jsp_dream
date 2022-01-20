@@ -56,7 +56,8 @@ button.btn_style4 { /*글쓰기 하단*/
 	font-weight:bold;
 }
 table.review_content td.title_style,
-table.notice_content td.title_style { /*후기게시판 상세보기 제목*/
+table.notice_content td.title_style, 
+table.qna_content td.title_style { /*후기게시판 상세보기 제목*/
 	/*font-size:20pt;*/
 	width:70%;
 }
@@ -199,7 +200,9 @@ form[name="reviewDeleteForm"] th,
 form[name="reviewWriteForm"] th,
 form[name="notice_contentform"] th,
 form[name="notice_updateform"] th,
-form[name="notice_writeform"] th{ /* 글 수정 th 색깔*/
+form[name="notice_writeform"] th,
+form[name="qna_update_form"] th,
+form[name="qna_delete_form"] th{ /* 글 수정 th 색깔*/
 	background:#B4B4FF;
 	text-align:center;
 }
@@ -302,3 +305,25 @@ label.list_star {
 	text-shadow: 0 0 0 rgba(255,150,61);
 
 }
+
+/**
+*문의게시판
+*/
+#qna_write_btn { 
+    margin-left:15px;
+    margin-top:5px;
+    padding:5px 15px;
+    background:#534bae;
+    border:1px solid #534bae;
+    color:white;
+    font-size:11pt;
+    font-weight:bold;
+}
+
+ #qna_write_btn:hover {
+     background-color: #8C8CFF;
+     color: #000069;
+}
+
+    
+   

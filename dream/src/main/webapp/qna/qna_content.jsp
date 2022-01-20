@@ -38,7 +38,7 @@ QnaVO vo = new QnaDAO().getQnaVO(qna_id);
   <link rel="stylesheet" href="http://localhost:9000/dream/css/style.css">
 
   <!-- 게시판 스타일 통일-->
-  <link href="http://localhost:9000/dream/css/qna.css" rel="stylesheet">
+  <link href="http://localhost:9000/dream/css/dreamReview.css" rel="stylesheet">
 
 
 </head>
@@ -67,86 +67,80 @@ QnaVO vo = new QnaDAO().getQnaVO(qna_id);
 <section class="section blog-wrap bg-gray">
     <div class="container">
       <div class="content">
-      <section class="review_board">
-       <h2 style="padding-top: 50px">문의게시판</h2>
-      			<table class="qna_table">
-					<tbody>
+        <section>
+             <h2>문의게시판</h2>
+               <form name="qna_delete_form" action="qna_delete_proc.jsp" method="post" >
+                  <input type="hidden" name="qna_id" value="<%= qna_id %>" >
+                     <table class="review_content" >
+                        <tr>
+                            <td colspan="4">
+                                <a href="http://localhost:9000/dream/qna/qna_list.jsp">
+                                    <button type="button" class="btn_style2">목록</button>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
 						<tr>
 							<th>제목</th>
-							<td colspan="3">&emsp;<%=vo.getQna_title() %></td>
-						</tr>
-						<tr>
-						    <th>작성자</th>
-	                        <td class="col2">&emsp;<%=vo.getMem_id1() %></td>
-	                        <th>작성일</th>
-	                        <td>&emsp;<%=vo.getQna_date() %></td>
-	                    </tr>
-						<tr>
-							<th>파일첨부</th>
-	                        <td class="col2">&emsp;</td>
-	                        <th>조회수</th>
-	                        <td>&emsp;<%=vo.getQna_hits() %></td>
-						</tr>
+                            <td class="title_style">&nbsp;&nbsp;<%= vo.getQna_title() %></td>
+                            <td class="date_style">날짜 <%= vo.getQna_date() %></td>
+                            <td class="date_style">조회수 <%= vo.getQna_hits() %></td>
+                        </tr>   
+                        <tr>
+                            <th>작성자</th><td colspan="3" class="star_style">&nbsp;&nbsp; <%= vo.getMem_id1() %></td>   
+                        </tr>  
 	                    <tr>
-	                        <th>내용</th>
-	                        <td colspan="4" style="height: 350px; text-align:left;">&emsp;<%=vo.getQna_content() %></td>
+	                        <th>내용</th><td colspan="4" height="300px">&nbsp;&nbsp;<%= vo.getQna_content() %></td>
 	                    </tr>
-					</tbody>
-			     </table>
-
-
-	           <table class="qna_table" style="background-color: transparent;">
-	                  <%-- 홀,짝 행 구분 --%>
-	                  <thead>
+					<tr>
+                        <% if(vo.getMem_id1().equals(sid) || "admin".equals(sid)){ %>
+                            <td colspan="4">
+                                <a href="http://localhost:9000/dream/reviewboard/qna_update.jsp?qna_id=<%= vo.getQna_id()%>">
+                                    <button type="button" class="btn_style1">수정</button>
+                                </a>
+                                    <button type="button" class="btn_style1" onclick="reviewDelete()">삭제</button>
+                            </td>
+                        <% }else{ %>
+                            <td colspan="4"></td>
+                        <% } %>
+                    </tr>
+                  </table>
+               </form> 
+                               
+               <form name="qna_comment_form" style="padding:0 60px !important;" method="post" action="comm_write_proc.jsp?qna_id=<%=vo.getQna_id()%>&mem_id=<%=sid%>">
+                   <table class="qna_comment" style="border-bottom: none; margin:auto" >
+                       <tbody style="display:block;"> 
 	                      <tr>
-	                          <td colspan="5" style="font-weight: bold; color: black;">댓글</td>
+	                          <td colspan="5" style="font-weight: bold; color: black; border-bottom: 2px solid black">댓글</td>
 	                      </tr>
-	                  </thead>
-	                      <%
-	                         CommDAO dao = new CommDAO();
-	                         ArrayList<CommVO> list = dao.getList(vo.getQna_id());
-	                         for(int i=0; i<list.size(); i++){
-	                      %>
-	                  <tbody>
+                      <%
+                        CommDAO dao = new CommDAO();
+                        ArrayList<CommVO> list = dao.getList(vo.getQna_id());
+                        for(int i=0; i<list.size(); i++){
+                       %>   
 	                      <tr>
-	                          <td id="comment_id"><%= list.get(i).getMem_id() %></td>
-	                          <td id="comment"><%= list.get(i).getComm_content() %>
+	                          <td><%= list.get(i).getMem_id1() %></td>
+	                          <td><%= list.get(i).getComm_content() %>
 	                          <td style="text-align: right; width: 20%;"><%= list.get(i).getComm_date() %>
-	                      <% if(sid != null && sid.equals(list.get(i).getMem_id())){ %>     
-	                          <td><a href="update.jsp?bbsID=수정"><button type="button" class="btn_style3">수정</button></a></td>
-	                          <td><a href="update.jsp?bbsID=삭제" class="btn_style3">삭제</a></td>
-	                      <% }else{ %>
-	                          <td></td>
-	                          <td></td>
 	                      </tr>
-	                      <% } %>
-	                        
-	                   <% if("admin".equals(sid) || list.get(i).getMem_id().equals(sid)){ %> 
-	                   <form method="post" action="comm_write_proc.jsp?qna_id=<%=vo.getQna_id()%>&mem_id=<%=sid%>">
-	                     <tr>
-	                         <td style="text-align: left;"><%=sid %></td>
-	                         <td colspan="2"><input type="text" style="height:100px; width:100%;" class="form-control" placeholder="(200자 이내)" name = "comm_content"></td>
-	                         <td colspan="2" style="text-align: right;"><input type="submit" class="btn_style3" value="댓글 등록"></td>
-	                     </tr>
-	                   </form>
-	                 <%} %>  
-	               <% } %> 
-	               </tbody>
-            </table>
-           <table class="qna_table">
-              <% if(vo.getMem_id1().equals(sid)|| "admin".equals(sid)){ %>   
-               <tbody> 
-	              <tr><a href="qna_list.jsp" class="btn_style3">목록</a></tr>
-		          <tr><a href="qna_update.jsp?qna_id=<%=qna_id%>" class="btn_style3">수정</a></tr>
-		          <tr><a href="qna_delete_proc.jsp?qna_id=<%=qna_id%>" class="btn_style3">삭제</a></tr>
-		       </tbody> 
-		      <% } %>
-	       </table>  
+                      <% }  %>
+                         </tbody> 
+                      <% if(vo.getMem_id1().equals(sid)|| "admin".equals(sid)){ %>  
+                         <tbody style="border-bottom: none !important; margin:auto">
+		                     <tr style="border-bottom: none !important; margin:auto">
+		                         <td style="text-align: left;"><%=sid %>&emsp;</td>
+		                         <td style="width: 700px !important"><input type="text" style="height:100px; width:100%;" class="form-control" placeholder="댓글을 등록해주세요(200자 이내)" name = "comm_content" required></td>
+		                         <td style="text-align: right;">&emsp;<button type="submit" class="btn_style3">댓글 등록</button></td>
+		                     </tr>
+		                 </tbody>    
+	                  <% } %>   
+                   </table>
+               </form>    
 	      </section> 
 	   </div>
     </div>
 </section> 
-</div>   
+</div>  
 <!-- footer Start -->
 <%@include file ="../footer.jsp" %>
 

@@ -21,7 +21,7 @@ public class CommDAO extends DBConn {
                 CommVO vo = new CommVO();
                 vo.setComm_id(rs.getInt(1));
                 vo.setQna_id(rs.getInt(2));
-                vo.setMem_id(rs.getString(3));
+                vo.setMem_id1(rs.getString(3));
                 vo.setComm_content(rs.getString(4));
                 vo.setComm_date(rs.getString(5));
 
@@ -43,8 +43,8 @@ public class CommDAO extends DBConn {
 
         try {
             pstmt.setInt(1, vo.getQna_id());
-            pstmt.setString(2, vo.getMem_id());
-            pstmt.setString(3, vo.getComm_content());
+            pstmt.setString(2, vo.getComm_content());
+            pstmt.setString(3, vo.getMem_id1());
 
             result = pstmt.executeUpdate();
 

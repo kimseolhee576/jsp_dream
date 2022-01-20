@@ -27,6 +27,9 @@
 
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="http://localhost:9000/dream/css/style.css">
+  
+   <!-- 게시판 스타일 통일-->
+  <link href="http://localhost:9000/dream/css/dreamReview.css" rel="stylesheet">
 
 </head>
 
@@ -56,34 +59,36 @@
       <div class="content">
           <section class="review_board">
             <h2>문의게시판</h2>
-        <div class="row" style="display: block;">
-            <form method="post" action="qna_write_proc.jsp">
-        				<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
-        					<thead>
-          						<tr>
-          							<th colspan="2"  style="background-color: #eeeeee; text-align: center;">게시판 글쓰기 양식</th>
-          						</tr>
-        					</thead>
-        					<tbody>
-          						<tr>
-        					       <td>
-                            <input type="text" class="form-control" id="qna_title" placeholder="제목을 입력해주세요" name="qna_title" maxlength="50">
-                          </td>
-          						</tr>
-        						<tr>
-            					   <td>
-                            <textarea class="form-control" id="qna_content" placeholder="내용을 입력해주세요" name="qna_content" maxlength="500" style="height: 350px;">
-                            </textarea>
-                        </td>
-        						</tr>
-        					</tbody>
-        				</table>
-        				<input type="submit" class="btn btn-primary pull-right" id="qna_write_button" value="글쓰기">
-            </form>
+                <form name="reviewWriteForm" method="post" action="qna_write_proc.jsp">
+        				<table class="review_write">
+          					<tr>
+	                            <td colspan="2">
+	                                <a href="http://localhost:9000/dream/qna/qna_list.jsp">
+	                                    <button type="button" class="btn_style2">목록</button>
+	                                </a>
+	                            </td>
+	                        </tr>
+	                        <tr>
+	                            <th>제목</th>
+	                            <td><input type="text" id="qna_title" name="qna_title" placeholder="제목을 입력해주세요" style="width: 99%"></td>
+	                        </tr>   
+	                        <tr>
+	                            <th>내용</th>
+	                            <td>
+	                                <textarea id="qna_content" name="qna_content" rows="7" cols="70"  placeholder="내용을 입력해주세요"></textarea>
+	                            </td>
+	                        </tr>
+	                        <tr>
+	                            <td colspan="2">
+	                                <button type="submit" id="qna_write_btn">등록</button>
+	                                <button type="reset" class="btn_style1">다시쓰기</button>
+	                            </td>
+	                        </tr>
+	                    </table>
+	                </form>
+	           </section>
 		    </div>
-		  </section>
-		</div>    
-    </div>
+		</div>  
 </section>
 
 </div>
