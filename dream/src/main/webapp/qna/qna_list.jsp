@@ -100,12 +100,7 @@
            <%} %>  
           <tr>
             <td colspan="6">
-    			<% if(sid!=null){ %>
-    			     <a href="http://localhost:9000/dream/qna/qna_write.jsp"> 	<button type="button" class="btn_style1">글쓰기</button>
-               </a>
-    			<% }else{ %>
-    			     <button type="button" class="btn_style1" onclick="qnaLoginAlert()">글쓰기</button>
-                <% } %>
+    			     <a href="http://localhost:9000/dream/qna/qna_list_proc.jsp"> 	<button type="button" class="btn_style1">글쓰기</button></a>
             </td>
           </tr>
         </table>

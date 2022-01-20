@@ -83,7 +83,7 @@ QnaVO vo = new QnaDAO().getQnaVO(qna_id);
 	                    </tr>
 						<tr>
 							<th>파일첨부</th>
-	                        <td class="col2">&emsp;<input type="file" name="fileName"></td>
+	                        <td class="col2">&emsp;</td>
 	                        <th>조회수</th>
 	                        <td>&emsp;<%=vo.getQna_hits() %></td>
 						</tr>
@@ -95,11 +95,11 @@ QnaVO vo = new QnaDAO().getQnaVO(qna_id);
 			     </table>
 
 
-	           <table class="qna_table">
+	           <table class="qna_table" style="background-color: transparent;">
 	                  <%-- 홀,짝 행 구분 --%>
 	                  <thead>
 	                      <tr>
-	                          <td colspan="5">댓글</td>
+	                          <td colspan="5" style="font-weight: bold; color: black;">댓글</td>
 	                      </tr>
 	                  </thead>
 	                      <%
@@ -111,7 +111,7 @@ QnaVO vo = new QnaDAO().getQnaVO(qna_id);
 	                      <tr>
 	                          <td id="comment_id"><%= list.get(i).getMem_id() %></td>
 	                          <td id="comment"><%= list.get(i).getComm_content() %>
-	                          <td style="text-align: right;"><%= list.get(i).getComm_date() %>
+	                          <td style="text-align: right; width: 20%;"><%= list.get(i).getComm_date() %>
 	                      <% if(sid != null && sid.equals(list.get(i).getMem_id())){ %>     
 	                          <td><a href="update.jsp?bbsID=수정"><button type="button" class="btn_style3">수정</button></a></td>
 	                          <td><a href="update.jsp?bbsID=삭제" class="btn_style3">삭제</a></td>
@@ -120,7 +120,8 @@ QnaVO vo = new QnaDAO().getQnaVO(qna_id);
 	                          <td></td>
 	                      </tr>
 	                      <% } %>
-	                    <% } %>       
+	                        
+	                   <% if("admin".equals(sid) || list.get(i).getMem_id().equals(sid)){ %> 
 	                   <form method="post" action="comm_write_proc.jsp?qna_id=<%=vo.getQna_id()%>&mem_id=<%=sid%>">
 	                     <tr>
 	                         <td style="text-align: left;"><%=sid %></td>
@@ -128,7 +129,8 @@ QnaVO vo = new QnaDAO().getQnaVO(qna_id);
 	                         <td colspan="2" style="text-align: right;"><input type="submit" class="btn_style3" value="댓글 등록"></td>
 	                     </tr>
 	                   </form>
-	                 
+	                 <%} %>  
+	               <% } %> 
 	               </tbody>
             </table>
            <table class="qna_table">
