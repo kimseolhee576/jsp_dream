@@ -90,7 +90,7 @@
 		              <td><%=vo.getQna_id() %></td>
 		              <td style="font-weight: bold"><a href="qna_content.jsp?qna_id=<%=vo.getQna_id()%>">&emsp;<%=vo.getQna_title() %></a>&nbsp;
 		            <% LocalDate today = LocalDate.now();
-		            if(vo.getQna_date().equals(today.toString())){%>   
+		            if(today.toString().equals(vo.getQna_date())){%>   
 		              <span class="badge badge-warning">new</span></td>
 		            <%} %> 
 		              <td><%=vo.getMem_id1() %></td>
