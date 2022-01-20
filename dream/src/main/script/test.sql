@@ -123,7 +123,9 @@ DROP TABLE REVIEW_TABLE; --후기게시판
 --회원가입 테이블 안에 데이터 모두 삭제
 DELETE FROM MEMBER_TABLE;
 
+select * from notice_table;
 
+insert into notice_table values('n_'||sequ_notice_table.nextval,'제목','내용',12,0,'test1',sysdate-1,'test1',sysdate);
 
 
 
