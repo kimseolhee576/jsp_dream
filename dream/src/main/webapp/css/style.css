@@ -1495,7 +1495,9 @@ header.navigation {
 .main-wrapper {
 	 padding-top: 168px;
 }
-
+#MapTxt, .txt {
+	font-family:"Poppins", sans-serif;
+}
 
 
 /*# sourceMappingURL=maps/style.css.map */
