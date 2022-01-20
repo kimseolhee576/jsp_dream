@@ -90,7 +90,7 @@
 									<option value="choice">선택</option>
 									<option value="naver.com">네이버</option>
 									<option value="google.com">구글</option>
-									<option value="naver.com">다음</option>
+									<option value="daum.net">다음</option>
 									<option value="self">직접입력</option>
 								</select>
 								 <span id="emailMsg"></span>

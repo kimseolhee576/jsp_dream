@@ -7,10 +7,21 @@
 MemberDao dao = new MemberDao();
 int result = dao.infoUpdate(vo);
 
-if(result == 1){
-    response.sendRedirect("myPage.jsp");
-}
-
 %>
-
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title></title>
+</head>
+<body>
+<% if(result == 1 ){ %>
+	<script>
+	alert("회원정보가 수정되었습니다.");
+	location.href="myPage.jsp";
+	</script>
+<% } %>
+</body>
+</html>
 
