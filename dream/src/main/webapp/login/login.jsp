@@ -2,6 +2,10 @@
     pageEncoding="UTF-8"  %>
 <%@ page import="java.util.ArrayList" %>
 
+<%
+	String login_result = request.getParameter("login_result");
+	String join_result = request.getParameter("join_result");
+%>
 
 <!doctype html>
 <html lang="en">
@@ -135,6 +139,12 @@
 
   
     <script src="http://localhost:9000/dream/js/script.js"></script>
+    <script>
+    /* 회원가입 성공 메시지 출력 */
+	if('<%=join_result%>' == 'succ'){
+		alert("회원가입에 성공하셨습니다. 로그인 페이지로 이동합니다.");
+	}
+    </script>
 
   </body>
   </html>
