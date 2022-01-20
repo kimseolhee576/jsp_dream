@@ -1,3 +1,19 @@
+/**
+ * 아이디 찾기 결과 출력 
+ */
+function getFindIdResult(id){
+    if(id.value!=""){
+        if(confirm('회원님의 아이디는'+id+'입니다. 로그인으로 이동하시겠습니까?')){
+            location.href='http://localhost:9000/dream/login/login.jsp'
+            }else{
+                location.href='http://localhost:9000/dream/login/forgotpw.jsp'
+            } 
+        }else{
+            alert('일치하는 회원 정보가 없습니다.')
+            history.back()
+    }
+}
+
 $(document).ready(function(){
 
 var current_fs, next_fs, previous_fs; //fieldsets
@@ -66,3 +82,8 @@ return false;
 })
 
 });
+
+
+function findIdResult(){
+ =
+}

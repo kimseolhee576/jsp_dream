@@ -58,7 +58,7 @@ public class MemberDao extends DBConn {
      */
     public int getLoginResult(MemberVO vo) {
         int result = 0;
-        String sql = "select count(*) from member_table where mem_id=? and mem_pass=?";
+        String sql = "select count(*) from member_table where mem_id=? and mem_pass=? and mem_status=0";
         getPreparedStatement(sql);
 
         try {
@@ -82,9 +82,9 @@ public class MemberDao extends DBConn {
     /**
      * 아이디 찾기--입력받은 이름, 핸드폰 번호를 db와 비교
      */
-    public int getFindIdResult(MemberVO vo) {
-        int result = 0;
-        String sql = "select count(*) from member_table where mem_name=? and mem_hp=?";
+    public String getFindIdResult(MemberVO vo) {
+        String result = null;
+        String sql = "select rpad(substr(mem_id, 1, length(mem_id)-2), length(mem_id), '*') from member_table where mem_name=? and mem_hp=?";
         getPreparedStatement(sql);
 
         try {
@@ -94,7 +94,7 @@ public class MemberDao extends DBConn {
             rs = pstmt.executeQuery();
 
             while (rs.next()) {
-                result = rs.getInt(1);
+                result = rs.getString(1);
             }
 
             close();
@@ -102,6 +102,7 @@ public class MemberDao extends DBConn {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
         return result;
     }
 
