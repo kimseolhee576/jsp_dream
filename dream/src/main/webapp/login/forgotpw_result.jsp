@@ -105,11 +105,11 @@
                                         <p class="find_result" style="font-size:11px; margin-bottom:0;">인증에 성공하셨습니다!</p>
                                         <p class="find_result" style="font-size:11px; margin-top:0;">새로 비밀번호를 설정해주세요</p><br>
                                         
-                                        <input type="password" name="mem_pass" placeholder="비밀번호(영문+숫자 조합의 6~10자리)" id="pass" onKeyup="passCheck()" >
+                                        <input type="password" name="mem_pass" placeholder="비밀번호(영문+숫자 조합의 6~10자리)" id="pass" onblur="passSameCheck()" onKeyup="passCheck()" required>
                                         <span id="passMsg"></span>
                                         <input type="password" placeholder="비밀번호 확인(영문+숫자 조합의 6~10자리)" id="cpass" onblur="passSameCheck()" onKeyup="cpassCheck()" required>
                                         <span id="cpassMsg"></span>
-                                        <button type="submit" class="btn_style3" style="padding:11px 110px; color:white; margin:25px auto;">완료</button>
+                                        <button type="button" onclick="updatePassworFormCheck()" class="btn_style3" style="padding:11px 110px; color:white; margin:25px auto;">완료</button>
                                  </div>
                             </fieldset>
                         </form>
@@ -151,7 +151,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="http://localhost:9000/dream/js/forgot.js"></script>
-    <script src="http://localhost:9000/dream/js/join.js"></script>
 
   </body>
   </html>
