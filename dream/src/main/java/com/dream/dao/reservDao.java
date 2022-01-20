@@ -14,8 +14,6 @@ public class reservDao extends DBConn {
                 + "',?,?,?,?,sysdate,?,?)";
         getPreparedStatement(sql);
 
-        System.out.println(sql);
-
         try {
 
             pstmt.setString(1, vo.getReserv_ss());
