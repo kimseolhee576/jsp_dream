@@ -77,7 +77,7 @@
 							<tr>
 								<th>내용</th>
 								<td>
-									<textarea name="ncontent" rows="7" cols="70"><%=vo.getNcontent() %></textarea>
+									<textarea name="ncontent" rows="13" cols="70"><%=vo.getNcontent() %></textarea>
 								</td>
 							</tr>
 							<tr>

@@ -192,7 +192,10 @@ table.notice_list td, table.notice_write td {
 /*후기게시판- 글 수정*/
 form[name="reviewUpdateForm"] th,
 form[name="reviewDeleteForm"] th,
-form[name="reviewWriteForm"] th{ /* 글 수정 th 색깔*/
+form[name="reviewWriteForm"] th,
+form[name="notice_contentform"] th,
+form[name="notice_updateform"] th,
+form[name="notice_writeform"] th{ /* 글 수정 th 색깔*/
 	background:#B4B4FF;
 	text-align:center;
 }

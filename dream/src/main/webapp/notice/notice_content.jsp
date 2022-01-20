@@ -46,13 +46,7 @@
 	  <div class="row">
 	    <div class="col-md-12">
 	       <div class="block text-center">
-	          <!-- <span class="text-white">News details</span> -->
 	         <h1 class="text-capitalize mb-4 text-lg">고객센터</h1>
-	         <ul class="list-inline">
-	            <!-- <li class="list-inline-item"><a href="../index.jsp" class="text-white">Home</a></li>
-	            <li class="list-inline-item"><span class="text-white">/</span></li>
-	            <li class="list-inline-item"><a href="#" class="text-white-50">News details</a></li> -->
-	         </ul>
 	       </div>
 	     </div>
 	   </div>
@@ -67,28 +61,29 @@
 						<h2>공지사항</h2>
 						<table class="notice_content">
 							<tr>
-								<td colspan="3">
+								<td colspan="4">
 									<a href="notice_list.jsp">
 										<button type="button" class="btn_style2">목록</button>
 									</a>
 								</td>	
 							</tr>
 							<tr>
+								<th>제목</th>
 								<td class="title_style"><%= vo.getNtitle() %></td>
 								<td class="date_style">날짜: <%=vo.getNotice_date() %></td>
 								<td class="date_style">조회수: <%=vo.getNotice_hits() %></td>
 							</tr>
 							<tr>
-								<td colspan="3"><%=vo.getNcontent() %></td>
+								<th>내용</th><td colspan="4" height="300px"><%=vo.getNcontent() %></td>
 							</tr>
 							<tr>
 							<%if ("admin".equals(sid)) { %>
-								<td colspan="3">
+								<td colspan="4">
 									<a href="notice_update.jsp?notice_id=<%= notice_id%>"><button type="button" class="btn_style1">수정</button></a>
 									<button type="button" onclick="notice_delete()" class="btn_style1">삭제</button>
 								</td>
 							<% }else{ %>
-								<td colspan="3"></td>
+								<td colspan="4"></td>
 							<% } %>
 							
 							</tr>

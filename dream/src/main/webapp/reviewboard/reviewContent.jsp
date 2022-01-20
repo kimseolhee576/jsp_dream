@@ -90,7 +90,7 @@
 							</td>
 						</tr>
 						<tr>
-							<th>내용</th><td colspan="3" height="300px">&nbsp;&nbsp;<%= vo.getReview_content() %></td>
+							<th>내용</th><td colspan="4" height="300px">&nbsp;&nbsp;<%= vo.getReview_content() %></td>
 						</tr>
 						<tr>
 						<% if(vo.getMem_id1().equals(sid) || "admin".equals(sid)){ %>
@@ -101,7 +101,7 @@
 									<button type="button" class="btn_style1" onclick="reviewDelete()">삭제</button>
 							</td>
 							<% }else{ %>
-							<td colspan="3">
+							<td colspan="4">
 							</td>
 							<% } %>
 						</tr>
