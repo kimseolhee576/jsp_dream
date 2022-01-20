@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"  %>
-<%@ page import="java.util.ArrayList" %>
-
+<% String mem_id = request.getParameter("mem_id"); %>   
 
 <!doctype html>
 <html lang="en">
@@ -13,7 +12,7 @@
   
   <meta name="author" content="themefisher.com">
 
-  <title>아이디 찾기 | 드림월드</title>
+  <title>비밀번호 찾기 결과 | 드림월드</title>
 <link rel="icon" href="http://localhost:9000/dream/images/favicon.png"> <!-- 파비콘 -->
   <!-- bootstrap.min css -->
   <link rel="stylesheet" href="http://localhost:9000/dream/plugins/bootstrap/css/bootstrap.min.css">
@@ -86,24 +85,27 @@
     <div class="row justify-content-center mt-0" style="width: 800px; margin:auto">
         <div class="col-11 col-sm-9 col-md-7 col -lg-6 text-center p-0 mt-3 mb-2" >
             <div class="card px-0 pt-4 pb-0 mt-3 mb-3" style="padding: 50px !important;">
-                <h2><strong>아이디 찾기</strong></h2>
-                <p class="msg">가입시 입력한 정보를 적어주세요</p>
+                <h2><strong>비밀번호 찾기 결과</strong></h2>
+                <p></p>
                 <div class="row">
                     <div class="col-md-12 mx-0">
-                        <form name="forgotid_form" action="forgotid_proc.jsp" method="post" id="msform">
+                        <form name="forgotid_form" action="updatepw_proc.jsp" method="post" id="msform">
+                            <input type="hidden" name="mem_id" value="<%=mem_id%>">
                             <!-- progressbar -->
                             <ul id="progressbar">
-                                <li class="active" id="personal"><strong>아이디 찾기</strong></li>
+                                <li id="personal"><strong>아이디 찾기</strong></li>
                                 <li id="account"><strong>비밀번호 찾기</strong></li>
-                                <li id="confirm"><strong>비밀번호 재설정</strong></li>
+                                <li class="active" id="confirm"><strong>비밀번호 재설정</strong></li>
                             </ul> <!-- fieldsets -->
                             <fieldset>
-                                <div class="form-card" style="height:300px;">
-                                    <h2 class="fs-title"></h2> 
-                                        <input type="text" name="mem_name" placeholder="이름(한글)" required>
-                                        <input type="text" name="mem_hp" placeholder="핸드폰 번호(ex.01012345678)" required>
-                                        <button type="button" onclick="location.href='login.jsp'" class="btn_style3" style="float:left;">&#8678&nbsp;로그인</button>
-                                        <button type="submit" class="btn_style3" style="float:right;">ID찾기&nbsp;&#8680</button>
+                                <div class="form-card" style="height:400px;">
+                                    <h2 class="fs-title"></h2>
+                                        <p class="find_result" style="font-size:14px; margin-bottom:0;">인증에 성공하셨습니다!</p>
+                                        <p class="find_result" style="font-size:14px; margin-top:0;">새로 비밀번호를 설정해주세요</p><br>
+                                        
+                                        <input type="password" name="mem_pass" placeholder="비밀번호" required>
+                                        <input type="password" placeholder="비밀번호 확인" required>
+                                        <button type="submit" class="btn_style3" style="padding:11px 110px; color:white; margin:25px auto;">완료</button>
                                  </div>
                             </fieldset>
                         </form>

@@ -106,6 +106,56 @@ public class MemberDao extends DBConn {
         return result;
     }
 
+    /**
+     * 비번 찾기--입력받은 아이디, 이름, 생년월일, 핸드폰 번호를 db와 비교
+     */
+    public int getFindPwResult(MemberVO vo) {
+        int result = 0;
+        String sql = "select count(*) from member_table where mem_id=? and mem_name=? and mem_birth=? and mem_hp=?";
+        getPreparedStatement(sql);
+
+        try {
+            pstmt.setString(1, vo.getMem_id());
+            pstmt.setString(2, vo.getMem_name());
+            pstmt.setInt(3, vo.getMem_birth());
+            pstmt.setString(4, vo.getMem_hp());
+
+            rs = pstmt.executeQuery();
+
+            while (rs.next()) {
+                result = rs.getInt(1);
+            }
+
+            close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return result;
+    }
+
+    /**
+     * 비번 새로 설정--입력받은 비밀번호를 db에 업데이트
+     */
+    public int setNewPassword(MemberVO vo, String mem_id) {
+        int result = 0;
+        String sql = "update member_table set mem_pass=? where mem_id='" + mem_id + "'";
+        getPreparedStatement(sql);
+
+        try {
+            pstmt.setString(1, vo.getMem_pass());
+
+            result = pstmt.executeUpdate();
+            close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return result;
+    }
+
 //    public int login(String ) {
 //        int result = 0;
 //        String sql = "select count(*) from member_table where mem_id=? and mem_pass=?";

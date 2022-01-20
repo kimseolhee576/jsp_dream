@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"  %>
-<%@ page import="java.util.ArrayList" %>
 <%
     String userid = (String)session.getAttribute("userid");
 %>
@@ -88,8 +87,8 @@
     <div class="row justify-content-center mt-0" style="width: 800px; margin:auto">
         <div class="col-11 col-sm-9 col-md-7 col -lg-6 text-center p-0 mt-3 mb-2" >
             <div class="card px-0 pt-4 pb-0 mt-3 mb-3" style="padding: 50px !important;">
-                <h2><strong>뭐라고 쓰지</strong></h2>
-                <p>일단 보류</p>
+                <h2><strong>아이디 찾기 결과</strong></h2>
+                <p></p>
                 <div class="row">
                     <div class="col-md-12 mx-0">
                         <form name="forgotid_form" action="forgotid_proc.jsp" method="post" id="msform">
@@ -100,10 +99,10 @@
                                 <li id="confirm"><strong>비밀번호 재설정</strong></li>
                             </ul> <!-- fieldsets -->
                             <fieldset>
-                                <div class="form-card" style="height:300px;">
-                                    <h2 class="fs-title">아이디 찾기 결과</h2><br> 
+                                <div class="form-card" style="height:270px;">
+                                    <h2 class="fs-title"></h2><br> 
                                         <p class="find_result">회원님의 아이디는</p>
-                                        <p class="find_result"><b><%=userid%></b>입니다.</p>
+                                        <p class="find_result" style="margin-bottom:20px"><b><%=userid%></b>입니다.</p>
                                         <button type="button" onclick="location.href='login.jsp'" class="btn_style3" style="float:left;">&#8678&nbsp;로그인</button>
                                         <button type="button" onclick="location.href='forgotpw.jsp'" class="btn_style3" style="float:right;">PW찾기&nbsp;&#8680</button>
                                  </div>

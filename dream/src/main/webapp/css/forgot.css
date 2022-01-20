@@ -239,7 +239,7 @@ select.list-dt:focus {
 
 .btn_style3 { 
     margin-left:10px;
-    margin-top:5px;
+    margin-top:10px;
     padding:10.5px 20px;
     background:#534bae;
     border:1px solid #534bae;
@@ -258,4 +258,9 @@ select.list-dt:focus {
 .find_result{
 	font-family: "Poppins", sans-serif !important;
 	text-align: center !important;
+	color: black;
+}
+
+.msg{
+	font-family: "Poppins", sans-serif !important;
 }
