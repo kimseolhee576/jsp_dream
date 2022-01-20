@@ -32,7 +32,7 @@ public class ReviewDAO extends DBConn {
      */
     public ArrayList<ReviewVO> select() {
         ArrayList<ReviewVO> list = new ArrayList<ReviewVO>();
-        String sql = "select rownum rno,review_id, review_title, review_content,review_star,review_hits,review_status, mem_id1, to_char(review_date,'yyyy/mm/dd') review_date , mem_id2, review_updatedate from (select rownum rno,review_id, review_title, review_content,review_star,review_hits,review_status, mem_id1, review_date, mem_id2, review_updatedate from\r\n"
+        String sql = "select rownum rno,review_id, review_title, review_content,review_star,review_hits,review_status, mem_id1, to_char(review_date,'yyyy-mm-dd') review_date , mem_id2, review_updatedate from (select rownum rno,review_id, review_title, review_content,review_star,review_hits,review_status, mem_id1, review_date, mem_id2, review_updatedate from\r\n"
                 + "(select review_id, review_title, review_content,review_star,review_hits,review_status, mem_id1, review_date, mem_id2, review_updatedate from review_table order by review_date)) where review_status=0 order by rno desc";
         getPreparedStatement(sql);
 
@@ -66,7 +66,7 @@ public class ReviewDAO extends DBConn {
      */
     public ReviewVO select(String review_id, String page) {
         ReviewVO vo = new ReviewVO();
-        String sql = "select review_id, review_title, review_content,review_star,review_hits,review_status, mem_id1, to_char(review_date,'yyyy/mm/dd') review_date, mem_id2, review_updatedate"
+        String sql = "select review_id, review_title, review_content,review_star,review_hits,review_status, mem_id1, to_char(review_date,'yyyy-mm-dd') review_date, mem_id2, review_updatedate"
                 + " from review_table where review_id=?";
         getPreparedStatement(sql);
 
@@ -159,7 +159,7 @@ public class ReviewDAO extends DBConn {
     public ArrayList<ReviewVO> getSearch(String searchField, String searchText) {
         ArrayList<ReviewVO> list = new ArrayList<ReviewVO>();
         String sql = "select rownum rno,review_id, review_title, review_content,review_star,review_hits,review_status, "
-                + " mem_id1, to_char(review_date,'yyyy/mm/dd') review_date, mem_id2, review_updatedate from "
+                + " mem_id1, to_char(review_date,'yyyy-mm-dd') review_date, mem_id2, review_updatedate from "
                 + " (select review_id, review_title, review_content,review_star,review_hits,review_status, "
                 + " mem_id1, review_date, mem_id2, review_updatedate from review_table where " + searchField.trim();
 

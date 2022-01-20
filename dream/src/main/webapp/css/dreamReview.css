@@ -140,6 +140,10 @@ table.notice_list th {
 	padding:4px;
 	font-size:13pt;
 }
+table.review_list tr:nth-child(2) th,
+table.notice_list tr:nth-child(2) th {
+	background:#ddd;
+}
 /*후기게시판 - 글 상세보기*/
 table.review_content tr:last-child td, table.notice_content tr:last-child td {
 	border:1px solid rgba(245, 248,249);

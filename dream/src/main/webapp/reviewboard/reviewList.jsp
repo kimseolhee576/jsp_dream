@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" import="com.dream.dao.ReviewDAO,com.dream.vo.ReviewVO, java.util.ArrayList" %>
+    pageEncoding="UTF-8" import="com.dream.dao.ReviewDAO,com.dream.vo.ReviewVO, java.util.ArrayList, java.time.LocalDate" %>
 <% 
 	ReviewDAO dao = new ReviewDAO();
 	ArrayList<ReviewVO> list= dao.select();
@@ -73,7 +73,11 @@
 							<% for( ReviewVO vo : list){ %>
 							<tr>
 								<td><%= vo.getRno()%></td>
-								<td><a href="reviewContent.jsp?review_id=<%= vo.getReview_id()%>"><%= vo.getReview_title() %></a></td>
+								<td><a href="reviewContent.jsp?review_id=<%= vo.getReview_id()%>"><%= vo.getReview_title() %></a>
+								<% LocalDate today = LocalDate.now();
+								if(vo.getReview_date().equals(today.toString())){%>   
+		             			<span class="badge " style="background:#B4B4FF"  >new</span></td>
+		           				<%} %> 
 								<td>
 								<%  int star = vo.getReview_star();
 									if(star == 1){%>
