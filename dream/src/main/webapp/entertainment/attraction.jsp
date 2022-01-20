@@ -10,8 +10,8 @@
 <!-- Main Stylesheet -->
 <link rel="stylesheet" href="http://localhost:9000/dream/css/style.css">
 <!-- entertainment Stylesheet -->
-<link rel="stylesheet" href="http://localhost:9000/dream/css/entertainment.css">
   <link rel="icon" href="http://localhost:9000/dream/images/favicon.png"> <!-- 파비콘 -->
+  
 
   <!-- bootstrap.min css -->
   <link rel="stylesheet" href="http://localhost:9000/dream/plugins/bootstrap/css/bootstrap.min.css">
@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="http://localhost:9000/dream/plugins/slick-carousel/slick/slick.css">
   <link rel="stylesheet" href="http://localhost:9000/dream/plugins/slick-carousel/slick/slick-theme.css">
 
+  <link rel="stylesheet" href="http://localhost:9000/dream/css/entertainment.css">
 </head>
 
 <body>
@@ -51,11 +52,15 @@
 			<h2 class="enter_h2">어트랙션</h2> 
 			<section class="attraction-top section about-2 position-relative1">
 				<div class="container">
-				
-					<div class="btn-map">
-						<a href="http://localhost:9000/dream/images/all_map.jpg" target="_blank">
-							<button type="button" class="btn_style_map">전체지도</button>
-						</a>
+					<div id="showPosition">
+						<button id="show" class="btn_style_map">전체지도</button>
+					</div>
+					<div class="background">
+						<div class="window">
+							<div class="popup">
+								<button id="close" ><img class="all-map" src="http://localhost:9000/dream/images/all_map.jpg"></button>
+							</div>
+						</div>
 					</div>
 					<div class="row">
 						<div class="attraction">
@@ -197,6 +202,17 @@
 </section>
 </section>
   </div>
+
+<script>
+function show(){
+	document.querySelector(".background").className="background show";
+}
+function close(){
+	document.querySelector(".background").className="background";
+}
+	document.querySelector("#show").addEventListener('click',show);
+	document.querySelector("#close").addEventListener('click',close);
+</script>
 
 <!-- footer Start -->
 <%@ include file="../footer.jsp" %>

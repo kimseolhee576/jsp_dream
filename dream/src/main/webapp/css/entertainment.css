@@ -6,7 +6,7 @@
 	 	font-weight:700;
 	 	width:100px;
 	 	padding:10px 0;
-	 	background: #8C8CFF;
+	 	background: #D2D2FF;
 	 	color: #000069;/* #FFDDEF;*/
 	 	border:1px solid white;
 	 	border-radius: 5px;
@@ -15,7 +15,7 @@
 	}
 	 .btn_style_map:hover {
 	  background-color: #000069;
-	 	color: #D2D2FF;
+	 	color: white;
 	}  
 
 .btn-map {
@@ -67,3 +67,69 @@
 	margin-bottom: -100px;
 }
 /*어트랙션 종료*/
+
+/*지도*/
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  
+  /* 숨기기 */
+  z-index: -1;
+  opacity: 0;
+}
+
+#showPosition {
+	display:flex;
+	justify-content:end;
+}
+
+.show {
+  opacity: 1;
+  z-index: 1000;
+  transition: all .5s;
+  
+}
+
+.window {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.all-map {
+   width:1000px;
+   height:800px;
+}
+
+.img{
+   position:relative;
+   width:50%;
+   height:50%;
+}
+
+
+.popup {
+  position: absolute;
+  top: 5%;
+  left: 10%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.3);
+  
+  /* 임시 지정 */
+  width: 0px;
+  height: 0px;
+  
+  /* 초기에 약간 아래에 배치 */
+  transform: translate(-50%, -40%);
+}
+
+.show .popup {
+  transform: translate(-50%, -50%);
+  transition: all .5s;
+}

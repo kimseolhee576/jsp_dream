@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="http://localhost:9000/dream/css/style.css">
 <!-- entertainment Stylesheet -->
 <link rel="stylesheet" href="http://localhost:9000/dream/css/entertainment.css">
+
 </head>
 
 <body>
@@ -39,6 +40,16 @@
 			<h2 class="enter_h2">부대시설</h2> 
 			<section class="attraction-top section about-2 position-relative1">
 				<div class="container">
+					<div id="showPosition">
+						<button id="show" class="btn_style_map">전체지도</button>
+					</div>
+					<div class="background">
+						<div class="window">
+							<div class="popup">
+								<button id="close" ><img class="all-map" src="http://localhost:9000/dream/images/all_map.jpg"></button>
+							</div>
+						</div>
+					</div>
 					<div class="row">
 						<div class="attraction">
 							<div id="attraction_img">
@@ -169,6 +180,17 @@
 </section>
 </section>
   </div>
+
+<script>
+function show(){
+	document.querySelector(".background").className="background show";
+}
+function close(){
+	document.querySelector(".background").className="background";
+}
+	document.querySelector("#show").addEventListener('click',show);
+	document.querySelector("#close").addEventListener('click',close);
+</script>
 
 <!-- footer Start -->
 <%@ include file="../footer.jsp" %>

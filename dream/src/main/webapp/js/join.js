@@ -136,68 +136,41 @@ function idCheck(){
     회원가입 - 비밀번호 유효성 체크
 */
     passFlag=0;
-function passCheck(){
     let pwJ = /^(?=.*[a-z])(?=.*[0-9]).{6,10}$/; 
+function passCheck(){
     let pass,cpass,passMsg,cpassMsg;
     pass = document.getElementById("pass");
     cpass = document.getElementById("cpass");
     passMsg = document.getElementById("passMsg");
     cpassMsg = document.getElementById("cpassMsg");
-    if(cpass.value==""){
-		passFlag=0;
-	}
-    if(passFlag==0){
-        if(!pwJ.test($('#pass').val())||empJ.test($('#pass').val())){
+    
+    if(!pwJ.test($('#pass').val())||empJ.test($('#pass').val())){
         passMsg.style.color = "#FF1493";
         pass.style.border = "1px solid #FF1493";
         passMsg.innerHTML = "유효한 양식이 아닙니다";
         return false;
-
-        }else{
-            passMsg.innerHTML = "";
-            pass.style.border = "1px solid #ddd";
-        }
-	}else if(passFlag==1){
-		passMsg.style.color = "#FF1493";
-        pass.style.border = "1px solid #FF1493";
-        passMsg.innerHTML = "비밀번호 일치 확인 중";
-	}else if(passFlag==2){
-		cpassMsg.style.color = "#FF1493";
-        cpass.style.border = "1px solid #FF1493";
-        cpassMsg.innerHTML = "비밀번호 일치 확인 중";
-	}
+    }else{
+        passMsg.innerHTML = "";
+        pass.style.border = "1px solid #ddd";
+    }
 }
 function cpassCheck(){
-    let pwJ = /^(?=.*[a-z])(?=.*[0-9]).{6,10}$/; 
     let pass,cpass,passMsg,cpassMsg;
     pass = document.getElementById("pass");
     cpass = document.getElementById("cpass");
     passMsg = document.getElementById("passMsg");
     cpassMsg = document.getElementById("cpassMsg");
 	
-    if(pass.value==""){
-		passFlag=0;
-	}
-    if(passFlag==0){
-        if(!pwJ.test($('#cpass').val())||empJ.test($('#cpass').val())){
+    if(!pwJ.test($('#cpass').val())||empJ.test($('#cpass').val())){
         cpassMsg.style.color = "#FF1493";
         cpass.style.border = "1px solid #FF1493";
         cpassMsg.innerHTML = "유효한 양식이 아닙니다";
-        return false;
+    return false;
 
-        }else{
-            cpassMsg.innerHTML = "";
-            cpass.style.border = "1px solid #ddd";
-        }
-	}else if(passFlag==1){
-		passMsg.style.color = "#FF1493";
-        pass.style.border = "1px solid #FF1493";
-        passMsg.innerHTML = "비밀번호 일치 확인 중";
-	}else if(passFlag==2){
-		cpassMsg.style.color = "#FF1493";
-        cpass.style.border = "1px solid #FF1493";
-        cpassMsg.innerHTML = "비밀번호 일치 확인 중";
-	}
+    }else{
+        cpassMsg.innerHTML = "";
+        cpass.style.border = "1px solid #ddd";
+    }
 }
 
 /*
@@ -218,18 +191,30 @@ function passSameCheck(){
 		}
     if(pass.value != "" && cpass.value != ""){
         if(pass.value == cpass.value){
+			if(pwJ.test($('#pass').val())){
 	            passMsg.innerHTML = "";
 	            cpassMsg.innerHTML = "";
 	            pass.style.border = "1px solid #ddd";
 	            cpass.style.border = "1px solid #ddd";
-			if(passFlag==1){
-	            passMsg.innerHTML = "비밀번호가 일치합니다";
-	            passMsg.style.color = "blue";
-	            return true;
-			}else if(passFlag==2){
-	            cpassMsg.innerHTML = "비밀번호가 일치합니다";
-	            cpassMsg.style.color = "blue";
-	            return true;
+				if(passFlag==1){
+		            passMsg.innerHTML = "비밀번호가 일치합니다";
+		            passMsg.style.color = "blue";
+		            return true;
+				}else if(passFlag==2){
+		            cpassMsg.innerHTML = "비밀번호가 일치합니다";
+		            cpassMsg.style.color = "blue";
+		            return true;
+				}
+			}else{
+				if(passFlag==1){
+				passMsg.style.color = "#FF1493";
+		        pass.style.border = "1px solid #FF1493";
+		        passMsg.innerHTML = "유효한 양식이 아닙니다";
+		        }else if(passFlag==2){
+				cpassMsg.style.color = "#FF1493";
+		        cpass.style.border = "1px solid #FF1493";
+		        cpassMsg.innerHTML = "유효한 양식이 아닙니다";
+				}
 			}
         }else{
 			if(passFlag==1){
@@ -438,7 +423,7 @@ function hpCheck(){
            ,dayNamesMin: ['일','월','화','수','목','금','토'] //달력의 요일 텍스트
            ,dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'] //달력의 요일 Tooltip
            ,minDate: "-100Y" //최소 선택일자(-1D:하루전, -1M:한달전, -1Y:일년전)
-           ,maxDate: "+5y" //최대 선택일자(+1D:하루후, -1M:한달후, -1Y:일년후) 
+           ,maxDate: "0" //최대 선택일자(+1D:하루후, -1M:한달후, -1Y:일년후) 
            ,yearRange: "-100:+0"
        });                    
    });
