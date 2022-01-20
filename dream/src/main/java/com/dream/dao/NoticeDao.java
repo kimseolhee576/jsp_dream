@@ -10,7 +10,7 @@ public class NoticeDao extends DBConn {
      */
     public int insert(NoticeVO vo) {
         int result = 0;
-        String sql = "insert into notice_table values('n_'||sequ_notice_table.nextval,?,?,1,0,'test1',sysdate,'test1',sysdate)";
+        String sql = "insert into notice_table values('n_'||sequ_notice_table.nextval,?,?,1,0,'admin',sysdate,'admin',sysdate)";
         getPreparedStatement(sql);
 
         try {
