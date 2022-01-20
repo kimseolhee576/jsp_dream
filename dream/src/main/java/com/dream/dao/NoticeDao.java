@@ -33,7 +33,7 @@ public class NoticeDao extends DBConn {
      */
     public ArrayList<NoticeVO> select() {
         ArrayList<NoticeVO> list = new ArrayList<NoticeVO>();
-        String sql = "select rownum rno, notice_id, ntitle, ncontent, notice_hits, notice_status, mem_id1, to_char(notice_date, 'yyyy/mm/dd'), mem_id2, notice_updatedate from\r\n"
+        String sql = "select rownum rno, notice_id, ntitle, ncontent, notice_hits, notice_status, mem_id1, to_char(notice_date, 'yyyy-mm-dd'), mem_id2, notice_updatedate from\r\n"
                 + "(select rownum rno, notice_id, ntitle, ncontent, notice_hits, notice_status, mem_id1, notice_date, mem_id2, notice_updatedate \r\n"
                 + "from (select notice_id, ntitle, ncontent, notice_hits, notice_status, \r\n"
                 + "mem_id1, notice_date, mem_id2, notice_updatedate from notice_table order by notice_date)) where notice_status=0 order by rno desc";
@@ -68,7 +68,7 @@ public class NoticeDao extends DBConn {
     public NoticeVO select(String notice_id, String page) {
         NoticeVO vo = new NoticeVO();
         String sql = "select notice_id, ntitle, ncontent, notice_hits, notice_status, "
-                + " mem_id1, to_char(notice_date, 'yyyy/mm/dd'), mem_id2, notice_updatedate from notice_table where notice_id=?";
+                + " mem_id1, to_char(notice_date, 'yyyy-mm-dd'), mem_id2, notice_updatedate from notice_table where notice_id=?";
         getPreparedStatement(sql);
         try {
             pstmt.setString(1, notice_id);
@@ -160,7 +160,7 @@ public class NoticeDao extends DBConn {
     public ArrayList<NoticeVO> getSearch(String searchField, String searchText) {
         ArrayList<NoticeVO> list = new ArrayList<NoticeVO>();
         String sql = "select rownum rno, notice_id, ntitle, ncontent, notice_hits, notice_status, "
-                + " mem_id1, to_char(notice_date,'yyyy/mm/dd') notice_date, mem_id2, notice_updatedate from "
+                + " mem_id1, to_char(notice_date,'yyyy-mm-dd') notice_date, mem_id2, notice_updatedate from "
                 + " (select notice_id, ntitle, ncontent, notice_hits, notice_status, "
                 + " mem_id1, notice_date, mem_id2, notice_updatedate from notice_table where " + searchField.trim();
         try {

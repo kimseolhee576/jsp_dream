@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"
-    import= "com.dream.dao.NoticeDao, com.dream.vo.NoticeVO, java.util.ArrayList"%>
+    import= "com.dream.dao.NoticeDao, com.dream.vo.NoticeVO, java.util.ArrayList, java.time.LocalDate"%>
 
 <%
 	NoticeDao dao = new NoticeDao();
@@ -78,13 +78,17 @@
 							<tr>
 								<th width="10%" >번호</th>
 								<th >제목</th>
-								<th width="10%">작성일</th>
+								<th width="15%">작성일</th>
 								<th width="10%">조회수</th>
 							</tr>
 							<% for(NoticeVO vo : list) { %>
 							<tr>
 								<td><%= vo.getRno() %></td>
-								<td><a href="notice_content.jsp?notice_id=<%=vo.getNotice_id() %>"><%=vo.getNtitle() %></a></td>
+								<td><a href="notice_content.jsp?notice_id=<%=vo.getNotice_id() %>"><%=vo.getNtitle() %></a>
+								<% LocalDate today = LocalDate.now();
+								if(today.toString().equals(vo.getNotice_date())){%>   
+		              <span class="badge " style="background:#B4B4FF">new</span></td>
+		            			<% } %>
 								<td><%= vo.getNotice_date() %></td>
 								<td><%= vo.getNotice_hits() %></td>
 							</tr>
