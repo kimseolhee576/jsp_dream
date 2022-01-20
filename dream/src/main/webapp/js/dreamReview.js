@@ -80,3 +80,9 @@ function searchCheck(){
 			searchForm.submit();
 		}
 }
+/**
+* 후기게시판-비회원이 글쓰기 눌렀을 때 alert창 띄우기 
+ */
+function reviewWriteAlert(){
+	alert("글쓰기는 회원만 가능합니다. 로그인페이지로 이동합니다.");
+}

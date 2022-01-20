@@ -99,7 +99,8 @@
 <!-- script 정리했는데 혹시 에러나면 다른데서 붙여 -->
 <script src="http://localhost:9000/dream/js/dreamReview.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script><!-- 수정하기 눌렀을 때 별점 선택되어있게함 -->
+
+<script><!-- 글 수정페이지로 갔을 때 별점 불러와서 선택되어있게 -->
 $.fn.radioSelect = function(val) {
 	this.each(function() {
 	var $this = $(this);

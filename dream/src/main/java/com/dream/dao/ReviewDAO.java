@@ -116,9 +116,10 @@ public class ReviewDAO extends DBConn {
     /**
      * 후기게시판-글 수정
      */
-    public int update(ReviewVO vo) {
+    public int update(ReviewVO vo, String sid) {
         int result = 0;
-        String sql = "update review_table set review_title=?, review_content=?, review_star=?, review_updatedate=sysdate  where review_id=?";
+        String sql = "update review_table set review_title=?, review_content=?, review_star=?, mem_id2='" + sid
+                + "', review_updatedate=sysdate  where review_id=?";
         getPreparedStatement(sql);
         try {
             pstmt.setString(1, vo.getReview_title());

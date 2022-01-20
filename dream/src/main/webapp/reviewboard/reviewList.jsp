@@ -95,11 +95,12 @@
 							<% } %>
 							<tr>
 								<td colspan="6">
-									<% if(sid != null) {%>
+									<% if(sid != null ) {%>
 									<a href="http://localhost:9000/dream/reviewboard/reviewWrite.jsp?login_id=<%= sid %>">
-									<% }else{ %>  <a href="http://localhost:9000/dream/login/login.jsp"> 
+									<% }else{ %>  
+										<a href="http://localhost:9000/dream/login/login.jsp" onclick="reviewWriteAlert()"> 
 									<% } %>
-											<button type="button" class="btn_style1">글쓰기</button>
+											<button type="button" class="btn_style1" >글쓰기</button>
 										</a>
 									</a>
 								</td>
@@ -124,13 +125,6 @@
     <!-- Bootstrap 4.3.1 -->
     <script src="plugins/bootstrap/js/popper.js"></script>
     <script src="plugins/bootstrap/js/bootstrap.min.js"></script>
-   <!--  Magnific Popup-->
-    <script src="plugins/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
-    <!-- Slick Slider -->
-    <script src="plugins/slick-carousel/slick/slick.min.js"></script>
-    <!-- Counterup -->
-    <script src="plugins/counterup/jquery.waypoints.min.js"></script>
-    <script src="plugins/counterup/jquery.counterup.min.js"></script>
 
     <script src="js/script.js"></script>
 

@@ -93,7 +93,7 @@
 							<th>내용</th><td colspan="3" height="300px">&nbsp;&nbsp;<%= vo.getReview_content() %></td>
 						</tr>
 						<tr>
-						<% if(vo.getMem_id1().equals(sid)){ %>
+						<% if(vo.getMem_id1().equals(sid) || "admin".equals(sid)){ %>
 							<td colspan="4">
 								<a href="http://localhost:9000/dream/reviewboard/reviewUpdate.jsp?review_id=<%= vo.getReview_id()%>">
 									<button type="button" class="btn_style1">수정</button>
