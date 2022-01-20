@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="com.dream.vo.MemberVO, com.dream.dao.MemberDao" %>
 <%
-	String info_id = (String)session.getAttribute("sid");
+	String login_id = (String)session.getAttribute("sid");
 	MemberDao dao = new MemberDao();
-	MemberVO vo = dao.getInfo(info_id);
+	MemberVO vo = dao.getInfo(login_id);
 	//System.out.println(vo.getMem_id());
 %>    
 
@@ -22,19 +22,17 @@
 <title>마이페이지 | 드림월드</title>
 <!-- bootstrap.min css -->
 <link rel="stylesheet" href="http://localhost:9000/dream/plugins/bootstrap/css/bootstrap.min.css">
+
 <!-- Icon Font Css -->
 <link rel="stylesheet" href="http://localhost:9000/dream/plugins/themify/css/themify-icons.css">
 <link rel="stylesheet" href="http://localhost:9000/dream/plugins/fontawesome/css/all.css">
 <link rel="stylesheet" href="http://localhost:9000/dream/plugins/magnific-popup/dist/magnific-popup.css">
-<!-- Owl Carousel CSS 
-<link rel="stylesheet" href="http://localhost:9000/dream/plugins/slick-carousel/slick/slick.css">
-<link rel="stylesheet" href="http://localhost:9000/dream/plugins/slick-carousel/slick/slick-theme.css">-->
 
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link href="http://localhost:9000/dream/css/dreamReview.css" rel="stylesheet">
+
 <!-- Main Stylesheet -->
 <!-- <link rel="stylesheet" href="http://localhost:9000/dream/css/style.css"> -->
-
-<link href="http://localhost:9000/dream/css/dreamReview.css" rel="stylesheet">
 
 </head>
 <body>

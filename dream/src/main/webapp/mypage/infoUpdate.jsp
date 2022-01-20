@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"  import="com.dream.vo.MemberVO, com.dream.dao.MemberDao"%>
 <%
-	String info_id = (String)session.getAttribute("sid");
+	String login_id = (String)session.getAttribute("sid");
 	MemberDao dao = new MemberDao();
-	MemberVO vo = dao.getInfo(info_id);
+	MemberVO vo = dao.getInfo(login_id);
 	//System.out.println(vo.getMem_id());
 %>    
 <!DOCTYPE html>
