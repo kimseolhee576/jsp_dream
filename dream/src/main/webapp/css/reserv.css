@@ -240,6 +240,7 @@ table.result_content td{
 	border-collapse:collapse;
 	border-bottom:1px solid #666;
 	font-family: "Poppins", sans-serif;
+	text-align:center;
 }
 
 table.result_content{
