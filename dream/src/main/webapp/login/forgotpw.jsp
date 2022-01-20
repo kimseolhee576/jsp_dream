@@ -105,7 +105,7 @@
                                         <input type="text" name="mem_name" placeholder="이름" required>
                                         <input type="text" name="mem_birth" placeholder="생년월일(ex.19901231)" required>
                                         <input type="text" name="mem_hp" placeholder="핸드폰 번호(ex.01012345678)" required>
-                                        <button type="button" onclick="location.href='forgotid().jsp'" class="btn_style3" style="float:left;">&#8678&nbsp;ID찾기</button>
+                                        <button type="button" onclick="location.href='forgotid.jsp'" class="btn_style3" style="float:left;">&#8678&nbsp;ID찾기</button>
                                         <button type="submit" class="btn_style3" style="float:right;">PW찾기&nbsp;&#8680</button>
                                  </div>
                             </fieldset>
