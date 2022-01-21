@@ -23,7 +23,7 @@ button.btn_style1 { /*글쓰기 하단*/
 	 	color: #000069;
 	}
 button.btn_style2 { /*목록버튼*/
-	margin:5px 0 0 200px;
+	/*margin:5px 0 0 200px;*/
 	padding:5px 15px;
 	background:#555;
 	border:1px solid #555;
