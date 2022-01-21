@@ -31,8 +31,7 @@ body {
 .TicketSort h2 {margin-bottom:40px;}
 
 
-#ChargeGuideNotice .Area { padding:56px 0 80px 0; text-align:center; font-family:"Poppins", sans-serif;}
-
+#ChargeGuideNotice .Area { padding:56px 0 80px 0; text-align:center;  font-family:"Poppins", sans-serif;}
 #ChargeGuideNotice .notice {margin-left:350px; float:left; display:block; font-weight: 500; font-size:1.5rem; line-height:160px; color:#ed1c24; width:230px; height:100px; background-image:url("https://www.gjw.co.kr/images/css/sign.png"); background-repeat:no-repeat; background-position:-150px -1100px; }
 #ChargeGuideNotice > ul {margin-left:230px; margin:0 540px; font-family:"Poppins", sans-serif;}
 #ChargeGuideNotice > ul > li {line-height:50px;   padding-left:20px; color:#444444; font-size:1rem;}
@@ -73,7 +72,7 @@ body {
 
 
 .h2 {
-	margin-left:250px;
+	margin-left:500px;
 }
 
 .btn_style {  /* 예매하기 버튼 */
@@ -296,22 +295,20 @@ table.result_content{
   background-size: cover;
 }
 .map_img {
-	width:1150px;
-	margin-left:200px;
+	width:1000px;
+	margin:auto;
 }
 .enter_h2 {
 	margin-left:250px;
 	margin-bottom:30px;
 	
 }
-.navi-img {
-	margin-left:30px;
-}
+
 /**********************************************
 	찾아오시는길
 **********************************************/
 #MapContent {}
-#MapImg ul {width:95%;}
+#MapImg ul {width:1500px; margin:auto;}
 #MapImg ul li {display:none;}
 #MapImg ul li.on {display:block;}
 #MapImg ul li img {width:100%;}

@@ -54,7 +54,9 @@
 
 <section class="section blog-wrap bg-gray">
 <h2 class="enter_h2">가이드맵</h2>
+<div class="map_img">
 <img src="http://localhost:9000/dream/images/all_map.jpg" class="map_img" >
+</div>
 </section>
 
 
