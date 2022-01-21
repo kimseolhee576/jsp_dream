@@ -79,6 +79,8 @@
 		              </td>
                     </tr>
                     <tr>
+                    
+                    
 						<th width="7%">번호</th>
 						<th width="40%">제목</th>
 						<th>작성자</th>
