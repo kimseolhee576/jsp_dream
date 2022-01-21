@@ -137,6 +137,7 @@ QnaVO vo = new QnaDAO().getQnaVO(qna_id);
 		                     </tr>
 		                 </tbody>    
 	                  <% } %>   
+	                  
                    </table>
                </form>    
 	      </section> 

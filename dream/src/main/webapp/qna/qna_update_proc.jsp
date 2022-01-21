@@ -13,5 +13,6 @@ request.setCharacterEncoding("utf-8");
 	
 	if(result ==1){
 	    response.sendRedirect("qna_list.jsp");
+
 	}
 %>

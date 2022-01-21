@@ -15,6 +15,7 @@ request.setCharacterEncoding("utf-8");
 	vo.setMem_id2(sid);
     QnaDAO dao = new QnaDAO();
 	int result = dao.writeQ(vo);
+
 	
 	
 	if(result ==1){

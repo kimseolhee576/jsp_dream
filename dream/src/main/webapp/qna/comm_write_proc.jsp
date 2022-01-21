@@ -20,4 +20,5 @@ request.setCharacterEncoding("utf-8");
 	if(result ==1){
 		response.sendRedirect("qna_content.jsp?qna_id="+qna_id);
 	} 
+	
 %>    

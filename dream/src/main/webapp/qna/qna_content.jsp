@@ -5,12 +5,12 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
 <%
 int qna_id = 0;
 qna_id = Integer.parseInt(request.getParameter("qna_id"));
 QnaVO vo = new QnaDAO().getQnaVO(qna_id);
 %>
+
 <!doctype html>
 <html>
   <head>

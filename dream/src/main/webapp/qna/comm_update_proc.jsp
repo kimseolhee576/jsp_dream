@@ -17,4 +17,5 @@ String sid = (String)session.getAttribute("sid");
 	if(result ==1){
 	    response.sendRedirect("qna_content.jsp?qna_id="+vo.getQna_id());
 	}
+	
 %>
