@@ -43,7 +43,9 @@ public class QnaDAO extends DBConn {
      */
     public QnaVO getQnaVO(int qna_id) {
         QnaVO vo = new QnaVO();
-        String sql = "select * from qna_table where qna_id=?";
+        String sql = "select qna_id, qna_title, qna_content, qna_hits, qna_status, "
+                + " mem_id1, to_char(qna_date,'yyyy-mm-dd') qna_date, mem_id2, "
+                + " qna_updatedate from qna_table where qna_id=? and qna_status=0";
         getPreparedStatement(sql);
 
         try {
@@ -57,6 +59,8 @@ public class QnaDAO extends DBConn {
                 vo.setQna_status(rs.getInt(5));
                 vo.setMem_id1(rs.getString(6));
                 vo.setQna_date(rs.getString(7));
+                vo.setMem_id2(rs.getString(8));
+                vo.setQna_updatedate(rs.getString(9));
                 return vo;
             }
         } catch (Exception e) {
@@ -131,6 +135,31 @@ public class QnaDAO extends DBConn {
             pstmt.setString(2, vo.getQna_content());
             pstmt.setString(3, vo.getMem_id1());
             pstmt.setString(4, vo.getMem_id1());
+
+            result = pstmt.executeUpdate();
+
+            close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return result;
+    }
+
+    /**
+     * 문의글 수정
+     */
+    public int updateQ(QnaVO vo) {
+        int result = 0;
+        String sql = "update qna_table set qna_title=?, qna_content=?, mem_id2=?, qna_updatedate=sysdate  where qna_id=?";
+        getPreparedStatement(sql);
+
+        try {
+            pstmt.setString(1, vo.getQna_title());
+            pstmt.setString(2, vo.getQna_content());
+            pstmt.setString(3, vo.getMem_id2());
+            pstmt.setInt(4, vo.getQna_id());
 
             result = pstmt.executeUpdate();
 

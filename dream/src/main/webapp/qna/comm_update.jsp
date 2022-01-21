@@ -6,9 +6,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-<%
-int qna_id = 0;
-qna_id = Integer.parseInt(request.getParameter("qna_id"));
+<% 
+int qna_id = Integer.parseInt(request.getParameter("qna_id"));
+int comm_id = Integer.parseInt(request.getParameter("comm_id"));
 QnaVO vo = new QnaDAO().getQnaVO(qna_id);
 %>
 <!doctype html>
@@ -93,16 +93,10 @@ QnaVO vo = new QnaDAO().getQnaVO(qna_id);
 	                        <th>내용</th><td colspan="4" height="300px">&nbsp;&nbsp;<%= vo.getQna_content() %></td>
 	                    </tr>
 						<tr>
-	                        <% if(vo.getMem_id1().equals(sid) || "admin".equals(sid)){ %>
-	                            <td colspan="4">
-	                                <a href="http://localhost:9000/dream/qna/qna_update.jsp?qna_id=<%= vo.getQna_id()%>">
-	                                    <button type="button" class="btn_style1">수정</button>
-	                                </a>
-	                                    <button type="button" class="btn_style1" onclick="reviewDelete()">삭제</button>
-	                            </td>
-	                        <% }else{ %>
-	                            <td colspan="4"></td>
-	                        <% } %>
+	                        <td colspan="4">
+	                        <p> </p>
+	                        <p><br></p>
+	                        </td>
 	                    </tr>
                     </table>
                </form> 
@@ -120,18 +114,16 @@ QnaVO vo = new QnaDAO().getQnaVO(qna_id);
 	                       %>   
 	                      <tr style="border-bottom: 1px dotted grey !important;">
 	                          <td style="width: 8%"><%=list.get(i).getMem_id1() %></td>
-	                          <td style="width: 50%"><%=list.get(i).getComm_content() %></td>
+	                          <td style="width: 50% !important"><input type="text" style="height:100px; width:100%;" class="form-control" placeholder="댓글을 등록해주세요(200자 이내)" name = "comm_content" required></td>
 	                          <td style="text-align: right; width: 20%;"><%= list.get(i).getComm_date() %></td>
 	                          <td>
-	                            <% if(list.get(i).getMem_id1().equals(sid) || "admin".equals(sid)){ %>
-	                                    <a href="http://localhost:9000/dream/qna/comm_update.jsp?qna_id=<%= vo.getQna_id()%>&comm_id=<%=list.get(i).getComm_id() %>">
+	                                    <a href="http://localhost:9000/dream/qna/comm_update_proc.jsp?qna_id=<%= vo.getQna_id()%>&comm_id=<%=list.get(i).getComm_id()%>">
 	                                        <button type="button" class="btn_style1">수정</button>
 	                                    </a>
-	                                        <button type="button" class="btn_style1" onclick="">삭제</button>
+	                                        <button type="button" class="btn_style1" onclick="">취소</button>
 	                            <% } %>
                               </td>
 	                       </tr>
-                           <% }  %>
                          </tbody> 
                      </table>
                      <br>

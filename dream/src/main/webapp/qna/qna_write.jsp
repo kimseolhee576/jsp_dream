@@ -70,12 +70,12 @@
 	                        </tr>
 	                        <tr>
 	                            <th>제목</th>
-	                            <td><input type="text" id="qna_title" name="qna_title" placeholder="제목을 입력해주세요" style="width: 99%"></td>
+	                            <td><input type="text" id="qna_title" name="qna_title" placeholder="제목을 입력해주세요" style="width: 99%" required></td>
 	                        </tr>   
 	                        <tr>
 	                            <th>내용</th>
 	                            <td>
-	                                <textarea id="qna_content" name="qna_content" rows="7" cols="70"  placeholder="내용을 입력해주세요"></textarea>
+	                                <textarea id="qna_content" name="qna_content" rows="7" cols="70"  placeholder="내용을 입력해주세요" required></textarea>
 	                            </td>
 	                        </tr>
 	                        <tr>

@@ -124,7 +124,7 @@ QnaVO vo = new QnaDAO().getQnaVO(qna_id);
 	                          <td style="text-align: right; width: 20%;"><%= list.get(i).getComm_date() %></td>
 	                          <td>
 	                            <% if(list.get(i).getMem_id1().equals(sid) || "admin".equals(sid)){ %>
-	                                    <a href="http://localhost:9000/dream/qna/comm_update.jsp?qna_id=<%= vo.getQna_id()%>&comm_id=<%=list.get(i).getComm_id() %>">
+	                                    <a href="http://localhost:9000/dream/qna/comm_update_proc.jsp?qna_id=<%= vo.getQna_id()%>&comm_id=<%=list.get(i).getComm_id()%>">
 	                                        <button type="button" class="btn_style1">수정</button>
 	                                    </a>
 	                                        <button type="button" class="btn_style1" onclick="">삭제</button>

@@ -10,9 +10,9 @@ request.setCharacterEncoding("utf-8");
 <jsp:setProperty name="vo" property="*" />
 
 <%
-String sid = (String)session.getAttribute("sid");
-vo.setMem_id1(sid);
-vo.setMem_id2(sid);
+	String sid = (String)session.getAttribute("sid");
+	vo.setMem_id1(sid);
+	vo.setMem_id2(sid);
     QnaDAO dao = new QnaDAO();
 	int result = dao.writeQ(vo);
 	
