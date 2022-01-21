@@ -99,8 +99,8 @@
 				<input type="text" class="form-control" name="reserv_total" id="reserv_total" value="<%= vo.getReserv_total() %>" readonly>
 			</li>
 			<li>
-				<input type="submit" class="btn_style" value="결제하기">
-				<input type="button" class="btn_style" value="취소" onclick="location='reserv.jsp'">
+				<input type="submit" class="btn_style1" value="결제하기">
+				<input type="button" class="btn_style1" value="취소" onclick="location='reserv.jsp'">
 			</li>
 		</ul>
 		

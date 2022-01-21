@@ -89,6 +89,20 @@ body {
 	 	font-family: "Poppins", sans-serif;
 	}
 	
+.btn_style1{  /* 결제하기, 취소버튼 */
+	font-size:9pt;
+	 	width:40%;
+	 	padding:8px 10px;
+	 	background:#534bae;
+	 	color:white;
+	 	border:1px solid white;
+	 	border-radius:7px;
+	 	margin-left:30px;
+	 	margin-right:10px;
+	 	font-family: "Poppins", sans-serif;
+	 	
+}
+	
 /*.btn{
 	background:white;
 }*/
