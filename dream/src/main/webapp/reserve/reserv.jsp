@@ -17,11 +17,8 @@
 
   
    <!-- bootstrap.min css -->
-  <link rel="stylesheet" href="http://localhost:9000/dream/plugins/bootstrap/css/bootstrap.min.css">
   <!-- Icon Font Css -->
-  <link rel="stylesheet" href="http://localhost:9000/dream/plugins/themify/css/themify-icons.css">
   <link rel="stylesheet" href="http://localhost:9000/dream/plugins/fontawesome/css/all.css">
-  <link rel="stylesheet" href="http://localhost:9000/dream/plugins/magnific-popup/dist/magnific-popup.css">
    <!-- Main Stylesheet -->
   <link rel="stylesheet" href="http://localhost:9000/dream/css/style.css">
   

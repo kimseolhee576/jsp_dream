@@ -39,7 +39,7 @@
 			<div class="col-lg-9 col-md-10">
 				<div class="block">
 					<span class="d-block mb-3 text-white text-capitalize">Welcome to DreamWorld</span>
-					<h1 class="animated fadeInUp mb-5">꿈과 환상의 나라로 <br>여러분을 초대합니다!555555 <br></h1>
+					<h1 class="animated fadeInUp mb-5">꿈과 환상의 나라로 <br>여러분을 초대합니다! <br></h1>
 					<a href="http://localhost:9000/dream/information/use_info.jsp" class="btn btn-main animated fadeInUp btn-round-full" >이용안내<i class="btn-icon fa fa-angle-right ml-2"></i></a>
 				</div>
 			</div>
