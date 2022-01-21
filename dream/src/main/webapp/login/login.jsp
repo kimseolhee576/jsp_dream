@@ -56,7 +56,7 @@
 
     
     <!-- Custom styles for this template -->
-    <link href="http://localhost:9000/dream/css/signin.css" rel="stylesheet">
+    <link href="http://localhost:9000/dream/css/login.css" rel="stylesheet">
 
 </head>
 
@@ -85,6 +85,9 @@
 <section class="section blog-wrap bg-gray">
     <div class="container">
         <div class="row" style="display:block; height:550px">
+           <div class="content">
+            <section>
+            <h2 style="margin-left:220px;">로그인</h2>
              <div class="text-center">
 				<main class="form-signin">
 					  <form name="login_form" action="login_proc.jsp" method="post">
@@ -110,7 +113,8 @@
 					  </form>
 	             </main>
 	         </div>    
-			
+			</section>
+	       </div>
 		</div>
     </div>
 </section>
