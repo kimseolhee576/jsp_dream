@@ -13,8 +13,8 @@
 <link rel="icon" type="image/png" href="http://example.com/myicon.png">
 
 <title>마이페이지 | 드림월드</title>
-<!-- bootstrap.min css -->
-<link rel="stylesheet" href="http://localhost:9000/dream/plugins/bootstrap/css/bootstrap.min.css">
+<!-- bootstrap.min css 
+<link rel="stylesheet" href="http://localhost:9000/dream/plugins/bootstrap/css/bootstrap.min.css">-->
 
 <!-- Main Stylesheet -->
 <link rel="stylesheet" href="http://localhost:9000/dream/css/style.css">

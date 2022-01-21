@@ -14,12 +14,12 @@
 
 <title>후기게시판 | 드림월드</title>
 
-<!-- bootstrap.min css -->
+<!-- bootstrap.min css 
 <link rel="stylesheet" href="http://localhost:9000/dream/plugins/bootstrap/css/bootstrap.min.css">
-<!-- Icon Font Css -->
+<!-- Icon Font Css 
 <link rel="stylesheet" href="http://localhost:9000/dream/plugins/themify/css/themify-icons.css">
 <link rel="stylesheet" href="http://localhost:9000/dream/plugins/fontawesome/css/all.css">
-<link rel="stylesheet" href="http://localhost:9000/dream/plugins/magnific-popup/dist/magnific-popup.css">
+<link rel="stylesheet" href="http://localhost:9000/dream/plugins/magnific-popup/dist/magnific-popup.css">-->
 
 <!-- Main Stylesheet -->
 <link rel="stylesheet" href="http://localhost:9000/dream/css/style.css">
@@ -99,14 +99,14 @@
     =====================================-->
 
     <script src="http://localhost:9000/dream/js/dreamReview.js"></script>
-    <!-- Main jQuery -->
+    <!-- Main jQuery 
     <script src="plugins/jquery/jquery.js"></script>
     <script src="js/contact.js"></script>
-    <!-- Bootstrap 4.3.1 -->
+    <!-- Bootstrap 4.3.1 
     <script src="plugins/bootstrap/js/popper.js"></script>
     <script src="plugins/bootstrap/js/bootstrap.min.js"></script>
     
-    <script src="js/script.js"></script>
+    <script src="js/script.js"></script>-->
 
 </body>
 </html>
