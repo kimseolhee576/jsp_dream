@@ -119,7 +119,7 @@ CommVO cvo = new CommDAO().getComment(qna_id, comm_id);
                               <td style="width: 8%"><%=list.get(i).getMem_id1() %></td>
                               <!-- <div id="read_comment"> -->
                               <td style="width: 50%"><%=list.get(i).getComm_content() %></td>
-                              <td style="text-align: right; width: 20%;"><%=list.get(i).getComm_date() %></td>
+                              <td style="text-align: right; width: 20%;"><%=list.get(i).getComm_updatedate() %></td>
                               <!-- </div> -->
                               
                           </tr>   
@@ -130,7 +130,7 @@ CommVO cvo = new CommDAO().getComment(qna_id, comm_id);
                      <br>
                      
                      
-                <form name="qna_comment_form" style="padding:0 60px !important;" method="post" action="comm_update_proc.jsp?comm_id=<%=comm_id%>">     
+                <form name="qna_comment_form" style="padding:0 60px !important;" method="post" action="comm_update_proc.jsp?qna_id=<%=qna_id %>&comm_id=<%=comm_id%>">     
                     
                     <table id="edit_comment" class="qna_comment_write" style="border-bottom: none; margin:auto" >  
                          <tbody style="border-bottom: none !important; margin:auto">
@@ -138,7 +138,7 @@ CommVO cvo = new CommDAO().getComment(qna_id, comm_id);
                                  <td style="text-align: left;"><%=cvo.getMem_id1() %>&emsp;</td>
                                  <td style="width: 700px !important"><textarea style="height:100px; width:100%;" class="form-control" placeholder="<%=cvo.getComm_content() %>" name = "comm_content" required></textarea></td>
                                  <td style="text-align: right;">&emsp;<button type="submit" class="btn_style3">수정 완료</button></td>
-                                 <td style="text-align: right;">&emsp;<button type="submit" class="btn_style3" onclick="history.back()">수정 취소</button></td>
+                                 <td style="text-align: right;">&emsp;<button type="button" class="btn_style3" onclick="history.back()">수정 취소</button></td>
                              </tr>      
                          </tbody>   
                    </table>
