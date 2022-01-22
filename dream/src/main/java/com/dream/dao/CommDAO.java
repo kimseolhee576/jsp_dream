@@ -37,6 +37,35 @@ public class CommDAO extends DBConn {
     }
 
     /**
+     * comm_edit.jsp 페이지에서 해당 글의 해당 댓글정보 조회
+     */
+    public CommVO getComment(int qna_id, int comm_id) {
+        String sql = "select * from comm_table where qna_id=? and comm_id=? and comm_status=0";
+        getPreparedStatement(sql);
+
+        try {
+            pstmt.setInt(1, qna_id);
+            pstmt.setInt(2, comm_id);
+            rs = pstmt.executeQuery();
+            while (rs.next()) {
+                CommVO vo = new CommVO();
+                vo.setComm_id(rs.getInt(1));
+                vo.setQna_id(rs.getInt(2));
+                vo.setComm_content(rs.getString(3));
+                vo.setMem_id1(rs.getString(4));
+                vo.setComm_date(rs.getString(5));
+                vo.setMem_id2(rs.getString(6));
+                vo.setComm_updatedate(rs.getString(7));
+                vo.setComm_status(rs.getInt(8));
+                return vo;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    /**
      * 입력한 댓글 데이터 db에 등록
      */
     public int writeC(CommVO vo) {

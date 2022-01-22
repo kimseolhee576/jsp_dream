@@ -8,7 +8,10 @@
 <%
 int qna_id = 0;
 qna_id = Integer.parseInt(request.getParameter("qna_id"));
+int comm_id = 0;
+comm_id = Integer.parseInt(request.getParameter("comm_id"));
 QnaVO vo = new QnaDAO().getQnaVO(qna_id);
+CommVO cvo = new CommDAO().getComment(qna_id, comm_id);
 %>
 
 <!doctype html>
@@ -93,77 +96,56 @@ QnaVO vo = new QnaDAO().getQnaVO(qna_id);
 	                        <th>내용</th><td colspan="4" height="300px">&nbsp;&nbsp;<%= vo.getQna_content() %></td>
 	                    </tr>
 						<tr>
-	                        <% if(vo.getMem_id1().equals(sid) || "admin".equals(sid)){ %>
-	                            <td colspan="4">
-	                                <a href="http://localhost:9000/dream/qna/qna_update_proc.jsp?qna_id=<%= vo.getQna_id()%>">
-	                                    <button id="update_qna_btn" type="button" class="btn_style1">수정</button>
-	                                </a>
-	                                    <button id="delete_qna_btn" type="button" class="btn_style1" onclick="reviewDelete()">삭제</button>
-	                            </td>
-	                        <% }else{ %>
-	                            <td colspan="4"></td>
-	                        <% } %>
+	                        <td colspan="4"><br><br></td>
 	                    </tr>
                     </table>
                </form> 
                                
-               <div id="read">
-                   <table id="qna_comment_list" style="border-bottom: none; width: 1000px; margin:auto" >
-                       <thead style="border-bottom: none !important; margin:auto"> 
-	                      <tr>
-	                          <th style="font-weight: bold; color: black; border-bottom: 2px solid black; width:4%">댓글</th>
-	                      </tr>
-	                      
-	                   </thead>
-	                   <tbody>   
-	                       <%
-	                        CommDAO dao = new CommDAO();
-	                        ArrayList<CommVO> list = dao.getList(vo.getQna_id());
-	                        for(int i=0; i<list.size(); i++){
-	                       %>   
-	                      <tr style="border-bottom: 1px dotted grey !important;">
-	                          <td style="width: 8%"><%=list.get(i).getMem_id1() %></td>
-	                          <!-- <div id="read_comment"> -->
-	                          <td style="width: 50%"><%=list.get(i).getComm_content() %></td>
-	                          <td style="text-align: right; width: 20%;"><%=list.get(i).getComm_date() %></td>
-	                          <!-- </div> -->
-	                          
-	                          
-	                            <% if(list.get(i).getMem_id1().equals(sid) || "admin".equals(sid)){ %>
-	                          <td>  
-	                                   <a href="http://localhost:9000/dream/qna/comm_edit.jsp?qna_id=<%= list.get(i).getQna_id()%>&comm_id=<%=list.get(i).getComm_id() %>">
-	                          
-	                                   <button type="button" class="btn_style1">수정</button>
-	                                    <!-- </a> -->
-	                                   <button type="button" class="btn_style1" onclick="">삭제</button>
-	                                   
-	                          </td> 
-	                            <% }else{ %>
-                              <td></td>
-                              <% }  %>
-	                       </tr>   
-	                        <% }  %>       
+               <div id="edit">
+                     <table id="qna_comment_list" style="border-bottom: none; width: 1000px; margin:auto; " >
+                        <thead style="border-bottom: none !important; margin:auto"> 
+                          <tr>
+                              <th style="font-weight: bold; color: black; border-bottom: 2px solid black; width:4%">댓글</th>
+                          </tr>
+                          
+                       </thead>
+                       <tbody>   
+                           <%
+                            CommDAO dao = new CommDAO();
+                            ArrayList<CommVO> list = dao.getList(vo.getQna_id());
+                            for(int i=0; i<list.size(); i++){
+                           %>   
+                          <tr style="border-bottom: 1px dotted grey !important;">
+                              <td style="width: 8%"><%=list.get(i).getMem_id1() %></td>
+                              <!-- <div id="read_comment"> -->
+                              <td style="width: 50%"><%=list.get(i).getComm_content() %></td>
+                              <td style="text-align: right; width: 20%;"><%=list.get(i).getComm_date() %></td>
+                              <!-- </div> -->
+                              
+                          </tr>   
+                            <% } %>      
                         </tbody> 
                             
                     </table>  
                      <br>
                      
-                     <% if(vo.getMem_id1().equals(sid)|| "admin".equals(sid)){ %> 
-                <form name="qna_comment_form" style="padding:0 60px !important;" method="post" action="comm_write_proc.jsp?qna_id=<%=vo.getQna_id()%>&mem_id1=<%=sid%>">    
+                     
+                <form name="qna_comment_form" style="padding:0 60px !important;" method="post" action="comm_update_proc.jsp?comm_id=<%=comm_id%>">     
                     
-                    <table id="write_comment" class="qna_comment_write" style="border-bottom: none; margin:auto" >    
-                       
+                    <table id="edit_comment" class="qna_comment_write" style="border-bottom: none; margin:auto" >  
                          <tbody style="border-bottom: none !important; margin:auto">
-		                     <tr style="border-bottom: none !important; margin:auto">
-		                         <td style="text-align: left;"><%=sid %>&emsp;</td>
-		                         <td style="width: 700px !important"><textarea style="height:100px; width:100%;" class="form-control" placeholder="댓글을 등록해주세요(200자 이내)" name = "comm_content" required></textarea></td>
-		                         <td style="text-align: right;">&emsp;<button type="submit" class="btn_style3">댓글 등록</button></td>
-		                     </tr>
-		                
-		                 </tbody>   
+                             <tr style="border-bottom: none !important; margin:auto">
+                                 <td style="text-align: left;"><%=cvo.getMem_id1() %>&emsp;</td>
+                                 <td style="width: 700px !important"><textarea style="height:100px; width:100%;" class="form-control" placeholder="<%=cvo.getComm_content() %>" name = "comm_content" required></textarea></td>
+                                 <td style="text-align: right;">&emsp;<button type="submit" class="btn_style3">수정 완료</button></td>
+                                 <td style="text-align: right;">&emsp;<button type="submit" class="btn_style3" onclick="history.back()">수정 취소</button></td>
+                             </tr>      
+                         </tbody>   
                    </table>
-               </form>    
-                     <% }  %> 
+               </form>   
+                
+               
+                
              </div>        
                
  <%--              <div id="edit" style="display:none">
