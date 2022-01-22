@@ -87,7 +87,7 @@ QnaVO vo = new QnaDAO().getQnaVO(qna_id);
                             <td class="date_style">조회수 <%= vo.getQna_hits() %></td>
                         </tr>   
                         <tr>
-                            <th>작성자</th><td colspan="3" class="star_style">&nbsp;&nbsp; <%= vo.getMem_id1() %></td>   
+                            <th>작성자</th><td colspan="3">&nbsp;&nbsp; <%= vo.getMem_id1() %></td>   
                         </tr>  
 	                    <tr>
 	                        <th>내용</th><td colspan="4" height="300px">&nbsp;&nbsp;<%= vo.getQna_content() %></td>
@@ -96,9 +96,9 @@ QnaVO vo = new QnaDAO().getQnaVO(qna_id);
 	                        <% if(vo.getMem_id1().equals(sid) || "admin".equals(sid)){ %>
 	                            <td colspan="4">
 	                                <a href="http://localhost:9000/dream/qna/qna_update.jsp?qna_id=<%= vo.getQna_id()%>">
-	                                    <button type="button" class="btn_style1">수정</button>
+	                                    <button id="update_qna_btn" type="button" class="btn_style1">수정</button>
 	                                </a>
-	                                    <button type="button" class="btn_style1" onclick="reviewDelete()">삭제</button>
+	                                    <button id="delete_qna_btn" type="button" class="btn_style1" onclick="reviewDelete()">삭제</button>
 	                            </td>
 	                        <% }else{ %>
 	                            <td colspan="4"></td>
@@ -107,44 +107,64 @@ QnaVO vo = new QnaDAO().getQnaVO(qna_id);
                     </table>
                </form> 
                                
-               <form name="qna_comment_form" style="padding:0 60px !important;" method="post" action="comm_write_proc.jsp?qna_id=<%=vo.getQna_id()%>&mem_id1=<%=sid%>">
-                   <table class="qna_comment" style="border-bottom: none; width: 1000px; margin:auto" >
-                       <tbody style="border-bottom: none !important; margin:auto"> 
+               
+                   <table id="qna_comment_list" style="border-bottom: none; width: 1000px; margin:auto" >
+                       <thead style="border-bottom: none !important; margin:auto"> 
 	                      <tr>
-	                          <td style="font-weight: bold; color: black; border-bottom: 2px solid black; width:4%">댓글</td>
+	                          <th style="font-weight: bold; color: black; border-bottom: 2px solid black; width:4%">댓글</th>
 	                      </tr>
+	                      
+	                   </thead>
+	                   <tbody>   
 	                       <%
 	                        CommDAO dao = new CommDAO();
 	                        ArrayList<CommVO> list = dao.getList(vo.getQna_id());
 	                        for(int i=0; i<list.size(); i++){
 	                       %>   
-	                      <tr style="border-bottom: 1px dotted grey !important;">
+	                      <tr id="read" style="border-bottom: 1px dotted grey !important;">
 	                          <td style="width: 8%"><%=list.get(i).getMem_id1() %></td>
-	                          <td style="width: 50%"><%=list.get(i).getComm_content() %></td>
-	                          <td style="text-align: right; width: 20%;"><%= list.get(i).getComm_date() %></td>
-	                          <td>
+	                          <!-- <div id="read_comment"> -->
+	                          <td id="read_content" style="width: 50%"><%=list.get(i).getComm_content() %></td>
+	                          <td id="edit_content" style="width: 700px !important; display:none"><textarea style="height:100px; width:100%;" class="form-control" placeholder="댓글을 등록해주세요(200자 이내)" name = "comm_content" required></textarea></td> 
+	                          <td style="text-align: right; width: 20%;"><%=list.get(i).getComm_date() %></td>
+	                          <!-- </div> -->
+	                          
+	                          
 	                            <% if(list.get(i).getMem_id1().equals(sid) || "admin".equals(sid)){ %>
-	                                    <a href="http://localhost:9000/dream/qna/comm_update.jsp?qna_id=<%= vo.getQna_id()%>&comm_id=<%=list.get(i).getComm_id() %>">
-	                                        <button type="button" class="btn_style1">수정</button>
-	                                    </a>
-	                                        <button type="button" class="btn_style1" onclick="">삭제</button>
-	                            <% } %>
-                              </td>
-	                       </tr>
-                           <% }  %>
-                         </tbody> 
-                     </table>
+	                          <td id="read_button">  
+	                                   <%--  <a href="http://localhost:9000/dream/qna/comm_update.jsp?qna_id=<%= list.get(i).getQna_id()%>&comm_id=<%=list.get(i).getComm_id() %>"> --%>
+	                          
+	                                   <button type="button" class="btn_style1" onclick="edit()">수정</button>
+	                                    <!-- </a> -->
+	                                   <button type="button" class="btn_style1" onclick="">삭제</button>
+	                                   
+	                          </td> 
+	                          <td> 
+                                       <button id="update_button" style="display: none" type="button" class="btn_style1" onclick="edit()">완료</button>
+	                                   <button id="cancel_button" style="display: none" type="button" class="btn_style1" onclick="goback()">취소</button>
+	                          </td> 
+	                            <% }else{ %>
+                              <td></td>
+                              <% }  %>
+	                       </tr>          
+                        </tbody> 
+                            <% }  %>
+                    </table>  
                      <br>
-                     <table class="qna_comment" style="border-bottom: none; margin:auto" >    
+                     
+                     
+                <form name="qna_comment_form" style="padding:0 60px !important;" method="post" action="comm_write_proc.jsp?qna_id=<%=vo.getQna_id()%>&mem_id1=<%=sid%>">    
+                    
+                    <table id="write_comment" class="qna_comment_write" style="border-bottom: none; margin:auto" >    
                       <% if(vo.getMem_id1().equals(sid)|| "admin".equals(sid)){ %>  
                          <tbody style="border-bottom: none !important; margin:auto">
 		                     <tr style="border-bottom: none !important; margin:auto">
 		                         <td style="text-align: left;"><%=sid %>&emsp;</td>
-		                         <td style="width: 700px !important"><input type="text" style="height:100px; width:100%;" class="form-control" placeholder="댓글을 등록해주세요(200자 이내)" name = "comm_content" required></td>
+		                         <td style="width: 700px !important"><textarea style="height:100px; width:100%;" class="form-control" placeholder="댓글을 등록해주세요(200자 이내)" name = "comm_content" required></textarea></td>
 		                         <td style="text-align: right;">&emsp;<button type="submit" class="btn_style3">댓글 등록</button></td>
 		                     </tr>
-		                 </tbody>    
-	                  <% } %>   
+		              <% } %>        
+		                 </tbody>   
                    </table>
                </form>    
 	      </section> 
@@ -152,6 +172,58 @@ QnaVO vo = new QnaDAO().getQnaVO(qna_id);
     </div>
 </section> 
 </div>  
+    <script>
+    function edit(){
+        document.getElementById("read_content").style.display = "none";
+        document.getElementById("edit_content").style.display = "";
+        document.getElementById("update_qna_btn").style.display = "none";
+        document.getElementById("delete_qna_btn").style.display = "none";
+        document.getElementById("read_button").style.display = "none";
+        document.getElementById("write_comment").style.display = "none";
+        document.getElementById("update_button").style.display = "";
+        document.getElementById("cancel_button").style.display = "";
+        
+    }
+   
+    
+    
+    function goback(){
+        document.getElementById("read_content").style.display = "";
+        document.getElementById("edit_content").style.display = "none";
+        document.getElementById("read_button").style.display = "";
+        document.getElementById("update_qna_btn").style.display = "";
+        document.getElementById("delete_qna_btn").style.display = "";
+        document.getElementById("write_comment").style.display = "";
+        document.getElementById("update_button").style.display = "none";
+        document.getElementById("cancel_button").style.display = "none";
+        
+    }
+    </script>
+
+
+
+    <!-- jQuery CDN -->
+    <script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
+     <script type="text/javascript">
+        function answerEdit(comm_id, mem_id1, comm_content, qna_id){
+            $('#comm_content'+comm_id).html(
+                "<textarea id='edit_content"+comm_id+"'>"+comm_content+"</textarea>"
+                +"<style>#edit_content"+comm_id+"{width:740px; height:80px; resize:none;} </style>"
+            );
+            
+            $('#comm_button'+comm_id).html(
+                "<a onclick='answerEditSave("+comm_id+","+qna_id+")' id='btnEdit'>완료</a> "
+                +"<a onclick='location.href='qna_content.jsp?qna_id="+qna_id+"' id='btnCancel'>취소</a>"
+            );
+        }
+        
+        function answerEditSave(comm_id, qna_id){
+            var comm_content = $("#comm_content"+comm_id).val();
+            location.href='comm_update.jsp?comm_id='+comm_id+"&comm_content="+comm_content; 
+           
+        }
+    </script>
+
 <!-- footer Start -->
 <%@include file ="../footer.jsp" %>
 
