@@ -11,7 +11,7 @@ public class CommDAO extends DBConn {
      */
     public ArrayList<CommVO> getList(int qna_id) {
         ArrayList<CommVO> list = new ArrayList<CommVO>();
-        String sql = "select * from comm_table where qna_id=? and comm_status=0";
+        String sql = "select * from comm_table where qna_id=? and comm_status=0 order by comm_id";
         getPreparedStatement(sql);
 
         try {

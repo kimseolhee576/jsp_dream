@@ -105,9 +105,10 @@ QnaVO vo = new QnaDAO().getQnaVO(qna_id);
 	                        <% } %>
 	                    </tr>
                     </table>
+                    <p></p>
                   </form>  
                
-                  
+                   <p></p>
 	                   <table id="qna_comment_list" style="border-bottom: none; width: 1000px; margin:auto" >
 	                       <thead style="border-bottom: none !important; margin:auto"> 
 		                      <tr>

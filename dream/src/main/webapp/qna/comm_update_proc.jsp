@@ -22,7 +22,6 @@ int qna_id = Integer.parseInt(request.getParameter("qna_id"));
 	int result = dao.updateC(vo);
 	
 	if(result ==1){
-	    System.out.println(qna_id);
 	    response.sendRedirect("qna_content.jsp?qna_id="+qna_id);
 	}
 	
