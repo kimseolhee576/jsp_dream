@@ -121,7 +121,6 @@ function idCheck(){
         idMsg.style.color = "#FF1493";
         id.style.border = "1px solid #FF1493";
         idMsg.innerHTML = "유효한 양식이 아닙니다";
-    //    $('#id').val('');
         return false;
 
         }else{
@@ -158,8 +157,7 @@ function cpassCheck(){
         cpassMsg.style.color = "#FF1493";
         cpass.style.border = "1px solid #FF1493";
         cpassMsg.innerHTML = "유효한 양식이 아닙니다";
-    return false;
-
+    	return false;
     }else{
         cpassMsg.innerHTML = "";
         cpass.style.border = "1px solid #ddd";
@@ -316,7 +314,6 @@ function hpCheck(){
         hpMsg.style.color = "#FF1493";
         hp.style.border = "1px solid #FF1493";
         hpMsg.innerHTML = "유효한 양식이 아닙니다";
-    //    $('#hp').val('');
         return false;
 
         }else{
