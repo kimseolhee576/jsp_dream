@@ -61,6 +61,7 @@ public class QnaDAO extends DBConn {
                 vo.setQna_date(rs.getString(7));
                 vo.setMem_id2(rs.getString(8));
                 vo.setQna_updatedate(rs.getString(9));
+                updateHits(qna_id);
 
             }
         } catch (Exception e) {
@@ -68,6 +69,23 @@ public class QnaDAO extends DBConn {
         }
 
         return vo;
+    }
+
+    /**
+     * 글 상세보기로 들어갔을 때 조회수 1 올라가기
+     */
+    public void updateHits(int qna_id) {
+        String sql = "update qna_table set qna_hits=qna_hits+1 where qna_id=?";
+        getPreparedStatement(sql);
+
+        try {
+            pstmt.setInt(1, qna_id);
+            pstmt.executeUpdate();
+
+            close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     /**
