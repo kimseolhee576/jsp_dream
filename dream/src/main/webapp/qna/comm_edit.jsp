@@ -130,13 +130,14 @@ CommVO cvo = new CommDAO().getComment(qna_id, comm_id);
                      <br>
                      
                      
-                <form name="qna_comment_form" style="padding:0 60px !important;" method="post" action="comm_update_proc.jsp?qna_id=<%=qna_id %>&comm_id=<%=comm_id%>">     
-                    
+                <form name="qna_comment_form" style="padding:0 60px !important;" method="post" action="comm_update_proc.jsp">     
+                  <input type="hidden" name="comm_id" value="<%=comm_id %>" >
+                  <input type="hidden" name="qna_id" value="<%=qna_id %>" >
                     <table id="edit_comment" class="qna_comment_write" style="border-bottom: none; margin:auto" >  
                          <tbody style="border-bottom: none !important; margin:auto">
                              <tr style="border-bottom: none !important; margin:auto">
                                  <td style="text-align: left;"><%=cvo.getMem_id1() %>&emsp;</td>
-                                 <td style="width: 700px !important"><textarea style="height:100px; width:100%;" class="form-control" placeholder="<%=cvo.getComm_content() %>" name = "comm_content" required></textarea></td>
+                                 <td style="width: 700px !important"><textarea style="height:100px; width:100%;" class="form-control" name = "comm_content" required><%=cvo.getComm_content() %></textarea></td>
                                  <td style="text-align: right;">&emsp;<button type="submit" class="btn_style3">수정 완료</button></td>
                                  <td style="text-align: right;">&emsp;<button type="button" class="btn_style3" onclick="history.back()">수정 취소</button></td>
                              </tr>      

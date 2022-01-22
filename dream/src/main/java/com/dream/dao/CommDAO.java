@@ -95,14 +95,35 @@ public class CommDAO extends DBConn {
      */
     public int updateC(CommVO vo) {
         int result = 0;
-        String sql = "update comm_table set comm_content=?, mem_id2=?, comm_updatedate=sysdate  where qna_id=? and comm_id=?";
+        String sql = "update comm_table set comm_content=?, mem_id2=?, comm_updatedate=sysdate  where comm_id=?";
         getPreparedStatement(sql);
 
         try {
             pstmt.setString(1, vo.getComm_content());
             pstmt.setString(2, vo.getMem_id2());
-            pstmt.setInt(3, vo.getQna_id());
-            pstmt.setInt(4, vo.getComm_id());
+            pstmt.setInt(3, vo.getComm_id());
+
+            result = pstmt.executeUpdate();
+
+            close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return result;
+    }
+
+    /**
+     * 삭제한 댓글 데이터 db에 등록
+     */
+    public int deleteC(int comm_id) {
+        int result = 0;
+        String sql = "update comm_table set comm_status=1 where comm_id=?";
+        getPreparedStatement(sql);
+
+        try {
+            pstmt.setInt(1, comm_id);
 
             result = pstmt.executeUpdate();
 

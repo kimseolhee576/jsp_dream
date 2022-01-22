@@ -60,7 +60,7 @@
       <div class="content">
           <section class="review_board">
             <h2>문의게시판</h2>
-                <form name="reviewWriteForm" method="post" action="qna_write_proc.jsp">
+                <form method="post" action="qna_write_proc.jsp">
         				<table class="review_write">
           					<tr>
 	                            <td colspan="2">

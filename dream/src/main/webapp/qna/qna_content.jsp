@@ -68,9 +68,9 @@ QnaVO vo = new QnaDAO().getQnaVO(qna_id);
     <div class="container">
       <div class="content">
         <section>
-             <h2>문의게시판</h2>
-               <form name="qna_delete_form" action="qna_delete_proc.jsp" method="post" >
-                  <input type="hidden" name="qna_id" value="<%= qna_id %>" >
+             <h2>문의게시판</h2>             
+               <form action="qna_delete_proc.jsp" method="post" onsubmit="return confirm('문의글을 정말로 삭제하시겠습니까?');">
+                  <input type="hidden" name="qna_id" value="<%= vo.getQna_id() %>" >
                      <table class="review_content" >
                         <tr>
                             <td colspan="4">
@@ -95,58 +95,60 @@ QnaVO vo = new QnaDAO().getQnaVO(qna_id);
 						<tr>
 	                        <% if(vo.getMem_id1().equals(sid) || "admin".equals(sid)){ %>
 	                            <td colspan="4">
-	                                <a href="http://localhost:9000/dream/qna/qna_update_proc.jsp?qna_id=<%= vo.getQna_id()%>">
+	                                <a href="http://localhost:9000/dream/qna/qna_update.jsp?qna_id=<%= vo.getQna_id()%>">
 	                                    <button id="update_qna_btn" type="button" class="btn_style1">수정</button>
 	                                </a>
-	                                    <button id="delete_qna_btn" type="button" class="btn_style1" onclick="reviewDelete()">삭제</button>
+	                                    <button type="submit" class="btn_style1">삭제</button>
 	                            </td>
 	                        <% }else{ %>
 	                            <td colspan="4"></td>
 	                        <% } %>
 	                    </tr>
                     </table>
-               </form> 
-                               
-               <div id="read">
-                   <table id="qna_comment_list" style="border-bottom: none; width: 1000px; margin:auto" >
-                       <thead style="border-bottom: none !important; margin:auto"> 
-	                      <tr>
-	                          <th style="font-weight: bold; color: black; border-bottom: 2px solid black; width:4%">댓글</th>
-	                      </tr>
-	                      
-	                   </thead>
-	                   <tbody>   
-	                       <%
-	                        CommDAO dao = new CommDAO();
-	                        ArrayList<CommVO> list = dao.getList(vo.getQna_id());
-	                        for(int i=0; i<list.size(); i++){
-	                       %>   
-	                      <tr style="border-bottom: 1px dotted grey !important;">
-	                          <td style="width: 8%"><%=list.get(i).getMem_id1() %></td>
-	                          <!-- <div id="read_comment"> -->
-	                          <td style="width: 50%"><%=list.get(i).getComm_content() %></td>
-	                          <td style="text-align: right; width: 20%;"><%=list.get(i).getComm_updatedate() %></td>
-	                          <!-- </div> -->
-	                          
-	                          
-	                            <% if(list.get(i).getMem_id1().equals(sid) || "admin".equals(sid)){ %>
-	                          <td>  
-	                                   <a href="http://localhost:9000/dream/qna/comm_edit.jsp?qna_id=<%= list.get(i).getQna_id()%>&comm_id=<%=list.get(i).getComm_id() %>">
-	                          
-	                                   <button type="button" class="btn_style1">수정</button>
-	                                    <!-- </a> -->
-	                                   <button type="button" class="btn_style1" onclick="">삭제</button>
-	                                   
-	                          </td> 
-	                            <% }else{ %>
-                              <td></td>
-                              <% }  %>
-	                       </tr>   
-	                        <% }  %>       
-                        </tbody> 
-                            
-                    </table>  
-                     <br>
+                  </form>  
+               
+                  
+	                   <table id="qna_comment_list" style="border-bottom: none; width: 1000px; margin:auto" >
+	                       <thead style="border-bottom: none !important; margin:auto"> 
+		                      <tr>
+		                          <th style="font-weight: bold; color: black; border-bottom: 2px solid black; width:4%">댓글</th>
+		                      </tr>
+		                      
+		                   </thead>
+		                   <tbody>   
+		                       <%
+		                        CommDAO dao = new CommDAO();
+		                        ArrayList<CommVO> list = dao.getList(vo.getQna_id());
+		                        for(int i=0; i<list.size(); i++){
+		                       %>   
+		                      <tr style="border-bottom: 1px dotted grey !important;">
+		                          <td style="width: 8%"><%=list.get(i).getMem_id1() %></td>
+		                          <!-- <div id="read_comment"> -->
+		                          <td style="width: 50%"><%=list.get(i).getComm_content() %></td>
+		                          <td style="text-align: right; width: 20%;"><%=list.get(i).getComm_updatedate() %></td>
+		                          <!-- </div> -->
+		                          
+		                          
+		                            <% if(list.get(i).getMem_id1().equals(sid) || "admin".equals(sid)){ %>
+		                          <td>  
+		                                   <a href="http://localhost:9000/dream/qna/comm_edit.jsp?qna_id=<%= list.get(i).getQna_id()%>&comm_id=<%=list.get(i).getComm_id() %>">
+		                                   <button type="button" class="btn_style1">수정</button>
+		                                   </a>
+		                                   <a href="http://localhost:9000/dream/qna/comm_delete_proc.jsp?qna_id=<%= list.get(i).getQna_id()%>&comm_id=<%=list.get(i).getComm_id() %>">
+		                                   <button type="button" class="btn_style1">삭제</button>
+		                                   </a>
+		                                   
+		                          </td> 
+		                            <% }else{ %>
+	                              <td></td>
+	                              <% }  %>
+		                       </tr>   
+		                        <% }  %>       
+	                        </tbody> 
+	                            
+	                    </table> 
+	                 
+                     <br>  
                      
                      <% if(vo.getMem_id1().equals(sid)|| "admin".equals(sid)){ %> 
                 <form name="qna_comment_form" style="padding:0 60px !important;" method="post" action="comm_write_proc.jsp?qna_id=<%=vo.getQna_id()%>&mem_id1=<%=sid%>">    
@@ -165,115 +167,13 @@ QnaVO vo = new QnaDAO().getQnaVO(qna_id);
                </form>    
                      <% }  %> 
              </div>        
-               
- <%--              <div id="edit" style="display:none">
-                     <table id="qna_comment_list2" style="border-bottom: none; width: 1000px; margin:auto; " >
-                        <thead style="border-bottom: none !important; margin:auto"> 
-                          <tr>
-                              <th style="font-weight: bold; color: black; border-bottom: 2px solid black; width:4%">댓글</th>
-                          </tr>
-                          
-                       </thead>
-                       <tbody>   
-                           <%
-                            CommDAO dao2 = new CommDAO();
-                            ArrayList<CommVO> list2 = dao2.getList(vo.getQna_id());
-                            for(int i=0; i<list2.size(); i++){
-                           %>   
-                          <tr style="border-bottom: 1px dotted grey !important;">
-                              <td style="width: 8%"><%=list2.get(i).getMem_id1() %></td>
-                              <!-- <div id="read_comment"> -->
-                              <td style="width: 50%"><%=list2.get(i).getComm_content() %></td>
-                              <td style="text-align: right; width: 20%;"><%=list2.get(i).getComm_date() %></td>
-                              <!-- </div> -->
-                              
-                          </tr>   
-                           <% } %>       
-                        </tbody> 
-                            
-                    </table>  
-                     <br>
-                     
-                     
-                <form name="qna_comment_form" style="padding:0 60px !important;" method="post" action="comm_update_proc.jsp?comm_id=<%=list2.get(i).%>">     
-                    
-                    <table id="edit_comment" class="qna_comment_write" style="border-bottom: none; margin:auto" >  
-                         <tbody style="border-bottom: none !important; margin:auto">
-                             <tr style="border-bottom: none !important; margin:auto">
-                                 <td style="text-align: left;"><%=sid %>&emsp;</td>
-                                 <td style="width: 700px !important"><textarea style="height:100px; width:100%;" class="form-control" placeholder="수정하세요" name = "comm_content" required></textarea></td>
-                                 <td style="text-align: right;">&emsp;<button type="submit" class="btn_style3">수정 완료</button></td>
-                                 <td style="text-align: right;">&emsp;<button type="submit" class="btn_style3" onclick="cancel()">수정 취소</button></td>
-                             </tr>      
-                         </tbody>   
-                   </table>
-               </form>   
-                
-               
-                
-             </div>    --%> 
-                 
+  
 	      </section> 
 	   </div>
     </div>
 </section> 
 </div>  
-    <script>
-    function edit(){
-    	document.getElementById("update_qna_btn").style.display = "none";
-        document.getElementById("delete_qna_btn").style.display = "none";
-    
-    }
-    
-    
-    	
-    	
-   /*  	document.getElementById("update_qna_btn").style.display = "none";
-        document.getElementById("delete_qna_btn").style.display = "none";
-        document.getElementById("qna_comment_list").style.display = "none";
-        document.getElementById("write_comment").style.display = "none";
-        document.getElementById("qna_comment_list2").style.display = "";
-        document.getElementById("edit_comment").style.display = ""; */
-    }
-   
-    
-    
-    function goback(){
-        document.getElementById("read_content").style.display = "";
-        document.getElementById("edit_content").style.display = "none";
-        document.getElementById("read_button").style.display = "";
-        document.getElementById("update_qna_btn").style.display = "";
-        document.getElementById("delete_qna_btn").style.display = "";
-        document.getElementById("write_comment").style.display = "";
-        document.getElementById("update_button").style.display = "none";
-        document.getElementById("cancel_button").style.display = "none";
-        
-    }
-    </script>
 
-
-
-    <!-- jQuery CDN -->
-    <script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
-     <script type="text/javascript">
-        function answerEdit(comm_id, mem_id1, comm_content, qna_id){
-            $('#comm_content'+comm_id).html(
-                "<textarea id='edit_content"+comm_id+"'>"+comm_content+"</textarea>"
-                +"<style>#edit_content"+comm_id+"{width:740px; height:80px; resize:none;} </style>"
-            );
-            
-            $('#comm_button'+comm_id).html(
-                "<a onclick='answerEditSave("+comm_id+","+qna_id+")' id='btnEdit'>완료</a> "
-                +"<a onclick='location.href='qna_content.jsp?qna_id="+qna_id+"' id='btnCancel'>취소</a>"
-            );
-        }
-        
-        function answerEditSave(comm_id, qna_id){
-            var comm_content = $("#comm_content"+comm_id).val();
-            location.href='comm_update.jsp?comm_id='+comm_id+"&comm_content="+comm_content; 
-           
-        }
-    </script>
 
 <!-- footer Start -->
 <%@include file ="../footer.jsp" %>

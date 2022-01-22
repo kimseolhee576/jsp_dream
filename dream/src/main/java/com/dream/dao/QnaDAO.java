@@ -13,7 +13,7 @@ public class QnaDAO extends DBConn {
         ArrayList<QnaVO> list = new ArrayList<QnaVO>();
         String sql = "select qna_id, qna_title, qna_content, qna_hits, qna_status, mem_id1, "
                 + " to_char(qna_date,'yyyy-mm-dd') qna_date, mem_id2, qna_updatedate "
-                + " from (select * from qna_table order by qna_date desc)";
+                + " from (select * from qna_table where qna_status=0 order by qna_date desc)";
         getPreparedStatement(sql);
 
         try {
@@ -61,13 +61,13 @@ public class QnaDAO extends DBConn {
                 vo.setQna_date(rs.getString(7));
                 vo.setMem_id2(rs.getString(8));
                 vo.setQna_updatedate(rs.getString(9));
-                return vo;
+
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        return null;
+        return vo;
     }
 
     /**
@@ -148,7 +148,7 @@ public class QnaDAO extends DBConn {
     }
 
     /**
-     * 문의글 수정
+     * 수정한 문의글 데이터 db에 등록
      */
     public int updateQ(QnaVO vo) {
         int result = 0;
@@ -168,7 +168,27 @@ public class QnaDAO extends DBConn {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return result;
+    }
 
+    /**
+     * 삭제한 문의글 데이터 db에 등록
+     */
+    public int deleteQ(String qna_id) {
+        int result = 0;
+        String sql = "update qna_table set qna_status=1 where qna_id=?";
+        getPreparedStatement(sql);
+
+        try {
+            pstmt.setString(1, qna_id);
+
+            result = pstmt.executeUpdate();
+
+            close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return result;
     }
 
