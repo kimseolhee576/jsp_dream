@@ -73,11 +73,11 @@
 								<div class="at-text">앞으로 뒤로 전장을 날아다니는 발키리<br>
 									격렬한 전투의 흔적 속에서 용맹히 싸우다 전사한 용사들의<br>
 									 영혼을 수거하는 발키리와 함께 흙의 보물을 찾아 떠나보세요!</div>
-								<span class="at-text">테마분류 | 자녀,연인,친구,스릴</span>
-								<span class="at-text">위&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     치&nbsp;| 드라켄밸리</span>
-								<span class="at-text">탑승인원 | 20명</span>
-								<span class="at-text">키&nbsp;&nbsp;제&nbsp;&nbsp;한 | 120cm ~ 200cm</span>
-								<span class="at-text">비&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     고    | 보호자 동승시 100cm이상 이용가능</span>
+								<span class="at-text"><span>테마분류</span><span>자녀,연인,친구,스릴</span></span></span>
+								<span class="at-text"><span>위&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;치</span><span>드라켄밸리</span></span>
+								<span class="at-text"><span>탑승인원</span><span>20명</span></span>
+								<span class="at-text"><span>키&nbsp;&nbsp;제&nbsp;&nbsp;한</span><span>120cm ~ 200cm</span></span>
+								<span class="at-text"><span>비&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     고</span><span>보호자 동승시 100cm이상 이용가능</span></span>
 							</div>
 						</div>
 					</div>
@@ -97,11 +97,11 @@
 					<h2 class="mt-3 mb-4 position-relative content-title">크라크</h2>
 					<div class="at-text">360도 회전하는 메가톤급 스릴 라이드!<br>
 						거칠게 좌우로 몰아치다가 거꾸로 매달리는 아찔한 스릴을 <br>
-						느껴보세요! (드라켄밸리 내 ‘불의 보물’이 숨겨진 곳)</div>
-					<span class="at-text">테마분류 | 자녀,연인,친구,스릴</span>
-					<span class="at-text">위&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     치&nbsp;| 드라켄밸리</span>
-					<span class="at-text">탑승인원 | 20명</span>
-					<span class="at-text">키&nbsp;&nbsp;제&nbsp;&nbsp;한 | 120cm ~ 200cm</span>
+						느껴보세요! (드라켄밸리 내 ‘불의 보물’이 숨겨진 곳)</div><br>
+					<span class="at-text"><span>테마분류</span><span>자녀,연인,친구,스릴</span></span>
+					<span class="at-text"><span>위&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     치&nbsp;</span><span>드라켄밸리</span></span>
+					<span class="at-text"><span>탑승인원</span><span>20명</span></span>
+					<span class="at-text"><span>키&nbsp;&nbsp;제&nbsp;&nbsp;한</span><span>120cm ~ 200cm</span></span>
 					
 				</div>
 			</div>
@@ -120,11 +120,11 @@
 					<h2 class="mt-3 mb-4 position-relative content-title">드라켄</h2>
 					<div class="at-text">세계 6번째, 국내 최초! 90도 다이브코스터!<br>
 						63m 높이에서 수직 하강! 2drop까지!<br>
-						지금껏 느껴볼 수 없던 최강 스릴에 도전하세요!</div>
-					<span class="at-text">테마분류 | 자녀,연인,친구,스릴</span>
-					<span class="at-text">위&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     치&nbsp;| 드라켄밸리</span>
-					<span class="at-text">탑승인원 | 24명</span>
-					<span class="at-text">키&nbsp;&nbsp;제&nbsp;&nbsp;한 | 135cm ~ 200cm</span>
+						지금껏 느껴볼 수 없던 최강 스릴에 도전하세요!</div><br>
+					<span class="at-text"><span>테마분류</span><span>자녀,연인,친구,스릴</span></span>
+					<span class="at-text"><span>위&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     치&nbsp;</span><span>드라켄밸리</span></span>
+					<span class="at-text"><span>탑승인원</span><span>24명</span></span>
+					<span class="at-text"><span>키&nbsp;&nbsp;제&nbsp;&nbsp;한</span><span>135cm ~ 200cm</span></span>
 					
 				</div>
 			</div>
@@ -143,11 +143,11 @@
 					<h2 class="mt-3 mb-4 position-relative content-title">파에톤</h2>
 					<div class="at-text">그리스 파에톤 신화를 테마로 한<br>
 						세계 최강의 인버티드 롤러코스터!<br>
-						초고속 익스트림 스릴을 직접 느껴보세요!</div>
-					<span class="at-text">테마분류 | 자녀,연인,친구,스릴</span>
-					<span class="at-text">위&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     치&nbsp;| 엑스존</span>
-					<span class="at-text">탑승인원 | 32명</span>
-					<span class="at-text">키&nbsp;&nbsp;제&nbsp;&nbsp;한 | 145cm ~ 200cm</span>
+						초고속 익스트림 스릴을 직접 느껴보세요!</div><br>
+					<span class="at-text"><span>테마분류</span><span>자녀,연인,친구,스릴</span></span>
+					<span class="at-text"><span>위&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     치&nbsp;</span><span>엑스존</span></span>
+					<span class="at-text"><span>탑승인원</span><span>32명</span></span>
+					<span class="at-text"><span>키&nbsp;&nbsp;제&nbsp;&nbsp;한</span><span>145cm ~ 200cm</span></span>
 					
 				</div>
 			</div>
@@ -166,11 +166,11 @@
 					<h2 class="mt-3 mb-4 position-relative content-title">메가드롭</h2>
 					<div class="at-text">지상 70m 하늘에서 떨어지는 기분!<br>
 						하늘에서 내려다보는 경치와<br>
-						급하강 할 때 심장 쫄깃한 스릴을 느껴보세요!</div>
-					<span class="at-text">테마분류 | 자녀,연인,친구,스릴</span>
-					<span class="at-text">위&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     치&nbsp;| 엑스존</span>
-					<span class="at-text">탑승인원 | 20명</span>
-					<span class="at-text">키&nbsp;&nbsp;제&nbsp;&nbsp;한 | 140cm ~ 200cm</span>
+						급하강 할 때 심장 쫄깃한 스릴을 느껴보세요!</div><br>
+					<span class="at-text"><span>테마분류</span><span>자녀,연인,친구,스릴</span></span>
+					<span class="at-text"><span>위&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     치&nbsp;</span><span>엑스존</span></span>
+					<span class="at-text"><span>탑승인원</span><span>20명</span></span>
+					<span class="at-text"><span>키&nbsp;&nbsp;제&nbsp;&nbsp;한</span><span>140cm ~ 200cm</span></span>
 					
 				</div>
 			</div>
@@ -189,11 +189,11 @@
 					<h2 class="mt-3 mb-4 position-relative content-title">토네이도</h2>
 					<div class="at-text">국내 최고의 스릴 어트랙션 토네이도!<br>
 						국내 최대 상승각도 왕복 230도에서 느끼는<br>
-						가슴 터질 듯한 스릴! 직접 느껴보세요!</div>
-					<span class="at-text">테마분류 | 자녀,연인,친구,스릴</span>
-					<span class="at-text">위&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     치&nbsp;| 엑스존</span>
-					<span class="at-text">탑승인원 | 24명</span>
-					<span class="at-text">키&nbsp;&nbsp;제&nbsp;&nbsp;한 | 140cm ~ 200cm</span>
+						가슴 터질 듯한 스릴! 직접 느껴보세요!</div><br>
+					<span class="at-text"><span>테마분류</span><span>자녀,연인,친구,스릴</span></span>
+					<span class="at-text"><span>위&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     치&nbsp;</span><span>엑스존</span></span>
+					<span class="at-text"><span>탑승인원</span><span>24명</span></span>
+					<span class="at-text"><span>키&nbsp;&nbsp;제&nbsp;&nbsp;한</span><span>140cm ~ 200cm</span></span>
 					
 				</div>
 			</div>
