@@ -109,7 +109,7 @@ function joinFormCheck(){
     회원가입 - 아이디 유효성 체크
 */
 function idCheck(){
-    let idJ = /^(?=.*[a-z])(?=.*[0-9]).{6,10}$/;
+    let idJ = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,10}$/;
     let id,idMsg;
     id = document.getElementById("id");
     idMsg = document.getElementById("idMsg");
@@ -135,7 +135,7 @@ function idCheck(){
     회원가입 - 비밀번호 유효성 체크
 */
     passFlag=0;
-    let pwJ = /^(?=.*[a-z])(?=.*[0-9]).{6,10}$/; 
+    let pwJ = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,10}$/; 
     let pass,cpass,passMsg,cpassMsg;
     pass = document.getElementById("pass");
     cpass = document.getElementById("cpass");
