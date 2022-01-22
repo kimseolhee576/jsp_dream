@@ -137,13 +137,12 @@ function idCheck(){
 */
     passFlag=0;
     let pwJ = /^(?=.*[a-z])(?=.*[0-9]).{6,10}$/; 
-function passCheck(){
     let pass,cpass,passMsg,cpassMsg;
     pass = document.getElementById("pass");
     cpass = document.getElementById("cpass");
     passMsg = document.getElementById("passMsg");
     cpassMsg = document.getElementById("cpassMsg");
-    
+function passCheck(){
     if(!pwJ.test($('#pass').val())||empJ.test($('#pass').val())){
         passMsg.style.color = "#FF1493";
         pass.style.border = "1px solid #FF1493";
@@ -155,12 +154,6 @@ function passCheck(){
     }
 }
 function cpassCheck(){
-    let pass,cpass,passMsg,cpassMsg;
-    pass = document.getElementById("pass");
-    cpass = document.getElementById("cpass");
-    passMsg = document.getElementById("passMsg");
-    cpassMsg = document.getElementById("cpassMsg");
-	
     if(!pwJ.test($('#cpass').val())||empJ.test($('#cpass').val())){
         cpassMsg.style.color = "#FF1493";
         cpass.style.border = "1px solid #FF1493";
@@ -177,18 +170,11 @@ function cpassCheck(){
     회원가입 - 비밀번호 일치 체크
 */
 function passSameCheck(){
-    let pass, cpass, name, passMsg, cpassMsg;
-    pass = document.getElementById("pass");
-    cpass = document.getElementById("cpass");
-    name = document.getElementById("name");
-    passMsg = document.getElementById("passMsg");
-    cpassMsg = document.getElementById("cpassMsg");
-    
-	    if(pass.value!=""&&cpass.value==""){
-			passFlag=1;
-		}else if(pass.value==""&&cpass.value!=""){
-			passFlag=2;
-		}
+    if(pass.value!=""&&cpass.value==""){
+		passFlag=1;
+	}else if(pass.value==""&&cpass.value!=""){
+		passFlag=2;
+	}
     if(pass.value != "" && cpass.value != ""){
         if(pass.value == cpass.value){
 			if(pwJ.test($('#pass').val())){
@@ -196,44 +182,29 @@ function passSameCheck(){
 	            cpassMsg.innerHTML = "";
 	            pass.style.border = "1px solid #ddd";
 	            cpass.style.border = "1px solid #ddd";
-				if(passFlag==1){
-		            passMsg.innerHTML = "비밀번호가 일치합니다";
-		            passMsg.style.color = "blue";
-		            return true;
-				}else if(passFlag==2){
-		            cpassMsg.innerHTML = "비밀번호가 일치합니다";
-		            cpassMsg.style.color = "blue";
-		            return true;
-				}
+	            passMsg.innerHTML = "비밀번호가 일치합니다";
+	            passMsg.style.color = "blue";
+	            return true;
 			}else{
-				if(passFlag==1){
 				passMsg.style.color = "#FF1493";
-		        pass.style.border = "1px solid #FF1493";
 		        passMsg.innerHTML = "유효한 양식이 아닙니다";
-		        }else if(passFlag==2){
-				cpassMsg.style.color = "#FF1493";
-		        cpass.style.border = "1px solid #FF1493";
-		        cpassMsg.innerHTML = "유효한 양식이 아닙니다";
-				}
+		        pass.style.border = "1px solid #FF1493";
+		        pass.value="";
+		        cpass.value="";
+		        cpassMsg.innerHTML = "";
+		        cpass.style.border = "1px solid #ddd";
+		        pass.focus();
 			}
         }else{
-			if(passFlag==1){
-	            passMsg.innerHTML = "비밀번호가 일치하지 않습니다";
-	            passMsg.style.color = "#FF1493";
-	            cpassMsg.innerHTML = "";
-	            pass.value = "";
-	            cpass.value = "";
-	            pass.focus();
-	            return false;
-	    	}else if(passFlag==2){
-	            cpassMsg.innerHTML = "비밀번호가 일치하지 않습니다";
-	            cpassMsg.style.color = "#FF1493";
-	            passMsg.innerHTML = "";
-	            cpass.value = "";
-	            pass.value = "";
-	            cpass.focus();
-	            return false;
-	    	}
+            passMsg.style.color = "#FF1493";
+            passMsg.innerHTML = "비밀번호가 일치하지 않습니다";
+	        pass.style.border = "1px solid #FF1493";
+            pass.value = "";
+            cpass.value = "";
+            cpassMsg.innerHTML = "";
+	        cpass.style.border = "1px solid #ddd";
+            pass.focus();
+            return false;
         }       
     }
 }
@@ -396,7 +367,7 @@ function hpCheck(){
 		}else{
 			$('#idMsg').text("아이디를 입력해주세요");
 			$('#idMsg').css("color","#FF1493");
-			$('#id').css("border-color","#FF1493");
+			$('#id').css("border","1px solid #FF1493");
 			$('#btn_idCheck').css("border-color","white");
 		}
     }
