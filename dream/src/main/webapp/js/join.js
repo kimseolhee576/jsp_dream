@@ -142,6 +142,10 @@ function idCheck(){
     passMsg = document.getElementById("passMsg");
     cpassMsg = document.getElementById("cpassMsg");
 function passCheck(){
+	if(cpass.value==""){
+        cpass.style.border = "1px solid #ddd";
+        cpassMsg.innerHTML = "";
+	}
     if(!pwJ.test($('#pass').val())||empJ.test($('#pass').val())){
         passMsg.style.color = "#FF1493";
         pass.style.border = "1px solid #FF1493";
@@ -153,6 +157,10 @@ function passCheck(){
     }
 }
 function cpassCheck(){
+	if(pass.value==""){
+        pass.style.border = "1px solid #ddd";
+        passMsg.innerHTML = "";
+	}
     if(!pwJ.test($('#cpass').val())||empJ.test($('#cpass').val())){
         cpassMsg.style.color = "#FF1493";
         cpass.style.border = "1px solid #FF1493";
