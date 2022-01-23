@@ -6,8 +6,9 @@
 <%@ page import="java.time.LocalDate" %>
 
 <%
-  QnaDAO dao = new QnaDAO();
-  ArrayList<QnaVO> list = dao.getList();
+QnaDAO dao = new QnaDAO();
+ArrayList<QnaVO> list = dao.getList();
+  
 %>
 
 <!doctype html>
@@ -87,10 +88,15 @@
 						<th>등록일</th>
 						<th width="10%">조회수</th>
   					</tr>
-            <% for(QnaVO vo : list){ %>
+            <%
+            for(QnaVO vo : list){ 
+            %>
     				<tr>
 		              <td><%=vo.getQna_id() %></td>
-		              <td style="font-weight: bold"><a href="qna_content.jsp?qna_id=<%=vo.getQna_id()%>">&emsp;<%=vo.getQna_title() %></a>&nbsp;
+		              <td>&emsp;<a href="qna_content.jsp?qna_id=<%=vo.getQna_id()%>"><%=vo.getQna_title().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>") %></a>&nbsp;
+		            <%if(vo.getComm_count()!=0){ %>
+		              <span style="color: orange">[&nbsp;<%= vo.getComm_count() %>&nbsp;]</span>
+		            <%} %>
 		            <% LocalDate today = LocalDate.now();
 		            if(today.toString().equals(vo.getQna_date())){%>   
 		              <span class="badge " style="background:#B4B4FF"  >new</span></td>
@@ -105,6 +111,7 @@
     			     <a href="http://localhost:9000/dream/qna/qna_list_proc.jsp"> 	<button type="button" class="btn_style1">글쓰기</button></a>
             </td>
           </tr>
+          
         </table>
        </section>
      </div>

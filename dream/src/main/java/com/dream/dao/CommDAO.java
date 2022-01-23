@@ -81,8 +81,6 @@ public class CommDAO extends DBConn {
 
             result = pstmt.executeUpdate();
 
-            close();
-
         } catch (Exception e) {
             e.printStackTrace();
         }

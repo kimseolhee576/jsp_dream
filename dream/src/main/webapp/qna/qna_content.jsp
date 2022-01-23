@@ -82,7 +82,7 @@ QnaVO vo = new QnaDAO().getQnaVO(qna_id);
                         <tr>
 						<tr>
 							<th>제목</th>
-                            <td class="title_style">&nbsp;&nbsp;<%= vo.getQna_title() %></td>
+                            <td class="title_style">&nbsp;&nbsp;<%= vo.getQna_title().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>") %></td>
                             <td class="date_style">날짜 <%= vo.getQna_date() %></td>
                             <td class="date_style">조회수 <%= vo.getQna_hits() %></td>
                         </tr>   
@@ -90,7 +90,7 @@ QnaVO vo = new QnaDAO().getQnaVO(qna_id);
                             <th>작성자</th><td colspan="3">&nbsp;&nbsp; <%= vo.getMem_id1() %></td>   
                         </tr>  
 	                    <tr>
-	                        <th>내용</th><td colspan="4" height="300px">&nbsp;&nbsp;<%= vo.getQna_content() %></td>
+	                        <th>내용</th><td colspan="4" height="300px">&nbsp;&nbsp;<%= vo.getQna_content().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>") %></td>
 	                    </tr>
 						<tr>
 	                        <% if(vo.getMem_id1().equals(sid) || "admin".equals(sid)){ %>

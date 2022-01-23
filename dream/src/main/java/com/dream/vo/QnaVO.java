@@ -3,7 +3,7 @@ package com.dream.vo;
 public class QnaVO {
 
     private String qna_title, qna_content, mem_id1, qna_date, mem_id2, qna_updatedate;
-    private int qna_id, qna_hits, qna_status;
+    private int qna_id, qna_hits, qna_status, comm_count;
 
     public String getQna_title() {
         return qna_title;
@@ -75,5 +75,13 @@ public class QnaVO {
 
     public void setQna_status(int qna_status) {
         this.qna_status = qna_status;
+    }
+
+    public int getComm_count() {
+        return comm_count;
+    }
+
+    public void setComm_count(int comm_count) {
+        this.comm_count = comm_count;
     }
 }
