@@ -34,7 +34,7 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="copyright">
-						&copy; 꿈과 희망의나라 드림월드 &nbsp; All Rights Reserved.
+						&copy; 꿈과 환상의 나라 드림월드 &nbsp; All Rights Reserved.
 					</div>
 				</div>
 				

@@ -125,7 +125,7 @@ QnaVO vo = new QnaDAO().getQnaVO(qna_id);
 		                      <tr style="border-bottom: 1px dotted grey !important;">
 		                          <td style="width: 8%"><%=list.get(i).getMem_id1() %></td>
 		                          <!-- <div id="read_comment"> -->
-		                          <td style="width: 50%"><%=list.get(i).getComm_content() %></td>
+		                          <td style="width: 50%"><%=list.get(i).getComm_content().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>") %></td>
 		                          <td style="text-align: right; width: 20%;"><%=list.get(i).getComm_updatedate() %></td>
 		                          <!-- </div> -->
 		                          

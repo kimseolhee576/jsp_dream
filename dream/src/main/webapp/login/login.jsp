@@ -109,7 +109,7 @@
 					      </label>
 					    </div>
 					    <button class="btn_style3" id="login_btn" type="submit">로그인</button>
-					    <p class="mt-5 mb-3 text-muted" id="copyright">&copy; 꿈과 희망의 나라 드림월드 All Rights Reserved.</p>
+					    <p class="mt-5 mb-3 text-muted" id="copyright">&copy; 꿈과 환상의 나라 드림월드 All Rights Reserved.</p>
 					  </form>
 	             </main>
 	         </div>    

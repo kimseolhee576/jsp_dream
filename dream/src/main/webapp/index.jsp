@@ -87,7 +87,7 @@
 			<div class="col-lg-7 text-center">
 				<div class="section-title">
 					<span class="h6 text-color">드림월드 안내</span>
-					<h2 class="mt-3 content-title text-black">꿈과 환상의나라 드림월드에 오신 많은분들 환영합니다.</h2>
+					<h2 class="mt-3 content-title text-black">꿈과 환상의 나라 드림월드에 오신<br> 많은분들 환영합니다.</h2>
 				</div>
 			</div>
 		</div>
@@ -99,7 +99,7 @@
 
 					<div class="card-body mt-2">
 						<div class="blog-item-meta">
-							<span class="ml-2 mr-2">어트랙션안내</span>
+							<span class="ml-2 mr-2">어트랙션 안내</span>
 						</div> 
 
 						<h3 class="mt-3 mb-5 lh-36">드림월드에 재미있는<br>어트랙션이 무엇이 있는지<br>궁금하다면?</h3>

@@ -16,7 +16,7 @@ function getFindIdResult(id){
 }
 
     let passFlag=0;
-    let pwJ = /^(?=.*[a-z])(?=.*[0-9]).{6,10}$/;
+    let pwJ = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,10}$/;
     let empJ = /\s/g; 
     let pass,cpass,passMsg,cpassMsg;
     pass = document.getElementById("pass");
