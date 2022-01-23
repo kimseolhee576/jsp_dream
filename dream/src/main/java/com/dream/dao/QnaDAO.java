@@ -186,45 +186,6 @@ public class QnaDAO extends DBConn {
         return list;
     }
 
-//    /**
-//     * QnA 목록: 다음 페이지 존재 여부 확인
-//     */
-//    public boolean nextPage(int pageNo) {
-//        String sql = "select * from qna_table where qna_id<? and qna_status=0";
-//        getPreparedStatement(sql);
-//
-//        try {
-//            pstmt.setInt(1, getNext() - (pageNo - 1) * 10);
-//            System.out.println(getNext() - (pageNo - 1) * 10);
-//            rs = pstmt.executeQuery();
-//
-//            while (rs.next()) {
-//                return true;
-//            }
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//        return false;
-//    }
-//
-//    /**
-//     * 다음 글 번호 가져오기
-//     */
-//    public int getNext() {
-//        String sql = "select qna_id from qna_table order by qna_date desc";
-//        try {
-//            getPreparedStatement(sql);
-//            rs = pstmt.executeQuery();
-//
-//            if (rs.next()) {
-//                return rs.getInt(1) + 1; // 다음 글 번호
-//            }
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//        return 1;
-//    }
-
     /**
      * 화면에 나타날 총 게시글 수(삭제글 제외)
      */
@@ -257,117 +218,6 @@ public class QnaDAO extends DBConn {
         }
         return totalPage;
     }
-
-//
-//    /**
-//     * QnA 목록에서 전체 게시글 리스트 조회(+ 페이지 처리)
-//     */
-//    public ArrayList<QnaVO> getList(int pageNo) {
-//        ArrayList<QnaVO> list = new ArrayList<QnaVO>();
-//        String sql = "select qna_id, qna_title, qna_content, qna_hits, qna_status, mem_id1, "
-//                + "to_char(qna_date,'yyyy-mm-dd') qna_date, mem_id2, qna_updatedate, comm_count from "
-//                + "(select * from qna_table where qna_id<? and qna_status=0 and rownum<=10 order by qna_id desc)";
-//        getPreparedStatement(sql);
-//
-//        try {
-//            pstmt.setInt(1, getNext() - (pageNo - 1) * 10); // (pageNo-1)*10 = 출력페이지 시작행. 10은 한페이지 출력 개수
-//            rs = pstmt.executeQuery();
-//
-//            while (rs.next()) {
-//                QnaVO vo = new QnaVO();
-//
-//                vo.setQna_id(rs.getInt(1));
-//                vo.setQna_title(rs.getString(2));
-//                vo.setQna_content(rs.getString(3));
-//                vo.setQna_hits(rs.getInt(4));
-//                vo.setQna_status(rs.getInt(5));
-//                vo.setMem_id1(rs.getString(6));
-//                vo.setQna_date(rs.getString(7));
-//                vo.setMem_id2(rs.getString(8));
-//                vo.setQna_updatedate(rs.getString(9));
-//                vo.setComm_count(rs.getInt(10));
-//
-//                list.add(vo);
-//            }
-////            close();
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//        return list;
-//    }
-//
-//    /**
-//     * QnA 목록: 다음 페이지 존재 여부 확인
-//     */
-//    public boolean nextPage(int pageNo) {
-//        String sql = "select * from qna_table where qna_id<? and qna_status=0";
-//        getPreparedStatement(sql);
-//
-//        try {
-//            pstmt.setInt(1, getNext() - (pageNo - 1) * 10);
-//
-//            rs = pstmt.executeQuery();
-//
-//            while (rs.next()) {
-//                return true;
-//            }
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//        return false;
-//    }
-
-//    /**
-//     * QnA 목록에서 전체 게시글 리스트 조회(+ 페이지 처리)
-//     */
-//    public ArrayList<QnaVO> getList2(int pageNumber) {
-//        String sql = "select * from qna_table where rownum <= 10 and qna_status = 0 order by qna_id desc";
-//        ArrayList<QnaVO> list = new ArrayList<QnaVO>();
-//
-//        try {
-//            getPreparedStatement(sql);
-//            pstmt.setInt(1, -(pageNumber - 1) * 10); // getNext() 대신 (vo.getQna_id()+1) 이렇게 넣었음
-//            rs = pstmt.executeQuery();
-//            while (rs.next()) {
-//                QnaVO vo = new QnaVO();
-//                vo.setQna_id(1);
-//                vo.setQna_title(rs.getString(2));
-//                vo.setQna_content(rs.getString(3));
-//                vo.setQna_hits(rs.getInt(4));
-//                vo.setQna_status(rs.getInt(5));
-//                vo.setMem_id1(rs.getString(6));
-//                vo.setQna_date(rs.getString(7));
-//                vo.setMem_id2(rs.getString(8));
-//                vo.setQna_updatedate(rs.getString(9));
-//
-//                list.add(vo);
-//            }
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//        return list;
-//    }
-//
-//    /**
-//     * QnA 목록: 다음 페이지 존재 여부 확인
-//     */
-//    public boolean nextPage(int pageNumber) {
-//        QnaVO vo = new QnaVO();
-//        String sql = "select * from qna_table where qna_id < ? and qna_status = 0 order by qna_id desc";
-//        getPreparedStatement(sql);
-//
-//        try {
-//            pstmt.setInt(1, (vo.getQna_id() + 1) - (pageNumber - 1) * 10); // getNext() 대신 (vo.getQna_id()+1) 이렇게 넣었음
-//            rs = pstmt.executeQuery();
-//
-//            if (rs.next()) {
-//                return true;
-//            }
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//        return false;
-//    }
 
     /**
      * 문의글 작성한 내용 db에 등록
@@ -469,7 +319,6 @@ public class QnaDAO extends DBConn {
                 vo.setQna_updatedate(rs.getString(9));
                 vo.setComm_count(rs.getInt(10));
 
-                System.out.println(vo.getQna_id());
                 list.add(vo);
             }
             close();
