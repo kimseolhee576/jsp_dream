@@ -15,11 +15,6 @@ request.setCharacterEncoding("utf-8");
     if(session.getAttribute("sid") != null){
 	    sid = (String)session.getAttribute("sid");
 	    response.sendRedirect("http://localhost:9000/dream/qna/qna_write.jsp");
-	}else{
-	    PrintWriter script = response.getWriter();
-	    script.println("<script>");
-	    script.println("alert('로그인이 필요합니다.')");
-	    script.println("location.href='http://localhost:9000/dream/login/login.jsp'");
-	    script.println("</script>");
+	
 	}     
 %>

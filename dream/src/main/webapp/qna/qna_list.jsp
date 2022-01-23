@@ -6,9 +6,10 @@
 <%@ page import="java.time.LocalDate" %>
 
 <%
-QnaDAO dao = new QnaDAO();
-ArrayList<QnaVO> list = dao.getList();
-  
+	int pageNo = 1; 
+	if(request.getParameter("pageNo") != null){
+	    pageNo = Integer.parseInt(request.getParameter("pageNo"));
+	}
 %>
 
 <!doctype html>
@@ -89,35 +90,56 @@ ArrayList<QnaVO> list = dao.getList();
 						<th width="10%">조회수</th>
   					</tr>
             <%
-            for(QnaVO vo : list){ 
+	            QnaDAO dao = new QnaDAO();
+	           /*  ArrayList<QnaVO> list = dao.getList(pageNo); */
+	            ArrayList<QnaVO> list = dao.getList();
+	            for(QnaVO vo : list){ 
             %>
     				<tr>
 		              <td><%=vo.getQna_id() %></td>
-		              <td>&emsp;<a href="qna_content.jsp?qna_id=<%=vo.getQna_id()%>"><%=vo.getQna_title().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>") %></a>&nbsp;
+		              <td>&emsp;<a href="qna_content.jsp?qna_id=<%=vo.getQna_id() %>"><%=vo.getQna_title().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>") %></a>
 		            <%if(vo.getComm_count()!=0){ %>
-		              <span style="color: orange">[&nbsp;<%= vo.getComm_count() %>&nbsp;]</span>
+		              <span style="color: orange">[<%=vo.getComm_count() %>]</span>
 		            <%} %>
 		            <% LocalDate today = LocalDate.now();
 		            if(today.toString().equals(vo.getQna_date())){%>   
-		              <span class="badge " style="background:#B4B4FF"  >new</span></td>
+		              <span class="badge " style= "background: #B4B4FF">new</span></td>
 		            <%} %> 
 		              <td><%=vo.getMem_id1() %></td>
 		              <td><%=vo.getQna_date() %></td>
 		              <td><%=vo.getQna_hits() %></td>
 		          </tr>
-           <%} %>  
+            <%} %>  
           <tr>
             <td colspan="6">
-    			     <a href="http://localhost:9000/dream/qna/qna_list_proc.jsp"> 	<button type="button" class="btn_style1">글쓰기</button></a>
+                <% if(sid != null ) {%>
+                      <a href="http://localhost:9000/dream/qna/qna_list_proc.jsp">
+                <% }else{ %>  
+                      <a href="http://localhost:9000/dream/login/login.jsp" onclick="qnaWriteAlert()"> 
+                <% } %>
+                     <button type="button" class="btn_style1" >글쓰기</button></a>
+                     
             </td>
           </tr>
-          
+            <%-- <% if(pageNo != 1){ %>
+                <a href="http://localhost:9000/dream/qna/qna_list.jsp?pageNo=<%= pageNo-1%>">이전</a>         
+            <% }if(dao.nextPage(pageNo+1)){ %> 
+                <a href="http://localhost:9000/dream/qna/qna_list.jsp?pageNo=<%= pageNo+1%>">다음</a>         
+          <%} %>  --%> 
         </table>
        </section>
      </div>
    </div>
 </section>   
 </div>
+
+<script>
+function qnaWriteAlert(){
+    alert("글쓰기는 회원만 가능합니다. 로그인페이지로 이동합니다.");
+    location.href="login/login.jsp";
+    
+}
+</script>
 <!-- footer Start -->
 <%@include file ="../footer.jsp" %>
 
