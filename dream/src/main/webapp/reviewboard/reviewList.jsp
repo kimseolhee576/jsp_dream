@@ -73,7 +73,7 @@
 							<% for( ReviewVO vo : list){ %>
 							<tr>
 								<td><%= vo.getRno()%></td>
-								<td><a href="reviewContent.jsp?review_id=<%= vo.getReview_id()%>"><%= vo.getReview_title() %></a>
+								<td><a href="reviewContent.jsp?review_id=<%= vo.getReview_id()%>"><%= vo.getReview_title().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>") %></a>
 								<% LocalDate today = LocalDate.now();
 								if(vo.getReview_date().equals(today.toString())){%>   
 		             			<span class="badge " style="background:#B4B4FF"  >new</span></td>

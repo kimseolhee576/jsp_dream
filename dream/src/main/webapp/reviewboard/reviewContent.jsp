@@ -64,7 +64,7 @@
 						</tr>
 						<tr>
 							<th>제목</th>
-							<td class="title_style">&nbsp;&nbsp;<%= vo.getReview_title() %></td>
+							<td class="title_style">&nbsp;&nbsp;<%= vo.getReview_title().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>") %></td>
 							<td class="date_style">날짜 <%= vo.getReview_date() %></td>
 							<td class="date_style">조회수 <%= vo.getReview_hits() %></td>
 						</tr>	
@@ -90,7 +90,7 @@
 							</td>
 						</tr>
 						<tr>
-							<th>내용</th><td colspan="4" height="300px">&nbsp;&nbsp;<%= vo.getReview_content() %></td>
+							<th>내용</th><td colspan="4" height="300px">&nbsp;&nbsp;<%= vo.getReview_content().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>") %></td>
 						</tr>
 						<tr>
 						<% if(vo.getMem_id1().equals(sid) || "admin".equals(sid)){ %>

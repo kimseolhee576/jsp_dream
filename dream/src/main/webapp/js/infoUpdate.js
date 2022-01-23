@@ -69,7 +69,7 @@ function infoUpdateCheck(){
 * 마이페이지 - 내 정보 수정 - 비밀번호 유효성 체크
 */
 function passCheck(){
-	let pwJ = /^(?=.*[a-z])(?=.*[0-9]).{6,10}$/; 
+	let pwJ = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,10}$/;
     let pass, cpass, passMsg;
     pass = document.getElementById("pass");
     cpass = document.getElementById("cpass");
@@ -95,7 +95,7 @@ function passCheck(){
 * 마이페이지 - 내 정보 수정 - 비밀번호 확인 유효성 체크
 */
 function cpassCheck(){
-    let pwJ = /^(?=.*[a-z])(?=.*[0-9]).{6,10}$/; 
+    let pwJ =/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,10}$/;
     let pass, cpass, cpassMsg;
     pass = document.getElementById("pass");
     cpass = document.getElementById("cpass");
