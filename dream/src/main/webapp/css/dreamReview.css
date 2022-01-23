@@ -335,8 +335,13 @@ label.list_star {
 
 .qna_content th {
 	background:#B4B4FF;
-    text-align:center;
-	
+    text-align:center;	
 }
+
+#qna_write th{
+	background:#B4B4FF;
+    text-align:center;  
+}
+
     
    
