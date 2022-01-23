@@ -69,7 +69,7 @@ QnaVO vo = new QnaDAO().getQnaVO(qna_id);
       <div class="content">
         <section>
              <h2>문의게시판</h2>             
-               <form action="qna_delete_proc.jsp" method="post" onsubmit="return confirm('문의글을 정말로 삭제하시겠습니까?');">
+               <form name ="qna_content_form" action="qna_delete_proc.jsp" method="post" onsubmit="return confirm('문의글을 정말로 삭제하시겠습니까?');">
                   <input type="hidden" name="qna_id" value="<%= vo.getQna_id() %>" >
                      <table class="review_content" >
                         <tr>

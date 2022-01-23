@@ -69,7 +69,7 @@ QnaVO vo = new QnaDAO().getQnaVO(qna_id);
       <div class="content">
         <section>
              <h2>문의게시판</h2>
-               <form action="qna_update_proc.jsp" method="post" >
+               <form name="reviewUpdateForm" action="qna_update_proc.jsp" method="post" >
                   <input type="hidden" name="qna_id" value="<%= qna_id %>" >
                      <table class="review_write">
                             <tr>

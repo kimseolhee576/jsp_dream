@@ -10,6 +10,7 @@
 	if(request.getParameter("pageNo") != null){
 	    pageNo = Integer.parseInt(request.getParameter("pageNo"));
 	}
+
 %>
 
 <!doctype html>
@@ -69,17 +70,13 @@
       <div class="content">
 				<section class="review_board">
           <h2>문의게시판</h2>
-            <form name="searchForm" action="qna_search.jsp" method="post">
     			<table class="review_list">
   					<tr>
 		              <td colspan="6">
-		                <select name="searchField" class="listSelect">
-		                  <option value="qna_title">제목</option>
-		                  <option value="mem_id1">작성자</option>
-		                </select>
-		                <input type="text" placeholder="검색어 입력" name="searchText" id="searchText">
-		                <button type="button" class="btn_style3" onclick="searchCheck()">검색</button> <!-- button type="button" -->
-		              </td>
+                         <a href="http://localhost:9000/dream/qna/qna_list.jsp">
+                            <button type="button" class="btn_style2">전체 목록</button>
+                          </a>
+                      </td>
                     </tr>
                     <tr>
                     
@@ -91,9 +88,9 @@
   					</tr>
             <%
 	            QnaDAO dao = new QnaDAO();
-	           /*  ArrayList<QnaVO> list = dao.getList(pageNo); */
-	            ArrayList<QnaVO> list = dao.getList();
-	            for(QnaVO vo : list){ 
+                ArrayList<QnaVO> list = dao.getSearch(request.getParameter("searchField"), request.getParameter("searchText"));
+	           
+                for(QnaVO vo : list){ 
             %>
     				<tr>
 		              <td><%=vo.getQna_id() %></td>
@@ -112,12 +109,12 @@
             <%} %>  
           <tr>
             <td colspan="6">
-                <% if(sid != null ) {%>
+                <%-- <% if(sid != null ) {%>
                       <a href="http://localhost:9000/dream/qna/qna_list_proc.jsp">
                 <% }else{ %>  
                       <a href="http://localhost:9000/dream/login/login.jsp" onclick="qnaWriteAlert()"> 
                 <% } %>
-                     <button type="button" class="btn_style1" >글쓰기</button></a>
+                     <button type="button" class="btn_style1" >글쓰기</button></a> --%>
                      
             </td>
           </tr>
@@ -127,7 +124,6 @@
                 <a href="http://localhost:9000/dream/qna/qna_list.jsp?pageNo=<%= pageNo+1%>">다음</a>         
           <%} %>  --%> 
         </table>
-        </form>
        </section>
      </div>
    </div>

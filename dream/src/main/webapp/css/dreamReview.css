@@ -90,8 +90,10 @@ table.notice_list tr:last-child td { /* 위에 검색, 아래는 버튼*/
 }
 table.review_list, table.review_write,
 table.review_content, table.review_update,
- table.notice_list,table.notice_write,
-table.notice_content, table.notice_update { /*여기*/
+table.notice_list,table.notice_write,
+table.notice_content, table.notice_update,
+table.qna_list,table.qna_write,
+table.qna_content, table.qna_update { /*여기*/
 	width:90%;
 	margin:auto;
 }
@@ -112,7 +114,11 @@ section.review_board table th,
 section.notice table,
 section.notice table tr,
 section.notice table td,
-section.notice table th {  /* 테이블 테두리*/
+section.notice table th,
+section.qna table,
+section.qna table tr,
+section.qna table td,
+section.qna table th {  /* 테이블 테두리*/
 	border-collapse:collapse;
 	border-bottom:1px solid #666;
 }
@@ -126,7 +132,7 @@ table.notice_list tr:last-child td,
 table.notice_update tr:last-child td {
 	border:1px solid rgba(245, 248,249); /* 버튼 부분 테이블 지우기*/
 }
-table.review_list td, table.notice_list td {
+table.review_list td, table.notice_list td, table.qna_list {
 	text-align:center;
 	font-size:12pt;
 	padding:4px;
@@ -201,6 +207,8 @@ form[name="reviewWriteForm"] th,
 form[name="notice_contentform"] th,
 form[name="notice_updateform"] th,
 form[name="notice_writeform"] th,
+form[name="qna_write_form"] th,
+form[name="qna_content_form"] th,
 form[name="qna_update_form"] th,
 form[name="qna_delete_form"] th{ /* 글 수정 th 색깔*/
 	background:#B4B4FF;
@@ -325,5 +333,10 @@ label.list_star {
      color: #000069;
 }
 
+.qna_content th {
+	background:#B4B4FF;
+    text-align:center;
+	
+}
     
    
