@@ -129,8 +129,8 @@ commit;
 select * from notice_table;
 
 -- 문의 게시판 데이터 입력
-insert into qna_table values(sequ_qna_table.nextval,'이용안내시간을 알고싶어요','오픈은 언제하고 몇시에 문을 닫나요',123,0,'test11',sysdate-1,'test11',sysdate-1);
-insert into qna_table values(sequ_qna_table.nextval,'음식물 반입이 되나요?','밖에서 음식을 사서 들어갈수있나요?',777,0,'test11',sysdate,'test11',sysdate);
+insert into qna_table values(sequ_qna_table.nextval,'이용안내시간을 알고싶어요','오픈은 언제하고 몇시에 문을 닫나요',123,0,'test11',sysdate-1,'test11',sysdate-1,0);
+insert into qna_table values(sequ_qna_table.nextval,'음식물 반입이 되나요?','밖에서 음식을 사서 들어갈수있나요?',777,0,'test11',sysdate,'test11',sysdate,0);
 insert into qna_table values(sequ_qna_table.nextval,'드림월드는 어디에 있나요?','드림월드 가고싶은데 어디에있나요?',12,0,'test22',sysdate,'test22',sysdate);
 insert into qna_table values(sequ_qna_table.nextval,'할인적용에 대해 알고싶어요','할인받고 싶은데 정보있나요?',223,0,'test22',sysdate,'test22',sysdate);
 commit;
@@ -138,7 +138,7 @@ commit;
 SELECT * FROM QNA_TABLE;
 
 -- 문의 게시판 댓글 데이터 입력
-INSERT INTO COMM_TABLE VALUES(SEQU_COMM_TABLE.NEXTVAL,1,'오전9시부터 오후10시까지 입니다. 감사합니다.','admin',sysdate,'admin',sysdate,0);
+INSERT INTO COMM_TABLE VALUES(SEQU_COMM_TABLE.NEXTVAL,2,'오전9시부터 오후10시까지 입니다. 감사합니다.','admin',sysdate,'admin',sysdate,0);
 INSERT INTO COMM_TABLE VALUES(SEQU_COMM_TABLE.NEXTVAL,1,'감사합니다:)','test11',sysdate,'test11',sysdate,0);
 INSERT INTO COMM_TABLE VALUES(SEQU_COMM_TABLE.NEXTVAL,2,'감사합니다:)','test22',sysdate,'test11',sysdate,0);
 
