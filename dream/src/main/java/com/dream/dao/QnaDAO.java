@@ -157,7 +157,6 @@ public class QnaDAO extends DBConn {
 //                + " (select * from qna_table where qna_status=0 order by qna_date desc) q) "
 //                + " where num between ? and ?"; //혹시 몰라 남겨두고 주석. 이렇게 해도 되는데 view가 더 편리
 
-        System.out.println(sql);
         getPreparedStatement(sql);
 
         try {
@@ -167,9 +166,6 @@ public class QnaDAO extends DBConn {
 
             while (rs.next()) {
                 QnaVO vo = new QnaVO();
-                System.out.println(rs.getInt(2));
-                System.out.println(rs.getInt(1));
-
                 vo.setQna_id(rs.getInt(2));
                 vo.setQna_title(rs.getString(3));
                 vo.setQna_content(rs.getString(4));
@@ -190,44 +186,78 @@ public class QnaDAO extends DBConn {
         return list;
     }
 
+//    /**
+//     * QnA 목록: 다음 페이지 존재 여부 확인
+//     */
+//    public boolean nextPage(int pageNo) {
+//        String sql = "select * from qna_table where qna_id<? and qna_status=0";
+//        getPreparedStatement(sql);
+//
+//        try {
+//            pstmt.setInt(1, getNext() - (pageNo - 1) * 10);
+//            System.out.println(getNext() - (pageNo - 1) * 10);
+//            rs = pstmt.executeQuery();
+//
+//            while (rs.next()) {
+//                return true;
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        return false;
+//    }
+//
+//    /**
+//     * 다음 글 번호 가져오기
+//     */
+//    public int getNext() {
+//        String sql = "select qna_id from qna_table order by qna_date desc";
+//        try {
+//            getPreparedStatement(sql);
+//            rs = pstmt.executeQuery();
+//
+//            if (rs.next()) {
+//                return rs.getInt(1) + 1; // 다음 글 번호
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        return 1;
+//    }
+
     /**
-     * QnA 목록: 다음 페이지 존재 여부 확인
+     * 화면에 나타날 총 게시글 수(삭제글 제외)
      */
-    public boolean nextPage(int pageNo) {
-        String sql = "select * from qna_table where qna_id<? and qna_status=0";
-        getPreparedStatement(sql);
-
-        try {
-            pstmt.setInt(1, getNext() - (pageNo - 1) * 10);
-
-            rs = pstmt.executeQuery();
-
-            while (rs.next()) {
-                return true;
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return false;
-    }
-
-    /**
-     * 다음 글 번호 가져오기
-     */
-    public int getNext() {
-        String sql = "select qna_id from qna_table order by qna_date desc";
+    public int getTotal() {
+        String sql = "select count(*) as totalCount from qna_table where qna_status =0";
         try {
             getPreparedStatement(sql);
             rs = pstmt.executeQuery();
 
             if (rs.next()) {
-                return rs.getInt(1) + 1; // 다음 글 번호
+                return rs.getInt(1);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return 1;
+        return -1;
     }
+
+    /**
+     * 총 페이지 수
+     */
+    public int getTotalPage() {
+
+        int totalCount = getTotal();
+        int listCount = 10;
+        int totalPage = totalCount / listCount;
+
+        if (totalCount % listCount > 0) {
+            return totalPage++;
+        }
+        return totalPage;
+    }
+
 //
 //    /**
 //     * QnA 목록에서 전체 게시글 리스트 조회(+ 페이지 처리)

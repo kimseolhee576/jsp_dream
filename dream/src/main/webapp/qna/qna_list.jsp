@@ -10,6 +10,7 @@
  	if(request.getParameter("pageNo") != null){
 	    pageNo = Integer.parseInt(request.getParameter("pageNo"));
 	} 
+ 	QnaDAO dao = new QnaDAO();
     
 %>
 
@@ -91,20 +92,20 @@
 						<th width="10%">조회수</th>
   					</tr>
             <%
-	            QnaDAO dao = new QnaDAO();
+                LocalDate today = LocalDate.now();
 	            ArrayList<QnaVO> list = dao.getList(pageNo); 
 	            for(QnaVO vo : list){ 
             %>
     				<tr>
 		              <td><%=vo.getQna_id() %></td>
 		              <td>&emsp;<a href="qna_content.jsp?qna_id=<%=vo.getQna_id() %>"><%=vo.getQna_title().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>") %></a>
-		            <%if(vo.getComm_count()!=0){ %>
+		            <%  if(vo.getComm_count()!=0){ %>
 		              <span style="color: orange">[<%=vo.getComm_count() %>]</span>
-		            <%} %>
-		            <% LocalDate today = LocalDate.now();
-		            if(today.toString().equals(vo.getQna_date())){%>   
-		              <span class="badge " style= "background: #B4B4FF">new</span></td>
-		            <%} %> 
+		            <%  } 
+			            if(today.toString().equals(vo.getQna_date())){%>   
+		               <span class="badge" style="background:#B4B4FF">new</span>
+		              <%} %> 
+		              </td>
 		              <td><%=vo.getMem_id1() %></td>
 		              <td><%=vo.getQna_date() %></td>
 		              <td><%=vo.getQna_hits() %></td>
@@ -112,25 +113,28 @@
             <%} %>  
           <tr>
             <td colspan="6">
+                <span>
                 <% if(sid != null ) {%>
                       <a href="http://localhost:9000/dream/qna/qna_list_proc.jsp">
                 <% }else{ %>  
                       <a href="http://localhost:9000/dream/login/login.jsp" onclick="qnaWriteAlert()"> 
                 <% } %>
                      <button type="button" class="btn_style1" >글쓰기</button></a>
-                     
+                </span>     
             </td>
           </tr>
          </table> 
-           <div style="text-align: center;">
-             <% if(pageNo != 1){ %>
+           <div style="text-align:center">
+            <span> 
+              <% if(pageNo != 1){ %>
                 <a href="http://localhost:9000/dream/qna/qna_list.jsp?pageNo=<%= pageNo-1%>">
-                <button type="button" class="btn_style1" >이전</button></a>         
-            <% }if(dao.nextPage(pageNo+1)){ %> 
+                <button type="button" class="btn_style1" >이전</button></a></span>
+             <% }if(pageNo <= dao.getTotalPage()){ %> 
+             <span>
                 <a href="http://localhost:9000/dream/qna/qna_list.jsp?pageNo=<%= pageNo+1%>">
-                <button type="button" class="btn_style1" >다음</button></a>         
-            <%} %>
-            </div>
+                <button type="button" class="btn_style1" >다음</button></a></span>         
+             <%} %> 
+           </div>  
         </form>
        </section>
      </div>
