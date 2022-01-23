@@ -1,155 +1,154 @@
-CREATE TABLE MEMBER_TABLE ( --È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ìºï¿½
-	MEM_ID VARCHAR2(50) CONSTRAINT MEMBER_TABLE_MEM_ID_PK PRIMARY KEY, --ï¿½ï¿½ï¿½Ìµï¿½
-	MEM_PASS VARCHAR2(30) CONSTRAINT MEMBER_TABLE_MEM_PASS_NN NOT NULL, --ï¿½ï¿½ï¿½Ð¹ï¿½È£
-	MEM_NAME VARCHAR2(30) CONSTRAINT MEMBER_TABLE_MEM_NAME_NN NOT NULL, --ï¿½Ì¸ï¿½
-  MEM_BIRTH	NUMBER(20) CONSTRAINT MEMBER_TABLE_MEM_BIRTH_NN NOT NULL, --ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-	MEM_EMAIL1	VARCHAR2(30) CONSTRAINT MEMBER_TABLE_MEM_EMAIL1_NN NOT NULL, --ï¿½Ì¸ï¿½ï¿½ï¿½ EX)imreu
-  MEM_EMAIL2	VARCHAR2(30) CONSTRAINT MEMBER_TABLE_MEM_EMAIL2_NN NOT NULL, --ï¿½Ì¸ï¿½ï¿½ï¿½ EX)naver.com
-	MEM_HP	VARCHAR2(30) CONSTRAINT MEMBER_TABLE_MEM_HP_NN NOT NULL,  --ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½È£
-  MEM_DATE DATE, --ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-	MEM_STATUS	number(20) --È¸ï¿½ï¿½Å»ï¿½ð¿©ºï¿½
+CREATE TABLE MEMBER_TABLE ( --È¸¿ø°¡ÀÔÅ×ÀÌºí
+	MEM_ID VARCHAR2(50) CONSTRAINT MEMBER_TABLE_MEM_ID_PK PRIMARY KEY, --¾ÆÀÌµð
+	MEM_PASS VARCHAR2(30) CONSTRAINT MEMBER_TABLE_MEM_PASS_NN NOT NULL, --ºñ¹Ð¹øÈ£
+	MEM_NAME VARCHAR2(30) CONSTRAINT MEMBER_TABLE_MEM_NAME_NN NOT NULL, --ÀÌ¸§
+  MEM_BIRTH	NUMBER(20) CONSTRAINT MEMBER_TABLE_MEM_BIRTH_NN NOT NULL, --»ý³â¿ùÀÏ
+	MEM_EMAIL1	VARCHAR2(30) CONSTRAINT MEMBER_TABLE_MEM_EMAIL1_NN NOT NULL, --ÀÌ¸ÞÀÏ EX)imreu
+  MEM_EMAIL2	VARCHAR2(30) CONSTRAINT MEMBER_TABLE_MEM_EMAIL2_NN NOT NULL, --ÀÌ¸ÞÀÏ EX)naver.com
+	MEM_HP	VARCHAR2(30) CONSTRAINT MEMBER_TABLE_MEM_HP_NN NOT NULL,  --ÇÚµåÆù¹øÈ£
+  MEM_DATE DATE, --°¡ÀÔÀÏ
+	MEM_STATUS	number(20) --È¸¿øÅ»Åð¿©ºÎ
 );
 
-CREATE TABLE RESERV_CHECK ( --ï¿½ï¿½ï¿½à³»ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½
-	RESERV_ID	VARCHAR2(50) CONSTRAINT RESERV_CHECK_RESERV_ID_PK PRIMARY KEY, --ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-	MEM_ID	VARCHAR2(50) CONSTRAINT RESERV_CHECK_MEM_ID_FK REFERENCES MEMBER_TABLE(MEM_ID), --ï¿½ï¿½ï¿½Ìµï¿½
-	RESERV_SS	NUMBER(20) CONSTRAINT RESERV_CHECK_RESERV_SS_NN NOT NULL, --ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½(start Small)
-	RESERV_SB	NUMBER(20) CONSTRAINT RESERV_CHECK_RESERV_SB_NN NOT NULL, --ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½(start Big)
-	RESERV_FS	NUMBER(20) CONSTRAINT RESERV_CHECK_RESERV_FS_NN NOT NULL, --ï¿½ï¿½ï¿½ï¿½ï¿½Ì¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½(Free Small)
-	RESERV_FB	NUMBER(20) CONSTRAINT RESERV_CHECK_RESERV_FB_NN NOT NULL, --ï¿½ï¿½ï¿½ï¿½ï¿½Ì¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½(Free Big)
-	RESERV_DATE	DATE, --ï¿½Ö¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-	RESERV_DDAY	VARCHAR2(50) CONSTRAINT RESERV_CHECK_RESERV_DDAY_NN NOT NULL, --ï¿½æ¹®ï¿½ï¿½ï¿½ï¿½
-	RESERV_TOTAL NUMBER(20) CONSTRAINT RESERV_CHECK_RESERV_TOTAL_NN NOT NULL --ï¿½Ñ±Ý¾ï¿½
+CREATE TABLE RESERV_CHECK ( --¿¹¾à³»¿ª Å×ÀÌºí
+	RESERV_ID	VARCHAR2(50) CONSTRAINT RESERV_CHECK_RESERV_ID_PK PRIMARY KEY, --½ÃÄö½º
+	MEM_ID	VARCHAR2(50) CONSTRAINT RESERV_CHECK_MEM_ID_FK REFERENCES MEMBER_TABLE(MEM_ID), --¾ÆÀÌµð
+	RESERV_SS	NUMBER(20) CONSTRAINT RESERV_CHECK_RESERV_SS_NN NOT NULL, --ÀÔÀå±Ç ¼ÒÀÎ(start Small)
+	RESERV_SB	NUMBER(20) CONSTRAINT RESERV_CHECK_RESERV_SB_NN NOT NULL, --ÀÔÀå±Ç ´ëÀÎ(start Big)
+	RESERV_FS	NUMBER(20) CONSTRAINT RESERV_CHECK_RESERV_FS_NN NOT NULL, --ÀÚÀ¯ÀÌ¿ë±Ç ¼ÒÀÎ(Free Small)
+	RESERV_FB	NUMBER(20) CONSTRAINT RESERV_CHECK_RESERV_FB_NN NOT NULL, --ÀÚÀ¯ÀÌ¿ë±Ç ´ëÀÎ(Free Big)
+	RESERV_DATE	DATE, --ÁÖ¹®ÇÑÀÏÀÚ
+	RESERV_DDAY	VARCHAR2(50) CONSTRAINT RESERV_CHECK_RESERV_DDAY_NN NOT NULL, --¹æ¹®ÀÏÀÚ
+	RESERV_TOTAL NUMBER(20) CONSTRAINT RESERV_CHECK_RESERV_TOTAL_NN NOT NULL --ÃÑ±Ý¾×
 );
 
-CREATE TABLE QNA_TABLE ( --ï¿½ï¿½ï¿½Ç°Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½
-	QNA_ID	NUMBER(20) CONSTRAINT QNA_TABLE_QNA_ID_PK PRIMARY KEY, --QNAï¿½Ô½Ã±Û¾ï¿½ï¿½Ìµï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
-	QNA_TITLE	VARCHAR2(100) CONSTRAINT QNA_TABLE_QNA_TITLE_NN NOT NULL, --ï¿½ï¿½ï¿½ï¿½
-	QNA_CONTENT	VARCHAR2(1000) CONSTRAINT QNA_TABLE_QNA_CONTENT_NN NOT NULL, --ï¿½ï¿½ï¿½ï¿½
-	QNA_HITS	NUMBER(6), --ï¿½ï¿½È¸ï¿½ï¿½
-	QNA_STATUS	NUMBER(4) DEFAULT 0, --ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-	MEM_ID1	VARCHAR2(50) CONSTRAINT QNA_TABLE_MEM_ID1_FK REFERENCES MEMBER_TABLE(MEM_ID), --ï¿½ï¿½ï¿½Ìµï¿½(ï¿½Û¼ï¿½ï¿½ï¿½)
-	QNA_DATE	DATE, --ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-	MEM_ID2	VARCHAR2(50) CONSTRAINT QNA_TABLE_MEM_ID2_FK REFERENCES MEMBER_TABLE(MEM_ID), --ï¿½ï¿½ï¿½Ìµï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
-	QNA_UPDATEDATE	DATE, --ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-	COMM_COUNT NUMBER(4) DEFAULT 0 --ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
+CREATE TABLE QNA_TABLE ( --¹®ÀÇ°Ô½ÃÆÇ Å×ÀÌºí
+	QNA_ID	NUMBER(20) CONSTRAINT QNA_TABLE_QNA_ID_PK PRIMARY KEY, --QNA°Ô½Ã±Û¾ÆÀÌµð(½ÃÄö½º)
+	QNA_TITLE	VARCHAR2(100) CONSTRAINT QNA_TABLE_QNA_TITLE_NN NOT NULL, --Á¦¸ñ
+	QNA_CONTENT	VARCHAR2(1000) CONSTRAINT QNA_TABLE_QNA_CONTENT_NN NOT NULL, --³»¿ë
+	QNA_HITS	NUMBER(6), --Á¶È¸¼ö
+	QNA_STATUS	NUMBER(4) DEFAULT 0, --»èÁ¦¿©ºÎ
+	MEM_ID1	VARCHAR2(50) CONSTRAINT QNA_TABLE_MEM_ID1_FK REFERENCES MEMBER_TABLE(MEM_ID), --¾ÆÀÌµð(ÀÛ¼ºÀÚ)
+	QNA_DATE	DATE, --µî·ÏÀÏ
+	MEM_ID2	VARCHAR2(50) CONSTRAINT QNA_TABLE_MEM_ID2_FK REFERENCES MEMBER_TABLE(MEM_ID), --¾ÆÀÌµð(¼öÁ¤ÀÚ)
+	QNA_UPDATEDATE	DATE, --¼öÁ¤ÀÏ
+	COMM_COUNT NUMBER(4) DEFAULT 0 --´ñ±Û ¼ö
 );
 
-CREATE TABLE COMM_TABLE ( --ï¿½ï¿½ï¿½Ç°Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½
-	COMM_ID	NUMBER(20) CONSTRAINT COMM_TABLE_COMM_ID_PK PRIMARY KEY, --ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-	QNA_ID NUMBER(20) CONSTRAINT COMM_TABLE_QNA_ID_FK REFERENCES QNA_TABLE(QNA_ID), --QNAï¿½Ô½Ã±Û¾ï¿½ï¿½Ìµï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
-  COMM_CONTENT VARCHAR2(1000) CONSTRAINT COMM_TABLE_COMM_CONTENT_NN NOT NULL, --ï¿½ï¿½ï¿½ï¿½
-  MEM_ID1	VARCHAR2(50) CONSTRAINT COMM_TABLE_MEM_ID1_FK REFERENCES MEMBER_TABLE(MEM_ID), --ï¿½ï¿½ï¿½Ìµï¿½(ï¿½Û¼ï¿½ï¿½ï¿½)
-  COMM_DATE	DATE, --ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-	MEM_ID2 VARCHAR2(50)	CONSTRAINT COMM_TABLE_MEM_ID2_FK REFERENCES MEMBER_TABLE(MEM_ID), --ï¿½ï¿½ï¿½ï¿½ï¿½Ú¾ï¿½ï¿½Ìµï¿½
-	COMM_UPDATEDATE	DATE, --ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-  COMM_STATUS NUMBER(4) DEFAULT 0 --ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+CREATE TABLE COMM_TABLE ( --¹®ÀÇ°Ô½ÃÆÇ ´ñ±Û Å×ÀÌºí
+	COMM_ID	NUMBER(20) CONSTRAINT COMM_TABLE_COMM_ID_PK PRIMARY KEY, --½ÃÄö½º
+	QNA_ID NUMBER(20) CONSTRAINT COMM_TABLE_QNA_ID_FK REFERENCES QNA_TABLE(QNA_ID), --QNA°Ô½Ã±Û¾ÆÀÌµð(½ÃÄö½º)
+  COMM_CONTENT VARCHAR2(1000) CONSTRAINT COMM_TABLE_COMM_CONTENT_NN NOT NULL, --³»¿ë
+  MEM_ID1	VARCHAR2(50) CONSTRAINT COMM_TABLE_MEM_ID1_FK REFERENCES MEMBER_TABLE(MEM_ID), --¾ÆÀÌµð(ÀÛ¼ºÀÚ)
+  COMM_DATE	DATE, --µî·ÏÀÏ
+	MEM_ID2 VARCHAR2(50)	CONSTRAINT COMM_TABLE_MEM_ID2_FK REFERENCES MEMBER_TABLE(MEM_ID), --¼öÁ¤ÀÚ¾ÆÀÌµð
+	COMM_UPDATEDATE	DATE, --¼öÁ¤ÀÏ
+  COMM_STATUS NUMBER(4) DEFAULT 0 --»èÁ¦¿©ºÎ
 );
 
-CREATE TABLE NOTICE_TABLE ( --ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½
-	NOTICE_ID	VARCHAR2(50) CONSTRAINT NOTICE_TABLE_NOTICE_ID_PK PRIMARY KEY, --ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-	NTITLE VARCHAR2(500)	CONSTRAINT NOTICE_TABLE_NTITLE_NN	NOT NULL, --ï¿½ï¿½ï¿½ï¿½
-	NCONTENT VARCHAR2(1000) CONSTRAINT NOTICE_TABLE_NCONTENT_NN NOT NULL, --ï¿½ï¿½ï¿½ï¿½
-	NOTICE_HITS NUMBER(6), --ï¿½ï¿½È¸ï¿½ï¿½
-	NOTICE_STATUS	NUMBER(4), --ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-	MEM_ID1	VARCHAR2(50) CONSTRAINT NOTICE_TABLE_MEM_ID1_FK REFERENCES MEMBER_TABLE(MEM_ID), --ï¿½Û¼ï¿½ï¿½Ú¾ï¿½ï¿½Ìµï¿½
-	NOTICE_DATE	DATE, --ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-	MEM_ID2 VARCHAR2(50) CONSTRAINT NOTICE_TABLE_MEM_ID2_FK REFERENCES MEMBER_TABLE(MEM_ID), --ï¿½ï¿½ï¿½ï¿½ï¿½Ú¾ï¿½ï¿½Ìµï¿½
-	NOTICE_UPDATEDATE	DATE --ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+CREATE TABLE NOTICE_TABLE ( --°øÁö»çÇ× Å×ÀÌºí
+	NOTICE_ID	VARCHAR2(50) CONSTRAINT NOTICE_TABLE_NOTICE_ID_PK PRIMARY KEY, --½ÃÄö½º
+	NTITLE VARCHAR2(500)	CONSTRAINT NOTICE_TABLE_NTITLE_NN	NOT NULL, --Á¦¸ñ
+	NCONTENT VARCHAR2(1000) CONSTRAINT NOTICE_TABLE_NCONTENT_NN NOT NULL, --³»¿ë
+	NOTICE_HITS NUMBER(6), --Á¶È¸¼ö
+	NOTICE_STATUS	NUMBER(4), --»èÁ¦¿©ºÎ
+	MEM_ID1	VARCHAR2(50) CONSTRAINT NOTICE_TABLE_MEM_ID1_FK REFERENCES MEMBER_TABLE(MEM_ID), --ÀÛ¼ºÀÚ¾ÆÀÌµð
+	NOTICE_DATE	DATE, --µî·ÏÀÏ
+	MEM_ID2 VARCHAR2(50) CONSTRAINT NOTICE_TABLE_MEM_ID2_FK REFERENCES MEMBER_TABLE(MEM_ID), --¼öÁ¤ÀÚ¾ÆÀÌµð
+	NOTICE_UPDATEDATE	DATE --¼öÁ¤ÀÏ
 );
 
-CREATE TABLE REVIEW_TABLE ( --ï¿½Ä±ï¿½ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½
-  REVIEW_ID VARCHAR2(50) CONSTRAINT REVIEW_TABLE_REVIEW_ID_PK PRIMARY KEY, --ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-  REVIEW_TITLE VARCHAR2(500) CONSTRAINT REVIEW_TABLE_REVIEW_TITLE_NN NOT NULL, --ï¿½ï¿½ï¿½ï¿½
-  REVIEW_CONTENT VARCHAR2(1000) CONSTRAINT REVIEW_TABLE_REVIEW_CONTENT_NN NOT NULL, --ï¿½ï¿½ï¿½ï¿½
-  REVIEW_STAR NUMBER(4), --ï¿½ï¿½ï¿½ï¿½
-  REVIEW_HITS NUMBER(6), --ï¿½ï¿½È¸ï¿½ï¿½
-  REVIEW_STATUS NUMBER(4), --ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-  MEM_ID1 VARCHAR2(50) CONSTRAINT REVIEW_TABLE_MEM_ID_FK REFERENCES MEMBER_TABLE(MEM_ID), --ï¿½Û¼ï¿½ï¿½Ú¾ï¿½ï¿½Ìµï¿½
-  REVIEW_DATE DATE, --ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-  MEM_ID2 VARCHAR2(50) CONSTRAINT REVIEW_TABLE_MEM_ID2_FK REFERENCES MEMBER_TABLE(MEM_ID), --ï¿½ï¿½ï¿½ï¿½ï¿½Ú¾ï¿½ï¿½Ìµï¿½
-  REVIEW_UPDATEDATE DATE --ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+CREATE TABLE REVIEW_TABLE ( --ÈÄ±â°Ô½ÃÆÇ Å×ÀÌºí
+  REVIEW_ID VARCHAR2(50) CONSTRAINT REVIEW_TABLE_REVIEW_ID_PK PRIMARY KEY, --½ÃÄö½º
+  REVIEW_TITLE VARCHAR2(500) CONSTRAINT REVIEW_TABLE_REVIEW_TITLE_NN NOT NULL, --Á¦¸ñ
+  REVIEW_CONTENT VARCHAR2(1000) CONSTRAINT REVIEW_TABLE_REVIEW_CONTENT_NN NOT NULL, --³»¿ë
+  REVIEW_STAR NUMBER(4), --º°Á¡
+  REVIEW_HITS NUMBER(6), --Á¶È¸¼ö
+  REVIEW_STATUS NUMBER(4), --»èÁ¦¿©ºÎ
+  MEM_ID1 VARCHAR2(50) CONSTRAINT REVIEW_TABLE_MEM_ID_FK REFERENCES MEMBER_TABLE(MEM_ID), --ÀÛ¼ºÀÚ¾ÆÀÌµð
+  REVIEW_DATE DATE, --µî·ÏÀÏ
+  MEM_ID2 VARCHAR2(50) CONSTRAINT REVIEW_TABLE_MEM_ID2_FK REFERENCES MEMBER_TABLE(MEM_ID), --¼öÁ¤ÀÚ¾ÆÀÌµð
+  REVIEW_UPDATEDATE DATE --¼öÁ¤ÀÏ
 );
 
---ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
---1.ï¿½ï¿½ï¿½à³»ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+--½ÃÄö½º Àû¿ë
+--1.¿¹¾à³»¿ª Å×ÀÌºí ½ÃÄö½º Àû¿ë
 CREATE SEQUENCE SEQU_RESERV_CHECK START WITH 1 INCREMENT BY 1;
---2.ï¿½ï¿½ï¿½Ç°Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+--2.¹®ÀÇ°Ô½ÃÆÇ Å×ÀÌºí ½ÃÄö½º Àû¿ë
 CREATE SEQUENCE SEQU_QNA_TABLE START WITH 1 INCREMENT BY 1;
---3.ï¿½ï¿½ï¿½Ç°Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+--3.¹®ÀÇ°Ô½ÃÆÇ ´ñ±Û Å×ÀÌºí ½ÃÄö½º Àû¿ë
 CREATE SEQUENCE SEQU_COMM_TABLE START WITH 1 INCREMENT BY 1;
---4.ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+--4.°øÁö»çÇ× Å×ÀÌºí ½ÃÄö½º Àû¿ë
 CREATE SEQUENCE SEQU_NOTICE_TABLE START WITH 1 INCREMENT BY 1;
---5.ï¿½Ä±ï¿½ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+--5.ÈÄ±â°Ô½ÃÆÇ Å×ÀÌºí ½ÃÄö½º Àû¿ë
 CREATE SEQUENCE SEQU_REVIEW_TABLE START WITH 1 INCREMENT BY 1;
 
---ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
-DROP SEQUENCE SEQU_REVIEW_TABLE; --ï¿½Ä±ï¿½ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
-DROP SEQUENCE SEQU_RESERV_CHECK; --ï¿½ï¿½ï¿½Å³ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
-DROP SEQUENCE SEQU_QNA_TABLE; --ï¿½ï¿½ï¿½Ç°Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
-DROP SEQUENCE SEQU_COMM_TABLE; --ï¿½ï¿½ï¿½Ç°Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
-DROP SEQUENCE SEQU_NOTICE_TABLE; --ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
---ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ï¿½ï¿½ È®ï¿½ï¿½
+--½ÃÄö½º »èÁ¦
+DROP SEQUENCE SEQU_REVIEW_TABLE; --ÈÄ±â°Ô½ÃÆÇ ½ÃÄö½º »èÁ¦
+DROP SEQUENCE SEQU_RESERV_CHECK; --¿¹¸Å³»¿ª ½ÃÄö½º »èÁ¦
+DROP SEQUENCE SEQU_QNA_TABLE; --¹®ÀÇ°Ô½ÃÆÇ ½ÃÄö½º »èÁ¦
+DROP SEQUENCE SEQU_COMM_TABLE; --¹®ÀÇ°Ô½ÃÆÇ ´ñ±Û ½ÃÄö½º »èÁ¦
+DROP SEQUENCE SEQU_NOTICE_TABLE; --°øÁö»çÇ× ½ÃÄö½º »èÁ¦
+--½ÃÄö½º ÀÖ´ÂÁö È®ÀÎ
 SELECT * FROM USER_SEQUENCES;
 
 
--- È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½
--- 1. ADMIN(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½) È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-INSERT INTO MEMBER_TABLE VALUES('admin','1234','ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',19930621,'admin','naver.com','01065096937', SYSDATE, 0);
+-- È¸¿ø°¡ÀÔ Å×ÀÌºí µ¥ÀÌÅÍ ÀÔ·Â
+-- 1. ADMIN(°ü¸®ÀÚ) È¸¿ø°¡ÀÔ
+INSERT INTO MEMBER_TABLE VALUES('admin','1234','°ü¸®ÀÚ',19930621,'admin','naver.com','01065096937', SYSDATE, 0);
 
--- 2. È«ï¿½æµ¿ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-INSERT INTO MEMBER_TABLE VALUES('test11','asd1234','È«ï¿½æµ¿',19910101,'test11','naver.com','01011111111', SYSDATE, 0);
+-- 2. È«±æµ¿ »ç¶÷ÀÌ È¸¿ø°¡ÀÔ
+INSERT INTO MEMBER_TABLE VALUES('test11','asd1234','È«±æµ¿',19910101,'test11','naver.com','01011111111', SYSDATE, 0);
 
--- 3. ï¿½ï¿½Ã¶ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-INSERT INTO MEMBER_TABLE VALUES('test22','qwe1234','ï¿½ï¿½Ã¶ï¿½ï¿½',19900101,'test22','naver.com','01022222222', SYSDATE, 0);
+-- 3. ±èÃ¶¼ö »ç¶÷ÀÌ È¸¿ø°¡ÀÔ
+INSERT INTO MEMBER_TABLE VALUES('test22','qwe1234','±èÃ¶¼ö',19900101,'test22','naver.com','01022222222', SYSDATE, 0);
 
--- È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½î°¬ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½
+-- È¸¿ø°¡ÀÔ Àß µé¾î°¬´ÂÁö È®ÀÎ
 SELECT * FROM MEMBER_TABLE;
 
---ï¿½ï¿½ï¿½Ìºï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-DROP TABLE MEMBER_TABLE; --È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-DROP TABLE NOTICE_TABLE; --ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-DROP TABLE QNA_TABLE; --ï¿½ï¿½ï¿½Ç°Ô½ï¿½ï¿½ï¿½
-DROP TABLE COMM_TABLE; --ï¿½ï¿½ï¿½Ç°Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
-DROP TABLE RESERV_CHECK; --ï¿½ï¿½ï¿½Å³ï¿½ï¿½ï¿½
-DROP TABLE REVIEW_TABLE; --ï¿½Ä±ï¿½ï¿½Ô½ï¿½ï¿½ï¿½
+--Å×ÀÌºí »èÁ¦½Ã
+DROP TABLE MEMBER_TABLE; --È¸¿ø°¡ÀÔ
+DROP TABLE NOTICE_TABLE; --°øÁö»çÇ×
+DROP TABLE QNA_TABLE; --¹®ÀÇ°Ô½ÃÆÇ
+DROP TABLE COMM_TABLE; --¹®ÀÇ°Ô½ÃÆÇ ´ñ±Û
+DROP TABLE RESERV_CHECK; --¿¹¸Å³»¿ª
+DROP TABLE REVIEW_TABLE; --ÈÄ±â°Ô½ÃÆÇ
 
 SELECT * FROM USER_TABLES;
---È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½ ï¿½È¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+--È¸¿ø°¡ÀÔ Å×ÀÌºí ¾È¿¡ µ¥ÀÌÅÍ ¸ðµÎ »èÁ¦
 DELETE FROM MEMBER_TABLE;
 delete from qna_table;
 delete from comm_table;
--- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½
-insert into notice_table values('n_'||sequ_notice_table.nextval,'[ï¿½ï¿½ï¿½ï¿½]ï¿½Þ°ï¿½ È¯ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½å¸²ï¿½ï¿½ï¿½ï¿½ È¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½È³ï¿½','ï¿½å¸²ï¿½ï¿½ï¿½å°¡ È¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ß½ï¿½ï¿½Ï´ï¿½. ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¿ï¿½ï¿½ï¿½Å¹ï¿½å¸³ï¿½Ï´ï¿½. ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.',1234,0,'admin',sysdate-1,'admin',sysdate);
-insert into notice_table values('n_'||sequ_notice_table.nextval,'[ï¿½ï¿½ï¿½ï¿½]ï¿½å¸²ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½È³ï¿½','ï¿½å¸²ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì±â±¸ï¿½ï¿½ ï¿½ï¿½ï¿½Þµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ù¶ï¿½ï¿½Ï´ï¿½.',984,0,'admin',sysdate-1,'admin',sysdate);
-insert into notice_table values('n_'||sequ_notice_table.nextval,'[ï¿½ï¿½ï¿½ï¿½]ï¿½å¸²ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¸ï¿½ï¿½ ï¿½Å¸ï¿½ï¿½Î±ï¿½','ï¿½å¸²ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¸ï¿½ï¿½ ï¿½Å¸ï¿½ï¿½Î±â°¡ ï¿½ï¿½ï¿½ï¿½ï¿½Ë´Ï´ï¿½. ï¿½×»ï¿½ ï¿½ï¿½ï¿½ï¿½Å© ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ö½Ã±ï¿½ ï¿½Ù¶ï¿½ï¿½Ï´ï¿½.',126,0,'admin',sysdate,'admin',sysdate);
-insert into notice_table values('n_'||sequ_notice_table.nextval,'[ï¿½ï¿½ï¿½ï¿½]2022 ï¿½ï¿½ï¿½ï¿½ ï¿½Ìºï¿½Æ® ï¿½È³ï¿½','ï¿½å¸²ï¿½ï¿½ï¿½å¿¡ï¿½ï¿½ 2022 ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Õ´Ï´ï¿½. ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ù¶ï¿½ï¿½Ï´ï¿½.',458,0,'admin',sysdate,'admin',sysdate);
+-- °øÁö»çÇ× µ¥ÀÌÅÍ ÀÔ·Â
+insert into notice_table values('n_'||sequ_notice_table.nextval,'[°øÁö]²Þ°ú È¯»óÀÇ ³ª¶ó µå¸²¿ùµå È¨ÆäÀÌÁö ¿ÀÇÂ ¾È³»','µå¸²¿ùµå°¡ È¨ÆäÀÌÁö¸¦ ¿ÀÇÂÇß½À´Ï´Ù. ¸¹Àº ÀÌ¿ëºÎÅ¹µå¸³´Ï´Ù. °¨»çÇÕ´Ï´Ù.',1234,0,'admin',sysdate-1,'admin',sysdate);
+insert into notice_table values('n_'||sequ_notice_table.nextval,'[°øÁö]µå¸²¿ùµå ¾îÆ®·¢¼Ç ¿îÈÞ ¾È³»','µå¸²¿ùµå ³»ÀÇ ³îÀÌ±â±¸°¡ ¿îÈÞµÉ ¿¹Á¤ÀÌ¿À´Ï Âü°í ¹Ù¶ø´Ï´Ù.',984,0,'admin',sysdate-1,'admin',sysdate);
+insert into notice_table values('n_'||sequ_notice_table.nextval,'[°øÁö]µå¸²¿ùµå »çÈ¸Àû °Å¸®µÎ±â','µå¸²¿ùµå ³»¿¡¼­´Â »çÈ¸Àû °Å¸®µÎ±â°¡ Àû¿ëµË´Ï´Ù. Ç×»ó ¸¶½ºÅ© ÇÊÈ÷ Âø¿ë ÈÄ Áñ°ÜÁÖ½Ã±æ ¹Ù¶ø´Ï´Ù.',126,0,'admin',sysdate,'admin',sysdate);
+insert into notice_table values('n_'||sequ_notice_table.nextval,'[°øÁö]2022 ¼³³¯ ÀÌº¥Æ® ¾È³»','µå¸²¿ùµå¿¡¼­ 2022 ¼³³¯ ¿ÀÇÁ¶óÀÎ Çà»ç ÇÕ´Ï´Ù. ¸¹Àº Âü¼® ¹Ù¶ø´Ï´Ù.',458,0,'admin',sysdate,'admin',sysdate);
 commit;
--- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½
+-- °øÁö»çÇ× ³»¿ë È®ÀÎ
 select * from notice_table;
 
--- ï¿½ï¿½ï¿½ï¿½ ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½
-insert into qna_table values(sequ_qna_table.nextval,'ï¿½Ì¿ï¿½ï¿½È³ï¿½ï¿½Ã°ï¿½ï¿½ï¿½ ï¿½Ë°ï¿½ï¿½Í¾ï¿½ï¿½ï¿½','ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½Ã¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ý³ï¿½ï¿½ï¿½',123,0,'test11',sysdate-1,'test11',sysdate-1,0);
-insert into qna_table values(sequ_qna_table.nextval,'ï¿½ï¿½ï¿½Ä¹ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ç³ï¿½ï¿½ï¿½?','ï¿½Û¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ç¼­ ï¿½ï¿½ï¿½î°¥ï¿½ï¿½ï¿½Ö³ï¿½ï¿½ï¿½?',777,0,'test11',sysdate,'test11',sysdate,0);
-insert into qna_table values(sequ_qna_table.nextval,'ï¿½å¸²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö³ï¿½ï¿½ï¿½?','ï¿½å¸²ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö³ï¿½ï¿½ï¿½?',12,0,'test22',sysdate,'test22',sysdate);
-insert into qna_table values(sequ_qna_table.nextval,'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë¿¡ ï¿½ï¿½ï¿½ï¿½ ï¿½Ë°ï¿½ï¿½Í¾ï¿½ï¿½ï¿½','ï¿½ï¿½ï¿½Î¹Þ°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ö³ï¿½ï¿½ï¿½?',223,0,'test22',sysdate,'test22',sysdate);
+-- ¹®ÀÇ °Ô½ÃÆÇ µ¥ÀÌÅÍ ÀÔ·Â
+insert into qna_table values(sequ_qna_table.nextval,'ÀÌ¿ë¾È³»½Ã°£À» ¾Ë°í½Í¾î¿ä','¿ÀÇÂÀº ¾ðÁ¦ÇÏ°í ¸î½Ã¿¡ ¹®À» ´Ý³ª¿ä',123,0,'test11',sysdate-1,'test11',sysdate-1,0);
+insert into qna_table values(sequ_qna_table.nextval,'À½½Ä¹° ¹ÝÀÔÀÌ µÇ³ª¿ä?','¹Û¿¡¼­ À½½ÄÀ» »ç¼­ µé¾î°¥¼öÀÖ³ª¿ä?',777,0,'test11',sysdate,'test11',sysdate,0);
+insert into qna_table values(sequ_qna_table.nextval,'µå¸²¿ùµå´Â ¾îµð¿¡ ÀÖ³ª¿ä?','µå¸²¿ùµå °¡°í½ÍÀºµ¥ ¾îµð¿¡ÀÖ³ª¿ä?',12,0,'test22',sysdate,'test22',sysdate);
+insert into qna_table values(sequ_qna_table.nextval,'ÇÒÀÎÀû¿ë¿¡ ´ëÇØ ¾Ë°í½Í¾î¿ä','ÇÒÀÎ¹Þ°í ½ÍÀºµ¥ Á¤º¸ÀÖ³ª¿ä?',223,0,'test22',sysdate,'test22',sysdate);
 commit;
--- ï¿½ï¿½ï¿½Ç°Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½
+-- ¹®ÀÇ°Ô½ÃÆÇ ³»¿ë È®ÀÎ
 SELECT * FROM QNA_TABLE;
 
--- ï¿½ï¿½ï¿½ï¿½ ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½
-INSERT INTO COMM_TABLE VALUES(SEQU_COMM_TABLE.NEXTVAL,2,'ï¿½ï¿½ï¿½ï¿½9ï¿½Ãºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½10ï¿½Ã±ï¿½ï¿½ï¿½ ï¿½Ô´Ï´ï¿½. ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.','admin',sysdate,'admin',sysdate,0);
-INSERT INTO COMM_TABLE VALUES(SEQU_COMM_TABLE.NEXTVAL,1,'ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½:)','test11',sysdate,'test11',sysdate,0);
-INSERT INTO COMM_TABLE VALUES(SEQU_COMM_TABLE.NEXTVAL,2,'ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½:)','test22',sysdate,'test11',sysdate,0);
+-- ¹®ÀÇ °Ô½ÃÆÇ ´ñ±Û µ¥ÀÌÅÍ ÀÔ·Â
+INSERT INTO COMM_TABLE VALUES(SEQU_COMM_TABLE.NEXTVAL,2,'¿ÀÀü9½ÃºÎÅÍ ¿ÀÈÄ10½Ã±îÁö ÀÔ´Ï´Ù. °¨»çÇÕ´Ï´Ù.','admin',sysdate,'admin',sysdate,0);
+INSERT INTO COMM_TABLE VALUES(SEQU_COMM_TABLE.NEXTVAL,1,'°¨»çÇÕ´Ï´Ù:)','test11',sysdate,'test11',sysdate,0);
+INSERT INTO COMM_TABLE VALUES(SEQU_COMM_TABLE.NEXTVAL,2,'°¨»çÇÕ´Ï´Ù:)','test22',sysdate,'test11',sysdate,0);
 
 commit;
--- ï¿½ï¿½ï¿½Ç°Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½
+-- ¹®ÀÇ°Ô½ÃÆÇ ´ñ±Û ³»¿ë È®ÀÎ
 SELECT * FROM COMM_TABLE;
 
 desc comm_table;
-INSERT INTO COMM_TABLE VALUES(SEQU_COMM_TABLE.NEXTVAL,1,'ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½:) ï¿½ï¿½ï¿½Å¿ï¿½ï¿½Ï·ï¿½ï¿½Ç¼ï¿½ï¿½ï¿½.','test11',sysdate,'test11',sysdate,0);
+INSERT INTO COMM_TABLE VALUES(SEQU_COMM_TABLE.NEXTVAL,1,'°¨»çÇÕ´Ï´Ù:) Áñ°Å¿îÇÏ·çµÇ¼¼¿ä.','test11',sysdate,'test11',sysdate,0);
 commit;
-
 
 create view qna_view
 as
@@ -157,5 +156,9 @@ select * from (
 	select rownum num, q.* from (
 		select qna_id, qna_title, qna_content, qna_hits, qna_status, mem_id1,  to_char(qna_date,'yyyy-mm-dd') qna_date, mem_id2, qna_updatedate, comm_count from qna_table where qna_status=0 order by qna_id desc
 	) q
-)
-insert into qna_table values(sequ_qna_table.nextval,'í…ŒìŠ¤íŠ¸','í…ŒìŠ¤íŠ¸',123,0,'admin',sysdate-2,'test11',sysdate-2,0);
+);
+insert into qna_table values(sequ_qna_table.nextval,'Å×½ºÆ®','Å×½ºÆ®',123,0,'admin',sysdate,'admin',sysdate,0);
+
+commit;
+
+select * from member_table;
