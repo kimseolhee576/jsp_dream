@@ -103,9 +103,9 @@
 							<% } %>
 							<tr>
 								<td colspan="6">
-									<a href="http://localhost:9000/dream/reviewboard/reviewWrite.jsp">
+									<!--  <a href="http://localhost:9000/dream/reviewboard/reviewWrite.jsp">
 										<button type="button" class="btn_style1">글쓰기</button>
-									</a>
+									</a>-->
 								</td>
 							</tr>
 						</table> 
