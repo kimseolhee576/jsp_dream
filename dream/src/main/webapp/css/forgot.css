@@ -264,3 +264,14 @@ select.list-dt:focus {
 .msg{
 	font-family: "Poppins", sans-serif !important;
 }
+
+#passMsg{
+    font-family: "Poppins", sans-serif !important;
+    font-size:13px !important;
+}	
+#cpassMsg{
+	font-family: "Poppins", sans-serif !important;
+	font-size:13px !important;
+}
+	
+}

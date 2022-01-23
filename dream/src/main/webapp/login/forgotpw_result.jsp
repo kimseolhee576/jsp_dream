@@ -102,12 +102,12 @@
                             <fieldset>
                                 <div class="form-card" style="height:400px;">
                                     <h2 class="fs-title"></h2>
-                                        <p class="find_result" style="font-size:11px; margin-bottom:0;">인증에 성공하셨습니다!</p>
-                                        <p class="find_result" style="font-size:11px; margin-top:0;">새로 비밀번호를 설정해주세요</p><br>
+                                        <p class="find_result" style="font-size:14px; margin-bottom:0;">인증에 성공하셨습니다!</p>
+                                        <p class="find_result" style="font-size:14px; margin-top:0;">새로 비밀번호를 설정해주세요</p><br>
                                         
-                                        <input type="password" name="mem_pass" placeholder="비밀번호(영문+숫자 조합의 6~10자리)" id="pass" onblur="passSameCheck()" onKeyup="passCheck()" required>
+                                        <input type="password" style="font-size:13px;" name="mem_pass" placeholder="비밀번호(영문+숫자 조합의 6~10자리)" id="pass" onblur="passSameCheck()" onKeyup="passCheck()" required>
                                         <span id="passMsg"></span>
-                                        <input type="password" placeholder="비밀번호 확인(영문+숫자 조합의 6~10자리)" id="cpass" onblur="passSameCheck()" onKeyup="cpassCheck()" required>
+                                        <input type="password" style="font-size:13px;" placeholder="비밀번호 확인(영문+숫자 조합의 6~10자리)" id="cpass" onblur="passSameCheck()" onKeyup="cpassCheck()" required>
                                         <span id="cpassMsg"></span>
                                         <button type="button" onclick="updatePassworFormCheck()" class="btn_style3" style="padding:11px 110px; color:white; margin:25px auto;">완료</button>
                                  </div>
