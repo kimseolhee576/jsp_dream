@@ -7,9 +7,10 @@
 
 <%
 	int pageNo = 1; 
-	if(request.getParameter("pageNo") != null){
+ 	if(request.getParameter("pageNo") != null){
 	    pageNo = Integer.parseInt(request.getParameter("pageNo"));
-	}
+	} 
+    
 %>
 
 <!doctype html>
@@ -91,8 +92,7 @@
   					</tr>
             <%
 	            QnaDAO dao = new QnaDAO();
-	           /*  ArrayList<QnaVO> list = dao.getList(pageNo); */
-	            ArrayList<QnaVO> list = dao.getList();
+	            ArrayList<QnaVO> list = dao.getList(pageNo); 
 	            for(QnaVO vo : list){ 
             %>
     				<tr>
@@ -121,12 +121,16 @@
                      
             </td>
           </tr>
-            <%-- <% if(pageNo != 1){ %>
-                <a href="http://localhost:9000/dream/qna/qna_list.jsp?pageNo=<%= pageNo-1%>">이전</a>         
+         </table> 
+           <div style="text-align: center;">
+             <% if(pageNo != 1){ %>
+                <a href="http://localhost:9000/dream/qna/qna_list.jsp?pageNo=<%= pageNo-1%>">
+                <button type="button" class="btn_style1" >이전</button></a>         
             <% }if(dao.nextPage(pageNo+1)){ %> 
-                <a href="http://localhost:9000/dream/qna/qna_list.jsp?pageNo=<%= pageNo+1%>">다음</a>         
-          <%} %>  --%> 
-        </table>
+                <a href="http://localhost:9000/dream/qna/qna_list.jsp?pageNo=<%= pageNo+1%>">
+                <button type="button" class="btn_style1" >다음</button></a>         
+            <%} %>
+            </div>
         </form>
        </section>
      </div>
