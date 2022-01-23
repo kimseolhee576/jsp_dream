@@ -69,12 +69,12 @@
 							</tr>
 							<tr>
 								<th>제목</th>
-								<td class="title_style"><%= vo.getNtitle() %></td>
+								<td class="title_style">&nbsp;&nbsp;<%= vo.getNtitle().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>")  %></td>
 								<td class="date_style">날짜: <%=vo.getNotice_date() %></td>
 								<td class="date_style">조회수: <%=vo.getNotice_hits() %></td>
 							</tr>
 							<tr>
-								<th>내용</th><td colspan="4" height="300px"><%=vo.getNcontent() %></td>
+								<th>내용</th><td colspan="4" height="300px">&nbsp;&nbsp;<%=vo.getNcontent().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>")  %></td>
 							</tr>
 							<tr>
 							<%if ("admin".equals(sid)) { %>

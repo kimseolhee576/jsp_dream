@@ -84,7 +84,7 @@
 							<% for(NoticeVO vo : list) { %>
 							<tr>
 								<td><%= vo.getRno() %></td>
-								<td><a href="notice_content.jsp?notice_id=<%=vo.getNotice_id() %>"><%=vo.getNtitle() %></a>
+								<td>&emsp;<a href="notice_content.jsp?notice_id=<%=vo.getNotice_id() %>"><%=vo.getNtitle().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>") %></a>&nbsp;
 								<% LocalDate today = LocalDate.now();
 								if(today.toString().equals(vo.getNotice_date())){%>   
 		              <span class="badge " style="background:#B4B4FF">new</span></td>
