@@ -6,7 +6,6 @@
     let idCheckFlag;
     let idDupliCheckFlag;
     let idUsingFlag;
-    let passFlag;
 function joinFormCheck(){
     
     let id, pass, cpass, name, birthdate, email1, email2, email3, hp;
@@ -134,7 +133,6 @@ function idCheck(){
 /*
     회원가입 - 비밀번호 유효성 체크
 */
-    passFlag=0;
     let pwJ = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,10}$/; 
     let pass,cpass,passMsg,cpassMsg;
     pass = document.getElementById("pass");
@@ -176,11 +174,6 @@ function cpassCheck(){
     회원가입 - 비밀번호 일치 체크
 */
 function passSameCheck(){
-    if(pass.value!=""&&cpass.value==""){
-		passFlag=1;
-	}else if(pass.value==""&&cpass.value!=""){
-		passFlag=2;
-	}
     if(pass.value != "" && cpass.value != ""){
         if(pass.value == cpass.value){
 			if(pwJ.test($('#pass').val())){

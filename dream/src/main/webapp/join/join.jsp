@@ -80,7 +80,7 @@
 					        </li>
 					        <li>
 					            <label>*휴대폰</label>
-					            <input type="text" name="mem_hp" placeholder="*숫자만 10~11자리(ex:01012345678)" class="input1" id="hp" onKeyup="hpCheck()">
+					            <input type="text" name="mem_hp" placeholder="숫자만 10~11자리(ex:01012345678)" class="input1" id="hp" onKeyup="hpCheck()">
 					            <span id="hpMsg"></span>
 					        </li>
 					        <li>
