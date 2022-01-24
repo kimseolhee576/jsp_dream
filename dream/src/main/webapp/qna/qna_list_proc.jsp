@@ -2,7 +2,6 @@
     pageEncoding="UTF-8" %>
 <%@ page import="com.dream.vo.QnaVO" %>
 <%@ page import="com.dream.dao.QnaDAO" %>
-<%@ page import="java.io.PrintWriter" %>
 
 <%
 request.setCharacterEncoding("utf-8");

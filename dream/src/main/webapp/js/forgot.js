@@ -1,7 +1,6 @@
 /**
  * 아이디 찾기 결과 출력 
  */
- 
 function getFindIdResult(id){
     if(id.value!=""){
         if(confirm('회원님의 아이디는'+id+'입니다. 로그인으로 이동하시겠습니까?')){
@@ -24,6 +23,10 @@ function getFindIdResult(id){
     passMsg = document.getElementById("passMsg");
     cpassMsg = document.getElementById("cpassMsg");
     
+
+/**
+ * 비밀번호 재설정
+ */   
 function updatePassworFormCheck(){
 	if(pass.value == ""){
 		passMsg.innerHTML = "비밀번호를 입력해주세요";
@@ -53,7 +56,7 @@ function updatePassworFormCheck(){
 }
 
 /*
-    회원가입 - 비밀번호 유효성 체크
+   비밀번호 재설정 - 비밀번호 유효성 체크
 */
 function passCheck(){
     if(!pwJ.test($('#pass').val())||empJ.test($('#pass').val())){
@@ -79,7 +82,7 @@ function cpassCheck(){
 }
 
 /*
-    회원가입 - 비밀번호 일치 체크
+    비밀번호 재설정 - 비밀번호 일치 체크
 */
 function passSameCheck(){
 	if(pass.value != "" && cpass.value != ""){

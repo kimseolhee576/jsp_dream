@@ -1,5 +1,7 @@
+<%@ page import="com.dream.vo.QnaVO" %>
+<%@ page import="com.dream.dao.QnaDAO" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" import="com.dream.vo.QnaVO,com.dream.dao.QnaDAO"%>
+    pageEncoding="UTF-8" %>
 
 
 <!doctype html>
@@ -8,25 +10,9 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="megakit,business,company,agency,multipurpose,modern,bootstrap4">
-
-  <meta name="author" content="themefisher.com">
 
   <title>문의게시판 | 드림월드</title>
-  <link rel="icon" href="http://localhost:9000/dream/images/favicon.png"> <!-- 파비콘 -->
-
-  <!-- bootstrap.min css -->
-  <link rel="stylesheet" href="http://localhost:9000/dream/plugins/bootstrap/css/bootstrap.min.css">
-  <!-- Icon Font Css -->
-  <link rel="stylesheet" href="http://localhost:9000/dream/plugins/themify/css/themify-icons.css">
-  <link rel="stylesheet" href="http://localhost:9000/dream/plugins/fontawesome/css/all.css">
-  <link rel="stylesheet" href="http://localhost:9000/dream/plugins/magnific-popup/dist/magnific-popup.css">
-  <!-- Owl Carousel CSS -->
-  <link rel="stylesheet" href="http://localhost:9000/dream/plugins/slick-carousel/slick/slick.css">
-  <link rel="stylesheet" href="http://localhost:9000/dream/plugins/slick-carousel/slick/slick-theme.css">
-
-  <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="http://localhost:9000/dream/css/style.css">
+  <link rel="icon" href="http://localhost:9000/dream/images/favicon.png"> 
   
    <!-- 게시판 스타일 통일-->
   <link href="http://localhost:9000/dream/css/dreamReview.css" rel="stylesheet">
@@ -96,27 +82,6 @@
 <!-- footer Start -->
 <%@include file ="../footer.jsp" %>
 
-    <!--
-    Essential Scripts
-    =====================================-->
-
-
-    <!-- Main jQuery -->
-    <script src="http://localhost:9000/dream/plugins/jquery/jquery.js"></script>
-    <script src="http://localhost:9000/dream/js/contact.js"></script>
-    <!-- Bootstrap 4.3.1 -->
-    <script src="http://localhost:9000/dream/plugins/bootstrap/js/popper.js"></script>
-    <script src="http://localhost:9000/dream/plugins/bootstrap/js/bootstrap.min.js"></script>
-    <!--  Magnific Popup-->
-    <script src="http://localhost:9000/dream/plugins/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
-    <!-- Slick Slider -->
-    <script src="http://localhost:9000/dream/plugins/slick-carousel/slick/slick.min.js"></script>
-    <!-- Counterup -->
-    <script src="http://localhost:9000/dream/plugins/counterup/jquery.waypoints.min.js"></script>
-    <script src="http://localhost:9000/dream/plugins/counterup/jquery.counterup.min.js"></script>
-
-
-    <script src="http://localhost:9000/dream/js/script.js"></script>
-
+   
   </body>
   </html>

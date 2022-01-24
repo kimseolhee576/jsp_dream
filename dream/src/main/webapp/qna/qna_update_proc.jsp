@@ -12,7 +12,6 @@ int qna_id = Integer.parseInt(request.getParameter("qna_id"));
 <%
 	QnaDAO dao = new QnaDAO();
     dao.subtractHits(qna_id); 
-    dao.subtractHits(qna_id); 
     vo.setMem_id2(sid);
     
 	int result = dao.updateQ(vo);
