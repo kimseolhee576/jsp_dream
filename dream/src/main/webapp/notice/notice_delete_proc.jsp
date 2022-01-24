@@ -12,6 +12,4 @@ request.setCharacterEncoding("utf-8");
 	if(result == 1) {
 	    response.sendRedirect("notice_list.jsp");
 	}
-	
-
 %>

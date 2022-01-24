@@ -4,7 +4,7 @@
     
 <%
     request.setCharacterEncoding("utf-8");
-    %>
+%>
 <jsp:useBean id="vo" class="com.dream.vo.NoticeVO"></jsp:useBean>
 <jsp:setProperty name="vo" property="*" />
 
@@ -12,8 +12,6 @@
 	NoticeDao dao = new NoticeDao();
 	int result = dao.insert(vo);
 	if(result == 1) {
-		
 	    response.sendRedirect("notice_list.jsp");
 	}
-	
 %>
