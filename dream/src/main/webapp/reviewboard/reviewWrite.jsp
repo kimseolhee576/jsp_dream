@@ -4,22 +4,13 @@
 <html>
 <head profile="http://www.w3.org/2005/10/profile">
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link rel="icon" href="http://localhost:9000/dream/images/favicon.png"> <!-- 파비콘 -->
+
 <!-- ailed to load resource: the server responded with a status of 404 () 에러나서 추가 -->
 <link rel="icon" type="image/png" href="http://example.com/myicon.png">
-<!-- Required meta tags -->
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="megakit,business,company,agency,multipurpose,modern,bootstrap4">
-<meta name="author" content="themefisher.com">
 
 <title>후기게시판 | 드림월드</title>
-
-<!-- bootstrap.min css 
-<link rel="stylesheet" href="http://localhost:9000/dream/plugins/bootstrap/css/bootstrap.min.css">
-<!-- Icon Font Css 
-<link rel="stylesheet" href="http://localhost:9000/dream/plugins/themify/css/themify-icons.css">
-<link rel="stylesheet" href="http://localhost:9000/dream/plugins/fontawesome/css/all.css">
-<link rel="stylesheet" href="http://localhost:9000/dream/plugins/magnific-popup/dist/magnific-popup.css">-->
 
 <!-- Main Stylesheet -->
 <link rel="stylesheet" href="http://localhost:9000/dream/css/style.css">
@@ -69,7 +60,7 @@
 							        <input type="radio" name="review_star" value="4" id="rate2"><label for="rate2">⭐</label>
 							        <input type="radio" name="review_star" value="3" id="rate3"><label for="rate3">⭐</label>
 							        <input type="radio" name="review_star" value="2" id="rate4"><label for="rate4">⭐</label>
-							        <input type="radio" name="review_star" value="1" id="rate5"><label for="rate5">⭐</label> <!-- id="rate5" -->
+							        <input type="radio" name="review_star" value="1" id="rate5"><label for="rate5">⭐</label> 
 						   	 	</div>
 							</td>
 						</tr>	
@@ -94,19 +85,10 @@
 </div>
     <!-- footer Start -->
 <%@include file ="../footer.jsp" %>
-    <!-- 
-    Essential Scripts
-    =====================================-->
 
+    <!--  Essential Scripts
+    =====================================-->
     <script src="http://localhost:9000/dream/js/dreamReview.js"></script>
-    <!-- Main jQuery 
-    <script src="plugins/jquery/jquery.js"></script>
-    <script src="js/contact.js"></script>
-    <!-- Bootstrap 4.3.1 
-    <script src="plugins/bootstrap/js/popper.js"></script>
-    <script src="plugins/bootstrap/js/bootstrap.min.js"></script>
-    
-    <script src="js/script.js"></script>-->
 
 </body>
 </html>

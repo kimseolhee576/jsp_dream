@@ -4,7 +4,6 @@
 	String login_id = (String)session.getAttribute("sid");
 	MemberDao dao = new MemberDao();
 	MemberVO vo = dao.getInfo(login_id);
-	//System.out.println(vo.getMem_id());
 %>    
 
 <!DOCTYPE html>
@@ -13,25 +12,15 @@
 <meta charset="UTF-8">
 <!-- Required meta tags -->
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="megakit,business,company,agency,multipurpose,modern,bootstrap4">
-<meta name="author" content="themefisher.com">
 <link rel="icon" href="http://localhost:9000/dream/images/favicon.png"> <!-- 파비콘 -->
+
 <!-- ailed to load resource: the server responded with a status of 404 () 에러나서 추가 -->
 <link rel="icon" type="image/png" href="http://example.com/myicon.png">
 
 <title>마이페이지 | 드림월드</title>
-<!-- bootstrap.min css -->
-<link rel="stylesheet" href="http://localhost:9000/dream/plugins/bootstrap/css/bootstrap.min.css">
-
-<!-- Icon Font Css -->
-<link rel="stylesheet" href="http://localhost:9000/dream/plugins/themify/css/themify-icons.css">
-<link rel="stylesheet" href="http://localhost:9000/dream/plugins/fontawesome/css/all.css">
-<link rel="stylesheet" href="http://localhost:9000/dream/plugins/magnific-popup/dist/magnific-popup.css">
 
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link href="http://localhost:9000/dream/css/dreamReview.css" rel="stylesheet">
-
-<!-- Main Stylesheet -->
 <!-- <link rel="stylesheet" href="http://localhost:9000/dream/css/style.css"> -->
 
 </head>
@@ -95,7 +84,7 @@
 							</li>	
 							<li>
 								<label>*핸드폰번호</label>
-								<input type="text" name="mem_hp" class="input_style1" id="hp" value="<%= vo.getMem_hp() %>"  placeholder="*숫자만 10~11자리(ex:01012345678)" onKeyup="hpCheck()">
+								<input type="text" name="mem_hp" class="input_style1" id="hp" value="<%= vo.getMem_hp() %>"  placeholder="숫자만 10~11자리(ex:01012345678)" onKeyup="hpCheck()">
 								<span id="hpMsg"></span>
 							</li>	
 							<li>
@@ -111,18 +100,10 @@
 </div>
 	<!-- footer Start -->
 <%@include file ="../footer.jsp" %>
-  <!-- 
-    Essential Scripts
+  <!--  Essential Scripts
     =====================================-->
-    <!-- Main jQuery -->
-    <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
-	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    
+  	<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script> <!-- 유효성체크(passCheck(), passSameCheck(), hpCheck()  -->
 	<script src="http://localhost:9000/dream/js/infoUpdate.js"></script>
-   <!--  <script src="http://localhost:9000/dream/js/contact.js"></script>
-    <!-- Bootstrap 4.3.1
-    <script src="http://localhost:9000/dream/plugins/bootstrap/js/popper.js"></script>
-    <script src="http://localhost:9000/dream/plugins/bootstrap/js/bootstrap.min.js"></script> -->
-    
+	<!-- <script src="http://localhost:9000/dream/js/contact.js"></script>  -->   
 </body>
 </html>

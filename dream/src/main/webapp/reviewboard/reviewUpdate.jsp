@@ -10,19 +10,14 @@
 <head profile="http://www.w3.org/2005/10/profile">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<!-- Required meta tags -->
-<meta name="description" content="megakit,business,company,agency,multipurpose,modern,bootstrap4">
-<meta name="author" content="themefisher.com">
 <title>후기게시판 | 드림월드</title>
 <link rel="icon" href="http://localhost:9000/dream/images/favicon.png"> <!-- 파비콘 -->
+
 <!-- ailed to load resource: the server responded with a status of 404 () 에러나서 추가 -->
 <link rel="icon" type="image/png" href="http://example.com/myicon.png">
-<!-- bootstrap.min css -->
-<link rel="stylesheet" href="http://localhost:9000/dream/plugins/bootstrap/css/bootstrap.min.css">
-<!-- Icon Font Css -->
-<link rel="stylesheet" href="http://localhost:9000/dream/plugins/themify/css/themify-icons.css">
-<link rel="stylesheet" href="http://localhost:9000/dream/plugins/fontawesome/css/all.css">
-<link rel="stylesheet" href="http://localhost:9000/dream/plugins/magnific-popup/dist/magnific-popup.css">
+
+<!-- bootstrap.min css 
+<link rel="stylesheet" href="http://localhost:9000/dream/plugins/bootstrap/css/bootstrap.min.css">-->
 
 <!-- Main Stylesheet -->
 <link rel="stylesheet" href="http://localhost:9000/dream/css/style.css">
@@ -49,7 +44,7 @@
 		<div class="content">
 			<section class="review_board">
 				<h2>후기게시판</h2>
-				<form name="reviewUpdateForm" action="reviewUpdate_proc.jsp" method="post" > <!-- id="reviewWriteForm" -->
+				<form name="reviewUpdateForm" action="reviewUpdate_proc.jsp" method="post" > 
 					<input type="hidden" name="review_id" value="<%= review_id%>">
 						<table class="review_write">
 							<tr>
@@ -96,11 +91,10 @@
 </div>
 <!-- footer Start -->
 <%@include file ="../footer.jsp" %>
-<!-- script 정리했는데 혹시 에러나면 다른데서 붙여 -->
 <script src="http://localhost:9000/dream/js/dreamReview.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
-<script><!-- 글 수정페이지로 갔을 때 별점 불러와서 선택되어있게 -->
+<script><!-- 글 수정페이지로 갔을 때 별점 불러와서 선택되어있게 함-->
 $.fn.radioSelect = function(val) {
 	this.each(function() {
 	var $this = $(this);

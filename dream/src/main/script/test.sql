@@ -157,6 +157,8 @@ select * from (
 		select qna_id, qna_title, qna_content, qna_hits, qna_status, mem_id1,  to_char(qna_date,'yyyy-mm-dd') qna_date, mem_id2, qna_updatedate, comm_count from qna_table where qna_status=0 order by qna_id desc
 	) q
 );
+
+
 insert into qna_table values(sequ_qna_table.nextval,'테스트','테스트',123,0,'admin',sysdate,'admin',sysdate,0);
 
 commit;

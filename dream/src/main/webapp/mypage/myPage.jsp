@@ -6,16 +6,12 @@
 <meta charset="UTF-8">
 <!-- Required meta tags -->
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="megakit,business,company,agency,multipurpose,modern,bootstrap4">
-<meta name="author" content="themefisher.com">
 <link rel="icon" href="http://localhost:9000/dream/images/favicon.png"> <!-- 파비콘 -->
+
 <!-- ailed to load resource: the server responded with a status of 404 () 에러나서 추가 -->
 <link rel="icon" type="image/png" href="http://example.com/myicon.png">
 
 <title>마이페이지 | 드림월드</title>
-<!-- bootstrap.min css 
-<link rel="stylesheet" href="http://localhost:9000/dream/plugins/bootstrap/css/bootstrap.min.css">-->
-
 <!-- Main Stylesheet -->
 <link rel="stylesheet" href="http://localhost:9000/dream/css/style.css">
 <link href="http://localhost:9000/dream/css/dreamReview.css" rel="stylesheet">
@@ -70,17 +66,9 @@
 </div>
 	<!-- footer Start -->
 <%@include file ="../footer.jsp" %>
-  <!-- 
-    Essential Scripts
+  <!-- Essential Scripts
     =====================================-->
     <script src="http://localhost:9000/dream/js/dreamReview.js"></script>
-    <!-- Main jQuery -->
-    <script src="plugins/jquery/jquery.js"></script>
-    <script src="js/contact.js"></script>
-    <!-- Bootstrap 4.3.1 -->
-    <script src="plugins/bootstrap/js/popper.js"></script>
-    <script src="plugins/bootstrap/js/bootstrap.min.js"></script>
     
-    <script src="js/script.js"></script>
 </body>
 </html>
