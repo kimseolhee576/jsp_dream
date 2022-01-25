@@ -131,8 +131,8 @@ select * from notice_table;
 -- 문의 게시판 데이터 입력
 insert into qna_table values(sequ_qna_table.nextval,'이용안내시간을 알고싶어요','오픈은 언제하고 몇시에 문을 닫나요',123,0,'test11',sysdate-1,'test11',sysdate-1,0);
 insert into qna_table values(sequ_qna_table.nextval,'음식물 반입이 되나요?','밖에서 음식을 사서 들어갈수있나요?',777,0,'test11',sysdate,'test11',sysdate,0);
-insert into qna_table values(sequ_qna_table.nextval,'드림월드는 어디에 있나요?','드림월드 가고싶은데 어디에있나요?',12,0,'test22',sysdate,'test22',sysdate);
-insert into qna_table values(sequ_qna_table.nextval,'할인적용에 대해 알고싶어요','할인받고 싶은데 정보있나요?',223,0,'test22',sysdate,'test22',sysdate);
+insert into qna_table values(sequ_qna_table.nextval,'드림월드는 어디에 있나요?','드림월드 가고싶은데 어디에있나요?',12,0,'test22',sysdate,'test22',sysdate,0);
+insert into qna_table values(sequ_qna_table.nextval,'할인적용에 대해 알고싶어요','할인받고 싶은데 정보있나요?',223,0,'test22',sysdate,'test22',sysdate,0);
 commit;
 -- 문의게시판 내용 확인
 SELECT * FROM QNA_TABLE;
@@ -150,7 +150,7 @@ desc comm_table;
 INSERT INTO COMM_TABLE VALUES(SEQU_COMM_TABLE.NEXTVAL,1,'감사합니다:) 즐거운하루되세요.','test11',sysdate,'test11',sysdate,0);
 commit;
 
-create view qna_view
+create view qna_view --문의게시판 목록 조회를 위한 view(qna_table 생성과 함께 같이 해줘야 함)
 as
 select * from (
 	select rownum num, q.* from (
@@ -158,9 +158,4 @@ select * from (
 	) q
 );
 
-
-insert into qna_table values(sequ_qna_table.nextval,'테스트','테스트',123,0,'admin',sysdate,'admin',sysdate,0);
-
-commit;
-
-select * from member_table;
+insert into qna_table values(sequ_qna_table.nextval,'테스트','테스트',123,0,'admin',sysdate,'admin',sysdate,0); --문의게시글 샘플 글
